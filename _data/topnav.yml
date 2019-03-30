@@ -12,21 +12,16 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Jekyll Help
+    - title: COIN-OR Help
       folderitems:
-        - title: Jekyll Talk
-          external_url: https://talk.jekyllrb.com
-        - title: Jekyll documentation
-          external_url: http://jekyllrb.com/docs/home/
-        - title: Jekyll on Stack Overflow
-          external_url: http://stackoverflow.com/questions/tagged/jekyll
-        - title: Jekyll on my blog
-          external_url: http://idratherbewriting.com/category-jekyll/
-    - title: Products
+        - title: COIN-OR Web Site
+          external_url: https://www.coin-or.org
+    - title: Guides
       folderitems:
-        - title: Jekyll Documentation Theme
-          url: /mydoc_introduction.html
-        - title: Product 1
-          url: /p1_landing_page.html
-        - title: Product 2
-          url: /p2_landing_page.html
+      - title: User Guide
+        url: /user_introduction.html
+        output: web
+      - title: Developer Guide
+        url: /developer_introduction.html
+        output: web
+
