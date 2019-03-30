@@ -12,7 +12,7 @@ site_title: COIN-OR Documentation
 company_name: COIN-OR Foundation
 # this appears in the footer
 
-github_editme_path: coin-or/coin-or.github.io/blob/master
+github_editme_path: coin-or/coin-or.github.io/blob/master/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
