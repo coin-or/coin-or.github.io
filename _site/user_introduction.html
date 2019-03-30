@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="These brief instructions will help you get started quickly with COIN-OR.">
+<meta name="keywords" content="getting_started,  optimization COIN-OR">
+<title>Getting started with the Optimization Suite | COIN-OR Documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> COIN-OR Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">COIN-OR Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://www.coin-or.org" target="_blank">COIN-OR Web Site</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guides<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li class="dropdownActive"><a href="user_introduction.html">User Guide</a></li>
+                        
+                        
+                        
+                        <li><a href="developer_introduction.html">Developer Guide</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:info@coin-or.org?subject=COIN-OR Documentation feedback&body=I have some feedback about the Getting started with the Optimization Suite page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Getting started with the Optimization Suite">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">COIN-OR User Guide </li>
+  
+  
+  
+      
+  
+  <li>
+      <a href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a href="user_introduction.html#downloading-and-installing">Downloading and Installing</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="user_introduction.html#building-from-source">Building from Source</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="user_introduction.html#additional-useful-information">Additional Information</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Getting started with the Optimization Suite</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">These brief instructions will help you get started quickly with COIN-OR.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/coin-or/coin-or.github.io/blob/masterpages/user/user_introduction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you’ve landed here, you’re probably just getting started with COIN-OR. This documentation provides an overview of the projects and how to work with them. Individual projects may have their own documentation.</div>
+
+<p>The COIN-OR Optimization Suite is a collection of interoperable open source
+solvers from the respository of open source software maintained by the COIN-OR
+Foundation. It consists of the following projects.</p>
+
+<ul>
+  <li><a href="https://github.com/coin-or/CoinUtils">CoinUtils</a> (COIN-OR utility library)</li>
+  <li><a href="https://github.com/coin-or/Osi">Osi</a> (Open Solver Interface)</li>
+  <li><a href="https://github.com/coin-or/Clp">Clp</a> (COIN-OR LP Solver)</li>
+  <li><a href="https://github.com/coin-or/FlopCpp">FlopCpp</a> (C++-based algebraic modeling language)</li>
+  <li><a href="https://github.com/coin-or/DyLP">DyLP</a> (LP solver based on dynamic simplex method)</li>
+  <li><a href="https://github.com/coin-or/Vol">Vol</a> (approximate LP solver based on Volume Algorithm)</li>
+  <li><a href="http://projects.coin-or.org/Cgl">Cgl</a> (Cut generation library)</li>
+  <li><a href="https://github.com/coin-or/SYMPHONY">SYMPHONY</a> (MILP solver framework)</li>
+  <li><a href="https://github.com/coin-or/Cbc">Cbc</a> (COIN-OR branch-and-cut MILP solver)</li>
+  <li><a href="https://github.com/coin-or/Smi">Smi</a> (Stochastic modeling interface)</li>
+  <li><a href="https://github.com/coin-or/CoinMP">CoinMP</a> (Unified C API for Cbc and Clp)</li>
+  <li><a href="https://github.com/coin-or/Bcp">Bcp</a> (Branch, cut, and price framework)</li>
+  <li><a href="https://github.com/coin-or/Ipopt">Ipopt</a> (Interior point algorithm for non-linear optimization)</li>
+  <li>CHiPPS (COIN-OR High Performance Parallel Search framework)
+    <ul>
+      <li><a href="https://github.com/coin-or/CHiPPS-ALPS">Alps</a> (Abstract Library for Parallel Search)</li>
+      <li><a href="https://github.com/coin-or/CHiPPS-BiCePS">BiCePS</a> (Branch, Constrain, and Price Software)</li>
+      <li><a href="https://github.com/coin-or/CHiPPS-BLIS">Blis</a> (BiCePS Linear Integer Solver)</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/coin-or/Dip">Dip</a> (Decomposition-based MILP solver framework)</li>
+  <li><a href="https://github.com/coin-or/CppAD">CppAD</a> (Automatic differentiation in C++)</li>
+  <li><a href="https://github.com/coin-or/Bonmin">Bonmin</a> (Solver for Convex MINLP)</li>
+  <li><a href="https://github.com/coin-or/Couenne">Couenne</a> (Solver for non-convex MINLP)</li>
+  <li><a href="https://github.com/coin-or/OS">OS</a> (Optimization Services)</li>
+  <li><a href="https://github.com/coin-or/MibS">MibS</a> (Mixed Integer Bilevel Solver)</li>
+  <li><a href="https://github.com/coin-or/DisCO">DisCO</a> (Discrete Conic Optimization )</li>
+  <li><a href="https://projects.coin-or.org/CoinBazaar/wiki/Projects/ApplicationTemplates">Application Templates</a> (Examples)</li>
+</ul>
+
+<h2 id="downloading-and-installing">Downloading and Installing</h2>
+
+<h3 id="pre-built-binaries">Pre-built Binaries</h3>
+
+<p>Binaries for most platforms are available for download from <a href="https://bintray.com/coin-or/download/">Bintray</a>. 
+Binaries can also be installed on specific platforms, as follows. AMPL also kindly provides executables of some 
+solvers for download at</p>
+
+<p>http://ampl.com/products/solvers/open-source/.</p>
+
+<p>We are working on some other better ways of getting binaries, such as conda
+packages, and will keep this README updated as things progress.</p>
+
+<h3 id="installers">Installers</h3>
+
+<h4 id="windows">Windows</h4>
+
+<p>There is a Windows GUI installer available
+<a href="http://www.coin-or.org/download/binary/OptimizationSuite">here</a> for
+installing libraries compatible with Visual Studio (you will need to install
+the free Intel compiler redistributable libraries). This may get updated someday, but in the meantime, 
+you can get binaries from <a href="http://bintray.com/coin-or/download">BinTray</a>.</p>
+
+<h4 id="os-x">OS X</h4>
+
+<p>There are Homebrew recipes for some projects available <a href="https://github.com/coin-or-tools/homebrew-coinor">here</a>. Just do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap coin-or-tools/coinor
+brew install XXX
+</code></pre></div></div>
+<p>It is also easy to build binaries from source with <a href="https://github.com/coin-or/coinbrew">coinbrew</a>.</p>
+
+<h4 id="linux">Linux</h4>
+
+<p>For Linux, there are now Debian and Fedora packages for most projects in
+the suite and we are investigating the possiblity of providing Linuxbrew
+packages.</p>
+<ul>
+  <li>Click <a href="https://packages.debian.org/search?keywords=coinor&amp;searchon=names&amp;suite=stable&amp;section=all">here</a> for list of Debian packages.</li>
+  <li>Click <a href="https://apps.fedoraproject.org/packages/s/coin-or">here</a> for a list of Fedora packages.
+It is also easy to build binaries from source with <a href="https://github.com/coin-or/coinbrew">coinbrew</a>.</li>
+</ul>
+
+<h3 id="docker-image">Docker Image</h3>
+
+<p>The Docker image available at</p>
+
+<p>https://hub.docker.com/r/tkralphs/coinor-optimization-suite/</p>
+
+<p>is another excellent way to use the COIN-OR Optimization Suite, although it is currently out of date. For details on
+how to obtain and use this image, see the project’s Github page
+<a href="https://github.com/tkralphs/optimization-suite-docker">here</a>.</p>
+
+<h3 id="other-installation-methods">Other Installation Methods</h3>
+
+<p>Other ways of obtaining COIN include downloading it through a number of
+modeling language front-ends. For example, COIN-OR can be used through</p>
+<ul>
+  <li><a href="http://www.gams.com/help/index.jsp?topic=%2Fgams.doc%2Fsolvers%2Findex.html">GAMS</a>,</li>
+  <li><a href="http://www.maximalsoftware.com/solvers/coin.html">MPL</a>, and</li>
+  <li><a href="http://ampl.com/products/solvers/open-source/">AMPL</a>,</li>
+  <li><a href="http://www.i2c2.aut.ac.nz/Wiki/OPTI/index.php/DL/DownloadOPTI">MATLAB</a></li>
+  <li><a href="https://www.r-project.org/">R</a>: Packages available
+ <a href="http://bioconductor.org/packages/devel/bioc/html/lpsymphony.html">here</a> or
+ <a href="https://cran.r-project.org/web/packages/Rsymphony/index.html">here</a> or
+ <a href="https://github.com/vladchimescu/lpsymphony">here</a></li>
+  <li><a href="http://opensolver.org">Open Solver</a></li>
+  <li><a href="http://solverstudio.org">Solver Studio</a></li>
+</ul>
+
+<h2 id="building-from-source">Building from Source</h2>
+
+<p>Why download and build COIN yourself? There are many options for building COIN
+codes and the distributed binaries are built with just one set of options. We
+cannot distribute binaries linked to libraries licensed under the GPL, so you
+must build yourself if you want GMPL, command completion, command history,
+Haskell libraries, etc. Other advanced options that require specific
+hardware/software may also not be supported in distributed binaries (parallel
+builds, MPI) Once you understand how to get and build source, it is
+much faster to get bug fixes.</p>
+
+<h3 id="linux-1">Linux</h3>
+
+<p>Most Linux distributions come with all the required tools installed. To obtain
+the source code, the first step is to get the installer that will then
+fetch the source for <code class="highlighter-rouge">ProjName</code> and all its dependencies. <em>You do not need to
+clone the repository first, just do the following!</em> Open a terminal and execute</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://www.github.com/coin-or/coinbrew
+</code></pre></div></div>
+
+<p>Next, to check out source code for and build all the necessary projects
+(including dependencies), execute the script in the <code class="highlighter-rouge">coinbrew</code>
+subdirectory. To execute the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd coinbrew
+chmod u+x coinbrew
+./coinbrew
+</code></pre></div></div>
+
+<p>(Note: The <code class="highlighter-rouge">chmod</code> command is only needed if the execute permission is not
+automatically set by git on cloning). Once you run the script,
+you will be prompted interactively to select a project to fetch and build. The
+rest should happen automagically. Alternatively, the following command-line
+incantation will execute the procedure non-interactively.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
+./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
+./coinbrew install --main-proj=ProjName
+</code></pre></div></div>
+<p>Note that is no prefix is specified, the package will be installed in the build 
+directory and no separate install step is necessary. 
+Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
+build system can simply be added to the command-line. For example, to build
+with debugging symbols, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+</code></pre></div></div>
+
+<p>To get help with additional options available in running the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew --help
+</code></pre></div></div>
+
+<p>The above procedures will build all required dependencies and SYMPHONY itself.
+Afterwards, the binaries will be installed in the directory <code class="highlighter-rouge">/path/to/install/dir/bin</code>
+and the libraries in the directory <code class="highlighter-rouge">/path/to/install/dir/lib</code>.</p>
+
+<p>After installation, you will also need to add <code class="highlighter-rouge">/path/to/install/dir/bin</code> to your
+<code class="highlighter-rouge">PATH</code> variable in your <code class="highlighter-rouge">.bashrc</code> and also add <code class="highlighter-rouge">/path/to/install/dir/lib</code>
+to your <code class="highlighter-rouge">LD_LIBRARY_PATH</code> if you want to link to COIN libraries.</p>
+
+<h3 id="windows-1">Windows</h3>
+
+<h4 id="command-line">Command line</h4>
+
+<p>By far, the easiest way to build on Windows is with the GNU autotools and the
+GCC compilers. The first step is to install either</p>
+<ul>
+  <li><a href="https://msys2.github.io/">Msys2</a></li>
+  <li><a href="http://cygwin.org/">CYGWIN</a></li>
+  <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>
+Bash and the gcc compilers also come with the <a href="https://www.anaconda.com/distribution/">Anaconda Python distribution</a></li>
+</ul>
+
+<p>If you don’t already have CYGWIN installed and don’t want to fool around with
+WSL (which is a great option if you already know your way around Unix), it is
+recommended to use MSys2, since it provides a minimal toolset that is easy to
+install. To get MSys2, either download the installer
+<a href="https://msys2.github.io/">here</a> or download and unzip MSys2 base from
+<a href="http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20190512.tar.xz">here</a> 
+(this is an out-of-date version, there may be a better place to get an archive
+version).</p>
+
+<p>Following any of the above steps, you should have the <code class="highlighter-rouge">bash</code> command
+(with Msys2, be sure to run <code class="highlighter-rouge">msys2_shell.bat</code> 
+or manually add <code class="highlighter-rouge">msys64\usr\bin</code>, <code class="highlighter-rouge">msys64\mingw32\bin</code>, and
+<code class="highlighter-rouge">msys64\mingw64\bin</code> to your Windows path).</p>
+
+<p>Once you have bash installed and in your <code class="highlighter-rouge">PATH</code>, open a Windows terminal and
+type</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+pacman -S make wget tar patch dos2unix diffutils git svn
+git clone https://www.github.com/coin-or/coinbrew
+</code></pre></div></div>
+
+<p>Next, to check out source code for and build all the necessary projects
+(including dependencies), execute the script in the <code class="highlighter-rouge">COIN-OR-OptimizationSuite</code>
+subdirectory. To execute the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd coinbrew
+chmod u+x coinbrew
+./coinbrew
+</code></pre></div></div>
+
+<p>(Note: The <code class="highlighter-rouge">chmod</code> command is only needed if the execute permission is not
+automatically set by git on cloning). Once you run the script,
+you will be prompted interactively to select a project to fetch and build. The
+rest should happen automagically. Alternatively, the following command-line
+incantation will execute the procedure non-interactively.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
+./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1
+./coinbrew install --main-proj=ProjName
+</code></pre></div></div>
+<p>Note that is no prefix is specified, the package will be installed in the build 
+directory and no separate install step is necessary. 
+Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
+build system can simply be added to the command-line. For example, to build
+with debugging symbols, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-debug
+</code></pre></div></div>
+
+<p>To get help with additional options available in running the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew --help
+</code></pre></div></div>
+
+<p>The above procedures will build all required dependencies and ProjName itself.
+Afterwards, the binaries will be installed in the directory <code class="highlighter-rouge">C:\path\to\install\dir\bin</code>
+and the libraries in the directory <code class="highlighter-rouge">C:\path\to\install\dir\lib</code>.</p>
+
+<p>To use the resulting binaries and/or libraries, you will need to add the
+full path of the directory <code class="highlighter-rouge">build\bin</code> to your Windows executable
+search <code class="highlighter-rouge">PATH</code>, or, alternatively, copy the conents of the build directory to 
+<code class="highlighter-rouge">C:\Program Files (x86)\ProjName</code> and add the directory
+<code class="highlighter-rouge">C:\Program Files (x86)\ProjName\bin</code> 
+to your Windows executable search <code class="highlighter-rouge">PATH</code>. You may also consider adding
+<code class="highlighter-rouge">C:\Program Files (x86)\ProjName\lib</code> to the <code class="highlighter-rouge">LIB</code> path and 
+<code class="highlighter-rouge">C:\Program Files (x86)\ProjName\include</code> to the <code class="highlighter-rouge">INCLUDE</code> path.</p>
+
+<p>It is possible to use almost the exact same commands to build with the Visual
+Studio compilers. Before doing any of the above commands in the Windows
+terminal, first run the <code class="highlighter-rouge">vcvarsall.bat</code> script for your version of Visual
+Studio. Note that you will also need a compatible Fortran compiler if you want
+to build any projects requiring Fortran (<code class="highlighter-rouge">ifort</code> is recommended, but not
+free). Then follow all the steps above, but replace the <code class="highlighter-rouge">build</code> command
+with</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-msvc
+</code></pre></div></div>
+
+<h4 id="visual-studio-ide">Visual Studio IDE</h4>
+
+<p>After obtaining source for the projects you want to build with <a href="https://github.com/coin-or/coinbrew">coinbrew</a>,
+find the solution file in the directory <code class="highlighter-rouge">MSVisualStudio</code>. Note that some projects that require a Fortran compiler cannot be built this way.</p>
+
+<h3 id="os-x-1">OS X</h3>
+
+<p>OS X is a Unix-based OS and ships with many of the basic components needed to
+build COIN-OR, but it’s missing some things. For examples, the latest versions
+of OS X come with the <code class="highlighter-rouge">clang</code> compiler but no Fortran compiler. You may also
+be missing the <code class="highlighter-rouge">wget</code> utility and <code class="highlighter-rouge">subversion</code> and <code class="highlighter-rouge">git</code> clients (needed for
+obtaining source code). The easiest way to get these missing utilitites is to
+install Homebrew (see http://brew.sh). After installation, open a terminal and
+do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install gcc wget svn git
+</code></pre></div></div>
+
+<p>To obtain
+the source code, the first step is to get the installer that will then
+fetch the source for ProjName and all its dependencies. <em>You do not need to
+clone ProjName first, just do the following!</em> Open a terminal and execute</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://www.github.com/coin-or/coinbrew
+</code></pre></div></div>
+
+<p>Next, to check out source code for and build all the necessary projects
+(including dependencies), execute the script in the <code class="highlighter-rouge">coinbrew</code>
+subdirectory. To execute the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd coinbrew
+chmod u+x coinbrew
+./coinbrew
+</code></pre></div></div>
+
+<p>(Note: The <code class="highlighter-rouge">chmod</code> command is only needed if the execute permission is not
+automatically set by git on cloning). Once you run the script,
+you will be prompted interactively to select a project to fetch and build. The
+rest should happen automagically. Alternatively, the following command-line
+incantation will execute the procedure non-interactively.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
+./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
+./coinbrew install --main-proj=ProjName
+</code></pre></div></div>
+<p>Note that is no prefix is specified, the package will be installed in the build 
+directory and no separate install step is necessary. 
+Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
+build system can simply be added to the command-line. For example, to build
+with debugging symbols, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+</code></pre></div></div>
+
+<p>To get help with additional options available in running the script, do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew --help
+</code></pre></div></div>
+<p>After installation, you will also need to add <code class="highlighter-rouge">/path/to/install/dir/bin</code> to your
+<code class="highlighter-rouge">PATH</code> variable in your <code class="highlighter-rouge">.bashrc</code> and also add <code class="highlighter-rouge">/path/to/install/dir/lib</code>
+to your <code class="highlighter-rouge">DYLD_LIBRARY_PATH</code> if you want to link to COIN libraries.</p>
+
+<h2 id="additional-useful-information">Additional Useful Information</h2>
+
+<h3 id="organization-of-the-repositories">Organization of the repositories</h3>
+
+<p>All projects are now (or will soon be) managed using <code class="highlighter-rouge">git</code>. Within
+the repository, the development branch is <code class="highlighter-rouge">master</code>, while branches named 
+<code class="highlighter-rouge">stable/x.y</code> contain long-running stable versions and tags names
+<code class="highlighter-rouge">releases/x.y.z</code> indicate point releases.</p>
+
+<p>The source tree for the root of project Xxx currently looks something like this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ProjName/
+doxydoc/
+INSTALL.md
+README.md
+AUTHORS
+Dependencies 
+configure 
+Makefile.am
+... 
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">ProjName</code> subdirectory for project <code class="highlighter-rouge">ProjName</code> looks something like this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/
+examples/
+MSVisualStudio/
+test/
+AUTHORS
+README 
+LICENSE 
+INSTALL 
+configure 
+Makefile.am 
+... 
+</code></pre></div></div>
+
+<p>The files in this subdirectory are for building the library of the project
+itself, with no dependencies, with the exception of the <code class="highlighter-rouge">MSVisualStudio</code>
+directory, which contains solution files that include dependencies.</p>
+
+<h3 id="about-version-numbers">About version numbers</h3>
+
+<p>COIN numbers versions by a standard semantic versioning scheme: each version
+has a <em>major</em>, <em>minor</em>, and <em>patch/release</em> number. All version within a
+<em>major.minor</em> series are compatible. All versions within a <em>major</em> series are
+backwards compatible. The versions with the <code class="highlighter-rouge">stable/</code> subdirectory have two
+digits, e.g., <code class="highlighter-rouge">1.1</code>, whereas the releases have three digits, e.g., <code class="highlighter-rouge">2.1.0</code>.
+The first two digits of the release version number indicates the stable series
+of which the release is a snapshot. The third digit is the release number in
+that series.</p>
+
+<h3 id="thirdparty-projects">ThirdParty Projects</h3>
+
+<p>There are a number of open-source projects that COIN projects can link to, but
+whose source we do not distribute. We provide convenient scripts for
+downloading these projects (shell scripts named <code class="highlighter-rouge">./get.ProjName</code> and a build
+harness for build them. We also produce libraries and pkg-config files. If you
+need the capabilities of a particular third party library, simply run the
+<code class="highlighter-rouge">get.ProjName</code> script before configuring for your build and it will be
+automatically integrated. Beware of licensing in compatibilities if you plan
+to redistribute the resulting binaries. The following are the supported
+libraries.</p>
+<ul>
+  <li>AMPL Solver Library (required to use solvers with AMPL)</li>
+  <li>Blas (improves performance—usually available natively on Linux/OS X)</li>
+  <li>Lapack (same as Blas)</li>
+  <li>Glpk</li>
+  <li>Metis</li>
+  <li>MUMPS (required for Ipopt to build completely open source)</li>
+  <li>Soplex</li>
+  <li>SCIP</li>
+  <li>HSL (an alternative to MUMPS that is not open source)</li>
+  <li>FilterSQP</li>
+</ul>
+
+<h3 id="parallel-builds">Parallel Builds</h3>
+
+<p><code class="highlighter-rouge">SYMPHONY</code>, <code class="highlighter-rouge">DIP</code>, <code class="highlighter-rouge">CHiPPS</code>, and <code class="highlighter-rouge">Cbc</code> all include the ability to solve in 
+parallel.</p>
+<ul>
+  <li>
+    <p>CHiPPS uses MPI and is targeted at massive parallelism (it would be
+possible to develop a hybrid algorithm, however). To build in parallel,
+specify the location of MPI with the <code class="highlighter-rouge">--with-mpi-incdir</code> and <code class="highlighter-rouge">--with-mpi-lib</code>
+arguments to <code class="highlighter-rouge">coinbrew build</code>, as follows:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--enable-static \ 
+--disable-shared \
+--with-mpi-incdir=/usr/include/mpich2 \ 
+--with-mpi-lib="-L/usr/lib  -lmpich" \
+MPICC=mpicc \
+MPICXX=mpic++ \
+</code></pre></div>    </div>
+  </li>
+  <li>SYMPHONY has both shared and distributed memory parallel modes, but we’ll
+ only discuss the shared memory capability here. It is enabled by default if
+ the compiler supports OpenMP (<code class="highlighter-rouge">gcc</code> and Microsft’s <code class="highlighter-rouge">cl</code> both do, but <code class="highlighter-rouge">clang</code>
+ does not). To disable share memory parallel mode, use the <code class="highlighter-rouge">--disable-openmp</code>
+ argument to <code class="highlighter-rouge">coinbrew</code>.</li>
+  <li>Cbc has shared memory parallelism, which can be enabled with the
+ <code class="highlighter-rouge">--enable-cbc-parallel</code> to <code class="highlighter-rouge">coinbrew</code></li>
+  <li>DIP currently has a shared memory parallel mode that works the same way as
+ SYMPHONY’s.</li>
+</ul>
+
+<h3 id="other-configure-time-options">Other Configure-time Options}</h3>
+
+<p>There are many configure options for customizing the builds, which is the
+advantage of learning to build yourself.</p>
+<ul>
+  <li>Over-riding variables: <code class="highlighter-rouge">CC, CXX, F77, CXX_ADDFLAGS</code></li>
+  <li><code class="highlighter-rouge">--prefix</code></li>
+  <li><code class="highlighter-rouge">--enable-debug</code></li>
+  <li><code class="highlighter-rouge">--enable-gnu-packages</code></li>
+  <li><code class="highlighter-rouge">-C</code>
+Individual project also have their own options.</li>
+  <li><code class="highlighter-rouge">ProjName/configure --help</code> will list the options for project ProjName.</li>
+  <li>The options for individual projects can be given to the root <code class="highlighter-rouge">coinbrew</code>
+ script—they will be passed on to subprojects automatically.</li>
+</ul>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Some documentation on using the full optimization suite will someday be available at
+http://coin-or.github.io/.
+There is also a full tutorial on the Optimization Suite and much more at
+http://coral.ie.lehigh.edu/~ted/teaching/coin-or.</p>
+
+<p>User’s manuals and documentation for project ProjName can be obtained at either
+http://coin-or.github.io/ProjName or http://www.coin-or.org/ProjName.
+Doxygen source code documentation for some projects can also be obtained at
+http://coin-or.github.io/Doxygen</p>
+
+<h3 id="support">Support</h3>
+
+<p>Support is available primarily through mailing lists and bug reports at
+http://github.com/coin-orProjName/issues/new.</p>
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        
+        
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2019 COIN-OR Foundation. All rights reserved. <br />
+ Site last generated: Mar 30, 2019 <br />
+<p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

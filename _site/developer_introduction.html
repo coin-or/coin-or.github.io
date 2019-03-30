@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This guide is for developers of COIN-OR projects, especially those that use the COIN-OR build system.">
+<meta name="keywords" content="developer_getting_started,  optimization COIN-OR">
+<title>COIN-OR Developer's Guide | COIN-OR Documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> COIN-OR Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">COIN-OR Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://www.coin-or.org" target="_blank">COIN-OR Web Site</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guides<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="user_introduction.html">User Guide</a></li>
+                        
+                        
+                        
+                        <li class="dropdownActive"><a href="developer_introduction.html">Developer Guide</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:info@coin-or.org?subject=COIN-OR Documentation feedback&body=I have some feedback about the COIN-OR Developer's Guide page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="COIN-OR Developer&#39;s Guide">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">COIN-OR Developer Guide </li>
+  
+  
+  
+      
+  
+  <li>
+      <a href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a href="developer_introduction.html#basics">Basics</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="developer_introduction.html#basics">Working with git</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="developer_introduction.html#basics">Working with Github</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="developer_introduction.html#basics">Build system</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">COIN-OR Developer's Guide</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">This guide is for developers of COIN-OR projects, especially those that use the COIN-OR build system.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/coin-or/coin-or.github.io/blob/masterpages/developer/developer_introduction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <p>For now, this guide focuses mainly on the migration from SVN to git in order
+to help everyone get on a solid footing with the move to github. It is assumed
+most people are familiar with git, but specific recipes are given for the usual workflows.</p>
+
+<h2 id="basics">Basics</h2>
+
+<h3 id="semantic-versioning">Semantic versioning</h3>
+
+<h3 id="contents-of-repository">Contents of repository</h3>
+
+<h2 id="working-with-git">Working with git</h2>
+
+<h3 id="migration-from-svn">Migration from SVN</h3>
+
+<p>There will ultimately be many changes going from SVN to git, the biggest are</p>
+
+<ul>
+  <li>We’ll be abandoning the use of the <em>externals</em> mechanism that made it
+  possible to easily pull in all dependencies in SVN.</li>
+  <li>The repository organization will change due to the fact that git doesn’t
+  employ the same sort of folder-based design for storage.</li>
+</ul>
+
+<p>Although there is now a mechanism in git that functions
+roughly like the SVN externals mechanims (it is called <em>submodules</em>), we’ve
+long thought of moving away from using the externals mechanism in order to
+avoid a number of issues, such as the difficult of having multiple packages
+checked out simultaneously with common dependencies. The
+<a href="#coinbrew">coinbrew</a> script now acts as a sort of
+package manager, effectively replacing the externals mechanism with a more
+powerful alternative.</p>
+
+<p>Other changes have to do simply terminology and philosophy. In git, each
+commit represents a complete snapshot of the state of the repository, not a
+set of changes, as in SVN. The commits in git are related to each other
+through a directed acyclic graph. Each commit has one or more parents and one
+or more children. The individual commits are identified by “hashes” or “SHAs”
+(as opposed to SVN’s revisions) because they are identified by a long string
+that is obtained by hashing the contents of the commit, such as</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc &gt; git log
+commit 8a40de8b1a6f550c440dddd3e83d26807c1877b8 (HEAD -&gt; master, origin/master, origin/HEAD)
+Author: John Forrest &lt;john.forrest@fastercoin.com&gt;
+Date:   Tue Mar 26 15:04:27 2019 +0000
+</code></pre></div></div>
+<p>Whereas in SVN, it is possible (thought not recommended) to commit changes to
+multiple branches in a single commit, this is not possible in git.</p>
+
+<p>When one “clones” a repository in git, the download includes the entirety of its contents,
+including all commits, whereas in SVN, one only gets the contents of the
+current revision. This enables you to work off-line with git and still be able
+to switch branches, make commits, etc.</p>
+
+<h3 id="repository-organization">Repository organization</h3>
+
+<p>If you had the recommeded repository structure in your SVN repository, then
+the root of your repository looked something like this.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>html/
+conf/
+branches/
+trunk/
+stable/
+releases/
+</code></pre></div></div>
+<p>In git, the top-level folders in SVN map either to git branches or tags. What was
+called <code class="highlighter-rouge">trunk</code> in SVN is the <code class="highlighter-rouge">master</code> branch in git. this is the branch that
+user’s get by default (although you can change this if you want). If you now
+do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/coin-or/Cbc
+</code></pre></div></div>
+<p>you will get the master branch. The stable versions in SVN are now mapped to
+git branches named <code class="highlighter-rouge">stable/x.y</code>. To get the stable version 2.10 of Cbc (after
+cloning as above), you would do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout stable/2.10
+</code></pre></div></div>
+<p>You can see what branches are available with the <code class="highlighter-rouge">git branch</code> command, but git
+only shows you branches that you have worked with locally by default. If you
+do <code class="highlighter-rouge">git branch -a</code>, you will also see remote branches. For Cbc, we have</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git branch -a
+  master
+* stable/2.10
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/autotools-update
+  remotes/origin/devel
+  remotes/origin/dynamicbranching
+  remotes/origin/gh-pages
+  remotes/origin/heur
+  remotes/origin/master
+  remotes/origin/newsearchtree
+  remotes/origin/primalheur
+  remotes/origin/stable/1.1
+  remotes/origin/stable/1.2
+  ...
+</code></pre></div></div>
+<p>The <code class="highlighter-rouge">*</code> indicates the branch you currently have checked out. Your local
+branches will usually correspond to branches that also exist in the remote
+repository, but not always. If you <code class="highlighter-rouge">git checkout</code> a branch with the same name as
+one that exists remotely, then it will set up a new local branch that tracks
+the remote one. Otherwise, it creates a new local branch for your current
+commit that can later be pushed to the remote repository, if desired.</p>
+
+<p>Releases in SVN are tags in git. To see the tags available, do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git tag
+releases/1.1.0
+releases/1.1.1
+releases/1.1.2
+releases/1.2.0
+releases/2.0.0
+</code></pre></div></div>
+<p>You can check out a tag in git, but you will get a message starting with</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are in 'detached HEAD' state. You can look around, make experimental changes...
+</code></pre></div></div>
+<p>This is because tags are just pointers to specific SHAs and don’t have parents
+or children. They exists in a fixed state detached from the rest of the
+respository, although the SHA may itself also be a commit in a branch as well.
+In general, it is better as a developer not to check out releases directly.</p>
+
+<h3 id="mapping-of-svn-revisions-to-git-hashes">Mapping of SVN revisions to git hashes</h3>
+
+<p>The mirroring software we used to move project from SVN to git keeps a record
+of the mapping between SVN revisions and git SHAs. To enable the mapping, edit
+your <code class="highlighter-rouge">.git/config</code> file and add</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
+...
+fetch = +refs/svn/map:refs/notes/commits
+</code></pre></div></div>
+<p>After that, the <code class="highlighter-rouge">git log</code> command will show the original SVN revision of any
+commits that were created through mirroring.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>Dependencies are indicated by maintaining a file called <code class="highlighter-rouge">Dependencies</code> in the
+root of your repository. This is used by the <a href="#coinbrew"><code class="highlighter-rouge">coinbrew</code></a> script,
+among others, to determine what additional projects are needed. The format of
+the file is lines consisting of a short name for the project, a URL, and (in
+the case of a git dependency), a branch name. Note that you can mix git and
+SVN URLs, although only SVN URLs hosted on <code class="highlighter-rouge">projects.coin-or.org</code>. The basic
+format is something like</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BuildTools  https://projects.coin-or.org/svn/BuildTools/stable/0.8
+ThirdParty/Blas   https://projects.coin-or.org/svn/BuildTools/ThirdParty/Blas/stable/1.3
+ThirdParty/Lapack https://projects.coin-or.org/svn/BuildTools/ThirdParty/Lapack/stable/1.4
+Data/Sample https://projects.coin-or.org/svn/Data/Sample/stable/1.2
+CoinUtils   https://projects.coin-or.org/svn/CoinUtils/stable/2.11/CoinUtils
+Osi         https://projects.coin-or.org/svn/Osi/stable/0.108/Osi
+Clp         https://projects.coin-or.org/svn/Clp/stable/1.17/Clp
+Cgl         https://projects.coin-or.org/svn/Cgl/stable/0.60/Cgl
+Cbc         https://projects.coin-or.org/svn/Cbc/stable/2.10/Cbc
+Alps        https://github.com/coin-or/CHiPPS-ALPS stable/1.5
+SYMPHONY    https://projects.coin-or.org/svn/SYMPHONY/stable/5.6/SYMPHONY
+</code></pre></div></div>
+
+<h3 id="development-workflows">Development workflows</h3>
+
+<h4 id="making-a-new-stable-version">Making a new stable version</h4>
+
+<h4 id="making-a-release">Making a release</h4>
+
+<h4 id="feature-branches">Feature branches</h4>
+
+<h4 id="merging">Merging</h4>
+
+<h3 id="the-coinbrew-script">The <code class="highlighter-rouge">coinbrew</code> script</h3>
+
+<p>It will allow you to fetch out any project and its
+dependencies, but is aware of what projects have already been checked out and
+will even switch version for you automatically if there are conflicting
+dependencies so you can have one clone of each project and still be able to
+build any version of any project with the proper dependencies all in one
+place.</p>
+
+<h2 id="working-with-github">Working with GitHub</h2>
+
+<h3 id="continuous-integeration">Continuous Integeration</h3>
+
+<h3 id="zenodo-and-dois">Zenodo and DOIs</h3>
+
+<h3 id="project-web-sites">Project Web sites</h3>
+
+<h2 id="working-with-the-build-system">Working with the build system</h2>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2019 COIN-OR Foundation. All rights reserved. <br />
+ Site last generated: Mar 30, 2019 <br />
+<p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

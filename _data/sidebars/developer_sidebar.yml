@@ -1,0 +1,43 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: COIN-OR Developer Guide
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Basics
+      url: /developer_introduction.html#basics
+      output: web, pdf
+      type: homepage
+    - title: Working with git
+      url: /developer_introduction.html#basics
+      output: web, pdf
+      type: homepage
+    - title: Working with Github
+      url: /developer_introduction.html#basics
+      output: web, pdf
+      type: homepage
+    - title: Build system
+      url: /developer_introduction.html#basics
+      output: web, pdf
+      type: homepage
+
+
