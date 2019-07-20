@@ -181,6 +181,7 @@ GCC compilers. The first step is to install either
    * [Msys2](https://msys2.github.io/)
    * [CYGWIN](http://cygwin.org/)
    * [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
 Bash and the gcc compilers also come with the [Anaconda Python distribution](https://www.anaconda.com/distribution/)
 
 If you don't already have CYGWIN installed and don't want to fool around with
