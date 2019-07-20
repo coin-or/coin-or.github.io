@@ -164,7 +164,7 @@ To get help with additional options available in running the script, do
 ./coinbrew --help
 ```
 
-The above procedures will build all required dependencies and SYMPHONY itself.
+The above procedures will build all required dependencies and the project itself.
 Afterwards, the binaries will be installed in the directory `/path/to/install/dir/bin`
 and the libraries in the directory `/path/to/install/dir/lib`. 
 
