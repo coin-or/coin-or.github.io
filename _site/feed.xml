@@ -5,9 +5,9 @@
         <description>A site for general COIN-OR documentation.</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 30 Mar 2019 14:09:47 -0400</pubDate>
-        <lastBuildDate>Sat, 30 Mar 2019 14:09:47 -0400</lastBuildDate>
-        <generator>Jekyll v3.7.4</generator>
+        <pubDate>Thu, 12 Sep 2019 22:59:57 -0400</pubDate>
+        <lastBuildDate>Thu, 12 Sep 2019 22:59:57 -0400</lastBuildDate>
+        <generator>Jekyll v3.8.5</generator>
         
         <item>
             <title>Sample post</title>

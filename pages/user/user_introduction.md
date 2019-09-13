@@ -67,7 +67,7 @@ you can get binaries from [BinTray](http://bintray.com/coin-or/download).
 There are Homebrew recipes for some projects available [here](https://github.com/coin-or-tools/homebrew-coinor). Just do
 ```
 brew tap coin-or-tools/coinor
-brew install XXX
+brew install Xyz
 ```
 It is also easy to build binaries from source with [coinbrew](https://github.com/coin-or/coinbrew).
 
@@ -144,18 +144,18 @@ rest should happen automagically. Alternatively, the following command-line
 incantation will execute the procedure non-interactively.
 
 ```
-./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
-./coinbrew install --main-proj=ProjName
+./coinbrew fetch ProjName:stable/x.y --no-prompt
+./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
+./coinbrew install ProjName
 ```
-Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do
-
+Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the `configure` script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do
 ```
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
 ```
 
 To get help with additional options available in running the script, do
@@ -224,18 +224,18 @@ rest should happen automagically. Alternatively, the following command-line
 incantation will execute the procedure non-interactively.
 
 ```
-./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1
-./coinbrew install --main-proj=ProjName
+./coinbrew fetch ProjName:stable/x.y --no-prompt
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --no-prompt
+./coinbrew install ProjName
 ```
-Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do
-
+Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the `configure` script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do
 ```
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-debug
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-debug --no-prompt
 ```
 
 To get help with additional options available in running the script, do
@@ -266,7 +266,7 @@ free). Then follow all the steps above, but replace the `build` command
 with
 
 ```
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-msvc
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --no-prompt
 ```
 
 #### Visual Studio IDE
@@ -318,14 +318,14 @@ incantation will execute the procedure non-interactively.
 ./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
 ./coinbrew install --main-proj=ProjName
 ```
-Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do
-
+Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the `configure` script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do
 ```
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
 ```
 
 To get help with additional options available in running the script, do

@@ -299,7 +299,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/coin-or/coin-or.github.io/blob/masterpages/user/user_introduction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/coin-or/coin-or.github.io/blob/master/pages/user/user_introduction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -367,7 +367,7 @@ you can get binaries from <a href="http://bintray.com/coin-or/download">BinTray<
 
 <p>There are Homebrew recipes for some projects available <a href="https://github.com/coin-or-tools/homebrew-coinor">here</a>. Just do</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap coin-or-tools/coinor
-brew install XXX
+brew install Xyz
 </code></pre></div></div>
 <p>It is also easy to build binaries from source with <a href="https://github.com/coin-or/coinbrew">coinbrew</a>.</p>
 
@@ -445,17 +445,17 @@ you will be prompted interactively to select a project to fetch and build. The
 rest should happen automagically. Alternatively, the following command-line
 incantation will execute the procedure non-interactively.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
-./coinbrew install --main-proj=ProjName
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch ProjName:stable/x.y --no-prompt
+./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
+./coinbrew install ProjName
 </code></pre></div></div>
-<p>Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+<p>Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the <code class="highlighter-rouge">configure</code> script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
 </code></pre></div></div>
 
 <p>To get help with additional options available in running the script, do</p>
@@ -463,7 +463,7 @@ with debugging symbols, do</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew --help
 </code></pre></div></div>
 
-<p>The above procedures will build all required dependencies and SYMPHONY itself.
+<p>The above procedures will build all required dependencies and the project itself.
 Afterwards, the binaries will be installed in the directory <code class="highlighter-rouge">/path/to/install/dir/bin</code>
 and the libraries in the directory <code class="highlighter-rouge">/path/to/install/dir/lib</code>.</p>
 
@@ -480,9 +480,10 @@ GCC compilers. The first step is to install either</p>
 <ul>
   <li><a href="https://msys2.github.io/">Msys2</a></li>
   <li><a href="http://cygwin.org/">CYGWIN</a></li>
-  <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>
-Bash and the gcc compilers also come with the <a href="https://www.anaconda.com/distribution/">Anaconda Python distribution</a></li>
+  <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a></li>
 </ul>
+
+<p>Bash and the gcc compilers also come with the <a href="https://www.anaconda.com/distribution/">Anaconda Python distribution</a></p>
 
 <p>If you don’t already have CYGWIN installed and don’t want to fool around with
 WSL (which is a great option if you already know your way around Unix), it is
@@ -521,17 +522,17 @@ you will be prompted interactively to select a project to fetch and build. The
 rest should happen automagically. Alternatively, the following command-line
 incantation will execute the procedure non-interactively.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch --no-prompt --main-proj=ProjName --main-proj-version=stable/x.y
-./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1
-./coinbrew install --main-proj=ProjName
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew fetch ProjName:stable/x.y --no-prompt
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --no-prompt
+./coinbrew install ProjName
 </code></pre></div></div>
-<p>Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-debug
+<p>Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the <code class="highlighter-rouge">configure</code> script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-debug --no-prompt
 </code></pre></div></div>
 
 <p>To get help with additional options available in running the script, do</p>
@@ -560,7 +561,7 @@ to build any projects requiring Fortran (<code class="highlighter-rouge">ifort</
 free). Then follow all the steps above, but replace the <code class="highlighter-rouge">build</code> command
 with</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=C:\path\to\install\dir --verbosity=1 --enable-msvc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --no-prompt
 </code></pre></div></div>
 
 <h4 id="visual-studio-ide">Visual Studio IDE</h4>
@@ -608,13 +609,13 @@ incantation will execute the procedure non-interactively.</p>
 ./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1
 ./coinbrew install --main-proj=ProjName
 </code></pre></div></div>
-<p>Note that is no prefix is specified, the package will be installed in the build 
-directory and no separate install step is necessary. 
-Options that would have been passed to the <code class="highlighter-rouge">configure</code> script under the old
-build system can simply be added to the command-line. For example, to build
-with debugging symbols, do</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build --no-prompt --main-proj=ProjName --prefix=/path/to/install/dir --verbosity=1 --enable-debug
+<p>Note that the prefix specified above is the directory where the packages will be
+installed. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building. If no prefix is specified,
+the package will be installed in the directory dist/. Options that would have
+been passed to the <code class="highlighter-rouge">configure</code> script under the old build system can simply be
+added to the command-line. For example, to build with debugging symbols, do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
 </code></pre></div></div>
 
 <p>To get help with additional options available in running the script, do</p>
@@ -788,7 +789,7 @@ http://github.com/coin-orProjName/issues/new.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
- Site last generated: Mar 30, 2019 <br />
+ Site last generated: Sep 12, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>
