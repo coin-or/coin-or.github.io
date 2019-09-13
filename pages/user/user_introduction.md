@@ -470,4 +470,4 @@ http://coin-or.github.io/Doxygen
 ### Support
 
 Support is available primarily through mailing lists and bug reports at
-http://github.com/coin-orProjName/issues/new. 
+http://github.com/coin-or/ProjName/issues/new. 
