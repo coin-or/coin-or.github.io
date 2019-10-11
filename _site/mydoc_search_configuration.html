@@ -41,7 +41,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -294,7 +294,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>I’ve found that including the <code class="highlighter-rouge">body</code> field in the search creates too many problems, and so I’ve removed <code class="highlighter-rouge">body</code> from the search. You can see the results of including the <code class="highlighter-rouge">body</code> by adding this along with the other fields in search.json:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.content | strip_html | strip_newlines | replace: '</span><span class="se">\'</span><span class="s2">, '</span><span class="se">\\\\</span><span class="s2">' | replace: '"</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'\\</span><span class="s2">"' | replace: '	', '    '  }}"</span><span class="p">,</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.content | strip_html | strip_newlines | replace: '</span><span class="se">\'</span><span class="s2">, '</span><span class="se">\\\\</span><span class="s2">' | replace: '"</span><span class="err">',</span><span class="w"> </span><span class="err">'\\</span><span class="s2">"' | replace: '	', '    '  }}"</span><span class="err">,</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Note that the last replace, <code class="highlighter-rouge">| replace: '^t', '    ' </code>, looks for any tab character and replaces it with four spaces. (Tab characters invalidate JSON.) If you run into other problematic formatting, you can use regex expressions to find and replace the content. See <a href="http://www.ultraedit.com/support/tutorials_power_tips/ultraedit/regular_expressions.html">Regular Expressions</a> for details on finding and replacing code.</p>
@@ -308,20 +308,20 @@ $('#toc').on('click', 'a', function() {
 <p>At some point, you may want to customize the search results more. Here’s a little more detail that will be helpful. The search.json file retrieves various page values:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">---</span><span class="w">
-</span><span class="err">title</span><span class="p">:</span><span class="w"> </span><span class="err">search</span><span class="w">
-</span><span class="err">layout</span><span class="p">:</span><span class="w"> </span><span class="err">none</span><span class="w">
-</span><span class="err">search</span><span class="p">:</span><span class="w"> </span><span class="err">exclude</span><span class="w">
+</span><span class="err">title:</span><span class="w"> </span><span class="err">search</span><span class="w">
+</span><span class="err">layout:</span><span class="w"> </span><span class="err">none</span><span class="w">
+</span><span class="err">search:</span><span class="w"> </span><span class="err">exclude</span><span class="w">
 </span><span class="err">---</span><span class="w">
 
 </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.pages</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">unless</span><span class="w"> </span><span class="err">page.search</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s2">"exclude"</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="w">
-</span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.title | escape }}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.tags }}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.keywords}}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.url | remove: "</span><span class="err">/</span><span class="s2">"}}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.summary | strip }}"</span><span class="w">
+</span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.title | escape }}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.tags }}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.keywords}}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.url | remove: "</span><span class="err">/</span><span class="s2">"}}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.summary | strip }}"</span><span class="w">
 </span><span class="p">},</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endunless</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
@@ -329,11 +329,11 @@ $('#toc').on('click', 'a', function() {
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-</span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.title | escape }}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.tags }}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{post.keywords}}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.url }}"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{post.summary | strip }}"</span><span class="w">
+</span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.title | escape }}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.tags }}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{post.keywords}}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.url }}"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{post.summary | strip }}"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">unless</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endunless</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
@@ -353,11 +353,11 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jekyll-search.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
             <span class="nx">SimpleJekyllSearch</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-                <span class="na">searchInput</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'search-input'</span><span class="p">),</span>
-                <span class="na">resultsContainer</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'results-container'</span><span class="p">),</span>
-                <span class="na">dataSource</span><span class="p">:</span> <span class="s1">'search.json'</span><span class="p">,</span>
-                <span class="na">searchResultTemplate</span><span class="p">:</span> <span class="s1">'&lt;li&gt;&lt;a href="{url}" title="Search configuration"&gt;{title}&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-    <span class="na">noResultsText</span><span class="p">:</span> <span class="s1">'No results found.'</span><span class="p">,</span>
+                <span class="na">searchInput</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">search-input</span><span class="dl">'</span><span class="p">),</span>
+                <span class="na">resultsContainer</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">results-container</span><span class="dl">'</span><span class="p">),</span>
+                <span class="na">dataSource</span><span class="p">:</span> <span class="dl">'</span><span class="s1">search.json</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">searchResultTemplate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;li&gt;&lt;a href="{url}" title="Search configuration"&gt;{title}&lt;/a&gt;&lt;/li&gt;</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">noResultsText</span><span class="p">:</span> <span class="dl">'</span><span class="s1">No results found.</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">limit</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="na">fuzzy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="p">})</span>
@@ -401,7 +401,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Sep 12, 2019 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Oct 11, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>
