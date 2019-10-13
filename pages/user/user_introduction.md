@@ -10,7 +10,7 @@ summary: These brief instructions will help you get started quickly with COIN-OR
 {% include note.html content="If you've landed here, you're probably just getting started with COIN-OR. This documentation provides an overview of the projects and how to work with them. Individual projects may have their own documentation." %}
 
 The COIN-OR Optimization Suite is a collection of interoperable open source
-solvers from the respository of open source software maintained by the COIN-OR
+solvers from the repository of open source software maintained by the COIN-OR
 Foundation. It consists of the following projects.
 
  * [CoinUtils](https://github.com/coin-or/CoinUtils) (COIN-OR utility library)
@@ -79,7 +79,7 @@ brew install coin-or-tools/coin-or/Xyz
 ### Linux 
 
 For Linux, there are Debian and Fedora packages for many projects in
-the suite and we are investigating the possiblity of providing Linuxbrew
+the suite and we are investigating the possibility of providing Linuxbrew
 packages.
  * Click
  [here](https://packages.debian.org/search?keywords=coinor&searchon=names&suite=stable&section=all)
@@ -134,7 +134,7 @@ to build and install in Linux, Windows, and OS X are given below.
 ### Linux
 
 Most Linux distributions come with all the required tools installed.
-Occassionally, some commands are missing, so before starting, check that you have
+Occasionally, some commands are missing, so before starting, check that you have
  * pkg-config
  * gcc, g++, and gfortran
  * BLAS and LAPACK
@@ -157,10 +157,10 @@ chmod u+x coinbrew
 ./coinbrew
 ```
 
-(Note: The `chmod` command is only needed if the execute permission is not
-automatically set by git on cloning). Once you run the script,
-you will be prompted interactively to select a project to fetch and build. The
-rest should happen automagically.
+{% include note.html content="The `chmod` command is only needed if the execute permission is not
+automatically set by git on cloning." %}
+Once you run the script, you will be prompted interactively to select a
+project to fetch and build. The rest should happen automagically.
 
 Alternatively, the following command-line
 incantation will execute the procedure non-interactively (this is recommended
@@ -172,11 +172,14 @@ for expert users who are used to executing Unix commands).
 sudo ./coinbrew install ProjName
 ```
 
-Note that the prefix specified above is the directory where the packages will
-be installed. If the specified prefix is writable, then all packages will be
-automatically installed immediately after building and the install command is
-not needed. If no prefix is specified, the package will be installed in the
-directory `coinbrew/dist/`. Options that would have been passed to the `configure`
+The `--prefix` argument above specifies the directory where the packages will
+be installed and would normally be something like `$HOME` or `\usr\local`. If
+the specified directory is writable, then all packages will be automatically
+installed immediately after building and the install command is not needed. If
+no prefix is specified, the package will be installed in the directory
+`dist/`.
+
+Options that would have been passed to the `configure`
 script under the old build system can simply be added to the command-line. For
 example, to build with debugging symbols, do
 
@@ -214,10 +217,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/install/dir/lib
 #### Obtaining the source 
 
 Source can be obtained either by downloading an archive that includes the
-minaproject and all dependendencies or by fetching with `coinbrew`. The use of
-`coinbrew` is strongly recommending unless you plan to work exclusively with
-Visual Studio and you wish to build within the Visual Studio IDE using the
-supplied Visual Studio project files.
+source of the main project and all dependencies or by fetching with
+`coinbrew`. The use of `coinbrew` is strongly recommending unless you plan to
+work exclusively with Visual Studio and you wish to build within the Visual
+Studio IDE using the supplied Visual Studio project files.
 
 If you wish to obtain the source by downloading a complete archive to use with
 Visual Studio, then go to the URL
@@ -246,7 +249,7 @@ distribution](https://www.anaconda.com/distribution/). Bash itself (but not
 the GCC compilers) come with [Git for Windows](https://git-scm.com/download/win).
 
 WSL is a great option if you already know your way around Unix and want a
-siilar experience in a Windows environment. WSL gives you access to a full
+similar experience in a Windows environment. WSL gives you access to a full
 Linux environment within Windows (essentially a Linux VM). If you go the route
 of using WSL, then once you install WSL, you can simply open a WSL terminal
 and follow the Linux instructions from there.
@@ -254,22 +257,22 @@ and follow the Linux instructions from there.
 Otherwise, if you don't already have have CYGWIN installed, it is recommended to
 use MSys2, which provides a minimal toolset that is easy to install. The
 remaining instructions will be for MSys2. Instructions for CYGWIN will be
-similar, just with different ppackage names and a different package manager.
+similar, just with different package names and a different package manager.
 
 To get MSys2, either download the installer or a zip file containing the MSys2
 base from [here](http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/)
-Once you have installed MSys2, be sure to run `msys2_shell.bat` 
-or manually add `msys64\usr\bin`, `msys64\mingw32\bin`, and
-`msys64\mingw64\bin` to your Windows `PATH`. You will then have the `bash`
-command, which you can run in a Windows terminal by typing
+Once you have installed MSys2, the easiest path to getting started if you are
+planning to use the GCC compilers is to execute `C:\msys64\mingw64.exe` or
+`C:\msys64\mingw32.exe`, which will automatically start up `bash` in a
+separate window and set all paths for you.
+{% include note.html content="If you are planning to build with
+the Visual Studio compiler, you will need to set the paths and start up bash
+manually before doing the actual build, as explained
+[below](#building-with-visual-studio-ide). For now, it is OK to continue with
+these instructions to set up MSys2." %} 
 
-```
-bash
-```
-
-Alternatively, you can also execute `C:\msys64\mingw64.exe` from the Windows
-File Explorer to get the built-in MSys2 terminal. Either way, once you are
-running bash, install required packages using the following command. 
+Once you are running bash, install required packages using the following
+command.
 
 ```
 pacman -S make wget tar patch dos2unix diffutils git svn pkg-config
@@ -297,7 +300,7 @@ Visual Studio compilers), you can install them via
 pacman -S mingw-w64-i686-toolchain mingw-w64-x86_64-toolchain
 ```
 
-It is recommended (but optionsl) to install BLAS and LAPACK packages, since this will speed
+It is recommended (but optional) to install BLAS and LAPACK packages, since this will speed
 up some of the solvers that can use those packages. 
 
 ```
@@ -305,8 +308,8 @@ pacman -S mingw-w64-x86_64-lapack --noconfirm
 ```
 
 Next, to check out source code for and build all the necessary projects
-(including dependencies), execute the script in the `coinbrew`
-subdirectory, as follows.
+(including dependencies), execute the script in the `coinbrew` subdirectory,
+as follows.
 
 
 ```
@@ -315,10 +318,10 @@ chmod u+x coinbrew
 ./coinbrew
 ```
 
-(Note: The `chmod` command is only needed if the execute permission is not
-automatically set by git on cloning). Once you run the script,
-you will be prompted interactively to select a project to fetch and build. The
-rest should happen automagically.
+{% include note.html content="The `chmod` command is only needed if the execute permission is not
+automatically set by git on cloning." %}
+Once you run the script, you will be prompted interactively to select a
+project to fetch and build. The rest should happen automagically.
 
 Alternatively, the following command-line incantation will execute the
 procedure non-interactively (this is recommended for most expert users).
@@ -329,12 +332,14 @@ procedure non-interactively (this is recommended for most expert users).
 ./coinbrew install ProjName
 ```
 
-The argument `--prefix=\path\to\install\dir` specifies the directory where
-the packages will be installed and would normally be something like
-`$HOME` or `\usr\local`.
-If the specified prefix is writable, then all packages will be automatically
-installed immediately after building and the install command is not needed. If
-no prefix is specified, the package will be installed in the directory `coinbrew/dist/`.
+The argument `--prefix=\path\to\install\dir` specifies the directory where the
+packages will be installed and would normally be something like `$HOME` or
+`\usr\local`. If the specified prefix is writable, then all packages will be
+automatically installed immediately after building and the install command is
+not needed. When the directory is not writable, the install step will need to
+be run with administrator privileges (usually by running `bash` as
+administrator). If no prefix is specified, the package will be installed in
+the directory `dist/`.
 
 Options that would have been passed to the `configure` script under the old
 build system can simply be added to the command-line. For example, to build
@@ -368,18 +373,19 @@ export PATH=$PATH:/path/to/install/dir/bin
 It is possible to use almost the exact same commands that were used with GCC
 to build with the Visual Studio compilers. If you want to use the Visual
 Studiop compilers, however, it is important to get your `PATH` set correctly,
-as there are some commnds tin MSys2 that have the same names as commands in
+as there are some commands tin MSys2 that have the same names as commands in
 Visual Studio and you need to ensure the right command is used. Mainly, it is
 important that the Visual Studio paths come *before* the MSys2 paths in your
-`PATH` variable. To ensure this, first set the MSys2 paths, as above by either
-running `msys2_shell.bat` or manually adding `msys64\usr\bin`,
-`msys64\mingw32\bin`, and `msys64\mingw64\bin` to your Windows `PATH` by executing
+`PATH` variable. To ensure this, start again in a fresh Windows command
+Window. Now, begin by manually adding `C:\msys64\usr\bin` to your Windows
+`PATH` by executing 
 
 ```
 set PATH=C:\msys64\usr\bin;%PATH%
 ```
 
-in a Windows terminal. After doing this (it is important to do it after), run
+in a Windows terminal. *Do NOT run `Msys2_shell.bat`, `mingw64.exe, or
+`mingw32.exe`*. After doing this (it is important to do it after), run
 the `vcvarsall.bat` script for your version of Visual Studio to add the Visual
 Studio paths with, e.g.,
 
@@ -387,9 +393,10 @@ Studio paths with, e.g.,
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat x86_amd64
 ```
 
-Note that you will also need a compatible Fortran compiler if you want to
-build any projects requiring Fortran (`ifort` is recommended, but is not
-free).
+{% include note.html content="Note that you will also need a compatible
+Fortran compiler if you want to build any projects requiring Fortran. Intel's
+`ifort` compiler is compatible with Visual Studio and is recommended, but is
+not available for free." %}
 
 Now run
 
@@ -421,10 +428,10 @@ chmod u+x coinbrew
 ./coinbrew
 ```
 
-(Note: The `chmod` command is only needed if the execute permission is not
-automatically set by git on cloning). Once you run the script,
-you will be prompted interactively to select a project to fetch and build. The
-rest should happen automagically.
+{% include note.html content="The `chmod` command is only needed if the execute permission is not
+automatically set by git on cloning." %}
+Once you run the script, you will be prompted interactively to select a
+project to fetch and build. The rest should happen automagically.
 
 Alternatively, the following command-line incantation will execute the
 procedure non-interactively (this is recommended for most expert users).
@@ -435,7 +442,7 @@ procedure non-interactively (this is recommended for most expert users).
 ./coinbrew install ProjName
 ```
 
-The argument `--prefix=\path\to\install\dir` specifies the directory where the
+The argument `--prefix=C:\path\to\install\dir` specifies the directory where the
 packages will be installed and would normally be something like `C:\Program
 Files (x86)\COIN-OR\ProjName` or `C:\Users\YourUserName\COIN-OR`. If the
 specified directory is writable, then all packages will be automatically
@@ -443,12 +450,12 @@ installed immediately after building and no separate install step is needed.
 When the directory is not writable, the install step will need to be run with
 administrator privileges (usually by running `bash` as administrator). If no
 prefix is specified, the package will be installed in the directory
-`coinbrew/dist/`.
+`dist/`.
 
-Important: If you do not have a fortran compiler, then you will not be able to
+{% include note.html content="If you do not have a Fortran compiler, then you will not be able to
 build any of the projects that require Fortran. Add `--no-third-party` to
 prevent building of some third party projects that are in Fortan or use the
-`--skip` argument to skip building of specific projects. 
+`--skip` argument to skip building of specific projects." %}
 
 Options that would have been passed to the `configure` script under the old
 build system can simply be added to the command-line. For example, to build
@@ -477,7 +484,7 @@ and the libraries in the directory `C:\path\to\install\dir\lib`.
 
 To use the resulting binaries and/or libraries, you will need to add the
 full path of the directory `build\bin` to your Windows executable
-search `PATH`, or, alternatively, copy the conents of the build directory to 
+search `PATH`, or, alternatively, copy the contents of the build directory to 
 `C:\Program Files (x86)\COIN-OR\ProjName` and add the directory
 `C:\Program Files (x86)\COIN-OR\ProjName\bin` 
 to your Windows executable search `PATH`. You may also consider adding
@@ -489,8 +496,12 @@ to your Windows executable search `PATH`. You may also consider adding
 After obtaining source for the projects you want to build, either with
 [coinbrew](https://github.com/coin-or/coinbrew) or by downloading an archive
 of the sources of all dependencies, as described above, find the solution file
-in the directory `MSVisualStudio`. Note that some projects that require a
-Fortran compiler cannot be built this way.
+in the directory `MSVisualStudio`.
+
+{% include note.html content="Note that you will also need a compatible
+Fortran compiler if you want to build any projects requiring Fortran. Intel's
+`ifort` compiler is compatible with Visual Studio and is recommended, but is
+not available for free." %}
 
 ### OS X
 
@@ -498,7 +509,7 @@ OS X is a Unix-based OS and ships with many of the basic components needed to
 build COIN-OR, but it's missing some things. For examples, the latest versions
 of OS X come with the `clang` compiler but no Fortran compiler. You may also
 be missing the `wget` utility and `subversion` and `git` clients (needed for
-obtaining source code). The easiest way to get these missing utilitites is to
+obtaining source code). The easiest way to get these missing utilities is to
 install Homebrew (see http://brew.sh). After installation, open a terminal and
 do
 
@@ -523,10 +534,10 @@ chmod u+x coinbrew
 ./coinbrew
 ```
 
-(Note: The `chmod` command is only needed if the execute permission is not
-automatically set by git on cloning). Once you run the script,
-you will be prompted interactively to select a project to fetch and build. The
-rest should happen automagically.
+{% include note.html content="The `chmod` command is only needed if the execute permission is not
+automatically set by git on cloning." %}
+Once you run the script, you will be prompted interactively to select a
+project to fetch and build. The rest should happen automagically.
 
 Alternatively, the following command-line
 incantation will execute the procedure non-interactively (this is recommended
@@ -538,13 +549,16 @@ for expert users who are used to executing Unix commands).
 sudo ./coinbrew install ProjName
 ```
 
-Note that the prefix specified above is the directory where the packages will
-be installed. If the specified prefix is writable, then all packages will be
-automatically installed immediately after building and the install command is
-not needed. If no prefix is specified, the package will be installed in the
-directory `coinbrew/dist/`. Options that would have been passed to the `configure`
-script under the old build system can simply be added to the command-line. For
-example, to build with debugging symbols, do
+The `--prefix` argument above specifies the directory where the packages will
+be installed and would normally be something like `$HOME$` or `\usr/local`. If
+the specified directory is writable, then all packages will be automatically
+installed immediately after building and the install command is not needed. If
+no prefix is specified, the package will be installed in the directory
+`dist/`.
+
+Options that would have been passed to the `configure` script under the old
+build system can simply be added to the command-line. For example, to build
+with debugging symbols, do
 
 ```
 ./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
@@ -638,7 +652,7 @@ downloading these projects (shell scripts named `./get.ProjName` and a build
 harness for build them. We also produce libraries and pkg-config files. If you
 need the capabilities of a particular third party library, simply run the
 `get.ProjName` script before configuring for your build and it will be
-automatically integrated. Beware of licensing in compatibilities if you plan
+automatically integrated. Beware of licensing incompatibilities if you plan
 to redistribute the resulting binaries. The following are the supported
 libraries. 
  * AMPL Solver Library (required to use solvers with AMPL)
@@ -672,7 +686,7 @@ parallel.
 
  * SYMPHONY has both shared and distributed memory parallel modes, but we'll
  only discuss the shared memory capability here. It is enabled by default if
- the compiler supports OpenMP (`gcc` and Microsft's `cl` both do, but `clang`
+ the compiler supports OpenMP (`gcc` and Microsoft's `cl` both do, but `clang`
  does not). To disable share memory parallel mode, use the `--disable-openmp`
  argument to `coinbrew`.  
  * Cbc has shared memory parallelism, which can be enabled with the
