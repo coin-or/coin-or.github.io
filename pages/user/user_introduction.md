@@ -398,6 +398,13 @@ Fortran compiler if you want to build any projects requiring Fortran. Intel's
 `ifort` compiler is compatible with Visual Studio and is recommended, but is
 not available for free." %}
 
+For using Intel C/C++ and Fortran compilers, the line above will be replaced by
+the Intel script to add the Intel paths, e.g.,
+
+```
+C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\bin\ipsxe-comp-vars.bat intel64 vs2019
+```
+
 Now run
 
 ```
@@ -415,6 +422,8 @@ The result should be something like
 ```
 /c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/BIN/x86_amd64/link
 ```
+
+The important thing is that, you should be able to type cl and it finds the Microsoft C++ compiler and, if installed, you can type ifort and it finds the Intel Fortran compiler.
 
 Next, to check out source code for and build all the necessary projects
 (including dependencies), execute the script in the `coinbrew`
