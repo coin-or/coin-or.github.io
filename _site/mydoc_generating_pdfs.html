@@ -353,11 +353,11 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Although you’re creating a PDF, you must still build an HTML web target before running Prince. Prince will pull from the HTML files and from the file-list for the TOC.</div>
 
-<p>Note that the default page layout specified by this configuration file is <code class="highlighter-rouge">page_print</code>. This layout strips out all the sections that shouldn’t appear in the print PDF, such as the sidebar and top navigation bar.</p>
+<p>Note that the default page layout specified by this configuration file is <code class="language-plaintext highlighter-rouge">page_print</code>. This layout strips out all the sections that shouldn’t appear in the print PDF, such as the sidebar and top navigation bar.</p>
 
-<p>Also note that there’s a <code class="highlighter-rouge">output: pdf</code> property in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether <code class="highlighter-rouge">site.output</code> is <code class="highlighter-rouge">pdf</code> or <code class="highlighter-rouge">web</code>. If it’s <code class="highlighter-rouge">pdf</code>, then include information only for the PDF, and so on. If you’re using nav tabs, you’ll definitely want to create an alternative experience in the PDF.</p>
+<p>Also note that there’s a <code class="language-plaintext highlighter-rouge">output: pdf</code> property in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether <code class="language-plaintext highlighter-rouge">site.output</code> is <code class="language-plaintext highlighter-rouge">pdf</code> or <code class="language-plaintext highlighter-rouge">web</code>. If it’s <code class="language-plaintext highlighter-rouge">pdf</code>, then include information only for the PDF, and so on. If you’re using nav tabs, you’ll definitely want to create an alternative experience in the PDF.</p>
 
-<p>In the configuration file, customize the values for the <code class="highlighter-rouge">print_title</code> and <code class="highlighter-rouge">print_subtitle</code> that you want. These will appear on the title page of the PDF.</p>
+<p>In the configuration file, customize the values for the <code class="language-plaintext highlighter-rouge">print_title</code> and <code class="language-plaintext highlighter-rouge">print_subtitle</code> that you want. These will appear on the title page of the PDF.</p>
 
 <p>We will access this configure file in the PDF generation script.</p>
 
@@ -386,7 +386,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
 </code></pre></div></div>
 
-<p>Leave these pages here in your sidebar. (The <code class="highlighter-rouge">output: pdf</code> property means they won’t appear in your online TOC because the conditional logic of the sidebar.html checks whether <code class="highlighter-rouge">web</code> is equal to <code class="highlighter-rouge">pdf</code> or not before including the item in the web version of the content.)</p>
+<p>Leave these pages here in your sidebar. (The <code class="language-plaintext highlighter-rouge">output: pdf</code> property means they won’t appear in your online TOC because the conditional logic of the sidebar.html checks whether <code class="language-plaintext highlighter-rouge">web</code> is equal to <code class="language-plaintext highlighter-rouge">pdf</code> or not before including the item in the web version of the content.)</p>
 
 <p>The code in the tocpage.html is mostly identical to that of the sidebar.html page. This is essential for Prince to create the page numbers correctly with cross references.</p>
 
@@ -396,7 +396,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 
 <h2 id="4-customize-your-headers-and-footers">4. Customize your headers and footers</h2>
 
-<p>Open up the css/printstyles.css file and customize what you want for the headers and footers. At the very least, customize the email address (<code class="highlighter-rouge">youremail@domain.com</code>) that appears in the bottom left.</p>
+<p>Open up the css/printstyles.css file and customize what you want for the headers and footers. At the very least, customize the email address (<code class="language-plaintext highlighter-rouge">youremail@domain.com</code>) that appears in the bottom left.</p>
 
 <p>Exactly how the print styling works here is pretty nifty. You don’t need to understand the rest of the content in this section unless you want to customize your PDFs to look different from what I’ve configured. But I’m adding this information here in case you want to understand how to customize the look and feel of the PDF output.</p>
 
@@ -414,7 +414,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you have a link to a file download, or some other link that shouldn’t have a cross reference (such as link used in JavaScript for navtabs or collapsible sections, for example, add <code class="highlighter-rouge">noCrossRef</code> as a class to the link to avoid having it say “page 0” in the cross reference.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you have a link to a file download, or some other link that shouldn’t have a cross reference (such as link used in JavaScript for navtabs or collapsible sections, for example, add <code class="language-plaintext highlighter-rouge">noCrossRef</code> as a class to the link to avoid having it say “page 0” in the cross reference.</div>
 
 <p>This style specifies that after links to web resources, the URL should be inserted instead of the page number:</p>
 
@@ -457,7 +457,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <span class="nn">---</span>
 </code></pre></div></div>
 
-<p>The default_print.html layout will change the class of the <code class="highlighter-rouge">body</code> element based on the type value in the page’s frontmatter:</p>
+<p>The default_print.html layout will change the class of the <code class="language-plaintext highlighter-rouge">body</code> element based on the type value in the page’s frontmatter:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body class="<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"title"</span><span class="p">%}</span>title<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"frontmatter"</span><span class="w"> </span><span class="p">%}</span>frontmatter<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"first_page"</span><span class="w"> </span><span class="p">%}</span>first_page<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span> print"&gt;
 </code></pre></div></div>
@@ -467,7 +467,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span><span class="nc">.title</span> <span class="p">{</span> <span class="nl">page</span><span class="p">:</span> <span class="n">title</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>This means that for content inside of <code class="highlighter-rouge">body class="title"</code>, we can style this page in our stylesheet using <code class="highlighter-rouge">@page title</code>.</p>
+<p>This means that for content inside of <code class="language-plaintext highlighter-rouge">body class="title"</code>, we can style this page in our stylesheet using <code class="language-plaintext highlighter-rouge">@page title</code>.</p>
 
 <p>Here’s how that title page is styled:</p>
 
@@ -489,7 +489,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 
 <p>As you can see, we don’t have any header or footer content, because it’s the title page.</p>
 
-<p>For the tocpage.html, which has the <code class="highlighter-rouge">type: frontmatter</code>, this is specified in the stylesheet:</p>
+<p>For the tocpage.html, which has the <code class="language-plaintext highlighter-rouge">type: frontmatter</code>, this is specified in the stylesheet:</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span><span class="nc">.frontmatter</span> <span class="p">{</span> <span class="nl">page</span><span class="p">:</span> <span class="n">frontmatter</span> <span class="p">}</span>
 <span class="nt">body</span><span class="nc">.frontmatter</span> <span class="p">{</span><span class="nl">counter-reset</span><span class="p">:</span> <span class="n">page</span> <span class="m">1</span><span class="p">}</span>
@@ -510,7 +510,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>With <code class="highlighter-rouge">counter(page, lower-roman)</code>, we reset the page count to 1 so that the title page doesn’t start the count. Then we also add some header and footer info. The page numbers start counting in lower-roman numerals.</p>
+<p>With <code class="language-plaintext highlighter-rouge">counter(page, lower-roman)</code>, we reset the page count to 1 so that the title page doesn’t start the count. Then we also add some header and footer info. The page numbers start counting in lower-roman numerals.</p>
 
 <p>Finally, for the first page (which doesn’t have a specific name), we restart the counting to 1 again and this time use regular numbers.</p>
 
@@ -540,11 +540,11 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>You’ll see some other items in there such as <code class="highlighter-rouge">prince-script</code>. This means we’re using JavaScript to run some functions to dynamically generate that content. These JavaScript functions are located in the _includes/head_print.html:</p>
+<p>You’ll see some other items in there such as <code class="language-plaintext highlighter-rouge">prince-script</code>. This means we’re using JavaScript to run some functions to dynamically generate that content. These JavaScript functions are located in the _includes/head_print.html:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="nx">Prince</span><span class="p">.</span><span class="nx">addScriptFunc</span><span class="p">(</span><span class="dl">"</span><span class="s2">datestamp</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: October 13, 2019</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: November 21, 2019</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span>
@@ -565,13 +565,13 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nx">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Page </span><span class="dl">"</span> <span class="nx">counter</span><span class="p">(</span><span class="nx">page</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>Because the theme uses JavaScript in the CSS, you have to add the <code class="highlighter-rouge">--javascript</code> tag in the Prince command (detailed later on this page).</p>
+<p>Because the theme uses JavaScript in the CSS, you have to add the <code class="language-plaintext highlighter-rouge">--javascript</code> tag in the Prince command (detailed later on this page).</p>
 
 <h2 id="5-customize-and-run-the-pdf-script">5. Customize and run the PDF script</h2>
 
 <p>Duplicate the pdf-mydoc.sh file in the root directory and customize it for your specific configuration files.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'Killing all Jekyll instances'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'Killing all Jekyll instances'
 kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 clear
 
@@ -586,9 +586,9 @@ echo "done";
 
 <p>Note that the first part kills all Jekyll instances. This way you won’t try to serve Jekyll at a port that is already occupied.</p>
 
-<p>The <code class="highlighter-rouge">jekyll serve</code> command serves up the HTML-friendly PDF configurations for our two projects. This web version is where Prince will go to get its content.</p>
+<p>The <code class="language-plaintext highlighter-rouge">jekyll serve</code> command serves up the HTML-friendly PDF configurations for our two projects. This web version is where Prince will go to get its content.</p>
 
-<p>The prince script issues a command to the Prince utility. JavaScript is enabled (<code class="highlighter-rouge">--javascript</code>), and we tell it exactly where to find the list of files (<code class="highlighter-rouge">--input-list</code>) — just point to the prince-list.txt file. Then we tell it where and what to output (<code class="highlighter-rouge">-o</code>).</p>
+<p>The prince script issues a command to the Prince utility. JavaScript is enabled (<code class="language-plaintext highlighter-rouge">--javascript</code>), and we tell it exactly where to find the list of files (<code class="language-plaintext highlighter-rouge">--input-list</code>) — just point to the prince-list.txt file. Then we tell it where and what to output (<code class="language-plaintext highlighter-rouge">-o</code>).</p>
 
 <p>Make sure that the path to the prince-list.txt is correct. For the output directory, I like to output the PDF file into my project’s source (into the files folder). Then when I build the web output, the PDF is included and something I can refer to.</p>
 
@@ -598,7 +598,7 @@ echo "done";
 
 <p>In the PDF configuration file, there’s a section that looks like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.product == "mydoc" %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.product == "mydoc" %}
 pdf_sidebar: product2_sidebar
 {% endif %}
 </code></pre></div></div>
@@ -622,38 +622,38 @@ pdf_sidebar: product2_sidebar
 
 <p>If you have JavaScript on any of your pages, Prince will note errors in Terminal like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: TypeError: value is not an object
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: TypeError: value is not an object
 </code></pre></div></div>
 
 <p>However, the PDF will still build.</p>
 
-<p>You need to conditionalize out any JavaScript from your PDF web output before building your PDFs. Make sure that the PDF configuration files have the <code class="highlighter-rouge">output: pdf</code> property.</p>
+<p>You need to conditionalize out any JavaScript from your PDF web output before building your PDFs. Make sure that the PDF configuration files have the <code class="language-plaintext highlighter-rouge">output: pdf</code> property.</p>
 
 <p>Then surround the JavaScript with conditional tags like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% raw %}{% unless site.output == "pdf" %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% raw %}{% unless site.output == "pdf" %}
 javascript content here ...
 {% endunless %}
 </code></pre></div></div>
 
-<p>For more detail about using <code class="highlighter-rouge">unless</code> in conditional logic, see [Conditional logic][mydoc_conditional_logic]. What this code means is “run this code unless this value is the case.”</p>
+<p>For more detail about using <code class="language-plaintext highlighter-rouge">unless</code> in conditional logic, see [Conditional logic][mydoc_conditional_logic]. What this code means is “run this code unless this value is the case.”</p>
 
 <h2 id="overriding-bootstrap-print-styles">Overriding Bootstrap Print Styles</h2>
 
 <p>The theme relies on Bootstrap’s CSS for styling. However, for print media, Bootstrap applies the following style:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@media print{*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@media print{*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}
 </code></pre></div></div>
-<p>This is minified, but basically the <code class="highlighter-rouge">*</code> (asterisk) means select all, and applied the color #000 (black). As a result, the Bootstrap style strips out all color from the PDF (for Bootstrap elements).</p>
+<p>This is minified, but basically the <code class="language-plaintext highlighter-rouge">*</code> (asterisk) means select all, and applied the color #000 (black). As a result, the Bootstrap style strips out all color from the PDF (for Bootstrap elements).</p>
 
 <p>This is problematic for code snippets that have syntax highlighting. I decided to remove this de-coloring from the print output. I commented out the Bootstrap style:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@media print{*,:after,:before{/*color:#000!important;*/text-shadow:none!important;/*background:0 0!important*/;-webkit-box-shadow:none!important;box-shadow:none!important}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@media print{*,:after,:before{/*color:#000!important;*/text-shadow:none!important;/*background:0 0!important*/;-webkit-box-shadow:none!important;box-shadow:none!important}
 </code></pre></div></div>
 
-<p>If you update Bootrap, make sure you make this edit. (Sorry, admittedly I couldn’t figure out how to simply overwrite the <code class="highlighter-rouge">*</code> selector with a later style.)</p>
+<p>If you update Bootrap, make sure you make this edit. (Sorry, admittedly I couldn’t figure out how to simply overwrite the <code class="language-plaintext highlighter-rouge">*</code> selector with a later style.)</p>
 
-<p>I did, however, remove the color from the alerts and lighten the background shading for <code class="highlighter-rouge">pre</code> elements. The printstyles.css has this setting.</p>
+<p>I did, however, remove the color from the alerts and lighten the background shading for <code class="language-plaintext highlighter-rouge">pre</code> elements. The printstyles.css has this setting.</p>
 
 
 
@@ -688,7 +688,7 @@ javascript content here ...
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

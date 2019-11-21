@@ -278,7 +278,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>By default, every page is included in the search. Depending on the type of content you’re including, you may find that some pages will break the JSON formatting. If that happens, then the search will no longer work.</p>
 
-<p>If you want to exclude a page from search add <code class="highlighter-rouge">search: exclude</code> in the page’s frontmatter.</p>
+<p>If you want to exclude a page from search add <code class="language-plaintext highlighter-rouge">search: exclude</code> in the page’s frontmatter.</p>
 
 <h2 id="troubleshooting-search">Troubleshooting search</h2>
 
@@ -292,12 +292,12 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="including-the-body-field-in-search">Including the body field in search</h2>
 
-<p>I’ve found that including the <code class="highlighter-rouge">body</code> field in the search creates too many problems, and so I’ve removed <code class="highlighter-rouge">body</code> from the search. You can see the results of including the <code class="highlighter-rouge">body</code> by adding this along with the other fields in search.json:</p>
+<p>I’ve found that including the <code class="language-plaintext highlighter-rouge">body</code> field in the search creates too many problems, and so I’ve removed <code class="language-plaintext highlighter-rouge">body</code> from the search. You can see the results of including the <code class="language-plaintext highlighter-rouge">body</code> by adding this along with the other fields in search.json:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.content | strip_html | strip_newlines | replace: '</span><span class="se">\'</span><span class="s2">, '</span><span class="se">\\\\</span><span class="s2">' | replace: '"</span><span class="err">',</span><span class="w"> </span><span class="err">'\\</span><span class="s2">"' | replace: '	', '    '  }}"</span><span class="err">,</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Note that the last replace, <code class="highlighter-rouge">| replace: '^t', '    ' </code>, looks for any tab character and replaces it with four spaces. (Tab characters invalidate JSON.) If you run into other problematic formatting, you can use regex expressions to find and replace the content. See <a href="http://www.ultraedit.com/support/tutorials_power_tips/ultraedit/regular_expressions.html">Regular Expressions</a> for details on finding and replacing code.</p>
+<p>Note that the last replace, <code class="language-plaintext highlighter-rouge">| replace: '^t', '    ' </code>, looks for any tab character and replaces it with four spaces. (Tab characters invalidate JSON.) If you run into other problematic formatting, you can use regex expressions to find and replace the content. See <a href="http://www.ultraedit.com/support/tutorials_power_tips/ultraedit/regular_expressions.html">Regular Expressions</a> for details on finding and replacing code.</p>
 
 <p>It’s possible that the formatting may not account for all the scenarios that would invalidate the JSON. (Sometimes it’s an extra comma after the last item that makes it invalid.)</p>
 
@@ -366,7 +366,7 @@ $('#toc').on('click', 'a', function() {
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div></div>
 
-<p>Where you see <code class="highlighter-rouge">{url}</code> and <code class="highlighter-rouge">{title}</code>, the search is retrieving the values for these as specified in the search.json file.</p>
+<p>Where you see <code class="language-plaintext highlighter-rouge">{url}</code> and <code class="language-plaintext highlighter-rouge">{title}</code>, the search is retrieving the values for these as specified in the search.json file.</p>
 
 <h2 id="more-robust-search">More robust search</h2>
 
@@ -401,7 +401,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

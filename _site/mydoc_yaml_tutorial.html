@@ -328,7 +328,7 @@ margin-bottom: 10px;
 &lt;p&gt;Wife's name: <span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">name</span><span class="p">.</span><span class="nv">wife</span><span class="p">}}</span>&lt;/p&gt;
 </code></pre></div></div>
 
-<p>Notice that in order to access the data file, you use <code class="highlighter-rouge">site.data.samplelist</code>. <code class="highlighter-rouge">mydoc</code> is the folder, and <code class="highlighter-rouge">samplelist</code> is the name of the YAML file.</p>
+<p>Notice that in order to access the data file, you use <code class="language-plaintext highlighter-rouge">site.data.samplelist</code>. <code class="language-plaintext highlighter-rouge">mydoc</code> is the folder, and <code class="language-plaintext highlighter-rouge">samplelist</code> is the name of the YAML file.</p>
 
 <p><strong>Result:</strong></p>
 
@@ -380,9 +380,9 @@ since you can format the code samples with
    white spacing.</p>
 </div>
 
-<p>The right angle bracket <code class="highlighter-rouge">&gt;</code> allows you to put the value on the next lines (which must be indented). Even if you create a line break, the output will remove all of those line breaks, creating one paragraph.</p>
+<p>The right angle bracket <code class="language-plaintext highlighter-rouge">&gt;</code> allows you to put the value on the next lines (which must be indented). Even if you create a line break, the output will remove all of those line breaks, creating one paragraph.</p>
 
-<p>The pipe <code class="highlighter-rouge">|</code> functions like the angle bracket in that it allows you to put the values for the mapping on the next lines (which again must be indented). However, the pipe does preserve all of the line breaks that you use. This makes the pipe method ideal for storing code samples.</p>
+<p>The pipe <code class="language-plaintext highlighter-rouge">|</code> functions like the angle bracket in that it allows you to put the values for the mapping on the next lines (which again must be indented). However, the pipe does preserve all of the line breaks that you use. This makes the pipe method ideal for storing code samples.</p>
 
 <h2 id="example-3-simple-list">Example 3: Simple list</h2>
 
@@ -417,7 +417,7 @@ since you can format the code samples with
 </ul>
 </div>
 
-<p>Here we use a “for” loop to get each item in the bikes list. By using <code class="highlighter-rouge">.title</code> we only get the <code class="highlighter-rouge">title</code> property from each list item.</p>
+<p>Here we use a “for” loop to get each item in the bikes list. By using <code class="language-plaintext highlighter-rouge">.title</code> we only get the <code class="language-plaintext highlighter-rouge">title</code> property from each list item.</p>
 
 <h2 id="example-4-list-items">Example 4: List items</h2>
 
@@ -433,7 +433,7 @@ since you can format the code samples with
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for item in site.data.samplelist.salesteams %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for item in site.data.samplelist.salesteams %}
 &lt;h3&gt;{{item.title}}&lt;/h3&gt;
 &lt;ul&gt;
 {% for entry in item.subitems %}
@@ -460,9 +460,9 @@ since you can format the code samples with
 
 </div>
 
-<p>Hopefully you can start to see how to wrap more complex formatting around the YAML content. When you use a “for” loop, you choose the variable of what to call the list items. The variable you choose to use becomes how you access the properties of each list item. In this case, I decided to use the variable <code class="highlighter-rouge">item</code>. In order to get each property of the list item, I used <code class="highlighter-rouge">item.subitems</code>.</p>
+<p>Hopefully you can start to see how to wrap more complex formatting around the YAML content. When you use a “for” loop, you choose the variable of what to call the list items. The variable you choose to use becomes how you access the properties of each list item. In this case, I decided to use the variable <code class="language-plaintext highlighter-rouge">item</code>. In order to get each property of the list item, I used <code class="language-plaintext highlighter-rouge">item.subitems</code>.</p>
 
-<p>Each list item starts with the hyphen <code class="highlighter-rouge">–</code>.  You cannot directly access the list item by referring to a mapping. You only loop through the list items. If you wanted to access the list item, you would have to use something like <code class="highlighter-rouge">[1]</code>, which is how you access the position in an array. You cannot access a list item like you can access a mapping key.</p>
+<p>Each list item starts with the hyphen <code class="language-plaintext highlighter-rouge">–</code>.  You cannot directly access the list item by referring to a mapping. You only loop through the list items. If you wanted to access the list item, you would have to use something like <code class="language-plaintext highlighter-rouge">[1]</code>, which is how you access the position in an array. You cannot access a list item like you can access a mapping key.</p>
 
 <h2 id="example-5-table-of-contents">Example 5: Table of contents</h2>
 
@@ -558,9 +558,9 @@ since you can format the code samples with
 Greetings earthling!
 </div>
 
-<p>This example is notably different. Here I’m showing how to reuse content in YAML file. If you have the same value that you want to repeat in other mappings, you can create a variable using the <code class="highlighter-rouge">&amp;</code> symbol. Then when you want to refer to that variable’s value, you use an asterisk <code class="highlighter-rouge">*</code> followed by the name of the variable.</p>
+<p>This example is notably different. Here I’m showing how to reuse content in YAML file. If you have the same value that you want to repeat in other mappings, you can create a variable using the <code class="language-plaintext highlighter-rouge">&amp;</code> symbol. Then when you want to refer to that variable’s value, you use an asterisk <code class="language-plaintext highlighter-rouge">*</code> followed by the name of the variable.</p>
 
-<p>In this case the variable is <code class="highlighter-rouge">&amp;hello</code> and its value is <code class="highlighter-rouge">Greetings earthling!</code> In order to reuse that same value, you just type <code class="highlighter-rouge">*hello</code>.</p>
+<p>In this case the variable is <code class="language-plaintext highlighter-rouge">&amp;hello</code> and its value is <code class="language-plaintext highlighter-rouge">Greetings earthling!</code> In order to reuse that same value, you just type <code class="language-plaintext highlighter-rouge">*hello</code>.</p>
 
 <p>I don’t use variables much, but that’s not to say they couldn’t be highly useful. For example, let’s say you put name of the product in parentheses after each title (because you have various products that you’re providing documentation for in the same site). You could create a variable for that product name so that if you change how you’re referring to it, you wouldn’t have to change all instances of it in your YAML file.</p>
 
@@ -577,7 +577,7 @@ Greetings earthling!
 
 <p><strong>Markdown:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ site.data.samplelist.about[0] }}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ site.data.samplelist.about[0] }}
 </code></pre></div></div>
 
 <p><strong>Result:</strong></p>
@@ -585,7 +585,7 @@ Greetings earthling!
 zero
 </div>
 
-<p>You can see that I’m accessing one of the items in the list using <code class="highlighter-rouge">[0]</code>. This refers to the position in the array where a list item is. Like most programming languages, you start counting at zero, not one.</p>
+<p>You can see that I’m accessing one of the items in the list using <code class="language-plaintext highlighter-rouge">[0]</code>. This refers to the position in the array where a list item is. Like most programming languages, you start counting at zero, not one.</p>
 
 <p>I wanted to include this example because it points to the challenge in getting a value from a specific list item. You can’t just call out a specific item in a list like you can with a mapping. This is why you usually iterate through the list items using a “for” loop.</p>
 
@@ -680,7 +680,7 @@ red
 
 <p>This example shows how you can use conditions in order to selectively get the YAML content. In your table of contents, you might have a lot of different pages. However, you might only want to get the pages for a particular audience. Conditions lets you get only the items that meet those audience attributes.</p>
 
-<p>Now let’s adjust the condition just a little. Let’s add a second condition so that the <code class="highlighter-rouge">audience</code> property has to be <code class="highlighter-rouge">writers</code> and the <code class="highlighter-rouge">product</code> property has to be gizmo. This is how you would write it:</p>
+<p>Now let’s adjust the condition just a little. Let’s add a second condition so that the <code class="language-plaintext highlighter-rouge">audience</code> property has to be <code class="language-plaintext highlighter-rouge">writers</code> and the <code class="language-plaintext highlighter-rouge">product</code> property has to be gizmo. This is how you would write it:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
 <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sec</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.mypages</span><span class="w"> </span><span class="p">%}</span>
@@ -740,7 +740,7 @@ red
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
- Site last generated: Oct 13, 2019 <br />
+ Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

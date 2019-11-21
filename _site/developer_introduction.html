@@ -349,7 +349,7 @@ through a directed acyclic graph. Each commit has one or more parents and one
 or more children. The individual commits are identified by “hashes” or “SHAs”
 (as opposed to SVN’s revisions) because they are identified by a long string
 that is obtained by hashing the contents of the commit, such as</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc &gt; git log
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc &gt; git log
 commit 8a40de8b1a6f550c440dddd3e83d26807c1877b8 (HEAD -&gt; master, origin/master, origin/HEAD)
 Author: John Forrest &lt;john.forrest@fastercoin.com&gt;
 Date:   Tue Mar 26 15:04:27 2019 +0000
@@ -366,7 +366,7 @@ to switch branches, make commits, etc.</p>
 
 <p>If you had the recommeded repository structure in your SVN repository, then
 the root of your repository looked something like this.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>html/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>html/
 conf/
 branches/
 trunk/
@@ -374,20 +374,20 @@ stable/
 releases/
 </code></pre></div></div>
 <p>In git, the top-level folders in SVN map either to git branches or tags. What was
-called <code class="highlighter-rouge">trunk</code> in SVN is the <code class="highlighter-rouge">master</code> branch in git. this is the branch that
+called <code class="language-plaintext highlighter-rouge">trunk</code> in SVN is the <code class="language-plaintext highlighter-rouge">master</code> branch in git. this is the branch that
 user’s get by default (although you can change this if you want). If you now
 do</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/coin-or/Cbc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/coin-or/Cbc
 </code></pre></div></div>
 <p>you will get the master branch. The stable versions in SVN are now mapped to
-git branches named <code class="highlighter-rouge">stable/x.y</code>. To get the stable version 2.10 of Cbc (after
+git branches named <code class="language-plaintext highlighter-rouge">stable/x.y</code>. To get the stable version 2.10 of Cbc (after
 cloning as above), you would do</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout stable/2.10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout stable/2.10
 </code></pre></div></div>
-<p>You can see what branches are available with the <code class="highlighter-rouge">git branch</code> command, but git
+<p>You can see what branches are available with the <code class="language-plaintext highlighter-rouge">git branch</code> command, but git
 only shows you branches that you have worked with locally by default. If you
-do <code class="highlighter-rouge">git branch -a</code>, you will also see remote branches. For Cbc, we have</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git branch -a
+do <code class="language-plaintext highlighter-rouge">git branch -a</code>, you will also see remote branches. For Cbc, we have</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git branch -a
   master
 * stable/2.10
   remotes/origin/HEAD -&gt; origin/master
@@ -403,15 +403,15 @@ do <code class="highlighter-rouge">git branch -a</code>, you will also see remot
   remotes/origin/stable/1.2
   ...
 </code></pre></div></div>
-<p>The <code class="highlighter-rouge">*</code> indicates the branch you currently have checked out. Your local
+<p>The <code class="language-plaintext highlighter-rouge">*</code> indicates the branch you currently have checked out. Your local
 branches will usually correspond to branches that also exist in the remote
-repository, but not always. If you <code class="highlighter-rouge">git checkout</code> a branch with the same name as
+repository, but not always. If you <code class="language-plaintext highlighter-rouge">git checkout</code> a branch with the same name as
 one that exists remotely, then it will set up a new local branch that tracks
 the remote one. Otherwise, it creates a new local branch for your current
 commit that can later be pushed to the remote repository, if desired.</p>
 
 <p>Releases in SVN are tags in git. To see the tags available, do</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git tag
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git tag
 releases/1.1.0
 releases/1.1.1
 releases/1.1.2
@@ -419,7 +419,7 @@ releases/1.2.0
 releases/2.0.0
 </code></pre></div></div>
 <p>You can check out a tag in git, but you will get a message starting with</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are in 'detached HEAD' state. You can look around, make experimental changes...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are in 'detached HEAD' state. You can look around, make experimental changes...
 </code></pre></div></div>
 <p>This is because tags are just pointers to specific SHAs and don’t have parents
 or children. They exists in a fixed state detached from the rest of the
@@ -430,24 +430,24 @@ In general, it is better as a developer not to check out releases directly.</p>
 
 <p>The mirroring software we used to move project from SVN to git keeps a record
 of the mapping between SVN revisions and git SHAs. To enable the mapping, edit
-your <code class="highlighter-rouge">.git/config</code> file and add</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
+your <code class="language-plaintext highlighter-rouge">.git/config</code> file and add</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
 ...
 fetch = +refs/svn/map:refs/notes/commits
 </code></pre></div></div>
-<p>After that, the <code class="highlighter-rouge">git log</code> command will show the original SVN revision of any
+<p>After that, the <code class="language-plaintext highlighter-rouge">git log</code> command will show the original SVN revision of any
 commits that were created through mirroring.</p>
 
 <h3 id="dependencies">Dependencies</h3>
 
-<p>Dependencies are indicated by maintaining a file called <code class="highlighter-rouge">Dependencies</code> in the
-root of your repository. This is used by the <a href="#coinbrew"><code class="highlighter-rouge">coinbrew</code></a> script,
+<p>Dependencies are indicated by maintaining a file called <code class="language-plaintext highlighter-rouge">Dependencies</code> in the
+root of your repository. This is used by the <a href="#coinbrew"><code class="language-plaintext highlighter-rouge">coinbrew</code></a> script,
 among others, to determine what additional projects are needed. The format of
 the file is lines consisting of a short name for the project, a URL, and (in
 the case of a git dependency), a branch name. Note that you can mix git and
-SVN URLs, although only SVN URLs hosted on <code class="highlighter-rouge">projects.coin-or.org</code>. The basic
+SVN URLs, although only SVN URLs hosted on <code class="language-plaintext highlighter-rouge">projects.coin-or.org</code>. The basic
 format is something like</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BuildTools  https://projects.coin-or.org/svn/BuildTools/stable/0.8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BuildTools  https://projects.coin-or.org/svn/BuildTools/stable/0.8
 ThirdParty/Blas   https://projects.coin-or.org/svn/BuildTools/ThirdParty/Blas/stable/1.3
 ThirdParty/Lapack https://projects.coin-or.org/svn/BuildTools/ThirdParty/Lapack/stable/1.4
 Data/Sample https://projects.coin-or.org/svn/Data/Sample/stable/1.2
@@ -470,7 +470,7 @@ SYMPHONY    https://projects.coin-or.org/svn/SYMPHONY/stable/5.6/SYMPHONY
 
 <h4 id="merging">Merging</h4>
 
-<h3 id="the-coinbrew-script">The <code class="highlighter-rouge">coinbrew</code> script</h3>
+<h3 id="the-coinbrew-script">The <code class="language-plaintext highlighter-rouge">coinbrew</code> script</h3>
 
 <p>It will allow you to fetch out any project and its
 dependencies, but is aware of what projects have already been checked out and
@@ -512,7 +512,7 @@ place.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
- Site last generated: Oct 13, 2019 <br />
+ Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

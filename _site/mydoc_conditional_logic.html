@@ -288,7 +288,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Here’s an example of conditional logic based on a value in the page’s frontmatter. Suppose you have the following in your frontmatter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform: mac
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform: mac
 </code></pre></div></div>
 
 <p>On a page in my site (it can be HTML or markdown), you can conditionalize content using the following:</p>
@@ -300,9 +300,9 @@ Here's some info about Windows ...
 <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
 </code></pre></div></div>
 
-<p>This uses simple <code class="highlighter-rouge">if-elsif</code> logic to determine what is shown (note the spelling of <code class="highlighter-rouge">elsif</code>). The <code class="highlighter-rouge">else</code> statement handles all other conditions not handled by the <code class="highlighter-rouge">if</code> statements.</p>
+<p>This uses simple <code class="language-plaintext highlighter-rouge">if-elsif</code> logic to determine what is shown (note the spelling of <code class="language-plaintext highlighter-rouge">elsif</code>). The <code class="language-plaintext highlighter-rouge">else</code> statement handles all other conditions not handled by the <code class="language-plaintext highlighter-rouge">if</code> statements.</p>
 
-<p>Here’s an example of <code class="highlighter-rouge">if-else</code> logic inside a list:</p>
+<p>Here’s an example of <code class="language-plaintext highlighter-rouge">if-else</code> logic inside a list:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To bake a casserole:
 
@@ -315,13 +315,13 @@ Here's some info about Windows ...
 3. Bake in oven for 45 min.
 </code></pre></div></div>
 
-<p>You don’t need the <code class="highlighter-rouge">elsif</code> or <code class="highlighter-rouge">else</code>. You could just use an <code class="highlighter-rouge">if</code> (but be sure to close it with <code class="highlighter-rouge">endif</code>).</p>
+<p>You don’t need the <code class="language-plaintext highlighter-rouge">elsif</code> or <code class="language-plaintext highlighter-rouge">else</code>. You could just use an <code class="language-plaintext highlighter-rouge">if</code> (but be sure to close it with <code class="language-plaintext highlighter-rouge">endif</code>).</p>
 
 <h2 id="or-operator">Or operator</h2>
 
-<p>You can use more advanced Liquid markup for conditional logic, such as an <code class="highlighter-rouge">or</code> command. See <a href="http://docs.shopify.com/themes/liquid-documentation/basics/operators">Shopify’s Liquid documentation</a> for more details.</p>
+<p>You can use more advanced Liquid markup for conditional logic, such as an <code class="language-plaintext highlighter-rouge">or</code> command. See <a href="http://docs.shopify.com/themes/liquid-documentation/basics/operators">Shopify’s Liquid documentation</a> for more details.</p>
 
-<p>For example, here’s an example using <code class="highlighter-rouge">or</code>:</p>
+<p>For example, here’s an example using <code class="language-plaintext highlighter-rouge">or</code>:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">audience</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s2">"vegan"</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">audience</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"vegetarian"</span><span class="w"> </span><span class="p">%}</span>
     Then run this...
@@ -339,7 +339,7 @@ Here's some info about Windows ...
 
 <h2 id="unless-operator">Unless operator</h2>
 
-<p>You can also use <code class="highlighter-rouge">unless</code> in your logic, like this:</p>
+<p>You can also use <code class="language-plaintext highlighter-rouge">unless</code> in your logic, like this:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">output</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"pdf"</span><span class="w"> </span><span class="p">%}</span>
 ...do this
@@ -363,31 +363,31 @@ this shows if neither of the above two if conditions are met.
 <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
 </code></pre></div></div>
 
-<p>To use this, I would need to have a _data folder called options where the <code class="highlighter-rouge">output</code> property is stored.</p>
+<p>To use this, I would need to have a _data folder called options where the <code class="language-plaintext highlighter-rouge">output</code> property is stored.</p>
 
 <h2 id="specifying-the-location-for-_data">Specifying the location for _data</h2>
 
-<p>You can also specify a <code class="highlighter-rouge">data_source</code> for your data location in your configuration file. Then you aren’t limited to simply using <code class="highlighter-rouge">_data</code> to store your data files.</p>
+<p>You can also specify a <code class="language-plaintext highlighter-rouge">data_source</code> for your data location in your configuration file. Then you aren’t limited to simply using <code class="language-plaintext highlighter-rouge">_data</code> to store your data files.</p>
 
 <p>For example, suppose you have 2 projects: alpha and beta. You might store all the data files for alpha inside data_alpha, and all the data files for beta inside data_beta.</p>
 
 <p>In your alpha configuration file, specify the data source like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data_source: data_alpha
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data_source: data_alpha
 </code></pre></div></div>
 
 <p>Then create a folder called _data_alpha.</p>
 
 <p>For your beta configuration file, specify the data source like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data_source: data_beta
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data_source: data_beta
 </code></pre></div></div>
 
 <p>Then create a folder called _data_beta.</p>
 
 <h2 id="conditions-versus-includes">Conditions versus includes</h2>
 
-<p>If you have a lot of conditions in your text, it can get confusing. As a best practice, whenever you insert an <code class="highlighter-rouge">if</code> condition, add the <code class="highlighter-rouge">endif</code> at the same time. This will reduce the chances of forgetting to close the if statement. Jekyll won’t build if there are problems with the liquid logic.</p>
+<p>If you have a lot of conditions in your text, it can get confusing. As a best practice, whenever you insert an <code class="language-plaintext highlighter-rouge">if</code> condition, add the <code class="language-plaintext highlighter-rouge">endif</code> at the same time. This will reduce the chances of forgetting to close the if statement. Jekyll won’t build if there are problems with the liquid logic.</p>
 
 <p>If your text is getting busy with a lot of conditional statements, consider putting a lot of content into includes so that you can more easily see where the conditions begin and end.</p>
 
@@ -416,7 +416,7 @@ this shows if neither of the above two if conditions are met.
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

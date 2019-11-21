@@ -44,14 +44,14 @@ Foundation. It consists of the following projects.
 ## Pre-built Binaries
 
 Binaries for some projects (and their dependencies) are available for download from
-[Bintray](https://bintray.com/coin-or/download/).    
-Binaries can also be installed on specific platforms, as follows. AMPL also
+[Bintray](https://bintray.com/coin-or/download/). AMPL also
 kindly provides executables of some solvers for download at
 
-http://ampl.com/products/solvers/open-source/.
+http://ampl.com/products/solvers/open-source/
 
 We are working on some other better ways of getting binaries, such as conda
-packages, and will keep this README updated as things progress.
+packages, and will keep this README updated as things progress. Some other
+platform-specific ways of obtaining binaries are listed next.
 
 ## Installers and Packages
 
@@ -63,7 +63,7 @@ installing binaries and libraries compatible with Visual Studio (you will need
 to install the free Intel compiler redistributable libraries). The versions
 installed are not currently up-to-date. This may get updated someday, but in
 the meantime, you can get binaries for some projects from
-[BinTray](http://bintray.com/coin-or/download).
+[BinTray](http://bintray.com/coin-or/download). 
 
 ### OS X
 
@@ -79,12 +79,19 @@ brew install coin-or-tools/coin-or/Xyz
 ### Linux 
 
 For Linux, there are Debian and Fedora packages for many projects in
-the suite and we are investigating the possibility of providing Linuxbrew
-packages.
+the suite.
  * Click
  [here](https://packages.debian.org/search?keywords=coinor&searchon=names&suite=stable&section=all)
  for a list of Debian packages.
  * Click [here](https://apps.fedoraproject.org/packages/s/coin-or) for a list of Fedora packages.
+
+It is also straightforward to install many packages using Linuxbrew, just as on OS X.
+```
+brew tap coin-or-tools/coinor
+brew install coin-or-tools/coin-or/Xyz
+```
+At the moment, the first install is quite cumbersome, as it involves installing many dependencies,
+but this should be reduced or eliminated, sonce we move to bottling most projects.   
 
 ## Docker Image
 
@@ -92,8 +99,7 @@ The Docker image available at
 
 https://hub.docker.com/r/tkralphs/coinor-optimization-suite/
 
-is another excellent way to use the COIN-OR Optimization Suite, although it is
-currently out of date. For details on
+is another excellent way to use the COIN-OR Optimization Suite. For details on
 how to obtain and use this image, see the project's Github page
 [here](https://github.com/tkralphs/optimization-suite-docker).
 
@@ -123,13 +129,19 @@ options that require specific hardware/software may also not be supported in
 distributed binaries (parallel builds, MPI). Once you understand how to get and
 build source, it is much faster to get bug fixes.
 
-Note that the below instructions revolve around the
+{% include note.html content="The below instructions revolve around the
 [coinbrew](https://github.com/coin-or/coinbrew) script, which requires the use
-of the `bash` shell (command interpreter). This shell is built in to Linux and
-OS X, but must be separately installed in Windows. More extensive
-documentation of the `coinbrew` script, including advanced usage is available
-[here](https://coin-or.github.io/coinbrew). Detailed instructions for the how
-to build and install in Linux, Windows, and OS X are given below.
+of the `bash` shell (a command interpreter). This shell is built in to Linux
+and OS X, but must be separately installed in Windows. Detailed instructions
+for how to do a basic build and install in Linux, Windows, and OS X, including
+all OS-specific workarounds and additional steps, are given below. More
+extensive documentation of the `coinbrew` script that might be useful after
+following the steps below, including advanced usage, is available
+[here](https://coin-or.github.io/coinbrew)." %}
+
+{% include note.html content="You do not need to clone the repository of the
+project before following these instructions. The `coinbrew` script will clone
+all required repositories for you automatically." %}
 
 ### Linux
 
@@ -141,8 +153,7 @@ Occasionally, some commands are missing, so before starting, check that you have
  
 To obtain the source code for a project `ProjName`, the first step is to download the
 `bash` script that automatically fetches the source, builds, and installs
-COIN-OR packages. *You do not need to clone the project's repository first,
-just do the following!* Open a terminal and execute 
+COIN-OR packages. 
 
 ```
 git clone https://www.github.com/coin-or/coinbrew
@@ -266,7 +277,7 @@ planning to use the GCC compilers is to execute `C:\msys64\mingw64.exe` or
 `C:\msys64\mingw32.exe`, which will automatically start up `bash` in a
 separate window and set all paths for you.
 {% include note.html content="If you are planning to build with
-the Visual Studio compiler, you will need to set the paths and start up bash
+the Visual Studio compiler, you will need to set the paths and start `bash`
 manually before doing the actual build, as explained
 [below](#building-with-visual-studio-ide). For now, it is OK to continue with
 these instructions to set up MSys2." %} 
@@ -372,8 +383,8 @@ export PATH=$PATH:/path/to/install/dir/bin
 
 It is possible to use almost the exact same commands that were used with GCC
 to build with the Visual Studio compilers. If you want to use the Visual
-Studiop compilers, however, it is important to get your `PATH` set correctly,
-as there are some commands tin MSys2 that have the same names as commands in
+Studio compilers, however, it is important to get your `PATH` set correctly,
+as there are some commands in MSys2 that have the same names as commands in
 Visual Studio and you need to ensure the right command is used. Mainly, it is
 important that the Visual Studio paths come *before* the MSys2 paths in your
 `PATH` variable. To ensure this, start again in a fresh Windows command
@@ -384,10 +395,10 @@ Window. Now, begin by manually adding `C:\msys64\usr\bin` to your Windows
 set PATH=C:\msys64\usr\bin;%PATH%
 ```
 
-in a Windows terminal. *Do NOT run `Msys2_shell.bat`, `mingw64.exe, or
-`mingw32.exe`*. After doing this (it is important to do it after), run
+in a Windows terminal. **Do NOT run `Msys2_shell.bat`, `mingw64.exe`, or
+`mingw32.exe`**. **After** setting your `PATH` as above, run
 the `vcvarsall.bat` script for your version of Visual Studio to add the Visual
-Studio paths with, e.g.,
+Studio paths to your `PATH`. You can do this with, for example, 
 
 ```
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat x86_amd64
@@ -436,6 +447,12 @@ project to fetch and build. The rest should happen automagically.
 Alternatively, the following command-line incantation will execute the
 procedure non-interactively (this is recommended for most expert users).
 
+{% include note.html content="If you do not have a Fortran compiler, then you
+will not be able to build any of the projects that require Fortran. Add
+`--no-third-party` to the second command below to prevent building of some
+third party projects that are in Fortan or use the `--skip` argument to skip
+building of specific projects." %}
+
 ```
 ./coinbrew fetch ProjName:stable/x.y --no-prompt
 ./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --no-prompt --build=x86_64-w64-mingw32
@@ -451,11 +468,6 @@ When the directory is not writable, the install step will need to be run with
 administrator privileges (usually by running `bash` as administrator). If no
 prefix is specified, the package will be installed in the directory
 `dist/`.
-
-{% include note.html content="If you do not have a Fortran compiler, then you will not be able to
-build any of the projects that require Fortran. Add `--no-third-party` to
-prevent building of some third party projects that are in Fortan or use the
-`--skip` argument to skip building of specific projects." %}
 
 Options that would have been passed to the `configure` script under the old
 build system can simply be added to the command-line. For example, to build
@@ -514,12 +526,11 @@ install Homebrew (see http://brew.sh). After installation, open a terminal and
 do
 
 ```
-brew install gcc wget svn git
+brew install bash gcc wget svn git
 ```
 
 To obtain the source code, the first step is to get the installer that will
-then fetch the source for ProjName and all its dependencies. *You do not need
-to clone ProjName first, just do the following!* Open a terminal and execute
+then fetch the source for ProjName and all its dependencies. 
 
 ```
 git clone https://www.github.com/coin-or/coinbrew

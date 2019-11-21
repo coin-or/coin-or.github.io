@@ -270,9 +270,9 @@ $('#toc').on('click', 'a', function() {
     
 
    <h2 id="add-a-tag-to-a-page">Add a tag to a page</h2>
-<p>You can add tags to pages by adding <code class="highlighter-rouge">tags</code> in the frontmatter with values inside brackets, like this:</p>
+<p>You can add tags to pages by adding <code class="language-plaintext highlighter-rouge">tags</code> in the frontmatter with values inside brackets, like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 title: 5.0 Release Notes
 permalink: release_notes_5_0.html
 tags: [formatting, single_sourcing]
@@ -348,7 +348,7 @@ sidebar: mydoc_sidebar
 
 <p>Because this code appears on the _layouts/page.html file by default, you don’t need to do anything in your page to get the tags to appear. However, if you want to alter the placement or change the button color, you can do so within the _includes/taglogic.html file.</p>
 
-<p>You can change the button color by changing the class on the button from <code class="highlighter-rouge">btn-info</code> to one of the other button classes bootstrap provides. See [Labels][mydoc_labels] for more options on button class names.</p>
+<p>You can change the button color by changing the class on the button from <code class="language-plaintext highlighter-rouge">btn-info</code> to one of the other button classes bootstrap provides. See [Labels][mydoc_labels] for more options on button class names.</p>
 
 <h2 id="retrieving-pages-for-a-specific-tag">Retrieving pages for a specific tag</h2>
 
@@ -725,7 +725,7 @@ sidebar: mydoc_sidebar
 
 </ul>
 
-<p>If you want to sort the pages alphabetically, you have to apply a <code class="highlighter-rouge">sort</code> filter:</p>
+<p>If you want to sort the pages alphabetically, you have to apply a <code class="language-plaintext highlighter-rouge">sort</code> filter:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 Getting started pages:
@@ -1103,13 +1103,13 @@ Getting started pages:
 </ul>
 
 <h2 id="efficiency">Efficiency</h2>
-<p>Although the tag approach here uses <code class="highlighter-rouge">for</code> loops, these are somewhat inefficient on a large site. Most of my tech doc projects don’t have hundreds of pages (like my blog does). If your project does have hundreds of pages, this <code class="highlighter-rouge">for</code> loop approach with tags is going to slow down your build times.</p>
+<p>Although the tag approach here uses <code class="language-plaintext highlighter-rouge">for</code> loops, these are somewhat inefficient on a large site. Most of my tech doc projects don’t have hundreds of pages (like my blog does). If your project does have hundreds of pages, this <code class="language-plaintext highlighter-rouge">for</code> loop approach with tags is going to slow down your build times.</p>
 
 <p>Without the ability to access pages inside a universal namespace with the page type, there aren’t many workarounds here for faster looping.</p>
 
-<p>With posts (instead of pages), since you can access just the posts inside <code class="highlighter-rouge">posts.tag.tagname</code>, you can be a lot more efficient with the looping.</p>
+<p>With posts (instead of pages), since you can access just the posts inside <code class="language-plaintext highlighter-rouge">posts.tag.tagname</code>, you can be a lot more efficient with the looping.</p>
 
-<p>Still, if the build times are getting long (e.g., 1 or 2 minutes per build), look into reducing the number of <code class="highlighter-rouge">for</code> loops on your site.</p>
+<p>Still, if the build times are getting long (e.g., 1 or 2 minutes per build), look into reducing the number of <code class="language-plaintext highlighter-rouge">for</code> loops on your site.</p>
 
 <h2 id="empty-tags">Empty tags?</h2>
 
@@ -1117,7 +1117,7 @@ Getting started pages:
 
 <ul>
   <li>You’re using a tag that isn’t specified in your allowed tags list in your tags.yml file.</li>
-  <li>You have an empty <code class="highlighter-rouge">tags: []</code> property in your frontmatter.</li>
+  <li>You have an empty <code class="language-plaintext highlighter-rouge">tags: []</code> property in your frontmatter.</li>
 </ul>
 
 <p>If you don’t want tags to appear at all on your page, remove the tags property from your frontmatter.</p>
@@ -1153,7 +1153,7 @@ Getting started pages:
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 16, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> July 16, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

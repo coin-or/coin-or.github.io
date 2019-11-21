@@ -277,7 +277,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Here’s the code for that button on the page.html layout for GitHub:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.github_editme_path %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.github_editme_path %}
 
 &lt;a target="_blank" href="https://github.com/{{site.github_editme_path}}/{{page.folder}}{{page.url | append: ".md"}}{% endif %}" class="btn btn-default githubEditButton" role="button"&gt;&lt;i class="fa fa-github fa-lg"&gt;&lt;/i&gt; Edit me&lt;/a&gt;
 
@@ -286,16 +286,16 @@ $('#toc').on('click', 'a', function() {
 
 <p>and here for GitLab:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.gitlab_editme_path %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if site.gitlab_editme_path %}
 
 &lt;a target="_blank" href="https://github.com/{{site.gitlab_editme_path}}/{{page.folder}}{{page.url | append: ".md"}}{% endif %}" class="btn btn-default githubEditButton" role="button"&gt;&lt;i class="fa fa-gitlab fa-lg"&gt;&lt;/i&gt; Edit me&lt;/a&gt;
 
 {% endif %}
 </code></pre></div></div>
 
-<p>In your configuration file, edit the value for <code class="highlighter-rouge">github_editme_path</code> (or for Gitlab: <code class="highlighter-rouge">gitlab_editme_path</code>). For example, you might create a branch called “reviews” on your Github repo. Then you would add something like this in your configuration file for the ‘github_editme_path’: tomjoht/documentation-theme-jekyll/edit/reviews. Here “tomjoht” is my github account name. The repo name is “documentation-theme-jekyll”. The “reviews” name is the branch.</p>
+<p>In your configuration file, edit the value for <code class="language-plaintext highlighter-rouge">github_editme_path</code> (or for Gitlab: <code class="language-plaintext highlighter-rouge">gitlab_editme_path</code>). For example, you might create a branch called “reviews” on your Github repo. Then you would add something like this in your configuration file for the ‘github_editme_path’: tomjoht/documentation-theme-jekyll/edit/reviews. Here “tomjoht” is my github account name. The repo name is “documentation-theme-jekyll”. The “reviews” name is the branch.</p>
 
-<p>To suppress this button, comment out the <code class="highlighter-rouge">github_editme_path</code> in the _config.yml file.</p>
+<p>To suppress this button, comment out the <code class="language-plaintext highlighter-rouge">github_editme_path</code> in the _config.yml file.</p>
 
 <h2 id="add-reviewers-as-collaborators">Add reviewers as collaborators</h2>
 
@@ -344,7 +344,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> November 30, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> November 30, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

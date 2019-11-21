@@ -273,14 +273,14 @@ $('#toc').on('click', 'a', function() {
 
 <p>When linking to an external site, use Markdown formatting because it’s simplest:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Google](http://google.com)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Google](http://google.com)
 </code></pre></div></div>
 
 <h2 id="linking-to-internal-pages">Linking to internal pages</h2>
 
 <p>When linking to internal pages, you can manually link to the pages like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Icons](mydoc_icons.html)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Icons](mydoc_icons.html)
 </code></pre></div></div>
 
 <p>However, if you change the file name, you’ll have to update all of your links. It’s much easier to use Automated links, as described in the next section.</p>
@@ -289,17 +289,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>This method for automated links creates a master list of all links in a Markdown reference format based on entries in your sidebar table of contents.</p>
 
-<p>With this Automated links method, make sure all your pages are referenced in a sidebar or topnav data file (inside _data &gt; sidebars). If they’re not in a sidebar or top nav (such as links to headings on a page), list them in the <code class="highlighter-rouge">other.yml</code> file (which is in the _data/sidebars folder).</p>
+<p>With this Automated links method, make sure all your pages are referenced in a sidebar or topnav data file (inside _data &gt; sidebars). If they’re not in a sidebar or top nav (such as links to headings on a page), list them in the <code class="language-plaintext highlighter-rouge">other.yml</code> file (which is in the _data/sidebars folder).</p>
 
-<p>The links.html file (in _includes) will iterate through all your sidebars and create a list of reference-style markdown links based on the <code class="highlighter-rouge">url</code> properties in the sidebar items.</p>
+<p>The links.html file (in _includes) will iterate through all your sidebars and create a list of reference-style markdown links based on the <code class="language-plaintext highlighter-rouge">url</code> properties in the sidebar items.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For the automated links method to work, each of your pages must have a <code class="highlighter-rouge">permalink</code> property in the frontmatter. The <code class="highlighter-rouge">permalink</code> property must match the file name. For example, if the file name is <code class="highlighter-rouge">somefile.html</code>, your permalink property would be <code class="highlighter-rouge">somefile.html</code>. See [Pages][mydoc_pages] for more details.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For the automated links method to work, each of your pages must have a <code class="language-plaintext highlighter-rouge">permalink</code> property in the frontmatter. The <code class="language-plaintext highlighter-rouge">permalink</code> property must match the file name. For example, if the file name is <code class="language-plaintext highlighter-rouge">somefile.html</code>, your permalink property would be <code class="language-plaintext highlighter-rouge">somefile.html</code>. See [Pages][mydoc_pages] for more details.</div>
 
 <p>To implement managed links:</p>
 
 <ol>
   <li>
-    <p>In your _config.yml file, list each sidebar in the <code class="highlighter-rouge">sidebars</code> property — including the other.yml file too:</p>
+    <p>In your _config.yml file, list each sidebar in the <code class="language-plaintext highlighter-rouge">sidebars</code> property — including the other.yml file too:</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">sidebars</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="s">home_sidebar</span>
@@ -312,13 +312,13 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>At the bottom of each topic where you plan to include links, include the links.html file:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include links.html %}
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include links.html %}
 </code></pre></div>    </div>
   </li>
   <li>
     <p>To link to a topic, use reference-style Markdown links, with the referent using the file name (without the file extension). For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the [Icon][mydoc_icons] file.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the [Icon][mydoc_icons] file.
 </code></pre></div>    </div>
 
     <p>Here’s the result:</p>
@@ -333,7 +333,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>If you’re linking to the specific heading from another page, first give the heading an ID:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Some heading {#someheading}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Some heading {#someheading}
 </code></pre></div></div>
 
 <p>Then add a property into the other.yml file in your _data/sidebars folder:</p>
@@ -344,14 +344,14 @@ $('#toc').on('click', 'a', function() {
 
 <p>And reference it like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is [Some link][mydoc_pages.html#someIdTag].
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is [Some link][mydoc_pages.html#someIdTag].
 </code></pre></div></div>
 
 <p><strong>Result:</strong></p>
 
 <p>This is [Some link][mydoc_pages.html#someIdTag].</p>
 
-<p>It’s a little strange having the <code class="highlighter-rouge">.html#</code> in a reference like this, but it works.</p>
+<p>It’s a little strange having the <code class="language-plaintext highlighter-rouge">.html#</code> in a reference like this, but it works.</p>
 
 
 
@@ -382,7 +382,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 COIN-OR Foundation. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Oct 13, 2019 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Nov 21, 2019 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>
