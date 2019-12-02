@@ -73,7 +73,7 @@ MacOS. There are Homebrew recipes for some projects available
 [here](https://github.com/coin-or-tools/homebrew-coinor). Just do 
 ```
 brew tap coin-or-tools/coinor
-brew install coin-or-tools/coin-or/Xyz
+brew install coin-or-tools/coinor/Xyz
 ```
 
 ### Linux 
