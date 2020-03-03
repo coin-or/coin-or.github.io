@@ -190,8 +190,8 @@ installed immediately after building and the install command is not needed. If
 no prefix is specified, the package will be installed in the directory
 `dist/`.
 
-Options that would have been passed to the `configure`
-script under the old build system can simply be added to the command-line. For
+Options that should be passed to the `configure`
+script can simply be added to the command-line. For
 example, to build with debugging symbols, do
 
 ```
@@ -204,7 +204,7 @@ To get help with additional options available in running the script, do
 ./coinbrew --help
 ```
 
-To get help with configuration options, so
+To get help with configuration options, do
 
 ```
 ./coinbrew ProjName --configure-help
@@ -229,16 +229,14 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/install/dir/lib
 
 Source can be obtained either by downloading an archive that includes the
 source of the main project and all dependencies or by fetching with
-`coinbrew`. The use of `coinbrew` is strongly recommending unless you plan to
+`coinbrew`. The use of `coinbrew` is strongly recommended unless you plan to
 work exclusively with Visual Studio and you wish to build within the Visual
 Studio IDE using the supplied Visual Studio project files.
 
 If you wish to obtain the source by downloading a complete archive to use with
 Visual Studio, then go to the URL
 
-```
-https://www.coin-or.org/download/source
-```
+[https://www.coin-or.org/download/source](https://www.coin-or.org/download/source)
 
 and click on the folder for your desired project. Download source for the
 latest release and unpack the archive. Then continue with the instructions for
@@ -248,13 +246,14 @@ with the instructions for `coinbrew`.
 #### Setting up `coinbrew`
 
 The most flexible and powerful way to build on Windows is with the GNU
-autotools and the GCC or Visual Studio compilers from a `bash` command line.
+autotools and the GCC, MS Visual Studio compilers, or Intel compilers from a `bash` command line.
 To obtain the source and build it in this way, you will need to first obtain a
 version of `bash`, which is a shell (command-line interpreter) and scripting
 language. To get bash (and the GCC compilers), install one of
    * [Msys2](https://msys2.github.io/)
    * [CYGWIN](http://cygwin.org/)
    * [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
 Bash and the GCC compilers also come with the [Anaconda Python
 distribution](https://www.anaconda.com/distribution/). Bash itself (but not
 the GCC compilers) come with [Git for Windows](https://git-scm.com/download/win).
@@ -265,10 +264,12 @@ Linux environment within Windows (essentially a Linux VM). If you go the route
 of using WSL, then once you install WSL, you can simply open a WSL terminal
 and follow the Linux instructions from there.
 
-Otherwise, if you don't already have have CYGWIN installed, it is recommended to
+Otherwise, it is recommended to
 use MSys2, which provides a minimal toolset that is easy to install. The
 remaining instructions will be for MSys2. Instructions for CYGWIN will be
 similar, just with different package names and a different package manager.
+Note that building on CYGWIN is not tested regularly and may not work when
+using MS or Intel compilers.
 
 To get MSys2, either download the installer or a zip file containing the MSys2
 base from [here](http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/)
@@ -301,7 +302,7 @@ git clone https://www.github.com/coin-or/coinbrew
 Using the GCC compiler suite is convenient and easy, but will build libraries
 that are incompatible with Visual Studio. If you intend to link your libraries
 to Visual Studio applications you plan to build, you should follow the [Visual
-Studio IDE](#building-with-visual-studio-ide) instructions below.
+Studio](#building-with-visual-studio) instructions below.
 
 You should already have the MinGW GCC compilers available (you can check by
 running `which gcc`). If not (and you plan to use the GCC compilers, not the
@@ -311,7 +312,7 @@ Visual Studio compilers), you can install them via
 pacman -S mingw-w64-i686-toolchain mingw-w64-x86_64-toolchain
 ```
 
-It is recommended (but optional) to install BLAS and LAPACK packages, since this will speed
+It is recommended (but optional for some solvers) to install BLAS and LAPACK packages, since this will speed
 up some of the solvers that can use those packages. 
 
 ```
@@ -352,8 +353,8 @@ be run with administrator privileges (usually by running `bash` as
 administrator). If no prefix is specified, the package will be installed in
 the directory `dist/`.
 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
+Options that should be passed to `configure`
+can be added to the command-line. For example, to build
 with debugging symbols, do 
 
 ```
@@ -366,7 +367,7 @@ To get help with additional options available in running the script, do
 ./coinbrew --help
 ```
 
-To get help with configuration options, so
+To get help with configuration options, do
 
 ```
 ./coinbrew ProjName --configure-help
@@ -444,7 +445,7 @@ automatically set by git on cloning." %}
 Once you run the script, you will be prompted interactively to select a
 project to fetch and build. The rest should happen automagically.
 
-Alternatively, the following command-line incantation will execute the
+Alternatively, the following command-line incarnation will execute the
 procedure non-interactively (this is recommended for most expert users).
 
 {% include note.html content="If you do not have a Fortran compiler, then you
@@ -469,8 +470,8 @@ administrator privileges (usually by running `bash` as administrator). If no
 prefix is specified, the package will be installed in the directory
 `dist/`.
 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
+Options that should be passed to the `configure` script
+can be added to the command-line. For example, to build
 with debugging symbols, do 
 
 ```
@@ -483,7 +484,7 @@ To get help with additional options available in running the script, do
 ./coinbrew --help
 ```
 
-To get help with configuration options, so
+To get help with configuration options, do
 
 ```
 ./coinbrew ProjName --configure-help
@@ -508,7 +509,8 @@ to your Windows executable search `PATH`. You may also consider adding
 After obtaining source for the projects you want to build, either with
 [coinbrew](https://github.com/coin-or/coinbrew) or by downloading an archive
 of the sources of all dependencies, as described above, find the solution file
-in the directory `MSVisualStudio`.
+in the directory `MSVisualStudio`. MSVS project files are only available for
+some projects.
 
 {% include note.html content="Note that you will also need a compatible
 Fortran compiler if you want to build any projects requiring Fortran. Intel's
@@ -561,14 +563,14 @@ sudo ./coinbrew install ProjName
 ```
 
 The `--prefix` argument above specifies the directory where the packages will
-be installed and would normally be something like `$HOME$` or `\usr/local`. If
+be installed and would normally be something like `$HOME$` or `/usr/local`. If
 the specified directory is writable, then all packages will be automatically
 installed immediately after building and the install command is not needed. If
 no prefix is specified, the package will be installed in the directory
 `dist/`.
 
-Options that would have been passed to the `configure` script under the old
-build system can simply be added to the command-line. For example, to build
+Options that should be passed to the `configure` script
+can simply be added to the command-line. For example, to build
 with debugging symbols, do
 
 ```
@@ -581,7 +583,7 @@ To get help with additional options available in running the script, do
 ./coinbrew --help
 ```
 
-To get help with configuration options, so
+To get help with configuration options, do
 
 ```
 ./coinbrew ProjName --configure-help
@@ -647,12 +649,12 @@ directory, which contains solution files that include dependencies.
 ### About version numbers 
 
 COIN-OR numbers versions by a standard semantic versioning scheme: each version
-has a *major*, *minor*, and *patch/release* number. All version within a
+has a *major*, *minor*, and *patch/release* number. All versions within a
 *major.minor* series are compatible. All versions within a *major* series are
 backwards compatible. The versions with the `stable/` subdirectory have two
-digits, e.g., `1.1`, whereas the releases have three digits, e.g., `2.1.0`.
-The first two digits of the release version number indicates the stable series
-of which the release is a snapshot. The third digit is the release number in
+numbers, e.g., `1.1`, whereas the releases have three numbers, e.g., `2.1.0`.
+The first two numbers of the release version indicate the stable series
+of which the release is a snapshot. The third number is the release number in
 that series.
 
 ### ThirdParty Projects
@@ -667,15 +669,19 @@ automatically integrated. Beware of licensing incompatibilities if you plan
 to redistribute the resulting binaries. The following are the supported
 libraries. 
  * AMPL Solver Library (required to use solvers with AMPL)
- * Blas (improves performance---usually available natively on Linux/macOS)
- * Lapack (same as Blas)
- * Glpk
- * Metis
+ * Glpk (required to read GMPL files and to use Glpk via OSI)
+ * Metis (used by HSL and MUMPS)
  * MUMPS (required for Ipopt to build completely open source)
- * Soplex
- * SCIP
  * HSL (an alternative to MUMPS that is not open source)
- * FilterSQP
+
+For the following, download and build scripts are still available, but are
+no longer updated.
+
+ * Blas (improves performance of basic linear algebra routines---usually available natively on Linux/macOS)
+ * Lapack (provides higher-level linear algebra routines---usually available natively on Linux/macOS)
+ * FilterSQP (NLP solver for Bonmin)
+ * SoPlex (required to use SoPlex via OSI; can be used by SCIP)
+ * SCIP (required for the feasibility pump in Couenne)
 
 ### Parallel Builds
 
@@ -714,6 +720,7 @@ advantage of learning to build yourself.
  * `--enable-debug`
  * `--enable-gnu-packages`
  * `-C`
+
 Individual project also have their own options.
  * `ProjName/configure --help` will list the options for project ProjName.
  * The options for individual projects can be given to the root `coinbrew`
@@ -721,17 +728,17 @@ Individual project also have their own options.
 
 ### Documentation
 
-Some documentation on using the full optimization suite will someday be available at
-http://coin-or.github.io/.
+Some documentation on using the full optimization suite will someday be available
+[here](http://coin-or.github.io/).
 There is also a full tutorial on the Optimization Suite and much more at
-http://coral.ie.lehigh.edu/~ted/teaching/coin-or.
+[Ted's page](http://coral.ie.lehigh.edu/~ted/teaching/coin-or).
 
 User's manuals and documentation for project ProjName can be obtained at either
-http://coin-or.github.io/ProjName or http://www.coin-or.org/ProjName.
+`http://coin-or.github.io/ProjName` or `http://www.coin-or.org/ProjName`.
 Doxygen source code documentation for some projects can also be obtained at
-http://coin-or.github.io/Doxygen
+[http://coin-or.github.io/Doxygen](http://coin-or.github.io/Doxygen).
 
 ### Support
 
 Support is available primarily through mailing lists and bug reports at
-http://github.com/coin-or/ProjName/issues/new. 
+`http://github.com/coin-or/ProjName/issues/new`.
