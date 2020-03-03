@@ -65,11 +65,11 @@ installed are not currently up-to-date. This may get updated someday, but in
 the meantime, you can get binaries for some projects from
 [BinTray](http://bintray.com/coin-or/download). 
 
-### OS X
+### macOS
 
 Binaries are available from
 [BinTray](http://bintray.com/coin-or/download) for most recent version of
-MacOS. There are Homebrew recipes for some projects available
+macOS. There are Homebrew recipes for some projects available
 [here](https://github.com/coin-or-tools/homebrew-coinor). Just do 
 ```
 brew tap coin-or-tools/coinor
@@ -85,7 +85,7 @@ the suite.
  for a list of Debian packages.
  * Click [here](https://apps.fedoraproject.org/packages/s/coin-or) for a list of Fedora packages.
 
-It is also straightforward to install many packages using Linuxbrew, just as on OS X.
+It is also straightforward to install many packages using Linuxbrew, just as on macOS.
 ```
 brew tap coin-or-tools/coinor
 brew install coin-or-tools/coin-or/Xyz
@@ -132,8 +132,8 @@ build source, it is much faster to get bug fixes.
 {% include note.html content="The below instructions revolve around the
 [coinbrew](https://github.com/coin-or/coinbrew) script, which requires the use
 of the `bash` shell (a command interpreter). This shell is built in to Linux
-and OS X, but must be separately installed in Windows. Detailed instructions
-for how to do a basic build and install in Linux, Windows, and OS X, including
+and macOS, but must be separately installed in Windows. Detailed instructions
+for how to do a basic build and install in Linux, Windows, and macOS, including
 all OS-specific workarounds and additional steps, are given below. More
 extensive documentation of the `coinbrew` script that might be useful after
 following the steps below, including advanced usage, is available
@@ -515,11 +515,11 @@ Fortran compiler if you want to build any projects requiring Fortran. Intel's
 `ifort` compiler is compatible with Visual Studio and is recommended, but is
 not available for free." %}
 
-### OS X
+### macOS
 
-OS X is a Unix-based OS and ships with many of the basic components needed to
+macOS is a Unix-based OS and ships with many of the basic components needed to
 build COIN-OR, but it's missing some things. For examples, the latest versions
-of OS X come with the `clang` compiler but no Fortran compiler. You may also
+of macOS come with the `clang` compiler but no Fortran compiler. You may also
 be missing the `wget` utility and `subversion` and `git` clients (needed for
 obtaining source code). The easiest way to get these missing utilities is to
 install Homebrew (see http://brew.sh). After installation, open a terminal and
@@ -667,7 +667,7 @@ automatically integrated. Beware of licensing incompatibilities if you plan
 to redistribute the resulting binaries. The following are the supported
 libraries. 
  * AMPL Solver Library (required to use solvers with AMPL)
- * Blas (improves performance---usually available natively on Linux/OS X)
+ * Blas (improves performance---usually available natively on Linux/macOS)
  * Lapack (same as Blas)
  * Glpk
  * Metis
