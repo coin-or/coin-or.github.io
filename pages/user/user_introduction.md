@@ -726,6 +726,29 @@ Individual project also have their own options.
  * The options for individual projects can be given to the root `coinbrew`
  script---they will be passed on to subprojects automatically.
 
+### Building without coinbrew
+
+The projects in the COIN-OR Optimization Suite use a buildsystem that is
+build on top of the autotools (autoconf, automake, autoheader, etc).
+
+Therefore, in principle, each project can be obtained, build, and installed via
+```
+   git clone --branch stable/x.y https://github.com/coin-or/ProjName.git
+   cd ProjName
+   ./configure
+   make
+   make test
+   make install
+```
+
+Most hints and instructions from above on how to setup a build environment,
+flags to configure, etc, also apply when not using `coinbrew`.
+
+However, many COIN-OR projects depend on a number of other COIN-OR projects.
+`coinbrew` automates fetching, building, and installing these dependencies.
+To see the dependencies of a project, see the file `Dependencies` in the
+`.coin-or` subdirectory or base directory of a project.
+
 ### Documentation
 
 Some documentation on using the full optimization suite will someday be available
