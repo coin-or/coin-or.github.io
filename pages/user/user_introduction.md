@@ -97,7 +97,7 @@ but this should be reduced or eliminated, sonce we move to bottling most project
 
 The Docker image available at
 
-https://hub.docker.com/r/tkralphs/coinor-optimization-suite/
+[https://hub.docker.com/r/tkralphs/coinor-optimization-suite/](https://hub.docker.com/r/tkralphs/coinor-optimization-suite/)
 
 is another excellent way to use the COIN-OR Optimization Suite. For details on
 how to obtain and use this image, see the project's Github page
