@@ -47,7 +47,7 @@ Binaries for some projects (and their dependencies) are available for download f
 [Bintray](https://bintray.com/coin-or/download/). AMPL also
 kindly provides executables of some solvers for download at
 
-http://ampl.com/products/solvers/open-source/
+[http://ampl.com/products/solvers/open-source/](http://ampl.com/products/solvers/open-source/)
 
 We are working on some other better ways of getting binaries, such as conda
 packages, and will keep this README updated as things progress. Some other
