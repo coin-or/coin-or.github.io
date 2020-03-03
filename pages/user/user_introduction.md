@@ -37,7 +37,7 @@ Foundation. It consists of the following projects.
  * [OS](https://github.com/coin-or/OS) (Optimization Services)
  * [MibS](https://github.com/coin-or/MibS) (Mixed Integer Bilevel Solver)
  * [DisCO](https://github.com/coin-or/DisCO) (Discrete Conic Optimization )
- * [Application Templates](https://projects.coin-or.org/CoinBazaar/wiki/Projects/ApplicationTemplates) (Examples)
+ * [Application Templates](https://github.com/coin-or-bazaar/ApplicationTemplates) (Examples)
 
 # Downloading and Installing
 
