@@ -107,10 +107,10 @@ how to obtain and use this image, see the project's Github page
 
 Other ways of obtaining COIN-OR include downloading it through a number of
 modeling language front-ends. For example, COIN-OR can be used through
- * [GAMS](http://www.gams.com/help/index.jsp?topic=%2Fgams.doc%2Fsolvers%2Findex.html),
- * [MPL](http://www.maximalsoftware.com/solvers/coin.html), and
  * [AMPL](http://ampl.com/products/solvers/open-source/),
+ * [GAMS](http://www.gams.com/help/index.jsp?topic=%2Fgams.doc%2Fsolvers%2Findex.html),
  * [MATLAB](http://www.i2c2.aut.ac.nz/Wiki/OPTI/index.php/DL/DownloadOPTI)
+ * [MPL](http://www.maximalsoftware.com/solvers/coin.html), and
  * [R](https://www.r-project.org/): Packages available
  [here](http://bioconductor.org/packages/devel/bioc/html/lpsymphony.html) or
  [here](https://cran.r-project.org/web/packages/Rsymphony/index.html) or
