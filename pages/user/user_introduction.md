@@ -105,7 +105,7 @@ how to obtain and use this image, see the project's Github page
 
 ## Other Installation Methods
 
-Other ways of obtaining COIN include downloading it through a number of
+Other ways of obtaining COIN-OR include downloading it through a number of
 modeling language front-ends. For example, COIN-OR can be used through
  * [GAMS](http://www.gams.com/help/index.jsp?topic=%2Fgams.doc%2Fsolvers%2Findex.html),
  * [MPL](http://www.maximalsoftware.com/solvers/coin.html), and
@@ -120,7 +120,7 @@ modeling language front-ends. For example, COIN-OR can be used through
 
 ## Building from Source
 
-Why download and build COIN yourself? There are many options for building COIN
+Why download and build COIN-OR yourself? There are many options for building COIN
 codes and the distributed binaries are built with just one possible set of
 options. We cannot distribute binaries linked to libraries licensed under the
 GPL or non-open source licenses, so you must build yourself if you want GMPL,
@@ -216,7 +216,7 @@ and the libraries in the directory `/path/to/install/dir/lib`.
 
 After installation, you will also need to add `/path/to/install/dir/bin` to your
 `PATH` variable in your `.bashrc` and also add `/path/to/install/dir/lib`
-to your `LD_LIBRARY_PATH` if you want to link to COIN libraries, as follows
+to your `LD_LIBRARY_PATH` if you want to link to COIN-OR libraries, as follows
 
 ```
 export PATH=$PATH:/path/to/install/dir/bin
@@ -593,7 +593,7 @@ and the libraries in the directory `/path/to/install/dir/lib`.
 
 After installation, you will also need to add `/path/to/install/dir/bin` to your
 `PATH` variable in your `.bashrc` and also add `/path/to/install/dir/lib`
-to your `DYLD_LIBRARY_PATH` if you want to link to COIN libraries. You can add
+to your `DYLD_LIBRARY_PATH` if you want to link to COIN-OR libraries. You can add
 the following lines to your `.bashrc`.
 
 ```
@@ -646,7 +646,7 @@ directory, which contains solution files that include dependencies.
 
 ### About version numbers 
 
-COIN numbers versions by a standard semantic versioning scheme: each version
+COIN-OR numbers versions by a standard semantic versioning scheme: each version
 has a *major*, *minor*, and *patch/release* number. All version within a
 *major.minor* series are compatible. All versions within a *major* series are
 backwards compatible. The versions with the `stable/` subdirectory have two
@@ -657,7 +657,7 @@ that series.
 
 ### ThirdParty Projects
 
-There are a number of open-source projects that COIN projects can link to, but
+There are a number of open-source projects that COIN-OR projects can link to, but
 whose source we do not distribute. We provide convenient scripts for
 downloading these projects (shell scripts named `./get.ProjName` and a build
 harness for build them. We also produce libraries and pkg-config files. If you
