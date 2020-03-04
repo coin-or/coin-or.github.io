@@ -731,7 +731,7 @@ Individual project also have their own options.
 The projects in the COIN-OR Optimization Suite use a buildsystem that is
 build on top of the autotools (autoconf, automake, autoheader, etc).
 
-Therefore, in principle, each project can be obtained, build, and installed via
+Therefore, in principle, each project can be obtained, built, and installed via
 ```
    git clone --branch stable/x.y https://github.com/coin-or/ProjName.git
    cd ProjName
