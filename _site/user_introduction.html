@@ -374,37 +374,44 @@ Foundation. It consists of the following projects.</p>
 
 <h2 id="pre-built-binaries">Pre-built Binaries</h2>
 
-<p>Binaries for some projects (and their dependencies) are available for download from
-<a href="https://bintray.com/coin-or/download/">Bintray</a>. AMPL also
-kindly provides executables of some solvers for download at</p>
+<p>Binaries for some projects (and their dependencies) are available for download
+from <a href="https://bintray.com/coin-or/download/">Bintray</a>. AMPL also kindly
+provides executables of some solvers for download at</p>
 
 <p><a href="http://ampl.com/products/solvers/open-source/">http://ampl.com/products/solvers/open-source/</a></p>
 
 <p>We are working on some other better ways of getting binaries, such as conda
-packages, and will keep this README updated as things progress. Some other
-platform-specific ways of obtaining binaries are listed next.</p>
+packages, and will keep this README updated as things progress. For now,
+various conda recipes are vavilable if you search, e.g.,
+<a href="https://anaconda.org/search?q=cbc">here</a>. Some other platform-specific ways
+of obtaining binaries are listed next.</p>
 
 <h2 id="installers-and-packages">Installers and Packages</h2>
 
 <h3 id="windows">Windows</h3>
 
-<p>There is a Windows GUI installer available
+<p>On Windows, there are binaries available for some projects on
+<a href="http://bintray.com/coin-or/download">BinTray</a>. Please let us know if you try
+to use them and they don’t work because of missing dependencies or other
+issues. There is a deprecated Windows GUI installer available
 <a href="http://www.coin-or.org/download/binary/OptimizationSuite">here</a> for
 installing binaries and libraries compatible with Visual Studio (you will need
-to install the free Intel compiler redistributable libraries). The versions
-installed are not currently up-to-date. This may get updated someday, but in
-the meantime, you can get binaries for some projects from
+to install the free Intel compiler redistributable libraries and the Visual
+Studio redistributable libraries. The versions installed are not currently
+up-to-date and this is not currently recommended. This may get updated
+someday, but in the meantime, you can get binaries for some projects from
 <a href="http://bintray.com/coin-or/download">BinTray</a>.</p>
 
 <h3 id="macos">macOS</h3>
 
-<p>Binaries are available from
-<a href="http://bintray.com/coin-or/download">BinTray</a> for most recent version of
-macOS. There are Homebrew recipes for some projects available
-<a href="https://github.com/coin-or-tools/homebrew-coinor">here</a>. Just do</p>
+<p>There are Homebrew recipes for some projects available
+<a href="https://github.com/coin-or-tools/homebrew-coinor">here</a> and this is the recommended way to install projects on OS X. Just do</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap coin-or-tools/coinor
 brew install coin-or-tools/coinor/Xyz
 </code></pre></div></div>
+<p>Binaries are also available from <a href="http://bintray.com/coin-or/download">BinTray</a> for
+most recent version of macOS, but it’s not clear how portable these binaries really
+are and your mileage may vary.</p>
 
 <h3 id="linux">Linux</h3>
 
@@ -422,17 +429,18 @@ the suite.</p>
 brew install coin-or-tools/coin-or/Xyz
 </code></pre></div></div>
 <p>At the moment, the first install is quite cumbersome, as it involves installing many dependencies,
-but this should be reduced or eliminated, sonce we move to bottling most projects.</p>
+but this should be reduced or eliminated, once we move to bottling most projects.</p>
 
 <h2 id="docker-image">Docker Image</h2>
 
-<p>The Docker image available at</p>
+<p>Several Docker images available at</p>
+
+<p><a href="https://hub.docker.com/r/tkralphs">https://hub.docker.com/r/tkralphs</a>.
+In particular, there is an image that contains the entire Optimization Suite here.</p>
 
 <p><a href="https://hub.docker.com/r/tkralphs/coinor-optimization-suite/">https://hub.docker.com/r/tkralphs/coinor-optimization-suite/</a></p>
 
-<p>is another excellent way to use the COIN-OR Optimization Suite. For details on
-how to obtain and use this image, see the project’s Github page
-<a href="https://github.com/tkralphs/optimization-suite-docker">here</a>.</p>
+<p>This is another excellent way to use the COIN-OR Optimization Suite.</p>
 
 <h2 id="other-installation-methods">Other Installation Methods</h2>
 
@@ -575,10 +583,11 @@ with the instructions for <code class="language-plaintext highlighter-rouge">coi
 <h4 id="setting-up-coinbrew">Setting up <code class="language-plaintext highlighter-rouge">coinbrew</code></h4>
 
 <p>The most flexible and powerful way to build on Windows is with the GNU
-autotools and the GCC, MS Visual Studio compilers, or Intel compilers from a <code class="language-plaintext highlighter-rouge">bash</code> command line.
-To obtain the source and build it in this way, you will need to first obtain a
-version of <code class="language-plaintext highlighter-rouge">bash</code>, which is a shell (command-line interpreter) and scripting
-language. To get bash (and the GCC compilers), install one of</p>
+autotools and the GCC, MS Visual Studio compilers, or Intel compilers from a
+<code class="language-plaintext highlighter-rouge">bash</code> command line. To obtain the source and build it in this way, you will
+need to first obtain a version of <code class="language-plaintext highlighter-rouge">bash</code>, which is a shell (command-line
+interpreter) and scripting language. To get bash (and the GCC compilers),
+install one of</p>
 <ul>
   <li><a href="https://msys2.github.io/">Msys2</a></li>
   <li><a href="http://cygwin.org/">CYGWIN</a></li>
@@ -587,20 +596,22 @@ language. To get bash (and the GCC compilers), install one of</p>
 
 <p>Bash and the GCC compilers also come with the <a href="https://www.anaconda.com/distribution/">Anaconda Python
 distribution</a>. Bash itself (but not
-the GCC compilers) come with <a href="https://git-scm.com/download/win">Git for Windows</a>.</p>
+the GCC compilers) come with <a href="https://git-scm.com/download/win">Git for
+Windows</a>.</p>
 
 <p>WSL is a great option if you already know your way around Unix and want a
 similar experience in a Windows environment. WSL gives you access to a full
 Linux environment within Windows (essentially a Linux VM). If you go the route
 of using WSL, then once you install WSL, you can simply open a WSL terminal
-and follow the Linux instructions from there.</p>
+and follow the Linux instructions from there. Note, however, that this
+produces Linux binaries that can only be run from within WSL.</p>
 
-<p>Otherwise, it is recommended to
-use MSys2, which provides a minimal toolset that is easy to install. The
-remaining instructions will be for MSys2. Instructions for CYGWIN will be
-similar, just with different package names and a different package manager.
-Note that building on CYGWIN is not tested regularly and may not work when
-using MS or Intel compilers.</p>
+<p>To get Windows binaries, it is recommended to use MSys2, which provides a
+minimal toolset that is easy to install. The remaining instructions will be
+for MSys2. Instructions for CYGWIN will be similar, just with different
+package names and a different package manager. Note that building on CYGWIN is
+no longer officially supported or tested and anecdotal evidence indicates
+that there may be issues with building recent version of some projects.</p>
 
 <p>To get MSys2, either download the installer or a zip file containing the MSys2
 base from <a href="http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/">here</a>
@@ -626,7 +637,7 @@ build COIN-OR packages, with the following command.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://www.github.com/coin-or/coinbrew
 </code></pre></div></div>
 
-<h4 id="building-with-gcc">Building with GCC</h4>
+<h4 id="building-with-gcc-in-msys2">Building with GCC in MSYs2</h4>
 
 <p>Using the GCC compiler suite is convenient and easy, but will build libraries
 that are incompatible with Visual Studio. If you intend to link your libraries
@@ -701,7 +712,7 @@ with debugging symbols, do</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/path/to/install/dir/bin
 </code></pre></div></div>
 
-<h4 id="building-with-visual-studio">Building with Visual Studio</h4>
+<h4 id="building-with-visual-studio-in-msys2">Building with Visual Studio in MSys2</h4>
 
 <p>It is possible to use almost the exact same commands that were used with GCC
 to build with the Visual Studio compilers. If you want to use the Visual
@@ -1037,12 +1048,25 @@ advantage of learning to build yourself.</p>
  script—they will be passed on to subprojects automatically.</li>
 </ul>
 
+<h3 id="build-environment">Build environment</h3>
+
+<p>The projects in the COIN-OR Optimization Suite use a build system that is
+build on top of the autotools (autoconf, automake, autoheader, etc).
+The <code class="language-plaintext highlighter-rouge">m4</code> functions and other custom build scripts are maintained in the
+<a href="https://github.com/coin-or-tools/BuildTools">BuildTools</a> project and this
+is where you need to go if you want to re-generate any of the auto-generated
+build files, such as the <code class="language-plaintext highlighter-rouge">configure</code> script.</p>
+
+<p>Note that until recently, all COIN-OR projects were using a very old version
+of the autotools. Recent versions of some projects (primarily the master
+versions of projects in the Cbc stack) in the Optimization Suite are now
+upgraded to use the most recent version of the autotools, but the transition
+is not complete yet and there are no releases of any projects using recent
+versions of the autotools.</p>
+
 <h3 id="building-without-coinbrew">Building without coinbrew</h3>
 
-<p>The projects in the COIN-OR Optimization Suite use a buildsystem that is
-build on top of the autotools (autoconf, automake, autoheader, etc).</p>
-
-<p>Therefore, in principle, each project can be obtained, built, and installed via</p>
+<p>In principle, each project can be obtained, built, and installed via</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   git clone --branch stable/x.y https://github.com/coin-or/ProjName.git
    cd ProjName
    ./configure
@@ -1058,6 +1082,32 @@ flags to configure, etc, also apply when not using <code class="language-plainte
 <code class="language-plaintext highlighter-rouge">coinbrew</code> automates fetching, building, and installing these dependencies.
 To see the dependencies of a project, see the file <code class="language-plaintext highlighter-rouge">Dependencies</code> in the
 <code class="language-plaintext highlighter-rouge">.coin-or</code> subdirectory or base directory of a project.</p>
+
+<h3 id="building-static-executables">Building static executables</h3>
+
+<p>For projects using the most recent version of the autotools (so far, this means
+the master version of anything in the Cbc stack, but this will be changing),
+running <code class="language-plaintext highlighter-rouge">configure</code> or <code class="language-plaintext highlighter-rouge">coinbrew</code> with the following additional arguments should
+produce static binaries with <code class="language-plaintext highlighter-rouge">gcc</code>, at least on Linux.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LT_LDFLAGS=-all-static LDFLAGS=-static --disable-shared
+</code></pre></div></div>
+<p>For version of COIN-OR projects using older versions of the autotools, e.g.,
+Cbc 2.10 and its dependencies, it <strong>may</strong> work to additionally disable the linking
+of libraries that not necessarily available statically (otherwise, the compiler
+finds and links to the dynamic libraries anyway anmd this defeats the purpose).
+For example, something like this may work for you, but you may have to tinker
+with it if you get an executable that is not static (usee <code class="language-plaintext highlighter-rouge">ldd</code> to see whether
+succeeded or not).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--enable-static
+--disable-shared
+LT_LDFLAGS=-all-static
+LD_FLAGS=-static
+--disable-readline
+--without-cholmod
+--without-lapack
+--without-amd
+--no-third-party
+</code></pre></div></div>
 
 <h3 id="documentation">Documentation</h3>
 
@@ -1100,7 +1150,7 @@ Doxygen source code documentation for some projects can also be obtained at
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 COIN-OR Foundation. All rights reserved. <br />
- Site last generated: Mar 4, 2020 <br />
+ Site last generated: May 3, 2020 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>
