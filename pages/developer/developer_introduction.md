@@ -402,29 +402,27 @@ added breaks anything.
 
 ### Making a new stable version
 
-Scripts will ultimately be provided for automating the process of making a new
-stable version, but the process in git is similar to that in SVN. A new branch
-is first made from a commit in `master` and the version string in
-`configure.ac` is updated.
-```
-git checkout master
-git checkout -b stable/x.y
-<edit configure.ac>
-run_autotools .
-git add -u
-git commit -m "Creating new stable branch x.y"
-git push -u origin stable/x.y
-```
-In addition, the `Dependencies` probably needs to be updated.
+The
+[prepare-stable](https://github.com/coin-or-tools/BuildTools/blob/master/prepare-stable)
+script is provided to automate the process of making a new stable verion, but
+we describe the process here anyway. The process in git is similar to that in
+SVN. A new branch is first made from a commit in `master` and the version
+string in `configure.ac` is updated. ``` git checkout master git checkout -b
+stable/x.y <edit configure.ac> run_autotools . git add -u git commit -m
+"Creating new stable branch x.y" git push -u origin stable/x.y ``` In
+addition, the `Dependencies` probably needs to be updated.
 
 ### Making a release
 
-The process of making a new release is quite different in git than in SVN. In
+The
+[prepare-release](https://github.com/coin-or-tools/BuildTools/blob/master/prepare-release)
+script is provided to automate the process of making a new release but we
+describe the process here, since it is quite different in git than in SVN. In
 SVN, it was necessary to create a number of "fake" commits that were there
 only for the purposes of temporarily changing version numbers. In git, it is
 possible to make a release without creating any additional commits that appear
 in the history of the stable branch. We simply make a new branch from
-stable/5.6, create a single commit in that new branch, tag that commit, then
+stable/x.y, create a single commit in that new branch, tag that commit, then
 delete the branch. Deleting a branch in git only means the label/pointer is
 deleted, not the commits in the branch. The tag that remains is enough to find
 the commit associated with the release if needed. 
@@ -441,8 +439,9 @@ git push origin releases/x.y.z
 git checkout stable/x.y
 git branch -d release-x.y.z
 ```
-As before, there will be a script available in the BuildTools project that
-automates much of this process. 
+Note that it is possible to push the commit without tagging it at first in
+order to wait for automated testing to be done before finally tagging the
+release. 
 
 ### Developing a feature
 
@@ -460,23 +459,71 @@ git rebase master
 git rebase master
 ```
 Once the feature is ready to be merged into master, it is strongly preferred
-that this be done using a pull request. If you are viewing your feature branch on
-Github, there should be a button there for creating a pull request. 
+that this be done using a pull request. If you are viewing your feature branch
+on Github, there should be a button there for creating a pull request.
+
+## Alternative workflows
+
+We mention here briefly that there are a number of other possible workflows
+that can be used. For simple, slow-moving projects with only one or two
+developers, working in master and tagging releases directly from there without
+having a stable branch may work fine, although much of the infrastructure
+described above and below depends on the existence of stable branches.
+
+Another alternative is to do development in the current stable branch. In this
+case, bug fixes applying to earlier stable version would need to be
+back-ported. Master would then consist of only the latest tagged releases. The
+advantage of this workflow is that when users check out the repository, they
+automatically get the latest release. 
 
 ## The `coinbrew` script
 
 The `coinbrew` script is a universal script for checking our projects with
 their dependencies, building a project and its dependencies, switching
-version, and much much more. The documentation for it is
+versions, and much much more. The documentation for it is
 [here](https://coin-or.github.io/coinbrew). 
 
 ## Working with GitHub
 
 ### Continuous Integeration
 
+Currently, we recommend using Travis (Linux and OS X) and Appveyor (Windows)
+for CI services. To get started, take a look at
+[.travis.yml](https://github.com/coin-or/Cbc/blob/master/.travis.yml) and
+[appveyor.yml](https://github.com/coin-or/Cbc/blob/master/appveyor.yml) in the
+Cbc repository. These can be used as a basic template. Once your repository is
+activated on the services (requests can be sent to github-admin@coin-or.org),
+simply adding the YAML files to the repository will activate automated build
+and test.
+
+### Uploading Binaries
+
+Any binaries/libraries that are built on either Travis or Appveyor can be
+uploaded and automatically distributed from
+[Bintray](https://bintray.com/coin-or/download). Requests for this service can
+be sent to github-admin@coin-or.org.
+
 ### Zenodo and DOIs
+
+We recommend using [Zenodo](https://zenodo.org/) to generate a DOI for each
+released version of your software. This makes it possible for the software to
+be formally and directly cited. Once Zenodo is activated for your project
+(requests can be sent to github-admin@coin-or.org), all that needs to be done
+to generate a DOI is to publish your release. Once a tagged release version is
+pushed, just go to page listing releases and click on the "Draft a New Release
+Button."
 
 ### Project Web sites
 
+To create a project Web site, we recommend using Github Pages, a service
+provided by Github by which your project's site is hosted directly in your
+repository. To get started, follow the instructions
+[here](https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages).
+The instructions are very general and cover a lot of cases, so in case it's
+not clear, in most cases, you will want to create a branch in your repository
+call `gh-pages` and place your Jekyll theme files there. The site will then be
+displayed at the URL https://coin-or.github.io/Xyz.
+
 ## Working with the build system
 
+Coming soon...
