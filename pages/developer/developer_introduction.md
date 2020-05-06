@@ -8,16 +8,16 @@ summary: This guide is for developers of COIN-OR projects, especially those that
 ---
 
 For now, this guide focuses mainly on the migration from SVN to git in order
-to help everyone get on a solid footing with the move to github. It is assumed
-most people are familiar with git, but specific recipes are given for the usual workflows.
-A good crash course in git for those familiar with SVN is
+to help everyone get on a solid footing with the move to GitHub. It is assumed
+most people are familiar with git, but specific recipes are given for the
+usual workflows. A good crash course in git for those familiar with SVN is
 [here](https://git.wiki.kernel.org/index.php/GitSvnCrashCourse).
 
 ## Moving from SVN to git
 
 This section will mainly be of interest to developers on projects have been
 mirrored from SVN and are now moving to being managed entirely under git,
-esepcially those who are not entirely familiar with git. There will ultimately
+especially those who are not entirely familiar with git. There will ultimately
 be many changes going from SVN to git, the biggest are
 
   * We'll be abandoning the use of the _externals_ mechanism that made it
@@ -26,7 +26,7 @@ be many changes going from SVN to git, the biggest are
     employ the same sort of folder-based design for storage.
 
 Although there is now a mechanism in git that functions roughly like the SVN
-externals mechanims (it is called _submodules_), we've long thought of moving
+externals mechanism (it is called _submodules_), we've long thought of moving
 away from using the externals mechanism in order to avoid a number of issues,
 such as the difficult of having multiple packages checked out simultaneously
 with common dependencies. The [coinbrew](#coinbrew) script now acts as a sort
@@ -70,7 +70,7 @@ folder structure translates into the structure of a git repository.
 
 ### Repository organization
 
-If you had the recommeded repository structure in your SVN repository, then
+If you had the recommended repository structure in your SVN repository, then
 the root of your repository looked something like this.
 ```
 html/
@@ -156,7 +156,7 @@ You are in 'detached HEAD' state. You can look around, make experimental changes
 ```
 This is because tags are just pointers to specific SHAs and don't have parents
 or children. They exists in a fixed state detached from the rest of the
-respository, although the SHA may itself also be a commit in a branch as well.
+repository, although the SHA may itself also be a commit in a branch as well.
 In general, it is better as a developer not to check out releases directly. 
 
 ### Mapping of SVN revisions to git hashes
@@ -194,8 +194,8 @@ Cbc         https://projects.coin-or.org/svn/Cbc/stable/2.10/Cbc
 Alps        https://github.com/coin-or/CHiPPS-ALPS stable/1.5
 SYMPHONY    https://projects.coin-or.org/svn/SYMPHONY/stable/5.6/SYMPHONY
 ```
-For now, there may be a mix of URLs for Github and SVN, but this will eventually be
-only Github URLs.
+For now, there may be a mix of URLs for GitHub and SVN, but this will eventually be
+only GitHub URLs.
 
 ### Root directories
 
@@ -203,7 +203,7 @@ Another change being made as we move from SVN to git is to remove what used to
 be the root directory of each repository. The repository for project Xyz used
 to contain a subdirectory within it called Xyz. This was so that when the
 project was checked out with its SVN externals (dependencies), the result
-would that each project (including the main project would edn up in its own
+would that each project (including the main project would end up in its own
 subdirectory. At the root level, there was also a main `configure` script,
 `Makefile.am`, `Makefile.in` and a number of other autotools-related scripts.
 The resulting structure when project Xyz was checked out was
@@ -248,13 +248,13 @@ to the stable branches, as explained in the next section.
 
 By default, whatever branch you check out will be set up to "track the
 remote," meaning that you can sync changes from the same branch in the remote
-repository (on COIN-OR's Git hub repo) and publish your changes to that
+repository (on COIN-OR's GitHub repo) and publish your changes to that
 branch. The normal flow of development would thus be to first checkout the
 `master` branch (if not already done).
 ```
 git checkout master
 ```
-After checking out `master`, make some changes, then commit them. Comitting in
+After checking out `master`, make some changes, then commit them. Committing in
 git is different than in SVN in that SVN commits all changes by default,
 whereas git only commits what you tell it to. The first step is then to `add`
 the files whose changes should be committed. Following this, you then `commit`
@@ -301,7 +301,7 @@ looking for conflict markers. After resolving the conflict, the files may need
 to added again with a `git add` to indicate the conflict has been resolved
 (this may happen automatically whenever the file doesn't contain any conflict
 markers). Merging creates a "merge commit" whose purpose is to record the two
-parent commits (the repsective tips of the two paths in the graph that are
+parent commits (the respective tips of the two paths in the graph that are
 being brought back together.
 
 #### Rebase (Preferred)
@@ -321,7 +321,7 @@ history. Two possible disadvantages of `rebase` are
   * A rebase can make it more difficult to resolve conflicts, since it applies
     each of your local commits, one by one. Each of these commits could
     potentially cause a conflict, which needs to be resolved, one by one. If
-    this process is too arduous it is easy to abort and do a merge instaead.
+    this process is too arduous it is easy to abort and do a merge instead.
 
 To do a pull with rebase, one can execute the command
 ```
@@ -354,11 +354,11 @@ git checkout stable/x.y
 git cherry-pick -x -e -s 1b89e6cc58
 ```
 A big difference between `svn` and `git` is that `svn` is "patch-based"
-meaning that the repository is a collection of patches, and `svn` explicitrly
+meaning that the repository is a collection of patches, and `svn` explicitly
 tracks when a patch is moved from one branch (folder) to another. In `git`,
 there is no explicit tracking. By adding `-sex` above, however, we do get some
 additional information, which makes it easier to keep track. The `-s`
-explicitly records who performaed the cherry-pick. The `-x` records the SHA of
+explicitly records who performed the cherry-pick. The `-x` records the SHA of
 the original commit that was cherry-picked.  Finally, the `-e` allows editing
 of the commit message for any additional information that should be recorded.
 
@@ -375,7 +375,7 @@ that have not yet been cherry-picked. Note, however, that it determines
 whether a commit has already been applied by comparing the id's (hashes) of
 the patches associated with each commit. If the patch applied when cherry
 picking the commit the first time was not exactly the same as the patch in the
-original branch (e.g., there was a conflct), then this will not be detected.
+original branch (e.g., there was a conflict), then this will not be detected.
 See discussion [here](https://stackoverflow.com/a/18746296/3054922). 
 
 #### Rebasing
@@ -388,15 +388,15 @@ git rebase -i --signoff --onto stable/2.10 `git merge-base master stable/2.10` m
 ```
 This command replays each commit in master on top of stable/2.10, starting at
 last common ancestor (which is given by `git merge-base master stable/2.10`).
-The `-i` argument maskes the rebase interactive, which means that the person
+The `-i` argument makes the rebase interactive, which means that the person
 doing the rebase will be presented with a file to edits containing all
 available commits and will be able to choose any that are relevant, deleting
 the others. Only the chosen commits will be moved. Thus, the result is similar
 to cherry-pick, but it may be easier to pick the exact set of commits to be
 moved. Note that the commit message for the re-based commits will not include
 the original SHA in this case. It should be possible, though using the `-x`
-argument, which runs a command after each commit, to amend the commmit
-message with the SHA of the original commit. The `-x` argument cxould also be
+argument, which runs a command after each commit, to amend the commit
+message with the SHA of the original commit. The `-x` argument could also be
 used to run a unit test after each commit is added to ensure that no commit
 added breaks anything. 
 
@@ -404,7 +404,7 @@ added breaks anything.
 
 The
 [prepare-stable](https://github.com/coin-or-tools/BuildTools/blob/master/prepare-stable)
-script is provided to automate the process of making a new stable verion, but
+script is provided to automate the process of making a new stable version, but
 we describe the process here anyway. The process in git is similar to that in
 SVN. A new branch is first made from a commit in `master` and the version
 string in `configure.ac` is updated. ``` git checkout master git checkout -b
@@ -446,8 +446,8 @@ release.
 ### Developing a feature
 
 Development of new features should be done, if at all possible in a "feature
-branch." THis can be done in one of two ways. Either fork the remote
-repository on Github into your own personal Github account and develop the
+branch." This can be done in one of two ways. Either fork the remote
+repository on GitHub into your own personal GitHub account and develop the
 feature there (this is somewhat preferred) or, if you are main developer,
 develop it in a separate branch in the main repo.
 ```
@@ -460,7 +460,7 @@ git rebase master
 ```
 Once the feature is ready to be merged into master, it is strongly preferred
 that this be done using a pull request. If you are viewing your feature branch
-on Github, there should be a button there for creating a pull request.
+on GitHub, there should be a button there for creating a pull request.
 
 ## Alternative workflows
 
@@ -485,7 +485,7 @@ versions, and much much more. The documentation for it is
 
 ## Working with GitHub
 
-### Continuous Integeration
+### Continuous Integration
 
 Currently, we recommend using Travis (Linux and OS X) and Appveyor (Windows)
 for CI services. To get started, take a look at
@@ -515,8 +515,8 @@ Button."
 
 ### Project Web sites
 
-To create a project Web site, we recommend using Github Pages, a service
-provided by Github by which your project's site is hosted directly in your
+To create a project Web site, we recommend using GitHub Pages, a service
+provided by GitHub by which your project's site is hosted directly in your
 repository. To get started, follow the instructions
 [here](https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages).
 The instructions are very general and cover a lot of cases, so in case it's

@@ -51,7 +51,7 @@ provides executables of some solvers for download at
 
 We are working on some other better ways of getting binaries, such as conda
 packages, and will keep this README updated as things progress. For now,
-various conda recipes are vavilable if you search, e.g.,
+various conda recipes are available if you search, e.g.,
 [here](https://anaconda.org/search?q=cbc). Some other platform-specific ways
 of obtaining binaries are listed next.
 
