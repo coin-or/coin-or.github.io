@@ -26,40 +26,46 @@ entries:
     - title: Downloading and Installing
       output: web, pdf
       url: /user_introduction.html#downloading-and-installing
-      folderitems:
-      - title: Pre-built binaries 
-        url: /user_introduction.html#pre-built-binaries
-        output: web, pdf
-        type: homepage
-      - title: Installers and Packages
-        url: /user_introduction.html#installers-and-packages
-        output: web, pdf
-        type: homepage
-      - title: Docker Image
-        url: /user_introduction.html#docker-image
-        output: web, pdf
-        type: homepage
-      - title: Other Installation Methods
-        url: /user_introduction.html#other-installation-methods
-        output: web, pdf
-        type: homepage
+      subfolders:
+      - title: Subsections
+        output: web
+        subfolderitems:
+        - title: Pre-built binaries 
+          url: /user_introduction.html#pre-built-binaries
+          output: web, pdf
+          type: homepage
+        - title: Installers and Packages
+          url: /user_introduction.html#installers-and-packages
+          output: web, pdf
+          type: homepage
+        - title: Docker Image
+          url: /user_introduction.html#docker-image
+          output: web, pdf
+          type: homepage
+        - title: Other Installation Methods
+          url: /user_introduction.html#other-installation-methods
+          output: web, pdf
+          type: homepage
 
     - title: Building from Source
       output: web, pdf
       url: /user_introduction.html#building-from-source
-      folderitems:
-      - title: Windows
-        url: /user_introduction.html#windows-1
-        output: web, pdf
-        type: homepage
-      - title: Linux
-        url: /user_introduction.html#linux-1
-        output: web, pdf
-        type: homepage
-      - title: OSX
-        url: /user_introduction.html#os-x-1
-        output: web, pdf
-        type: homepage
+      subfolders:
+      - title: Subsections
+        output: web
+        subfolderitems:
+        - title: Windows
+          url: /user_introduction.html#windows-1
+          output: web, pdf
+          type: homepage
+        - title: Linux
+          url: /user_introduction.html#linux-1
+          output: web, pdf
+          type: homepage
+        - title: OSX
+          url: /user_introduction.html#os-x-1
+          output: web, pdf
+          type: homepage
 
     - title: Additional Useful Information
       output: web, pdf
