@@ -57,6 +57,3 @@ entries:
       output: web, pdf
       type: homepage
 
-  - title: Additional Useful Information
-    output: web, pdf
-    url: /user_introduction.html#additional-useful-information
