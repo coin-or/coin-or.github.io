@@ -19,28 +19,33 @@ entries:
       output: pdf
       type: frontmatter
 
-  # - title: Moving to git
-  #   output: web, pdf
-  #   url: /developer_introduction.html#moving-from-svn-to-git
 
-  # - title: Standard Workflows
-  #   output: web, pdf
-  #   url: /developer_introduction.html#standard-development-workflows
+  - title: Contents
+    output: web, pdf
+    type: frontmatter
+    folderitems:
+    - title: Moving to git
+      output: web, pdf
+      url: /developer_introduction.html#moving-from-svn-to-git
 
-  # - title: Alternative Workflows
-  #   output: web, pdf
-  #   url: /developer_introduction.html#alternative-workflows
+    - title: Standard Workflows
+      output: web, pdf
+      url: /developer_introduction.html#standard-development-workflows
 
-  # - title: The coinbrew Script
-  #   output: web, pdf
-  #   url: /developer_introduction.html#the-coinbrew-script
+    - title: Alternative Workflows
+      output: web, pdf
+      url: /developer_introduction.html#alternative-workflows
 
-  # - title: Working with Github
-  #   output: web, pdf
-  #   url: /developer_introduction.html#working-with-github
+    - title: The coinbrew Script
+      output: web, pdf
+      url: /developer_introduction.html#the-coinbrew-script
 
-  # - title: The Build System
-  #   output: web, pdf
-  #   url: /developer_introduction.html#working-with-the-build-system
+    - title: Working with Github
+      output: web, pdf
+      url: /developer_introduction.html#working-with-github
+
+    - title: The Build System
+      output: web, pdf
+      url: /developer_introduction.html#working-with-the-build-system
 
 
