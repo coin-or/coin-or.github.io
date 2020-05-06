@@ -5,64 +5,19 @@
         <description>A site for general COIN-OR documentation.</description>
         <link>/</link>
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 05 May 2020 23:13:30 -0400</pubDate>
-        <lastBuildDate>Tue, 05 May 2020 23:13:30 -0400</lastBuildDate>
+        <pubDate>Tue, 05 May 2020 23:29:45 -0400</pubDate>
+        <lastBuildDate>Tue, 05 May 2020 23:29:45 -0400</lastBuildDate>
         <generator>Jekyll v3.8.5</generator>
         
         <item>
-            <title>Sample post</title>
-            <description>&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
-
-&lt;h2 id=&quot;heading&quot;&gt;Heading&lt;/h2&gt;
-
-&lt;p&gt;but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
+            <title>Welcome to the new COIN-OR Documentation site</title>
+            <description>&lt;p&gt;Welcome to the new COIN-OR documentation site! We are just getting started, so
+hopefully, this site will grow more in the future. Keep checking back!&lt;/p&gt;
 
 </description>
-            <pubDate>Fri, 26 Feb 2016 00:00:00 -0500</pubDate>
-            <link>/samplepost.html</link>
-            <guid isPermaLink="true">/samplepost.html</guid>
-            
-            <category>news</category>
-            
-            <category>getting_started</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Welcome to Jekyll!</title>
-            <description>&lt;p&gt;Theme updates:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Permalinks&lt;/li&gt;
-  &lt;li&gt;Kramdown&lt;/li&gt;
-  &lt;li&gt;URL specified in config file&lt;/li&gt;
-  &lt;li&gt;removed PDF output&lt;/li&gt;
-  &lt;li&gt;removed some of the alternative layouts&lt;/li&gt;
-  &lt;li&gt;added blog feature&lt;/li&gt;
-  &lt;li&gt;sidebars configurable per page&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-            <pubDate>Wed, 24 Feb 2016 00:00:00 -0500</pubDate>
-            <link>/myupdate.html</link>
-            <guid isPermaLink="true">/myupdate.html</guid>
-            
-            <category>news</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Test post from last year</title>
-            <description>&lt;p&gt;This is just a test post from the previous year.&lt;/p&gt;
-
-</description>
-            <pubDate>Sun, 12 Apr 2015 00:00:00 -0400</pubDate>
-            <link>/test-post-from-last-year.html</link>
-            <guid isPermaLink="true">/test-post-from-last-year.html</guid>
+            <pubDate>Tue, 05 May 2020 00:00:00 -0400</pubDate>
+            <link>/welcome-to-coin-or-documentation.html</link>
+            <guid isPermaLink="true">/welcome-to-coin-or-documentation.html</guid>
             
             <category>news</category>
             
