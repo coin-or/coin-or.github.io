@@ -318,7 +318,10 @@ A good crash course in git for those familiar with SVN is
 
 <h2 id="moving-from-svn-to-git">Moving from SVN to git</h2>
 
-<p>There will ultimately be many changes going from SVN to git, the biggest are</p>
+<p>This section will mainly be of interest to developers on projects have been
+mirrored from SVN and are now moving to being managed entirely under git,
+esepcially those who are not entirely familiar with git. There will ultimately
+be many changes going from SVN to git, the biggest are</p>
 
 <ul>
   <li>We’ll be abandoning the use of the <em>externals</em> mechanism that made it
@@ -376,17 +379,17 @@ the root of your repository looked something like this.</p>
 conf/
 branches/
 trunk/
-stable/
-releases/
+stable/x.y
+releases/x.y.z
 </code></pre></div></div>
-<p>In git, the top-level folders in SVN map either to git “branches” or “tags”.
-Both branches and tage are nothing more in git than aliases for particular
-commits (identified by their SHA or hash). The difference between a branch and
-a tag is only that a branch is dynamic and always points to the “tip” of a
-given series of commits, whereas a “tag” is a fixed pointer that never
-changes.</p>
+<p>Git is not folder based, so the folders in SVN have to be mapped either to a
+git “branch” or to a git “tag”. Both branches and tags are nothing more in git
+than aliases for particular commits (identified by their SHA or hash). The
+difference between a branch and a tag is only that a branch is dynamic and
+always points to the “tip” of a given series of commits, whereas a “tag” is a
+fixed pointer that never changes.</p>
 
-<p>The recommended structure (which is imposed for the repositories that were
+<p>The recommended structure in git (which is imposed for the repositories that were
 mirrored from SVN to git) is as follows.</p>
 <ul>
   <li>The stable versions in SVN that used to live in a folder <code class="language-plaintext highlighter-rouge">stable/x.y</code> are
@@ -412,9 +415,10 @@ If you now do</li>
 above), you would do</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout stable/2.10
 </code></pre></div></div>
-<p>You can see what branches are available with the <code class="language-plaintext highlighter-rouge">git branch</code> command, but git
-only shows you branches that you have worked with locally by default. If you
-do <code class="language-plaintext highlighter-rouge">git branch -a</code>, you will also see remote branches. For Cbc, we have</p>
+<p>You can see what branches are available with the <code class="language-plaintext highlighter-rouge">git branch</code> command, but by
+default, git only shows you branches that you have already checked out
+locally. If you do <code class="language-plaintext highlighter-rouge">git branch -a</code>, you will also see remote branches. For
+Cbc, we have</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Projects/Cbc&gt; git branch -a
   master
 * stable/2.10
@@ -493,14 +497,14 @@ only Github URLs.</p>
 <h3 id="root-directories">Root directories</h3>
 
 <p>Another change being made as we move from SVN to git is to remove what used to
-be the root directory of each repository. The repository for project Xxx used
-to contain a subdirectory within it called Xxx. This was so that when the
+be the root directory of each repository. The repository for project Xyz used
+to contain a subdirectory within it called Xyz. This was so that when the
 project was checked out with its SVN externals (dependencies), the result
 would that each project (including the main project would edn up in its own
 subdirectory. At the root level, there was also a main <code class="language-plaintext highlighter-rouge">configure</code> script,
-<code class="language-plaintext highlighter-rouge">Makefile.am</code>, Makefile.in` and a number of other autotools-related scripts.
-The resulting structure when project Xxx was checked out was</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Xxx/
+<code class="language-plaintext highlighter-rouge">Makefile.am</code>, <code class="language-plaintext highlighter-rouge">Makefile.in</code> and a number of other autotools-related scripts.
+The resulting structure when project Xyz was checked out was</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Xyz/
 Yyy/
 Zzz/
 configure
@@ -510,19 +514,33 @@ Makefile.in
 </code></pre></div></div>
 <p>The new structure will (eventually) be that the root directory will be
 removed. When checked out with <code class="language-plaintext highlighter-rouge">coinbrew</code>, the same overall structure (each
-project in its own subdirectory will be maintainedm, but the root directory
+project in its own subdirectory) will be maintained, but the root directory
 won’t be part of any repository and the main <code class="language-plaintext highlighter-rouge">configure</code> script is essentially
 replaced by <code class="language-plaintext highlighter-rouge">coinbrew</code> (see section below describing coinbrew).</p>
 
-<h2 id="development-workflows">Development workflows</h2>
+<h2 id="standard-development-workflows">Standard development workflows</h2>
 
-<p>For the foreseeable future, workflows under git will be similar to those under
-SVN. Development will take place in the <code class="language-plaintext highlighter-rouge">master</code> branch (or in feature
-branches, as described below). Long-running branches will be maintained for
-each stable version, but it is typically not expected that commits will be
-made directly to these branches. Instead, as was also the case with SVN,
-commits made to master will be moved to the stable branches, as explained in
-the next section.</p>
+<p>This section describes standard workflows that are closely aligned with the
+workflows used in many projects in the past under SVN. Project managers are
+free to use any of the alternative workflows described briefly in the next
+section, as well as any other workflow of their choice. To take advantage of
+the <code class="language-plaintext highlighter-rouge">coinbrew</code> build script, as well as other shared services related to
+continuous integration, testing, and binary distribution, all that is required
+is that</p>
+
+<ul>
+  <li>the repository be organized as described above, using the recommended
+naming conventions for branches and tags,</li>
+  <li>that it use the scheme described above for dependencies,</li>
+  <li>and (for now), that it use an autotools-based build system.</li>
+</ul>
+
+<p>In the standard workflow described here, development takes place in the
+<code class="language-plaintext highlighter-rouge">master</code> branch (or in feature branches, as described below). Long-running
+branches will be maintained for each stable version (as with SVN), but it is
+typically not expected that commits will be made directly to these branches.
+Instead, as was also the case with SVN, commits made to master will be moved
+to the stable branches, as explained in the next section.</p>
 
 <h3 id="publishing-changes">Publishing changes</h3>
 
@@ -538,7 +556,7 @@ git is different than in SVN in that SVN commits all changes by default,
 whereas git only commits what you tell it to. The first step is then to <code class="language-plaintext highlighter-rouge">add</code>
 the files whose changes should be committed. Following this, you then <code class="language-plaintext highlighter-rouge">commit</code>
 the changes. The <code class="language-plaintext highlighter-rouge">commit</code> command only records the changes in your local copy
-of the repository. To publish them requires a <code class="language-plaintext highlighter-rouge">push</code> command, as follows. ```</p>
+of the repository. To publish them requires a <code class="language-plaintext highlighter-rouge">push</code> command, as follows.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add fileToAdd.cpp
 git commit -m "This is the commit message describing the commit"
 git push
@@ -563,8 +581,8 @@ to publish (<code class="language-plaintext highlighter-rouge">push</code>) your
 This means invoking the command</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
 </code></pre></div></div>
-<p>In git, there are <em>two ways</em>
-to sync change and it is very important to understand the difference.</p>
+<p>In git, there are <em>two ways</em> to sync change and it is very important to
+understand the difference.</p>
 
 <h4 id="merge">Merge</h4>
 
@@ -625,18 +643,18 @@ want to to abort the process and start over, just do `git rebase –abort.</p>
 cherry-pick</code>. If you want to move a single commit from <code class="language-plaintext highlighter-rouge">master</code> to
 <code class="language-plaintext highlighter-rouge">stable/x.y</code>, the recommended incantation is</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout stable/x.y
-git cherry-pick -sex 1b89e6cc58
+git cherry-pick -x -e -s 1b89e6cc58
 </code></pre></div></div>
 <p>A big difference between <code class="language-plaintext highlighter-rouge">svn</code> and <code class="language-plaintext highlighter-rouge">git</code> is that <code class="language-plaintext highlighter-rouge">svn</code> is “patch-based”
 meaning that the repository is a collection of patches, and <code class="language-plaintext highlighter-rouge">svn</code> explicitrly
 tracks when a patch is moved from one branch (folder) to another. In <code class="language-plaintext highlighter-rouge">git</code>,
 there is no explicit tracking. By adding <code class="language-plaintext highlighter-rouge">-sex</code> above, however, we do get some
 additional information, which makes it easier to keep track. The <code class="language-plaintext highlighter-rouge">-s</code>
-explicitly records who performaed the cherry pick. the <code class="language-plaintext highlighter-rouge">-x</code> records the SHA of
-the original commit that was cherry picked.  Finally, the <code class="language-plaintext highlighter-rouge">-e</code> allows editing
+explicitly records who performaed the cherry-pick. The <code class="language-plaintext highlighter-rouge">-x</code> records the SHA of
+the original commit that was cherry-picked.  Finally, the <code class="language-plaintext highlighter-rouge">-e</code> allows editing
 of the commit message for any additional information that should be recorded.</p>
 
-<p>It is also possible to cherry pick a series of commits, just as with <code class="language-plaintext highlighter-rouge">svn
+<p>It is also possible to cherry-pick a series of commits, just as with <code class="language-plaintext highlighter-rouge">svn
 merge</code>.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git cherry-pick -sex 1b89e6cc58..c0079e0da58
 </code></pre></div></div>
@@ -705,11 +723,14 @@ git checkout -b release-x.y.z
 run_autotools .
 git add -u
 git commit -m "Creating new release x.y.z"
+&lt;wait for automated testing to complete successfully&gt;
 git tag -a releases/x.y.z -m "Creating release x.y.z"
 git push origin releases/x.y.z
 git checkout stable/x.y
 git branch -d release-x.y.z
 </code></pre></div></div>
+<p>As before, there will be a script available in the BuildTools project that
+automates much of this process.</p>
 
 <h3 id="developing-a-feature">Developing a feature</h3>
 
@@ -769,7 +790,7 @@ version, and much much more. The documentation for it is
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 COIN-OR Foundation. All rights reserved. <br />
- Site last generated: May 3, 2020 <br />
+ Site last generated: May 5, 2020 <br />
 <p><img src="images/COIN-OR_150.png" width="50" height="50" alt="COIN-OR logo"/></p>
                 </div>
             </div>

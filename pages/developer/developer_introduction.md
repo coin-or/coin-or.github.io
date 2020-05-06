@@ -15,7 +15,10 @@ A good crash course in git for those familiar with SVN is
 
 ## Moving from SVN to git
 
-There will ultimately be many changes going from SVN to git, the biggest are
+This section will mainly be of interest to developers on projects have been
+mirrored from SVN and are now moving to being managed entirely under git,
+esepcially those who are not entirely familiar with git. There will ultimately
+be many changes going from SVN to git, the biggest are
 
   * We'll be abandoning the use of the _externals_ mechanism that made it
     possible to easily pull in all dependencies in SVN.
@@ -74,17 +77,17 @@ html/
 conf/
 branches/
 trunk/
-stable/
-releases/
+stable/x.y
+releases/x.y.z
 ```
-In git, the top-level folders in SVN map either to git "branches" or "tags".
-Both branches and tage are nothing more in git than aliases for particular
-commits (identified by their SHA or hash). The difference between a branch and
-a tag is only that a branch is dynamic and always points to the "tip" of a
-given series of commits, whereas a "tag" is a fixed pointer that never
-changes.
+Git is not folder based, so the folders in SVN have to be mapped either to a
+git "branch" or to a git "tag". Both branches and tags are nothing more in git
+than aliases for particular commits (identified by their SHA or hash). The
+difference between a branch and a tag is only that a branch is dynamic and
+always points to the "tip" of a given series of commits, whereas a "tag" is a
+fixed pointer that never changes.
 
-The recommended structure (which is imposed for the repositories that were
+The recommended structure in git (which is imposed for the repositories that were
 mirrored from SVN to git) is as follows.
   * The stable versions in SVN that used to live in a folder `stable/x.y` are
     now in a git branch called `stable/x.y`. In git, this branch label is just
@@ -110,9 +113,10 @@ above), you would do
 ```
 git checkout stable/2.10
 ```
-You can see what branches are available with the `git branch` command, but git
-only shows you branches that you have worked with locally by default. If you
-do `git branch -a`, you will also see remote branches. For Cbc, we have
+You can see what branches are available with the `git branch` command, but by
+default, git only shows you branches that you have already checked out
+locally. If you do `git branch -a`, you will also see remote branches. For
+Cbc, we have
 ```
 ~/Projects/Cbc> git branch -a
   master
@@ -196,15 +200,15 @@ only Github URLs.
 ### Root directories
 
 Another change being made as we move from SVN to git is to remove what used to
-be the root directory of each repository. The repository for project Xxx used
-to contain a subdirectory within it called Xxx. This was so that when the
+be the root directory of each repository. The repository for project Xyz used
+to contain a subdirectory within it called Xyz. This was so that when the
 project was checked out with its SVN externals (dependencies), the result
 would that each project (including the main project would edn up in its own
 subdirectory. At the root level, there was also a main `configure` script,
-`Makefile.am`, Makefile.in` and a number of other autotools-related scripts.
-The resulting structure when project Xxx was checked out was
+`Makefile.am`, `Makefile.in` and a number of other autotools-related scripts.
+The resulting structure when project Xyz was checked out was
 ```
-Xxx/
+Xyz/
 Yyy/
 Zzz/
 configure
@@ -214,19 +218,31 @@ Makefile.in
 ```
 The new structure will (eventually) be that the root directory will be
 removed. When checked out with `coinbrew`, the same overall structure (each
-project in its own subdirectory will be maintainedm, but the root directory
+project in its own subdirectory) will be maintained, but the root directory
 won't be part of any repository and the main `configure` script is essentially
 replaced by `coinbrew` (see section below describing coinbrew).
 
-## Development workflows
+## Standard development workflows
 
-For the foreseeable future, workflows under git will be similar to those under
-SVN. Development will take place in the `master` branch (or in feature
-branches, as described below). Long-running branches will be maintained for
-each stable version, but it is typically not expected that commits will be
-made directly to these branches. Instead, as was also the case with SVN,
-commits made to master will be moved to the stable branches, as explained in
-the next section.
+This section describes standard workflows that are closely aligned with the
+workflows used in many projects in the past under SVN. Project managers are
+free to use any of the alternative workflows described briefly in the next
+section, as well as any other workflow of their choice. To take advantage of
+the `coinbrew` build script, as well as other shared services related to
+continuous integration, testing, and binary distribution, all that is required
+is that
+
+  * the repository be organized as described above, using the recommended
+naming conventions for branches and tags,
+  * that it use the scheme described above for dependencies,
+  * and (for now), that it use an autotools-based build system. 
+
+In the standard workflow described here, development takes place in the
+`master` branch (or in feature branches, as described below). Long-running
+branches will be maintained for each stable version (as with SVN), but it is
+typically not expected that commits will be made directly to these branches.
+Instead, as was also the case with SVN, commits made to master will be moved
+to the stable branches, as explained in the next section.
 
 ### Publishing changes 
 
@@ -243,7 +259,7 @@ git is different than in SVN in that SVN commits all changes by default,
 whereas git only commits what you tell it to. The first step is then to `add`
 the files whose changes should be committed. Following this, you then `commit`
 the changes. The `commit` command only records the changes in your local copy
-of the repository. To publish them requires a `push` command, as follows. ```
+of the repository. To publish them requires a `push` command, as follows.
 ```
 git add fileToAdd.cpp
 git commit -m "This is the commit message describing the commit"
@@ -272,8 +288,8 @@ This means invoking the command
 ```
 git pull
 ```
-In git, there are *two ways*
-to sync change and it is very important to understand the difference.
+In git, there are *two ways* to sync change and it is very important to
+understand the difference. 
 
 #### Merge
 
@@ -335,18 +351,18 @@ cherry-pick`. If you want to move a single commit from `master` to
 `stable/x.y`, the recommended incantation is
 ```
 git checkout stable/x.y
-git cherry-pick -sex 1b89e6cc58
+git cherry-pick -x -e -s 1b89e6cc58
 ```
 A big difference between `svn` and `git` is that `svn` is "patch-based"
 meaning that the repository is a collection of patches, and `svn` explicitrly
 tracks when a patch is moved from one branch (folder) to another. In `git`,
 there is no explicit tracking. By adding `-sex` above, however, we do get some
 additional information, which makes it easier to keep track. The `-s`
-explicitly records who performaed the cherry pick. the `-x` records the SHA of
-the original commit that was cherry picked.  Finally, the `-e` allows editing
+explicitly records who performaed the cherry-pick. The `-x` records the SHA of
+the original commit that was cherry-picked.  Finally, the `-e` allows editing
 of the commit message for any additional information that should be recorded.
 
-It is also possible to cherry pick a series of commits, just as with `svn
+It is also possible to cherry-pick a series of commits, just as with `svn
 merge`. 
 ```
 git cherry-pick -sex 1b89e6cc58..c0079e0da58
@@ -419,11 +435,14 @@ git checkout -b release-x.y.z
 run_autotools .
 git add -u
 git commit -m "Creating new release x.y.z"
+<wait for automated testing to complete successfully>
 git tag -a releases/x.y.z -m "Creating release x.y.z"
 git push origin releases/x.y.z
 git checkout stable/x.y
 git branch -d release-x.y.z
 ```
+As before, there will be a script available in the BuildTools project that
+automates much of this process. 
 
 ### Developing a feature
 
