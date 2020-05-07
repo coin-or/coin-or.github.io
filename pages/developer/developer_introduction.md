@@ -351,12 +351,12 @@ cherry-pick`. If you want to move a single commit from `master` to
 `stable/x.y`, the recommended incantation is
 ```
 git checkout stable/x.y
-git cherry-pick -x -e -s 1b89e6cc58
+git cherry-pick -xes 1b89e6cc58
 ```
 A big difference between `svn` and `git` is that `svn` is "patch-based"
 meaning that the repository is a collection of patches, and `svn` explicitly
 tracks when a patch is moved from one branch (folder) to another. In `git`,
-there is no explicit tracking. By adding `-sex` above, however, we do get some
+there is no explicit tracking. By adding `-xes` above, however, we do get some
 additional information, which makes it easier to keep track. The `-s`
 explicitly records who performed the cherry-pick. The `-x` records the SHA of
 the original commit that was cherry-picked.  Finally, the `-e` allows editing
@@ -381,24 +381,27 @@ See discussion [here](https://stackoverflow.com/a/18746296/3054922).
 #### Rebasing
 
 Depending on what you want to do precisely, there are many alternatives to
-`cherry-pick`. one that is not well-tested, but seems to be useful is to
+`cherry-pick`. One that is not well-tested, but seems to be useful is to
 interactively rebase master onto stable/2.10. 
 ```
-git rebase -i --signoff --onto stable/2.10 `git merge-base master stable/2.10` master
+git rebase -i --signoff --onto stable/2.10 <starting-sha> master
 ```
 This command replays each commit in master on top of stable/2.10, starting at
-last common ancestor (which is given by `git merge-base master stable/2.10`).
-The `-i` argument makes the rebase interactive, which means that the person
-doing the rebase will be presented with a file to edits containing all
-available commits and will be able to choose any that are relevant, deleting
-the others. Only the chosen commits will be moved. Thus, the result is similar
-to cherry-pick, but it may be easier to pick the exact set of commits to be
-moved. Note that the commit message for the re-based commits will not include
-the original SHA in this case. It should be possible, though using the `-x`
-argument, which runs a command after each commit, to amend the commit
-message with the SHA of the original commit. The `-x` argument could also be
-used to run a unit test after each commit is added to ensure that no commit
-added breaks anything. 
+the SHA <starting-sha>, which would usually be the SHA after the one that was
+the tip of master last time the two branches were synced. It could also be the
+least common ancestor (which is the SHA at which the stable branch
+oreeiginally split from the master branch, given by `git merge-base master
+stable/2.10`). The `-i` argument makes the rebase interactive, which means
+that the person doing the rebase will be presented with a file to edits
+containing all available commits and will be able to choose any that are
+relevant, deleting the others. Only the chosen commits will be moved. Thus,
+the result is similar to cherry-pick, but it may be easier to pick the exact
+set of commits to be moved. Note that the commit message for the re-based
+commits will not include the original SHA in this case. It should be possible,
+though using the `-x` argument, which runs a command after each commit, to
+amend the commit message with the SHA of the original commit. The `-x`
+argument could also be used to run a unit test after each commit is added to
+ensure that no commit added breaks anything.
 
 ### Making a new stable version
 
