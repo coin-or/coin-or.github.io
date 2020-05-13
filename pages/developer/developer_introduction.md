@@ -470,7 +470,16 @@ git rebase master
 ```
 Once the feature is ready to be merged into master, it is strongly preferred
 that this be done using a pull request. If you are viewing your feature branch
-on GitHub, there should be a button there for creating a pull request.
+on GitHub, there should be a button there for creating a pull request. If you 
+don't want to create a pull request, you can follow up the above series of
+commits with
+```
+git checkout master
+git merge feature_branch
+```
+and this will perform a co-called "fast-forward" merge, which means that the tip
+of `master` will just be moved to the tip of your branch (since there is nothing 
+in `master` that is not in your branch, once you rebase). 
 
 ## Alternative workflows
 
