@@ -410,10 +410,17 @@ The
 script is provided to automate the process of making a new stable version, but
 we describe the process here anyway. The process in git is similar to that in
 SVN. A new branch is first made from a commit in `master` and the version
-string in `configure.ac` is updated. ``` git checkout master git checkout -b
-stable/x.y <edit configure.ac> run_autotools . git add -u git commit -m
-"Creating new stable branch x.y" git push -u origin stable/x.y ``` In
-addition, the `Dependencies` probably needs to be updated.
+string in `configure.ac` is updated. 
+``` 
+git checkout master 
+git checkout -b stable/x.y 
+<edit configure.ac> 
+run_autotools . 
+git add -u 
+git commit -m "Creating new stable branch x.y" 
+git push -u origin stable/x.y 
+``` 
+In addition, the `Dependencies` probably needs to be updated.
 
 ### Making a release
 
