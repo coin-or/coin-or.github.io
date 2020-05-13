@@ -365,7 +365,7 @@ of the commit message for any additional information that should be recorded.
 It is also possible to cherry-pick a series of commits, just as with `svn
 merge`. 
 ```
-git cherry-pick -sex 1b89e6cc58..c0079e0da58
+git cherry-pick -xes 1b89e6cc58..c0079e0da58
 ```
 There is lots of other fancy stuff that can be done, see the [git
 book](https://git-scm.com/docs/git-cherry-pick) for examples.
