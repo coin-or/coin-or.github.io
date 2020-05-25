@@ -186,8 +186,13 @@ incantation will execute the procedure non-interactively (this is recommended
 for expert users who are used to executing Unix commands).
 
 ```
-./coinbrew fetch ProjName@stable/x.y --no-prompt
+./coinbrew fetch ProjName@version --no-prompt
 ./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
+```
+For example
+
+```
+./coinbrew fetch Cbc@2.10.5 --no-prompt
 ```
 
 The `--prefix` argument above specifies the directory where the packages will
@@ -349,7 +354,7 @@ Alternatively, the following command-line incantation will execute the
 procedure non-interactively (this is recommended for most expert users).
 
 ```
-./coinbrew fetch ProjName@stable/x.y --no-prompt
+./coinbrew fetch ProjName@version --no-prompt
 ./coinbrew build ProjName --prefix=\path\to\install\dir --no-prompt --build=x86_64-w64-mingw32
 ```
 
@@ -464,7 +469,7 @@ third party projects that are in Fortan or use the `--skip` argument to skip
 building of specific projects." %}
 
 ```
-./coinbrew fetch ProjName@stable/x.y --no-prompt
+./coinbrew fetch ProjName@version --no-prompt
 ./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --no-prompt --build=x86_64-w64-mingw32
 ```
 
@@ -565,7 +570,7 @@ incantation will execute the procedure non-interactively (this is recommended
 for expert users who are used to executing Unix commands).
 
 ```
-./coinbrew fetch ProjName@stable/x.y --no-prompt
+./coinbrew fetch ProjName@version --no-prompt
 ./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
 ```
 
