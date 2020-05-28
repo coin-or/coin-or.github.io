@@ -158,7 +158,13 @@ Occasionally, some commands are missing, so before starting, check that you have
  * pkg-config
  * gcc, g++, and gfortran
  * BLAS and LAPACK
- 
+ * Optional additions
+   * Metis
+   * Suitesparse
+   * libamd
+   * Cholmod
+   * Nauty
+   
 To obtain the source code for a project `ProjName`, the first step is to download the
 `bash` script that automatically fetches the source, builds, and installs
 COIN-OR packages. 
@@ -302,7 +308,7 @@ Once you are running bash, install required packages using the following
 command.
 
 ```
-pacman -S make wget tar patch dos2unix diffutils git svn pkg-config
+pacman -S make wget tar patch dos2unix diffutils git svn pkg-config zip unzip
 ```
 
 Finally, you can obtain `coinbrew`, the script that will help you download and
@@ -334,10 +340,20 @@ up some of the solvers that can use those packages.
 pacman -S mingw-w64-x86_64-lapack --noconfirm
 ```
 
+Additionally, there are a number of other packages that provide additional 
+functionality and can also be installed.
+
+```
+pacman -S mingw-w64-x86_64-lapack \
+          mingw-w64-x86_64-winpthreads-git \
+          mingw-w64-x86_64-readline \
+          mingw-w64-x86_64-suitesparse \
+          mingw-w64-x86_64-metis
+```
+
 Next, to check out source code for and build all the necessary projects
 (including dependencies), execute the script in the `coinbrew` subdirectory,
 as follows.
-
 
 ```
 cd coinbrew
