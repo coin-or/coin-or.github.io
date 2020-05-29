@@ -104,10 +104,11 @@ but this should be reduced or eliminated, once we move to bottling most projects
 
 Several Docker images available at
 
-[https://hub.docker.com/r/tkralphs](https://hub.docker.com/r/tkralphs).
-In particular, there is an image that contains the entire Optimization Suite here.
+https://hub.docker.com/orgs/coinor/repositories
 
-[https://hub.docker.com/r/tkralphs/coinor-optimization-suite/](https://hub.docker.com/r/tkralphs/coinor-optimization-suite/)
+In particular, there is an image that contains the entire Optimization Suite.
+
+https://hub.docker.com/repository/docker/coinor/coin-or-optimization-suite
 
 This is another excellent way to use the COIN-OR Optimization Suite.
 
