@@ -744,7 +744,7 @@ parallel.
 
 There are many configure options for customizing the builds, which is the
 advantage of learning to build yourself.
- * Over-riding variables: `CC, CXX, F77, CXX_ADDFLAGS`
+ * Over-riding variables: `CC, CXX, F77, ADD_CXXFLAGS`
  * `--prefix`
  * `--enable-debug`
  * `--enable-gnu-packages`
