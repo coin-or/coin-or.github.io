@@ -755,6 +755,14 @@ Individual project also have their own options.
  * The options for individual projects can be given to the root `coinbrew`
  script---they will be passed on to subprojects automatically.
 
+If one regularly uses a number of configure options, using a config.site
+file is a good choice.
+For projects based on BuildTools 0.8, [this template](https://github.com/coin-or-tools/BuildTools/blob/stable/0.8/share/config.site)
+documents a number of commonly used configure options and shows how they
+can be set via a config.site file.
+For projects that already use the current BuildTools master,
+[this template](config.site) applies.
+
 ### Build environment
 
 The projects in the COIN-OR Optimization Suite use a build system that is
