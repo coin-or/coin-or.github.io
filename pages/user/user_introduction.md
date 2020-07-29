@@ -102,14 +102,9 @@ but this should be reduced or eliminated, once we move to bottling most projects
 
 ### Docker Image
 
-Several Docker images available at
-
-https://hub.docker.com/orgs/coinor/repositories
-
-In particular, there is an image that contains the entire Optimization Suite.
-
-https://hub.docker.com/repository/docker/coinor/coin-or-optimization-suite
-
+Several Docker images available at [Dockerhub](https://hub.docker.com/orgs/coinor/repositories).
+In particular, there is an image that contains the entire 
+[Optimization Suite](https://hub.docker.com/repository/docker/coinor/coin-or-optimization-suite)
 This is another excellent way to use the COIN-OR Optimization Suite.
 
 ### Other Installation Methods
@@ -835,9 +830,9 @@ There is also a full tutorial on the Optimization Suite and much more at
 [Ted's page](http://coral.ie.lehigh.edu/~ted/teaching/coin-or).
 
 User's manuals and documentation for project ProjName can be obtained at either
-`http://coin-or.github.io/ProjName` or `http://www.coin-or.org/ProjName`.
+`https://coin-or.github.io/ProjName` or `https://www.coin-or.org/ProjName`.
 Doxygen source code documentation for some projects can also be obtained at
-[http://coin-or.github.io/Doxygen](http://coin-or.github.io/Doxygen).
+`https://coin-or.github.io/ProjName/Doxygen`.
 
 ### Support
 
