@@ -225,24 +225,23 @@ replaced by `coinbrew` (see section below describing coinbrew).
 ## Standard development workflows
 
 This section describes standard workflows that are closely aligned with the
-workflows used in many projects in the past under SVN. Project managers are
-free to use any of the alternative workflows described briefly in the next
-section, as well as any other workflow of their choice. To take advantage of
-the `coinbrew` build script, as well as other shared services related to
-continuous integration, testing, and binary distribution, all that is required
-is that
+workflows used in many projects in the past under SVN. Project managers are free
+to use any of the alternative workflows described briefly in the next section,
+as well as any other workflow of their choice. To take advantage of the
+`coinbrew` build script, as well as other shared services related to continuous
+integration, testing, and binary distribution, all that is required is that
 
-  * the repository be organized as described above, using the recommended
-naming conventions for branches and tags,
+  * the repository be organized as described above, using the recommended naming
+    conventions for branches and tags,
   * that it use the scheme described above for dependencies,
   * and (for now), that it use an autotools-based build system. 
 
-In the standard workflow described here, development takes place in the
-`master` branch (or in feature branches, as described below). Long-running
-branches will be maintained for each stable version (as with SVN), but it is
-typically not expected that commits will be made directly to these branches.
-Instead, as was also the case with SVN, commits made to master will be moved
-to the stable branches, as explained in the next section.
+In the standard workflow described here, development takes place in the `master`
+branch (or in feature branches, as described below). Long-running branches will
+be maintained for each stable version (as with SVN), but it is typically not
+expected that commits will be made directly to these branches.  Instead, as was
+also the case with SVN, commits made to master will be moved to the stable
+branches, as explained in the next section.
 
 ### Publishing changes 
 
@@ -483,54 +482,51 @@ in `master` that is not in your branch, once you rebase).
 
 ## Alternative workflows
 
-We mention here briefly that there are a number of other possible workflows
-that can be used. For simple, slow-moving projects with only one or two
-developers, working in master and tagging releases directly from there without
-having a stable branch may work fine, although much of the infrastructure
-described above and below depends on the existence of stable branches.
+We mention here briefly that there are a number of other possible workflows that
+can be used. For simple, slow-moving projects with only one or two developers,
+working in master and tagging releases directly from there without having a
+stable branch may work fine, although much of the infrastructure described above
+and below depends on the existence of stable branches.
 
 Another alternative is to do development in the current stable branch. In this
-case, bug fixes applying to earlier stable version would need to be
-back-ported. Master would then consist of only the latest tagged releases. The
-advantage of this workflow is that when users check out the repository, they
-automatically get the latest release. 
+case, bug fixes applying to earlier stable version would need to be back-ported.
+Master would then consist of only the latest tagged releases. The advantage of
+this workflow is that when users check out the repository, they automatically
+get the latest release. 
 
 ## The `coinbrew` script
 
-The `coinbrew` script is a universal script for checking our projects with
-their dependencies, building a project and its dependencies, switching
-versions, and much much more. The documentation for it is
+The `coinbrew` script is a universal script for checking our projects with their
+dependencies, building a project and its dependencies, switching versions, and
+much much more. The documentation for it is
 [here](https://coin-or.github.io/coinbrew). 
 
 ## Working with GitHub
 
 ### Continuous Integration
 
-Currently, we recommend using Travis (Linux and OS X) and Appveyor (Windows)
-for CI services. To get started, take a look at
-[.travis.yml](https://github.com/coin-or/Cbc/blob/master/.travis.yml) and
-[appveyor.yml](https://github.com/coin-or/Cbc/blob/master/appveyor.yml) in the
-Cbc repository. These can be used as a basic template. Once your repository is
-activated on the services (requests can be sent to github-admin@coin-or.org),
-simply adding the YAML files to the repository will activate automated build
-and test.
+Currently, we recommend using Github Actions CI services. To get started, take
+a look at
+[.github/workflows](https://github.com/coin-or/CoinUtils/blob/master/.github/worflows)
+in the CoinUtils repository. These can be used as a basic template. Once your
+repository is activated on the services (requests can be sent to
+github-admin@coin-or.org), simply adding the YAML files to the repository will
+activate automated build and test.
 
 ### Uploading Binaries
 
-Any binaries/libraries that are built on either Travis or Appveyor can be
-uploaded and automatically distributed from
-[Bintray](https://bintray.com/coin-or/download). Requests for this service can
-be sent to github-admin@coin-or.org.
+Any binaries/libraries that are built using Github Actions are automatically
+uploaded as
+[artifacts](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts).
 
 ### Zenodo and DOIs
 
 We recommend using [Zenodo](https://zenodo.org/) to generate a DOI for each
-released version of your software. This makes it possible for the software to
-be formally and directly cited. Once Zenodo is activated for your project
-(requests can be sent to github-admin@coin-or.org), all that needs to be done
-to generate a DOI is to publish your release. Once a tagged release version is
-pushed, just go to page listing releases and click on the "Draft a New Release
-Button."
+released version of your software. This makes it possible for the software to be
+formally and directly cited. Once Zenodo is activated for your project (requests
+can be sent to github-admin@coin-or.org), all that needs to be done to generate
+a DOI is to publish your release. Once a tagged release version is pushed, just
+go to page listing releases and click on the "Draft a New Release Button."
 
 ### Project Web sites
 
@@ -538,11 +534,15 @@ To create a project Web site, we recommend using GitHub Pages, a service
 provided by GitHub by which your project's site is hosted directly in your
 repository. To get started, follow the instructions
 [here](https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages).
-The instructions are very general and cover a lot of cases, so in case it's
-not clear, in most cases, you will want to create a branch in your repository
-call `gh-pages` and place your Jekyll theme files there. The site will then be
+The instructions are very general and cover a lot of cases, so in case it's not
+clear, in most cases, you will want to create a branch in your repository call
+`gh-pages` and place your Jekyll theme files there. The site will then be
 displayed at the URL https://coin-or.github.io/Xyz.
 
 ## Working with the build system
 
-Coming soon...
+We are currently transitiong from TravisCI, AppVeyor and Bintray to Github
+Actions and Github Releases. Pushes to the main branch or pull requests
+automatically trigger the CI across a variety of platforms. Pushing a
+new tag automatically creates a new release, and builds and uploads artifacts for
+each platform.
