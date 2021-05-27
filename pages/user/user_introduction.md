@@ -44,44 +44,41 @@ Foundation. It consists of the following projects.
 ### Pre-built Binaries
 
 Binaries for some projects (and their dependencies) are available for download
-from [Bintray](https://bintray.com/coin-or/download/). AMPL also kindly
-provides executables of some solvers for download at
+from the [COIN-OR website](https://www.coin-or.org/download/binary/) and/or on
+the project's Github Release page. AMPL also kindly provides executables of
+some solvers for download at
 
 [http://ampl.com/products/solvers/open-source/](http://ampl.com/products/solvers/open-source/)
 
 We are working on some other better ways of getting binaries, such as conda
 packages, and will keep this README updated as things progress. For now,
 various conda recipes are available if you search, e.g.,
-[here](https://anaconda.org/search?q=cbc). Some other platform-specific ways
-of obtaining binaries are listed next.
+[here](https://anaconda.org/search?q=cbc). Some other platform-specific ways of
+obtaining binaries are listed next.
 
 ### Installers and Packages
 
 #### Windows
 
-On Windows, there are binaries available for some projects on
-[BinTray](http://bintray.com/coin-or/download). Please let us know if you try
-to use them and they don't work because of missing dependencies or other
-issues. There is a deprecated Windows GUI installer available
-[here](http://www.coin-or.org/download/binary/OptimizationSuite) for
-installing binaries and libraries compatible with Visual Studio (you will need
-to install the free Intel compiler redistributable libraries and the Visual
-Studio redistributable libraries. The versions installed are not currently
-up-to-date and this is not currently recommended. This may get updated
-someday, but in the meantime, you can get binaries for some projects from
-[BinTray](http://bintray.com/coin-or/download).
+On Windows, there are binaries available for some projects on the [COIN-OR
+website](http://www.coin-or.org/download/binary/) for installing binaries and
+libraries compatible with Visual Studio (you will need to install the free
+Intel compiler redistributable libraries and the Visual Studio redistributable
+libraries). We are in the process of transitioning to Github Releases.
 
 #### macOS
 
 There are Homebrew recipes for some projects available
-[here](https://github.com/coin-or-tools/homebrew-coinor) and this is the recommended way to install projects on OS X. Just do
+[here](https://github.com/coin-or-tools/homebrew-coinor) and this is the
+recommended way to install projects on OS X. Just do
+
 ```
 brew tap coin-or-tools/coinor
 brew install coin-or-tools/coinor/Xyz
 ```
-Binaries are also available from [BinTray](http://bintray.com/coin-or/download) for
-most recent version of macOS, but it's not clear how portable these binaries really
-are and your mileage may vary.
+Binaries are also available on the [COIN-OR website]() for most recent version
+of macOS, but it's not clear how portable these binaries really are and your
+mileage may vary.
 
 #### Linux 
 
@@ -245,17 +242,11 @@ Source can be obtained either by downloading an archive that includes the
 source of the main project and all dependencies or by fetching with
 `coinbrew`. The use of `coinbrew` is strongly recommended unless you plan to
 work exclusively with Visual Studio and you wish to build within the Visual
-Studio IDE using the supplied Visual Studio project files.
-
-If you wish to obtain the source by downloading a complete archive to use with
-Visual Studio, then go to the URL
-
-[https://www.coin-or.org/download/source](https://www.coin-or.org/download/source)
-
-and click on the folder for your desired project. Download source for the
-latest release and unpack the archive. Then continue with the instructions for
-the [Visual Studio IDE](#building-with-visual-studio-ide) below. Otherwise, continue here
-with the instructions for `coinbrew`.
+Studio IDE using the supplied Visual Studio project files. Download source for
+the latest release from the Github Release's page and unpack the archive. Then
+continue with the instructions for the [Visual Studio
+IDE](#building-with-visual-studio-ide) below. Otherwise, continue here with the
+instructions for `coinbrew`.
 
 #### Setting up `coinbrew`
 
