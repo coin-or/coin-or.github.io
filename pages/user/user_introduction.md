@@ -185,13 +185,13 @@ incantation will execute the procedure non-interactively (this is recommended
 for expert users who are used to executing Unix commands).
 
 ```
-./coinbrew fetch ProjName@version --no-prompt
-./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
+./coinbrew fetch ProjName@version
+./coinbrew build ProjName --prefix=/path/to/install/dir
 ```
 For example
 
 ```
-./coinbrew fetch Cbc@2.10.5 --no-prompt
+./coinbrew fetch Cbc@2.10.5
 ```
 
 The `--prefix` argument above specifies the directory where the packages will
@@ -206,7 +206,7 @@ script can simply be added to the command-line. For
 example, to build with debugging symbols, do
 
 ```
-./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
+./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug
 ```
 
 To get help with additional options available in running the script, do
@@ -280,7 +280,7 @@ no longer officially supported or tested and anecdotal evidence indicates
 that there may be issues with building recent version of some projects. 
 
 To get MSys2, either download the installer or a zip file containing the MSys2
-base from [here](http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/)
+base from [here](http://kent.dl.sourceforge.net/project/msys2/Base/x86_64/).
 Once you have installed MSys2, the easiest path to getting started if you are
 planning to use the GCC compilers is to execute `C:\msys64\mingw64.exe` or
 `C:\msys64\mingw32.exe`, which will automatically start up `bash` in a
@@ -357,8 +357,8 @@ Alternatively, the following command-line incantation will execute the
 procedure non-interactively (this is recommended for most expert users).
 
 ```
-./coinbrew fetch ProjName@version --no-prompt
-./coinbrew build ProjName --prefix=\path\to\install\dir --no-prompt --build=x86_64-w64-mingw32
+./coinbrew fetch ProjName@version
+./coinbrew build ProjName --prefix=\path\to\install\dir --build=x86_64-w64-mingw32
 ```
 
 The argument `--prefix=\path\to\install\dir` specifies the directory where the
@@ -375,7 +375,7 @@ can be added to the command-line. For example, to build
 with debugging symbols, do 
 
 ```
-./coinbrew build ProjName --prefix=\path\to\install\dir --enable-debug --no-prompt
+./coinbrew build ProjName --prefix=\path\to\install\dir --enable-debug
 ```
 
 To get help with additional options available in running the script, do
@@ -472,8 +472,8 @@ third party projects that are in Fortan or use the `--skip` argument to skip
 building of specific projects." %}
 
 ```
-./coinbrew fetch ProjName@version --no-prompt
-./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --no-prompt --build=x86_64-w64-mingw32
+./coinbrew fetch ProjName@version
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-msvc --build=x86_64-w64-mingw32
 ```
 
 The argument `--prefix=C:\path\to\install\dir` specifies the directory where the
@@ -491,7 +491,7 @@ can be added to the command-line. For example, to build
 with debugging symbols, do 
 
 ```
-./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-debug --no-prompt
+./coinbrew build ProjName --prefix=C:\path\to\install\dir --enable-debug
 ```
 
 To get help with additional options available in running the script, do
@@ -573,8 +573,8 @@ incantation will execute the procedure non-interactively (this is recommended
 for expert users who are used to executing Unix commands).
 
 ```
-./coinbrew fetch ProjName@version --no-prompt
-./coinbrew build ProjName --prefix=/path/to/install/dir --no-prompt
+./coinbrew fetch ProjName@version
+./coinbrew build ProjName --prefix=/path/to/install/dir
 ```
 
 The `--prefix` argument above specifies the directory where the packages will
@@ -589,7 +589,7 @@ can simply be added to the command-line. For example, to build
 with debugging symbols, do
 
 ```
-./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug --no-prompt
+./coinbrew build ProjName --prefix=/path/to/install/dir --enable-debug
 ```
 
 To get help with additional options available in running the script, do
