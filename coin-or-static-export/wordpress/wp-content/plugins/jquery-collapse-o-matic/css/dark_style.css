@@ -1,0 +1,40 @@
+.collapseomatic {
+	background-image: url(/wordpress/wp-content/plugins/jquery-collapse-o-matic/css/images/arrow-down-dark.png);
+	background-repeat: no-repeat;
+	padding: 0 0 10px 16px;
+}
+.collapseomatic:focus {
+      outline: 0;
+}
+.arrowright {
+	background-position: right top;
+	padding: 0 16px 10px 0;
+}
+.noarrow {
+	background-image: none !important;
+	padding: 0 0 10px 0;
+}
+.colomat-hover {
+	text-decoration: underline;
+}
+.colomat-close {
+	background-image: url(/wordpress/wp-content/plugins/jquery-collapse-o-matic/css/images/arrow-up-dark.png);
+}
+.collapseomatic_excerpt, .collapseomatic_content {
+	margin-top: 0px;
+	margin-left: 16px;
+	padding: 0px;
+}
+.content_collapse_wrapper {
+	position: absolute; left: -999em;
+}
+.collapseall:hover, .expandall:hover, .collapseall:focus, .expandall:focus {
+	text-decoration: underline;
+}
+.span_fix {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.span_fix:before, .span_fix:after {
+	content: none;
+}

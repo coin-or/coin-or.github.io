@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Slider</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Slider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.5,27.5 L30,27.5 C30.8284271,27.5 31.5,26.8284271 31.5,26 L31.5,6 C31.5,5.17157288 30.8284271,4.5 30,4.5 L6,4.5 C5.17157288,4.5 4.5,5.17157288 4.5,6 L4.5,27.5 Z" id="Rectangle-34" stroke="#4A4A4A"></path>
+        <path d="M0.5,8.5 L0.5,24 C0.5,25.9329966 2.06700338,27.5 4,27.5 L4.5,27.5 L4.5,8.5 L0.5,8.5 Z" id="Rectangle-35" stroke="#4A4A4A"></path>
+        <polyline id="Line" stroke="#4A4A4A" points="16 12 12 16 16 20"></polyline>
+        <polyline id="Line" stroke="#4A4A4A" transform="translate(23.000000, 16.000000) scale(-1, 1) translate(-23.000000, -16.000000) " points="25 12 21 16 25 20"></polyline>
+    </g>
+</svg>

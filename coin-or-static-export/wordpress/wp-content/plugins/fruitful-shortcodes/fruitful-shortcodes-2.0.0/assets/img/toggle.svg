@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Round Buttons/Expand/Normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="16" cy="16" r="16"></circle>
+    </defs>
+    <g id="Round-Buttons/Expand/Normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Expand-Button/Normal">
+            <g id="Oval-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <circle stroke="#EFEFEF" stroke-width="1" cx="16" cy="16" r="15.5"></circle>
+            </g>
+            <g id="Icons-16x16/Light/Up" transform="translate(16.000000, 17.000000) scale(1, -1) translate(-16.000000, -17.000000) translate(8.000000, 9.000000)" fill="#A0A0A0" fill-rule="nonzero">
+                <path d="M12.1558408,5.33867128 C12.355515,5.14762895 12.6720148,5.15487618 12.8627628,5.35485843 C13.0535109,5.55484068 13.0462748,5.87182873 12.8466006,6.06287106 L7.99995316,10.699999 L3.15457111,6.0628242 C2.95492274,5.87175477 2.94772955,5.55476574 3.13850466,5.35480938 C3.32927977,5.15485301 3.64578053,5.14764872 3.84542889,5.33871815 L8.00004684,8.39999798 L12.1558408,5.33867128 Z" id="Line-2" transform="translate(8.000610, 7.949999) scale(1, -1) translate(-8.000610, -7.949999) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+    "slug": "LiteBase",
+    "name": "Lite Base",
+    "description": "Core backup, migration, and restore functionality.",
+    "version": "1.0.0",
+    "author": "Duplicator",
+    "authorURI": "https://duplicator.com/",
+    "addonURI": "",
+    "requiresWP": "5.3",
+    "requiresPHP": "7.4",
+    "requiresDuplcator": "4.5.20",
+    "requiresAddons": []
+}

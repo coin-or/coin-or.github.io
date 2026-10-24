@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons-16x16/Dark/Clear</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons-16x16/Dark/Clear" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5.5,5.5 L10.5040894,10.5040894" id="Line" stroke="#646464" stroke-linecap="round"></path>
+        <path d="M5.5,5.49523926 L10.5,10.5" id="Line" stroke="#646464" stroke-linecap="round" transform="translate(8.000000, 7.997620) scale(-1, 1) translate(-8.000000, -7.997620) "></path>
+        <circle id="Oval-3" stroke="#646464" cx="8" cy="8" r="6.5"></circle>
+    </g>
+</svg>

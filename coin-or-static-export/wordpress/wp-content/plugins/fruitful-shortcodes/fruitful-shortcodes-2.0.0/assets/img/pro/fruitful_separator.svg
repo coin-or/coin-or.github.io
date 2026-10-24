@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Separator</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="2.5" cy="16.5" r="2.5"></circle>
+        <circle id="path-2" cx="29.5" cy="16.5" r="2.5"></circle>
+    </defs>
+    <g id="Shortcodes-Icons/Separator" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval-12">
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <circle stroke="#4A4A4A" stroke-width="1" cx="2.5" cy="16.5" r="2"></circle>
+        </g>
+        <g id="Oval-12">
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+            <circle stroke="#4A4A4A" stroke-width="1" cx="29.5" cy="16.5" r="2"></circle>
+        </g>
+        <rect id="Rectangle-8" fill="#4A4A4A" x="4" y="16" width="24" height="1"></rect>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+    "slug": "LiteLegacyAddon",
+    "name": "Lite Legacy Migration",
+    "description": "One-shot migration of backups from standalone Duplicator Lite.",
+    "version": "1.0.0",
+    "author": "Duplicator",
+    "authorURI": "https://duplicator.com/",
+    "addonURI": "",
+    "requiresWP": "5.3",
+    "requiresPHP": "7.4",
+    "requiresDuplcator": "5.0.0-RC1",
+    "requiresAddons": ["LiteBase"]
+}

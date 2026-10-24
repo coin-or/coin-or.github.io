@@ -1,0 +1,418 @@
+/* WPCode Packs — pack-specific styles only.
+   Sidebar, grid, list items, and buttons use the existing plugin styles
+   (wpcode-items-sidebar, wpcode-items-list-category, wpcode-list-item,
+   wpcode-button*) — no overrides needed there. */
+
+/* ===========================================================
+   Pack card icon + category badge (inside wpcode-list-item)
+   =========================================================== */
+
+/* Installed-state indicator: subtle 3px green left accent strip. */
+.wpcode-pack-list-item[data-installed="1"] {
+	border-left: 3px solid var(--wpcode-notice-success-bg, #009966);
+}
+
+.wpcode-pack-list-item .wpcode-pack-head {
+	display: flex;
+	align-items: stretch;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+.wpcode-pack-list-item .wpcode-pack-head-text {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 4px;
+}
+.wpcode-pack-list-item h3 {
+	margin: 0;
+}
+
+.wpcode-pack-icon {
+	width: 48px;
+	min-height: 48px;
+	border-radius: 6px;
+	display: grid;
+	place-items: center;
+	flex-shrink: 0;
+	background: var(--wpcode-background-highlight, #F6FAFF);
+	color: var(--wpcode-color-primary, #3568B7);
+	align-self: stretch;
+}
+.wpcode-pack-icon .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	line-height: 1;
+}
+
+.wpcode-pack-icon-lg {
+	width: 56px;
+	height: 56px;
+	min-height: 56px;
+	border-radius: 10px;
+}
+.wpcode-pack-icon-lg .dashicons {
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+}
+
+.cat-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	background: var(--wpcode-background-highlight, #F6FAFF);
+	color: var(--wpcode-color-primary, #3568B7);
+	align-self: flex-start;
+	width: auto;
+}
+
+/* Snippet name chips below the title (max 2 + "+N more"). */
+.wpcode-pack-snippets {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 6px 0 10px;
+}
+.wpcode-pack-snippet-chip {
+	display: inline-block;
+	max-width: 100%;
+	padding: 3px 8px;
+	border-radius: 4px;
+	border: 1px solid var(--wpcode-border-color, #e5e7eb);
+	background: var(--wpcode-background-gray, #f6f7f7);
+	color: var(--wpcode-text-color-paragraph, #50575e);
+	font-size: 11.5px;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.wpcode-pack-snippet-chip-more {
+	background: transparent;
+	border-color: transparent;
+	color: var(--wpcode-text-color-highlight, #2271b1);
+}
+
+/* Pack card description (sits between the title row and the snippet chips). */
+.wpcode-pack-desc {
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.45;
+	color: var(--wpcode-text-color-paragraph, #50575e);
+}
+
+/* Pack card footer — snippet chips on the left, button on the right, same row. */
+.wpcode-pack-foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 12px;
+}
+.wpcode-pack-foot .wpcode-pack-snippets {
+	margin: 0;
+	flex: 1;
+	min-width: 0;
+}
+.wpcode-pack-foot .wpcode-pack-actions {
+	flex-shrink: 0;
+}
+
+/* ----- NEW pill on the Packs tab button ----- */
+.wpcode-library-tab-button .wpcode-tab-new-pill {
+	display: inline-block;
+	margin-left: 6px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #fff;
+	background: var(--wpcode-color-primary, #3568B7);
+	padding: 2px 6px;
+	border-radius: 3px;
+	letter-spacing: 0.04em;
+	vertical-align: 2px;
+}
+
+/* ----- Danger variant on the secondary button (Remove pack) ----- */
+.wpcode-button.wpcode-button-danger {
+	color: var(--wpcode-color-red, #DF2A35);
+	border-color: var(--wpcode-color-red, #DF2A35);
+}
+.wpcode-button.wpcode-button-danger:hover {
+	background: var(--wpcode-color-red, #DF2A35);
+	color: #fff;
+}
+
+/* ===========================================================
+   Detail view (post-install)
+   =========================================================== */
+
+.wpcode-pack-detail-back {
+	display: inline-block;
+	margin: 0 0 16px;
+	font-size: 13px;
+	color: var(--wpcode-text-color-highlight, #2271b1);
+	text-decoration: none;
+}
+.wpcode-pack-detail-back:hover { text-decoration: underline; }
+
+.wpcode-pack-detail {
+	background: var(--wpcode-background-white, #fff);
+	border: 1px solid var(--wpcode-border-color, #dcdcde);
+	border-radius: 4px;
+	padding: 24px;
+}
+.wpcode-detail-desc {
+	margin: 0 0 16px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--wpcode-text-color-paragraph, #50575e);
+}
+.wpcode-detail-actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 16px;
+}
+
+.wpcode-detail-head {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	margin-bottom: 22px;
+}
+.wpcode-detail-head .info { flex: 1; min-width: 0; }
+.wpcode-detail-head h2 {
+	margin: 0 0 6px;
+	font-size: var(--wpcode-font-size-xl, 22px);
+	font-weight: 600;
+	color: var(--wpcode-text-color-heading, #1d2327);
+}
+.wpcode-detail-head .meta-row {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	font-size: var(--wpcode-font-size-s, 14px);
+	color: var(--wpcode-text-color-paragraph, #646970);
+}
+.wpcode-detail-head .meta-row .dot {
+	width: 3px; height: 3px;
+	border-radius: 50%;
+	background: var(--wpcode-border-color, #c3c4c7);
+}
+.wpcode-detail-head .cat-name {
+	font-weight: 600;
+	color: var(--wpcode-text-color-highlight, #2271b1);
+}
+
+/* Snippets card */
+.wpcode-snippets-card {
+	background: #fff;
+	border: 1px solid var(--wpcode-border-color, #dcdcde);
+	border-radius: 4px;
+	overflow: hidden;
+}
+.wpcode-snippets-card .head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	background: var(--wpcode-background-gray, #f8f8f8);
+	border-bottom: 1px solid var(--wpcode-border-color, #dcdcde);
+}
+.wpcode-snippets-card .head h3 {
+	margin: 0;
+	font-size: var(--wpcode-font-size-s, 14px);
+	font-weight: 600;
+	color: var(--wpcode-text-color-heading, #1d2327);
+}
+.wpcode-snippets-card .head .meta {
+	font-size: 12px;
+	color: var(--wpcode-text-color-paragraph, #646970);
+}
+
+.wpcode-snippet-row {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 16px;
+	border-bottom: 1px solid var(--wpcode-border-color, #dcdcde);
+}
+.wpcode-snippet-row:last-child { border-bottom: 0; }
+.wpcode-snippet-row .toggle-wrap { flex-shrink: 0; }
+.wpcode-snippet-row .snippet-info { flex: 1; min-width: 0; }
+.wpcode-snippet-row h5 {
+	margin: 0 0 2px;
+	font-size: var(--wpcode-font-size-s, 14px);
+	font-weight: 600;
+	color: var(--wpcode-text-color-heading, #1d2327);
+}
+.wpcode-snippet-row .actions { flex-shrink: 0; }
+.wpcode-snippet-row.is-inactive h5 { color: #8c8f94; }
+
+/* Hint shown on options flagged as needing personalization on the library. */
+.wpcode-snippet-personalize-note {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	margin-top: 2px;
+	font-size: var(--wpcode-font-size-xs, 12px);
+	color: #b26200;
+}
+.wpcode-snippet-personalize-note .dashicons {
+	width: 14px;
+	height: 14px;
+	font-size: 14px;
+}
+
+/* Note shown when a snippet is shared with (also part of) another pack. */
+.wpcode-snippet-shared-note {
+	display: block;
+	margin-top: 2px;
+	font-size: var(--wpcode-font-size-xs, 12px);
+	color: var(--wpcode-text-color-paragraph, #646970);
+}
+
+/* Toggle switch */
+.wpcode-toggle {
+	width: 36px; height: 20px;
+	border-radius: 999px;
+	background: #c3c4c7;
+	position: relative;
+	cursor: pointer;
+	transition: background 150ms ease;
+	flex-shrink: 0;
+}
+.wpcode-toggle::after {
+	content: "";
+	position: absolute;
+	top: 2px; left: 2px;
+	width: 16px; height: 16px;
+	border-radius: 50%;
+	background: #fff;
+	transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.wpcode-toggle.is-on { background: var(--wpcode-color-primary, #3568B7); }
+.wpcode-toggle.is-on::after { transform: translateX(16px); }
+
+/* ===========================================================
+   Install confirmation modal (renamed to wpcode-rmodal-* to
+   avoid colliding with the existing .wpcode-modal class in
+   src/admin/modal.css which is display:none by default).
+   =========================================================== */
+
+.wpcode-rmodal-backdrop {
+	position: fixed; inset: 0;
+	background: rgba(16, 24, 40, 0.45);
+	display: grid;
+	place-items: center;
+	z-index: 100000;
+}
+.wpcode-rmodal {
+	background: #fff;
+	border-radius: 6px;
+	width: 520px;
+	max-width: calc(100vw - 40px);
+	box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+	overflow: hidden;
+}
+.wpcode-rmodal-head {
+	padding: 18px 20px 12px;
+	border-bottom: 1px solid var(--wpcode-border-color, #f0f0f1);
+}
+.wpcode-rmodal-head h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--wpcode-text-color-heading, #1d2327);
+}
+.wpcode-rmodal-head .sub {
+	margin-top: 4px;
+	font-size: 12px;
+	color: var(--wpcode-text-color-paragraph, #646970);
+}
+
+.wpcode-rmodal-body { padding: 16px 20px; }
+.wpcode-rmodal-body .js-wpcode-rmodal-lead {
+	margin: 0 0 12px;
+	font-size: 13px;
+	color: var(--wpcode-text-color-paragraph, #50575e);
+}
+.wpcode-rmodal-body .wpcode-checklist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid var(--wpcode-border-color, #f0f0f1);
+	border-radius: 4px;
+	overflow: hidden;
+}
+.wpcode-rmodal-body .wpcode-check-row {
+	padding: 9px 14px;
+	font-size: 13px;
+	border-bottom: 1px solid var(--wpcode-border-color, #f0f0f1);
+}
+.wpcode-rmodal-body .wpcode-check-row:last-child { border-bottom: 0; }
+.wpcode-rmodal-body .wpcode-check-row.pending .label-name { color: #8c8f94; }
+.wpcode-rmodal-body .wpcode-check-row.active { background: #f6faff; }
+.wpcode-rmodal-body .wpcode-check-row.done { color: var(--wpcode-text-color-heading, #1d2327); }
+
+.wpcode-rmodal-body .wpcode-progress-track {
+	height: 4px;
+	background: #f0f0f1;
+	border-radius: 999px;
+	margin: 14px 0 6px;
+	overflow: hidden;
+}
+.wpcode-rmodal-body .wpcode-progress-fill {
+	height: 100%;
+	background: var(--wpcode-color-primary, #3568B7);
+	transition: width 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wpcode-rmodal-body .wpcode-progress-label {
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+	color: var(--wpcode-text-color-paragraph, #646970);
+}
+
+.wpcode-rmodal-body .wpcode-success-state {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 24px 16px 8px;
+}
+.wpcode-rmodal-body .wpcode-success-state[hidden] {
+	display: none;
+}
+.wpcode-rmodal-body .wpcode-success-state .wpcode-icon-checkmark {
+	margin-bottom: 14px;
+}
+.wpcode-rmodal-body .wpcode-success-state h4 {
+	margin: 0 0 6px;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--wpcode-text-color-heading, #1d2327);
+}
+.wpcode-rmodal-body .wpcode-success-state p {
+	margin: 0;
+	max-width: 340px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--wpcode-text-color-paragraph, #50575e);
+}
+
+.wpcode-rmodal-foot {
+	padding: 12px 20px 16px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	border-top: 1px solid var(--wpcode-border-color, #f0f0f1);
+	background: var(--wpcode-background-gray, #fafafa);
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Pricing</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Pricing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M23.5,11 L23.5,11 C23.5,8.51471863 21.4852814,6.5 19,6.5 L13.25,6.5 C10.6266474,6.5 8.5,8.62664744 8.5,11.25 L8.5,11.25 C8.5,13.8733526 10.6266474,16 13.25,16 L18.75,16 C21.3733526,16 23.5,18.1266474 23.5,20.75 L23.5,20.75 C23.5,23.3733526 21.3733526,25.5 18.75,25.5 L13,25.5 C10.5147186,25.5 8.5,23.4852814 8.5,21" id="Line-4" stroke="#4A4A4A"></path>
+        <path d="M16,6 L16,3" id="Line" stroke="#4A4A4A"></path>
+        <path d="M16,29 L16,26" id="Line" stroke="#4A4A4A"></path>
+    </g>
+</svg>

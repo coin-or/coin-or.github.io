@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Sponsors</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Sponsors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval-7" stroke="#4A4A4A" cx="7" cy="7" r="6.5"></circle>
+        <rect id="Rectangle-25" stroke="#4A4A4A" x="18.5" y="0.5" width="13" height="13" rx="3"></rect>
+        <path d="M7,19.118034 L0.809016994,31.5 L13.190983,31.5 L7,19.118034 Z" id="Triangle-2" stroke="#4A4A4A"></path>
+        <path d="M25,18.7071068 L18.7071068,25 L25,31.2928932 L31.2928932,25 L25,18.7071068 Z" id="Rectangle-26" stroke="#4A4A4A"></path>
+    </g>
+</svg>

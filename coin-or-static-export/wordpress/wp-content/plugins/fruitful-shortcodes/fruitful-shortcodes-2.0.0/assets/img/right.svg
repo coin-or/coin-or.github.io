@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Alignment/Grey/Right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Alignment/Grey/Right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5.5,12 L14.5,12 C14.7761424,12 15,12.2238576 15,12.5 C15,12.7761424 14.7761424,13 14.5,13 L5.5,13 C5.22385763,13 5,12.7761424 5,12.5 C5,12.2238576 5.22385763,12 5.5,12 Z M1.5,3 L14.5,3 C14.7761424,3 15,3.22385763 15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L1.5,4 C1.22385763,4 1,3.77614237 1,3.5 C1,3.22385763 1.22385763,3 1.5,3 Z M1.5,9 L14.5,9 C14.7761424,9 15,9.22385763 15,9.5 C15,9.77614237 14.7761424,10 14.5,10 L1.5,10 C1.22385763,10 1,9.77614237 1,9.5 C1,9.22385763 1.22385763,9 1.5,9 Z M5.5,6 L14.5,6 C14.7761424,6 15,6.22385763 15,6.5 C15,6.77614237 14.7761424,7 14.5,7 L5.5,7 C5.22385763,7 5,6.77614237 5,6.5 C5,6.22385763 5.22385763,6 5.5,6 Z" id="Alignment/Right" fill="#A0A0A0"></path>
+    </g>
+</svg>

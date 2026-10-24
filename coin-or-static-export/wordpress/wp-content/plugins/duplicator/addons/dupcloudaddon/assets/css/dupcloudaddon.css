@@ -1,0 +1,33 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./addons/dupcloudaddon/assets/sass/main.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/*!
+DUPLICATOR DUP CLOUD ADDON STYLE
+*/
+/**
+ * Foundation for Sites
+ * Version 6.9.0
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.dup-styles .dup-box.dup-cloud-connect {
+  width: 600px;
+  background: #fefefe;
+  border: 1px solid #1D2327;
+}
+.dup-styles .dup-box.dup-cloud-connect .dup-box-title {
+  background: rgb(240, 240, 241);
+}
+.dup-styles .dup-box.dup-cloud-connect .dupli-admin-notice {
+  width: 100%;
+  background: rgb(240, 240, 241);
+}
+.dup-styles .dup-box.dup-cloud-connect .dup-storage-info {
+  background-color: rgb(240, 240, 241);
+  border: 1px solid #a0a0a0;
+  margin-bottom: 1.25rem;
+  padding: 10px;
+}
+.dup-styles .dup-box.dup-cloud-connect input {
+  width: 100%;
+}

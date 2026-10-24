@@ -1,0 +1,233 @@
+.bold {
+	font-weight:bold;
+}
+.title-divider th {
+	border-top:1px solid #ccc;
+	padding:0;
+}
+.form-table td, .form-table tr {
+	padding-top:10px;
+}
+.title-divider .title {
+	font-size:1.125em;
+	padding-left:0!important;
+	padding-top:20px!important;
+	padding-bottom:0!important;
+}
+
+#emodal-settings-editor .regular-text {
+	width:25em;
+}
+#emodal-settings-editor .description.expires strong {
+	color:#9e0007;
+	font-size:14px;
+}
+#emodal-settings-editor .description.domains strong {
+	color:#00a633;
+	font-size:14px;
+}
+
+
+.button.rounded {
+	box-shadow: none;
+	border:0;
+	border-radius:2px;
+	background:#0074a2;
+	color:#fff;
+	padding-left:18px;
+	padding-right:18px;
+	transition:transform .5s;
+	margin-bottom:10px;
+}
+.button.rounded:hover {
+	color:#fff;
+	background:#007fb1;
+	transform:scale(1.125);
+}
+.button.rounded:focus {
+	color:#fff;
+	background:#007fb1;
+	transform:scale(1.125);
+}
+.loveit-shareit {
+	font:400 24px/1.125 "Oswald"!important;
+	color:#333;
+}
+.loveit-shareit span {
+	color:#00b7cd;
+}
+.follow-box {
+	text-align: center;
+	padding:14px 36px;
+	background:#fff;
+	border:1px solid #e5e5e5;
+}
+
+#icon-easy-modal {
+    background: transparent url('/wordpress/wp-content/plugins/easy-modal/assets/images/admin/easy-modal-icon.png') no-repeat;
+}
+.share-buttons {
+	margin:0 auto;
+	width:68%;
+	display:block;
+	clear:both;
+}
+.share-buttons li {
+	text-align:center;
+	width:32%;
+	display:inline-block;
+	float:left;
+	margin-right:1%;
+	margin-bottom:0;
+}
+.share-buttons li:last-child {
+	margin-right:0;
+}
+
+/* Modal List */
+.wrap .add-new-h2, .wrap .add-new-h2:active {
+	color:#fff;
+	background:#00b7cd;
+}
+.add-new-get-started:before {
+	display:inline-block;
+	width:60px;
+	content:" ";
+	height:19px;
+	background:url(/wordpress/wp-content/plugins/easy-modal/assets/images/admin/get-started-arrow.png) no-repeat center center transparent;
+}
+.add-new-get-started {
+	display:inline;
+	font-weight: 700;
+	font:14px/1 "Open Sans",​sans-serif;
+	color:#00b7cd;
+}
+.get-started-modal-welcome h1 {
+	font-family: "Oswald";
+	font-weight: 300;
+	font-size:48px;
+	color:#e0e0e0;
+}
+.get-started-modal-welcome h1 .easy {
+	color:#00b7cd;
+}
+.get-started-modal-welcome h1 .modal {
+	color:#333;
+}
+.get-started-modal-welcome p {
+	color:#333;
+	font-size:18px;
+}
+.tab-box {
+	margin-top:40px;
+	position:relative;
+	border:1px solid #ccc;
+	max-width:500px;
+	padding:20px 10px 5px;
+}
+.tab-box h4 {
+	font:13px/30px "Open Sans",​sans-serif;
+	font-weight: bold;
+	position:absolute;
+	background:#ccc;
+	display:inline-block;
+	padding:0 10px;
+	top:-48px;
+	left:-1px;
+}
+.tab-box a {
+	font:300 18px/1.125 "Oswald";
+	color:#00b7cd;
+}
+.tab-box button {
+	font:300 18px/1.125 "Oswald";
+	color:#fff;
+	background:#00b7cd;
+	box-shadow: none;
+	border:0;
+	padding:5px 10px 7px;
+	cursor:pointer;
+	transition:transform .5s;
+}
+
+.tab-box button:hover {
+	transform:scale(1.125);
+}
+/* Sidebar */
+.emodal-feature-list {
+	font:14px/24px 	"Open Sans",​sans-serif;
+}
+
+.emodal-feature-list span {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0;
+    position: relative;
+    top: 8px;
+}
+.emodal-feature-list > img {
+	margin-top:5px;
+}
+.emodal-feature-list a {
+	color:#1a77a3;
+    font-weight: bold;
+	text-decoration: none;
+}
+.emodal-feature-list a.btn {
+	font-size:14px;
+	display:inline-block;
+	margin-bottom:6px;
+	color:#fff;
+	background:#00b7cd;
+	text-transform: uppercase;
+	padding:8px 28px;
+}
+
+#emodal-theme-editor .tabwrapper {
+	display:inline-block;
+	width:66%;
+}
+#emodal-theme-editor .empreview {
+	width:33%;
+	float:right;
+	position:relative;
+}
+.example-modal, .example-modal:before, .example-modal:after {
+	-moz-box-sizing: border-box;
+}
+.empreview h2{
+	text-align:center;
+	color:#fff;
+	margin:0 7px;
+	font-size:30px;
+	position:relative;
+}
+.empreview .example-modal-overlay{
+	position:absolute;
+	display:block;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0
+}
+.empreview .example-modal {
+	display:block;
+	position:relative;
+	width:75%;
+	margin:0 auto 75px;
+	font-size:16px;
+	position: relative;
+	z-index: 99;
+}
+.empreview .example-modal .close-modal {
+	text-decoration:none;
+	text-align:center;
+    line-height: 1;
+	position: absolute;
+	font-weight: bold;
+	cursor: pointer;
+	min-width: 1em;
+}
+#poststuff .inside.close-modal {
+	margin:0;
+}

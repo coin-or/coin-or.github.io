@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Progress Bar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Progress-Bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-20" stroke="#4A4A4A" x="0.5" y="8.5" width="31" height="5" rx="2.5"></rect>
+        <path d="M26,8.5 L22,13.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M22,8.5 L18,13.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M18,8.5 L14,13.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M14,8.5 L10,13.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M10,8.5 L6,13.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M6,8.5 L2,13.5" id="Line" stroke="#4A4A4A"></path>
+        <rect id="Rectangle-20" stroke="#4A4A4A" x="0.5" y="18.5" width="31" height="5" rx="2.5"></rect>
+        <path d="M18,18.5 L14,23.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M14,18.5 L10,23.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M10,18.5 L6,23.5" id="Line" stroke="#4A4A4A"></path>
+        <path d="M6,18.5 L2,23.5" id="Line" stroke="#4A4A4A"></path>
+    </g>
+</svg>
