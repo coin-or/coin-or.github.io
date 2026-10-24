@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Box</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Box" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1.996,28 C1.447,28 1,27.553 1,27.004 L1,12 L31,12 L31,27.004 C31,27.553 30.553,28 30.004,28 L1.996,28 Z M1,11 L1,6.996 C1,6.447 1.447,6 1.996,6 L30.004,6 C30.553,6 31,6.447 31,6.996 L31,11 L1,11 Z M30.004,5 L1.996,5 C0.893,5 0,5.894 0,6.996 L0,10 L0,11 L0,27.004 C0,28.106 0.893,29 1.996,29 L30.004,29 C31.106,29 32,28.106 32,27.004 L32,11 L32,10 L32,6.996 C32,5.894 31.106,5 30.004,5 Z" id="Page-1" fill="#4A4A4A"></path>
+    </g>
+</svg>

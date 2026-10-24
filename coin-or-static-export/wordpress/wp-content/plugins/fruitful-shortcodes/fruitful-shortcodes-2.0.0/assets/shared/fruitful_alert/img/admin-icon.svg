@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Alerts</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Alerts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M18.4911592,25.7882556 C18.3836726,24.5066445 17.3093935,23.5 16,23.5 C14.6906065,23.5 13.6163274,24.5066445 13.5088408,25.7882556 C14.071918,26.2578146 14.8954076,26.5 16,26.5 C17.1045924,26.5 17.928082,26.2578146 18.4911592,25.7882556 Z" id="Combined-Shape" stroke="#4A4A4A"></path>
+        <path d="M6.5,23.0962912 L6.5,23.5 L25.5,23.5 L25.5,23.0962912 L23.5357617,18.1856953 L23.5,18 C23.5,12.442719 21.6360375,9.39187587 17.9050708,8.67039766 L17.5,8.59206683 L17.5,6 C17.5,5.17157288 16.8284271,4.5 16,4.5 C15.1715729,4.5 14.5,5.17157288 14.5,6 L14.5,8.59206683 L14.0949292,8.67039766 C10.3639625,9.39187587 8.5,12.442719 8.5,18 L8.46423835,18.1856953 L6.5,23.0962912 Z" id="Combined-Shape" stroke="#4A4A4A"></path>
+        <rect id="Rectangle-39" fill="#4A4A4A" x="8" y="18" width="16" height="1"></rect>
+    </g>
+</svg>

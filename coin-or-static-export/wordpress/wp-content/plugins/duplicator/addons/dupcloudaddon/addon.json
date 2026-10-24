@@ -1,0 +1,13 @@
+{
+    "slug": "DupCloudAddon",
+    "name": "DupCloud Storage",
+    "description": "Store backups on Duplicator's managed cloud storage.",
+    "version": "1.0.0",
+    "author": "Duplicator",
+    "authorURI": "https://duplicator.com/",
+    "addonURI": "",
+    "requiresWP": "",
+    "requiresPHP": "",
+    "requiresDuplcator": "",
+    "requiresAddons": []
+}

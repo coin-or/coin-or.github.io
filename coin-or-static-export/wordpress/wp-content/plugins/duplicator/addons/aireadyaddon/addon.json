@@ -1,0 +1,13 @@
+{
+    "slug": "AiReadyAddon",
+    "name": "AI Ready",
+    "description": "Exposes Duplicator backup operations to AI assistants via the WordPress Abilities API.",
+    "version": "1.0.0",
+    "author": "Duplicator",
+    "authorURI": "https://duplicator.com/",
+    "addonURI": "",
+    "requiresWP": "6.9",
+    "requiresPHP": "7.4",
+    "requiresDuplcator": "",
+    "requiresAddons": []
+}

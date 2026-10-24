@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Line 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pop-Up" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pop_Up-Content" transform="translate(-319.000000, -97.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-2" transform="translate(304.000000, 80.000000)">
+                <path d="M18.7605517,23 L27,23 C27.5522847,23 28,23.4477153 28,24 C28,24.5522847 27.5522847,25 27,25 L18.7605517,25 L22.2399401,28.8273272 C22.611447,29.2359848 22.5813304,29.8684331 22.1726728,30.2399401 C21.7640152,30.611447 21.1315669,30.5813304 20.7600599,30.1726728 L15.1485392,24 L20.7600599,17.8273272 C21.1315669,17.4186696 21.7640152,17.388553 22.1726728,17.7600599 C22.5813304,18.1315669 22.611447,18.7640152 22.2399401,19.1726728 L18.7605517,23 Z" id="Line-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

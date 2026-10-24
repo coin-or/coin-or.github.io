@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Quote" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-41" stroke="#4A4A4A" x="4.5" y="15.5" width="9" height="9" rx="2"></rect>
+        <path d="M4.5,21.5 L4.5,13.5 C4.5,10.1862915 7.1862915,7.5 10.5,7.5 L11,7.5" id="Line" stroke="#4A4A4A"></path>
+        <rect id="Rectangle-41" stroke="#4A4A4A" x="18.5" y="15.5" width="9" height="9" rx="2"></rect>
+        <path d="M18.5,21.5 L18.5,13.5 C18.5,10.1862915 21.1862915,7.5 24.5,7.5 L25,7.5" id="Line" stroke="#4A4A4A"></path>
+    </g>
+</svg>

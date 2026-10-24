@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-21" stroke="#4A4A4A" x="0.5" y="8.5" width="31" height="15" rx="3"></rect>
+        <circle id="Oval-6" stroke="#4A4A4A" cx="8" cy="16" r="1.5"></circle>
+        <circle id="Oval-6" stroke="#4A4A4A" cx="16" cy="16" r="1.5"></circle>
+        <circle id="Oval-6" stroke="#4A4A4A" cx="24" cy="16" r="1.5"></circle>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shortcodes Icons/Parallax</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Shortcodes-Icons/Parallax" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-18" stroke="#4A4A4A" x="0.5" y="4.5" width="31" height="23" rx="2"></rect>
+        <circle id="Oval-5" stroke="#4A4A4A" cx="25.5" cy="9.5" r="2"></circle>
+        <polyline id="Line" stroke="#4A4A4A" points="3.5 27.5 20.0039063 13 31.5 24.5"></polyline>
+        <polyline id="Line-2" stroke="#4A4A4A" points="0.5 18.5 10 11 16 17"></polyline>
+    </g>
+</svg>

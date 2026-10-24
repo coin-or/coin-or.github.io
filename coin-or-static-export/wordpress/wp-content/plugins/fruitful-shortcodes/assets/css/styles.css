@@ -1,0 +1,44 @@
+.ffst-modal.version .ff-version {
+    float:left;
+    width:50%;
+    padding:0 15px;
+    cursor:pointer;
+}
+.ffst-modal.version h1 {
+    font-size:1.8em;
+    color:#000;
+    margin-top:0;
+    margin-left:15px;
+}
+.ffst-modal.version h2 {
+    font-size:1.3em;
+    color:green;
+}
+.ffst-modal.version h2 span {
+    font-weight:normal;
+    font-size:0.8em;
+    font-style: italic;
+
+}
+
+.ffst-modal.version #ffst-modal-form {
+    padding:25px 30px;
+    overflow:hidden;
+}
+.ffst-modal.version img {
+    max-width:100%;
+}
+.ffst-modal.version .ff-notice {
+    margin-left:15px;
+}
+.notice-dismiss {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: 0 0;
+    color: #72777c;
+    cursor: pointer;
+}

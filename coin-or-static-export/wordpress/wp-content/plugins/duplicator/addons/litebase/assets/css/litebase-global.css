@@ -1,0 +1,63 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./addons/litebase/assets/sass/main-global.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*!
+DUPLICATOR LITEBASE ADDON GLOBAL STYLE
+Loaded site-wide on every wp-admin page. Contains only selectors that live
+OUTSIDE the .dup-styles wrapper (sidebar entry, plugins-row link, dashboard
+widget). Depends on dupli-plugin-global-style.
+*/
+/**
+ * Foundation for Sites
+ * Version 6.9.0
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+#dup-link-upgrade-highlight {
+  color: #1da867;
+  font-weight: 600;
+}
+#dup-link-upgrade-highlight:hover {
+  color: #178a52;
+}
+
+.dupli-plugins-list-pro-upgrade,
+.dupli-plugins-list-pro-upgrade strong {
+  color: #1da867;
+}
+
+.dupli-plugins-list-pro-upgrade strong {
+  display: inline !important;
+  font-weight: 600;
+}
+
+.dupli-plugins-list-pro-upgrade:hover,
+.dupli-plugins-list-pro-upgrade:hover strong,
+.dupli-plugins-list-pro-upgrade:focus,
+.dupli-plugins-list-pro-upgrade:focus strong {
+  color: #178a52;
+}
+
+.dupli-litebase-dashboard-recommended {
+  line-height: 20px;
+}
+.dupli-litebase-dashboard-recommended .dupli-litebase-dashboard-recommended-label {
+  color: #787c82;
+}
+.dupli-litebase-dashboard-recommended .dupli-litebase-dashboard-recommended-actions a:after {
+  content: "|";
+  cursor: not-allowed;
+  margin: 0 5px;
+  color: #646970;
+}
+.dupli-litebase-dashboard-recommended .dupli-litebase-dashboard-recommended-actions a:last-child:after {
+  content: "";
+  margin: 0;
+}
+.dupli-litebase-dashboard-recommended .dupli-litebase-dashboard-recommended-dismiss {
+  color: #787c82;
+  text-decoration: none;
+}
+.dupli-litebase-dashboard-recommended .dupli-litebase-dashboard-recommended-dismiss:hover {
+  color: #d63638;
+}

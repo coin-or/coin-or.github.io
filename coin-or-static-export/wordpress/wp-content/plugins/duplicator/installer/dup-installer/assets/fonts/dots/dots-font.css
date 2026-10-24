@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'dotsfont';
+  src: url('/wordpress/wp-content/plugins/duplicator/installer/dup-installer/assets/fonts/dots/dotsfont.eot');
+  src: url('/wordpress/wp-content/plugins/duplicator/installer/dup-installer/assets/fonts/dots/dotsfont.eot#iefix') format('embedded-opentype'),
+       url('/wordpress/wp-content/plugins/duplicator/installer/dup-installer/assets/fonts/dots/dotsfont.woff') format('woff'),
+       url('/wordpress/wp-content/plugins/duplicator/installer/dup-installer/assets/fonts/dots/dotsfont.ttf') format('truetype'),
+       url('/wordpress/wp-content/plugins/duplicator/installer/dup-installer/assets/fonts/dots/dotsfont.svg#dotsfontregular') format('svg');
+}
