@@ -1,21 +1,20 @@
 ## Topnav single links
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+## use site_url for a page on the main site outside /docs/ (opens in the same tab).
 topnav:
 - title: Topnav
   items:
+    - title: COIN-OR Home
+      site_url: /
+    - title: News
+      site_url: /news/
     - title: GitHub
       external_url: https://github.com/coin-or/coin-or.github.io
-    - title: News
-      url: /news
 
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: COIN-OR Help
-      folderitems:
-        - title: COIN-OR Web Site
-          external_url: https://www.coin-or.org
     - title: Guides
       folderitems:
       - title: User Guide

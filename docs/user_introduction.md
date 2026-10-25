@@ -3,7 +3,8 @@ title: "Getting started with the Optimization Suite"
 keywords: optimization COIN-OR
 tags: [getting_started]
 sidebar: user_sidebar
-permalink: user_introduction.html
+permalink: /docs/user_introduction.html
+redirect_from: /user_introduction.html
 summary: These brief instructions will help you get started quickly with COIN-OR.
 ---
 
@@ -747,7 +748,7 @@ For projects based on BuildTools 0.8, [this template](https://github.com/coin-or
 documents a number of commonly used configure options and shows how they
 can be set via a config.site file.
 For projects that already use the current BuildTools master,
-[this template](config.site) applies.
+[this template](/pages/user/config.site) applies.
 
 ### Build environment
 

@@ -3,7 +3,8 @@ title: "COIN-OR Developer's Guide"
 keywords: optimization COIN-OR
 tags: [developer_getting_started]
 sidebar: developer_sidebar
-permalink: developer_introduction.html
+permalink: /docs/developer_introduction.html
+redirect_from: /developer_introduction.html
 summary: This guide is for developers of COIN-OR projects, especially those that use the COIN-OR build system.
 ---
 

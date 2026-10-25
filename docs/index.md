@@ -3,7 +3,7 @@ title: "COIN-OR Documentation Site"
 keywords: sample homepage
 tags: [welcome]
 sidebar: home_sidebar
-permalink: index.html
+permalink: /docs/index.html
 summary: This guide will help you get started quickly with COIN-OR.
 ---
 
@@ -13,7 +13,7 @@ summary: This guide will help you get started quickly with COIN-OR.
 
 Here you will find guides to working with COIN projects, both as a developer and a user. Here are
 the currently available guides.
-  * [User's Guide](/user_introduction) (focused primarily on the [COIN-OR Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite))
-  * [Developer's Guide](/developer_introduction.html)
+  * [User's Guide](user_introduction.html) (focused primarily on the [COIN-OR Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite))
+  * [Developer's Guide](developer_introduction.html)
 
 {% include links.html %}
