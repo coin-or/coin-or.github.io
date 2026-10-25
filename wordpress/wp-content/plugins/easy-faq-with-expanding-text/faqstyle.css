@@ -1,0 +1,4 @@
+.bg_faq_closed, .bg_faq_opened {
+cursor:pointer!important;
+background-repeat: no-repeat;
+}

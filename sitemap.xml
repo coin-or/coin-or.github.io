@@ -15,7 +15,7 @@ search: exclude
 
 
   {% for page in site.pages %}
-  {% unless page.search == "exclude" %}
+  {% unless page.search == "exclude" or page.sitemap == false or page.url contains ".css" or page.url contains ".json" %}
   <url>
     <loc>{{site.url}}{{ page.url}}</loc>
   </url>

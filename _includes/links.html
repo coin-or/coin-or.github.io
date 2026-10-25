@@ -24,7 +24,7 @@
 
 {% for entry in site.data.topnav.topnav %}
 {% for item in entry.items %}
-{% if item.external_url == null %}
+{% if item.external_url == null and item.site_url == null %}
 [{{item.url | remove: "/" | remove: ".html"}}]: {{item.url | remove: "/"}}
 {% endif %}
 {% endfor %}
