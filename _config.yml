@@ -33,6 +33,13 @@ port: 4000
 exclude:
   - .idea/
   - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - docker-compose.yml
+  - build_and_serve.sh
+  - update.sh
+  - var/
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: COIN-OR Documentation
@@ -61,11 +68,6 @@ kramdown:
 
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
-collections:
-  tooltips:
-    output: false
-# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
-
 defaults:
   -
     scope:
@@ -77,16 +79,6 @@ defaults:
       search: true
       sidebar: home_sidebar
       topnav: topnav
-  -
-    scope:
-      path: ""
-      type: "tooltips"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-      tooltip: true
-
   -
     scope:
       path: ""
@@ -102,9 +94,8 @@ defaults:
 
 sidebars:
 - home_sidebar
-- build_sidebar
-- issues_sidebar
-- pr_sidebar
+- user_sidebar
+- developer_sidebar
 
 description: "A site for general COIN-OR documentation."
 # the description is used in the feed.xml file
