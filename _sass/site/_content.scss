@@ -1,0 +1,176 @@
+// Page and post bodies, the news sidebar, and shared components (accordions, tables, quotes).
+
+.page-title {
+  margin: 30px 0 24px;
+  font-size: 28px;
+}
+
+.content {
+  > :first-child { margin-top: 0; }
+
+  a { text-decoration-color: rgba($gold, 0.8); text-underline-offset: 2px; }
+
+  ul, ol { padding-left: 1.6em; }
+  li { margin-bottom: 0.25em; }
+
+  blockquote {
+    margin-left: 0;
+    padding: 2px 0 2px 18px;
+    border-left: 3px solid $gold;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 6px 10px;
+    border: 1px solid $rule;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: $tint; font-weight: 600; }
+
+  code, pre { font-size: 13px; background: $tint; }
+  code { padding: 1px 4px; }
+  pre { padding: 12px 14px; overflow-x: auto; }
+  pre code { padding: 0; }
+}
+
+// Expandable items (<details>), used for the FAQ and on the home page.
+.accordion {
+  border-top: 1px solid $border;
+  margin-bottom: 1em;
+}
+
+details {
+  border: 1px solid $border;
+  border-top: 0;
+
+  summary {
+    position: relative;
+    padding: 13px 44px 13px 20px;
+    cursor: pointer;
+    list-style: none;
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      margin-top: -4px;
+      border: 7px solid transparent;
+      border-top: 9px solid $gray;
+      border-bottom: 0;
+      transition: transform 0.15s;
+    }
+    &:hover { background: $tint; }
+  }
+  &[open] > summary {
+    background: $tint;
+    &::after { transform: rotate(180deg); }
+  }
+
+  .details-body {
+    padding: 14px 20px 4px;
+    text-align: left;
+  }
+}
+
+.faq summary { font-weight: 600; }
+
+// Posts: date badge beside a boxed title, with a sidebar of recent news.
+.with-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) $sidebar;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.post-header {
+  position: relative;
+  margin-left: 54px;
+  padding: 12px 25px 10px;
+  border: 1px solid $border;
+  border-bottom: 2px solid $gold;
+}
+
+.date-badge {
+  position: absolute;
+  left: -55px;
+  top: -1px;
+  width: 54px;
+  padding: 8px 0 7px;
+  background: $ink;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+
+  .date-day { display: block; font-size: 20px; font-weight: 700; }
+  .date-month { display: block; font-size: 12px; text-transform: uppercase; }
+  .date-year { display: block; margin-top: 2px; font-size: 11px; color: #c8c8c8; }
+}
+
+.post-title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.post-body {
+  margin-left: 54px;
+  padding: 25px;
+  border: 1px solid $border;
+  border-top: 0;
+}
+
+.post-author {
+  margin: 1.5em 0 0;
+  color: $link;
+  .icon { color: $gray; }
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 24px 0 0 54px;
+  a { text-decoration: none; }
+  .post-nav-next { margin-left: auto; text-align: right; }
+}
+
+.widget {
+  margin-bottom: 30px;
+  font-size: 14px;
+
+  ul { list-style: none; margin: 0 0 12px; padding: 0; }
+  li { padding: 6px 8px; border-bottom: 1px solid $rule; }
+  a { text-decoration: none; }
+  a[aria-current="page"] { color: $ink; font-weight: 600; }
+}
+
+.widget-title {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid $gold;
+  font-size: 20px;
+}
+
+.widget-date {
+  display: block;
+  color: $gray;
+  font-size: 12px;
+}
+
+@media (max-width: $mobile) {
+  .with-sidebar { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .post-header, .post-body, .post-nav { margin-left: 0; }
+  .post-header { padding-top: 58px; }
+  .date-badge { left: -1px; display: flex; gap: 6px; width: auto; padding: 6px 10px; align-items: baseline; }
+  .date-badge .date-day { font-size: 15px; }
+  .date-badge .date-year { margin: 0; }
+}

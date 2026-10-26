@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer-inner">
+      <div class="footer-info">
+        <ul class="footer-links">
+          {%- for link in site.data.navigation.footer.links %}
+          <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+          {%- endfor %}
+        </ul>
+        <p class="copyright">&copy; {{ site.time | date: "%Y" }} COIN-OR Foundation, Inc.
+          {%- if page.path %}
+          · <a href="https://github.com/{{ site.repository }}/edit/master/{{ page.path }}">Edit this page on GitHub</a>
+          {%- endif %}
+        </p>
+      </div>
+      <ul class="social-links">
+        {%- for link in site.data.navigation.footer.social %}
+        <li><a href="{{ link.url }}" title="{{ link.title }}">{% include site/icon.html name=link.icon %}<span class="visually-hidden">{{ link.title }}</span></a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</footer>

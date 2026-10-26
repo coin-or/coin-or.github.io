@@ -1,0 +1,9 @@
+---
+# Main site theme. The partials live in _sass/site/; the docs under /docs/ keep their own CSS.
+---
+@import "site/variables";
+@import "site/base";
+@import "site/header";
+@import "site/footer";
+@import "site/content";
+@import "site/home";

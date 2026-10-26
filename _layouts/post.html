@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="container with-sidebar">
+  <article class="post">
+    <header class="post-header">
+      <time class="date-badge" datetime="{{ page.date | date_to_xmlschema }}">
+        <span class="date-day">{{ page.date | date: "%-d" }}</span>
+        <span class="date-month">{{ page.date | date: "%b" }}</span>
+        <span class="date-year">{{ page.date | date: "%Y" }}</span>
+      </time>
+      <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+    <div class="post-body content">
+      {{ content }}
+      {%- if page.author %}
+      <p class="post-author">{% include site/icon.html name="user" %} {{ page.author }}</p>
+      {%- endif %}
+    </div>
+    {%- if page.previous or page.next %}
+    <nav class="post-nav" aria-label="More news">
+      {%- if page.previous %}
+      <a class="post-nav-prev" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="post-nav-next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </article>
+  <aside class="sidebar">
+    <section class="widget">
+      <h2 class="widget-title">Recent News</h2>
+      <ul>
+        {%- for post in site.posts limit: 8 %}
+        <li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.title }}</a>
+          <span class="widget-date">{{ post.date | date: "%B %Y" }}</span></li>
+        {%- endfor %}
+      </ul>
+      <p><a href="{{ '/news/' | relative_url }}">All news &rarr;</a></p>
+    </section>
+  </aside>
+</div>
