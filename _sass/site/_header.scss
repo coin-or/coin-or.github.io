@@ -1,0 +1,127 @@
+// Centered logo with the menu below it; on small screens, logo left and a menu button right.
+
+.site-header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.site-logo img {
+  display: block;
+  width: 165px;
+  height: auto;
+}
+
+.nav-toggle { display: none; }
+
+.site-nav {
+  margin: 20px 0 10px;
+
+  ul { list-style: none; margin: 0; padding: 0; }
+
+  a {
+    display: block;
+    padding: 8px 10px;
+    color: $charcoal;
+    font-family: $font-menu;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 4px;
+
+  > li { position: relative; }
+
+  > li > a:hover,
+  > li:focus-within > a,
+  > li.is-active > a {
+    background: $gold;
+    color: $ink;
+  }
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 10;
+  min-width: 220px;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+
+  a {
+    padding: 9px 14px;
+    text-transform: none;
+    white-space: nowrap;
+  }
+  a:hover, a[aria-current="page"] {
+    background: $gold;
+    color: $ink;
+  }
+}
+
+.has-children:hover > .sub-menu,
+.has-children:focus-within > .sub-menu {
+  display: block;
+}
+
+.menu > li:last-child > .sub-menu { left: auto; right: 0; }
+
+@media (max-width: $mobile) {
+  .site-header-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .site-logo img { width: 96px; }
+
+  .nav-toggle {
+    display: block;
+    padding: 8px;
+    border: 0;
+    background: none;
+    color: $charcoal;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    margin: 12px 0 0;
+    border-top: 2px solid $gold;
+  }
+  .nav-open .site-nav { display: block; }
+
+  .menu {
+    display: block;
+    > li { border-bottom: 1px solid $rule; }
+
+    // only the current page is filled in; its parent section is just bold
+    > li.has-children.is-active > a {
+      background: none;
+      font-weight: bold;
+    }
+  }
+
+  .sub-menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    a { padding-left: 28px; }
+  }
+}

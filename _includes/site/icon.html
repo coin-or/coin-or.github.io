@@ -1,0 +1,6 @@
+{%- comment -%}
+  Inline SVG icon from _data/icons.yml.  Usage: {% include site/icon.html name="github" %}
+  Font glyphs have y pointing up with the baseline at 0 (ascent 1536, descent 256), hence the flip.
+{%- endcomment -%}
+{%- assign icon = site.data.icons[include.name] -%}
+<svg class="icon icon-{{ include.name }}" viewBox="0 -1536 {{ icon.width }} 1792" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" d="{{ icon.d }}"/></svg>

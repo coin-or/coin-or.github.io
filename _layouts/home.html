@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- comment -%}
+  Home page: a series of titled sections, each a row of centered columns.
+  Front matter (see index.md):
+    sections:
+      - title: Section title
+        columns:
+          - icon: /path/to/image.png   (an image) or a name from _data/icons.yml (drawn in a dark circle)
+            title: Column title
+            text: Markdown
+            accordion:                 (optional) expandable items below the text
+              - title: Item title
+                text: Markdown
+{%- endcomment -%}
+<div class="container home">
+  {%- for section in page.sections %}
+  <section class="home-section">
+    <h2 class="section-title">{{ section.title }}</h2>
+    <div class="columns columns-{{ section.columns.size }}">
+      {%- for column in section.columns %}
+      <div class="column">
+        {%- if column.icon contains "/" %}
+        <img class="column-image" src="{{ column.icon | relative_url }}" alt="" width="100" height="100">
+        {%- elsif column.icon %}
+        <span class="column-icon">{% include site/icon.html name=column.icon %}</span>
+        {%- endif %}
+        <h3 class="column-title">{{ column.title }}</h3>
+        <div class="column-text">{{ column.text | markdownify }}</div>
+        {%- if column.accordion %}
+        <div class="accordion">
+          {%- for item in column.accordion %}
+          <details>
+            <summary>{{ item.title }}</summary>
+            <div class="details-body">{{ item.text | markdownify }}</div>
+          </details>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endfor %}
+  {{ content }}
+</div>

@@ -1,0 +1,77 @@
+// Home page: uppercase section titles framed by soft shadow lines, then rows of centered columns.
+
+.home-section { margin-top: 50px; }
+
+.section-title {
+  position: relative;
+  margin: 0 0 40px;
+  padding: 24px 0;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+
+  // The old theme's "shadow-type-1" frame: a faint rule with a shadow that is strongest near the ends.
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background:
+      radial-gradient(ellipse 30% 100% at 18% 0, rgba(0, 0, 0, 0.10), transparent),
+      radial-gradient(ellipse 30% 100% at 82% 0, rgba(0, 0, 0, 0.10), transparent);
+  }
+  &::before { top: 0; border-top: 1px solid $rule; }
+  &::after { bottom: 0; transform: scaleY(-1); border-top: 1px solid $rule; }
+}
+
+.columns {
+  display: grid;
+  gap: 30px;
+  &.columns-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  &.columns-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  &.columns-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.column {
+  text-align: center;
+  font-size: 14px;
+}
+
+.column-image {
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.column-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 22px;
+}
+
+.column-title {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.column-text a { font-weight: 600; text-decoration: none; }
+
+.column .accordion {
+  margin-top: 12px;
+  summary { text-align: center; }
+}
+
+@media (max-width: 760px) {
+  .columns.columns-2, .columns.columns-3, .columns.columns-4 { grid-template-columns: minmax(0, 1fr); }
+  .section-title { font-size: 22px; }
+}

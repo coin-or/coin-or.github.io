@@ -1,0 +1,61 @@
+# Main menu of the site theme (_includes/site/header.html).
+# An item is highlighted when the current page is its url, lies under it, or is one of its children;
+# "posts: true" also highlights it on news posts.
+main:
+  - title: Home
+    url: /
+  - title: News
+    url: /news/
+    posts: true          # highlighted on news posts too
+  - title: Workshops
+    url: /workshops/
+    children:
+      - title: IMA
+        url: /workshops/oct2018/
+  - title: Projects
+    url: /projects/
+  - title: Download
+    url: /downloading/
+  - title: Docs
+    url: /docs/
+  - title: Contributing
+    url: /contributing/
+  - title: FAQ
+    url: /faq/
+  - title: Resources
+    url: /resources/
+  - title: About…
+    url: /about-the-foundation/
+    children:
+      - title: COIN-OR Foundation
+        url: /about-the-foundation/
+      - title: Strategic Leadership Board
+        url: /about-the-foundation/strategic-leadership-board/
+      - title: Technical Leadership Council
+        url: /about-the-foundation/technical-leadership-council/
+      - title: Members
+        url: /members/
+      - title: Former Board and Council Members
+        url: /about-the-foundation/former-board-and-council-members/
+
+footer:
+  links:
+    - title: Terms of Service
+      url: /terms-of-service/
+    - title: Code of Conduct
+      url: /code-of-conduct/
+    - title: About the Foundation
+      url: /about-the-foundation/
+  social:
+    - title: COIN-OR on GitHub
+      icon: github
+      url: https://github.com/coin-or
+    - title: COIN-OR Foundation on LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/groups/97659/
+    - title: COIN-OR on Twitter
+      icon: twitter
+      url: https://twitter.com/coin_or
+    - title: Email info@coin-or.org
+      icon: envelope
+      url: mailto:info@coin-or.org

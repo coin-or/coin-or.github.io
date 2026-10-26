@@ -1,5 +1,12 @@
 repository: coin-or/coin-or.github.io
 
+title: COIN-OR
+tagline: Computational Infrastructure for Operations Research
+# used by the main site theme (page titles, header, SEO tags); the docs use site_title below
+
+permalink: /:year/:month/:day/:title/
+# matches the old WordPress post URLs, so converted posts keep their addresses
+
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
@@ -100,8 +107,8 @@ sidebars:
 - user_sidebar
 - developer_sidebar
 
-description: "A site for general COIN-OR documentation."
-# the description is used in the feed.xml file
+description: "Open-source software for the operations research community."
+# default page description for search engines and link previews
 
 # needed for sitemap.xml file only
 # url: http://idratherbewriting.com
@@ -109,6 +116,7 @@ description: "A site for general COIN-OR documentation."
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-seo-tag
 redirect_from:
   json: false
 # redirect_from/redirect_to front matter keeps old URLs working (see _layouts/redirect.html and redirects/)

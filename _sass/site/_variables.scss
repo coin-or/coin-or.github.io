@@ -1,0 +1,18 @@
+// COIN-OR site theme: colors and sizes, taken from the WordPress (Fruitful) theme settings and the logo.
+
+$gold:        #eab300;  // accent: menu highlight, rules, icons (the logo's gold)
+$link:        #8a6a00;  // link text: a darker gold, 5.1:1 on white (#eab300 itself is only 1.9:1)
+$charcoal:    #333333;  // body text, buttons, social icons
+$ink:         #1d2323;  // date badges, text on gold
+$gray:        #808080;  // secondary text (the logo's gray ring)
+$border:      #d6d6d6;
+$rule:        #e5e5e5;
+$tint:        #f6f6f6;  // light backgrounds
+
+$font-body:   "Open Sans", "Helvetica Neue", Arial, sans-serif;
+$font-menu:   Arial, Helvetica, sans-serif;
+
+$container:   960px;
+$gutter:      20px;
+$sidebar:     280px;
+$mobile:      900px;    // below this the menu collapses behind the toggle button
