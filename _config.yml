@@ -75,6 +75,12 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  -
+    scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "docs-page"
       comments: true
       search: true
       sidebar: home_sidebar
@@ -85,12 +91,9 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true
-      search: true
-      sidebar: home_sidebar
-      topnav: topnav
 
 # these are defaults used for the frontmatter for these file types
+# main site pages use the site theme (_layouts/page.html etc.); pages under docs/ use the docs theme (_layouts/docs-*.html)
 
 sidebars:
 - home_sidebar
