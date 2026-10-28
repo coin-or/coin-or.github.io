@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="436" height="280">
+	<defs>
+		<filter id="drop_shadow">
+			<feGaussianBlur result="blurredAlpha" in="SourceAlpha" stdDeviation="3"/>
+			<feOffset result="offsetBlurredAlpha" in="blurredAlpha" dx="3" dy="3"/>
+			<feFlood result="flooded" style="flood-color:#000000; flood-opacity:0.65"/>
+			<feComposite result="coloredShadow" in="flooded" operator="in" in2="offsetBlurredAlpha"/>
+			<feComposite in="SourceGraphic" operator="over" in2="coloredShadow"/>
+		</filter>
+
+	</defs>
+<g transform="scale(.85,.86)">
+	<g 	id="txtNewCurrentSolution" >
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="235" 
+			y="30" >New Current</text>
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="235" 
+			y="48" >Solution</text>
+	</g>
+
+	<g 	id="txtMoveManager" >
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="430" 
+			y="146" >Move Manager</text>
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="430" 
+			y="164" >generates moves</text>
+	</g>
+
+	<g 	id="txtObjectiveFunction" >
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="370" 
+			y="264" >Objective Function</text>
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="370" 
+			y="282" >evaluates moves</text>
+	</g>
+
+	<g 	id="txtBestMovePicked" >
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="130" 
+			y="264" >Best non-tabu</text>
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="130" 
+			y="282" >move is picked</text>
+	</g>
+
+	<g 	id="txtMoveOperates" >
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="80" 
+			y="146" >Move operates on</text>
+		<text 	style="stroke:none; stroke-width:1; stroke-opacity:1; font-size:18; font-family:Times New Roman; fill:#0d259b; fill-opacity:1; text-anchor: middle" 
+			x="80" 
+			y="164" >the current solution</text>
+	</g>
+
+	<path 	id="SouthArrow"
+		style="stroke:none; stroke-width:1; stroke-opacity:1; stroke-miterlimit:10; fill:#077f1e; fill-opacity:1" d="M 409.74 86.1237 457 103.474 409.74 121 V 107.309 C 376.453 107.242 359 112.933 314 93 l 7.565 -8 c 29 15.6959 61.8141 15.5312 88.175 15.4639 z" 
+		transform="matrix(-1.09009 -0.056331 -0.105375 0.713799 672.539 245.207)" />
+
+	<path 	id="SouthEastArrow"
+		style="stroke:none; stroke-width:1; stroke-opacity:1; stroke-miterlimit:10; fill:#077f1e; fill-opacity:1" d="M 409.74 86.1237 457 103.474 409.74 121 V 107.309 C 376.453 107.242 333.077 99.7 320.877 78.9655 L 330.616 74.9739 c 23.3176 24.2801 52.763 25.5573 79.1239 25.49 z" 
+		transform="matrix(-0.481478 0.496841 0.600646 0.398268 572.581 -23.05148)" />
+
+	<path 	id="SouthWestArrow" 
+		style="stroke:none; stroke-width:1; stroke-opacity:1; stroke-miterlimit:10; fill:#077f1e; fill-opacity:1" d="M 409.74 86.1237 457 103.474 409.74 121 V 107.309 c -33.287 -0.067 -56.224 1.898 -88.862 -31.3294 l 11.289 -4.1572 c 24.312 25.3254 51.212 28.7086 77.573 28.6416 z" 
+		transform="matrix(-0.134841 -0.608417 -0.63816 0.333082 163.083 427.237)" />
+
+	<path 	id="NorthWestArrow"
+		style="stroke:none; stroke-width:1; stroke-opacity:1; stroke-miterlimit:10; fill:#077f1e; fill-opacity:1" d="M 409.74 86.1237 457 103.474 409.74 121 V 107.309 C 376.453 107.242 350.889 120.081 304.915 78.3577 l 10.449 -8.5114 c 11.738 26.2238 68.015 30.6847 94.376 30.6177 z" 
+		transform="matrix(0.961621 -0.46507 -0.273792 -0.667571 -230.526 315.747)" />
+
+	<path 	id="NorthEastArrow"
+		style="stroke:none; stroke-width:1; stroke-opacity:1; stroke-miterlimit:10; fill:#077f1e; fill-opacity:1" d="M 409.74 86.1237 457 103.474 409.74 121 V 107.309 C 376.453 107.242 350.889 120.081 304.915 78.3577 l 10.449 -8.5114 c 11.738 26.2238 68.015 30.6847 94.376 30.6177 z" 
+		transform="matrix(0.85359 0.710444 0.494534 -0.525403 -9.3945 -142.222)" />
+</g>
+</svg>
+

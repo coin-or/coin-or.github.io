@@ -1,0 +1,329 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- Generated from XML source. Copyright 2001 Robert Harder. --><title>OpenTS Tutorial - Traveling Salesman Problem (TSP) - Main Program: Starting the Tabu Search</title>
+<meta http-equiv="Content-Language" content="EN">
+<meta name="keywords" content="OpenTS, teaching, aids, what, tabu search, java, javabean, heuristic">
+<meta name="description" content="A tutorial for using OpenTS">
+<meta name="abstract" content="A tutorial for using OpenTS">
+<meta name="author" content="Robert Harder">
+<meta name="copyright" content="Robert Harder, 2001">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="FOLLOW,INDEX">
+<link rel="SHORTCUT ICON" href="../../../docs/favicon.ico">
+<link rel="alternate" media="print" href="-pr.html">
+<base target="_parent">
+<style type="text/css"><!--
+             
+
+               body
+                 {  margin: 0;
+                 }
+
+
+               .iHarderNet
+                 {  font-family: arial, geneva, lucida sans unicode, helvetica;
+                    color: white;
+                    text-align: center;
+                    font-size: 14pt;
+                 }
+
+
+               .i_iHarder
+                 {  font-family: times new roman, courier;
+                    font-style:  italic;
+                    font-weight: bold;
+                    font-size: 12pt;
+                 }
+
+               .MainTitle
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    font-style: italic;
+                    margin-bottom: 4pt;
+                 }
+
+               .OpenTS_Home
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 14pt;
+                    font-style: italic;
+                 }
+
+               .Menu
+                 {  margin-top: 10pt;
+                    margin-left: 6pt;
+                    text-indent: -6pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .SubMenu
+                 {  margin-top: -5pt;
+                    margin-left: 4pt;
+                 }
+
+
+               .MenuItem
+                 {  margin-top: 10pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .Menu A
+                 {  color: #000033;
+                 }
+
+               .Logo
+                 {  text-align: center;
+                 }
+
+.SubTitle
+{  font-family: Arial, san serif;
+   font-size: 16pt;
+   font-style: italic;
+   font-weight: bold;
+}
+
+
+               .SectionTitle
+                 {  margin-top: 1em;
+                    margin-left: 1em;
+                    margin-right: 25%;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: larger;
+                    /*border-top: 4px double black;*/
+                    /*border-bottom: 4px double black;*/
+                 }
+
+               .MainSectionTitle
+                 {  margin-top: 1em;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 22pt;
+                    font-style: italic;
+                    border-bottom: 4px double black;
+                 }
+
+               .SectionBody
+                 {  margin-top: 1em;
+                    margin-left: 1ex;
+                 }
+
+               .MainSectionBody
+                 {  margin-top: 10pt;
+                 }
+
+               .MainPage
+                 {  margin: 4pt; 
+                    margin-right: 24pt;
+                 }
+
+               .FAQList_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Answer
+                 {  
+                 }
+
+
+               .TopMenu
+                 {  margin-top: 20pt;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               .BottomMenu
+                 {  margin-top: 0.1in;
+                    border-top: 4px double black;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               p
+                 {  
+                    margin-top: 0.1in;
+                    text-indent: 1em;
+                 }
+
+               li
+                 {  margin-top: 0.2in;  
+                 }
+
+               ul
+                 {  margin-left: 0.25in;
+                    margin-top: 0.1in;
+                 }
+
+               tt
+                 {  font-size: larger;
+                 }
+
+
+ p.alert { border-left:solid red 6px; margin-left:-12px; padding-left:6px; }
+ pre { padding:1ex; border: solid gray 1px;}
+ code { font-size: 95%; }
+ dl dt { font-weight: bold }
+ dl dd { margin-bottom: 1em }
+ .newCode { background: #EEEEEE; }
+
+               a
+                 {  color: #000055;
+                 }
+               a:hover
+                 {  background: lavender;
+                    text-decoration: none;
+                    color: black;
+                 }
+               
+             
+           --></style>
+</head>
+<body bgcolor="white"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="#000066" height="50">
+<td width="128" height="50"><div class="iHarderNet"><a href="http://www.iHarder.net"><span class="iHarderNet"><span class="i_iHarder">i</span>Harder.net</span></a></div></td>
+<td width="*"><div class="MainTitle"><title-medium>OpenTS Tutorial</title-medium></div></td>
+</tr>
+<tr><td colspan="2"><div style="margin:0 ; border-top: 1px double black"></div></td></tr>
+<tr height="*">
+<td width="128" valign="top" bgcolor="#9090d0"><table width="100%" height="100%" cellpadding="2" cellspacing="0" border="0">
+<tr height="1"><td height="1" width="120" bgcolor="white" valign="center" align="center"><div class="SubTitle">
+      <img src="../../OpenTS_128x36.jpg" border="0" width="128" height="36">
+    </div></td></tr>
+<tr><td valign="top" height="*" style="border-top: solid black 1px; border-right: solid black 1px">
+<div class="Menu">
+<a title="" href="../../../index.html">Summary</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../downloads/OpenTS_10-exp10.tgz">Download now!</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/index.html">Documentation</a><div class="SubMenu">
+<div class="Menu">
+<a title="" href="../../../docs/installation.html">Installation</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/manual.html">Users' Manual</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/tutorial/simple/index.html">Tutorial</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/api/index.html">Javadoc API</a><div class="SubMenu"></div>
+</div>
+</div>
+</div>
+<div class="Menu">
+<a title="" href="../../../license.html">License (CPL v0.5)</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="http://www.coin-or.org">COIN Home Page</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a><div class="SubMenu"></div>
+</div>
+<div class="Menu" style="font-weight: normal">Curious about what started it? <br><a href="http://www-124.ibm.com/developerworks/oss/coin/OpenTS/downloads/ITOR_01101001.PDF">Read this paper on vehicle routing</a> and then
+<a href="http://rharder.freezope.org/Vehicle-Routing-Package.zip">download this file with all the relevant code</a>.
+</div>
+</td></tr>
+</table></td>
+<td width="*" height="*" bgcolor="white" valign="top"><div class="MainPage">
+
+    <div class="MainSectionTitle">Main Program</div>
+<div class="MainSectionBody">
+        <div class="SectionTitle">Starting the Tabu Search</div>
+<div class="SectionBody">
+
+            <p>
+              With just a couple of lines we'll get this Tabu Search
+              started on its way.
+            </p>
+
+<pre><code>import org.coinor.opents.*;
+
+public class Main
+{
+
+    public static void main( String[] args )
+    {
+        ...
+
+        // Start tabu search
+<div class="newCode">        tabuSearch.setIterationsToGo( 100 );
+        tabuSearch.startSolving();
+</div>
+        ...
+
+    }   // end main
+
+    ...
+    
+}   // end class Main</code></pre>
+
+            <p>
+              We've chosen to solve for one hundred iterations.
+              Is this too much? Too little? There's no way to know with tabu
+              search in general except by experimenting.
+            </p>
+
+            <p>
+              Because we've chosen to use the <tt>SingleThreadedTabuSearch</tt>
+              object, the <tt>startSolving()</tt> method blocks until all iterations
+              have been executed.
+              In a more complicated (and proper) application, you should
+              use the <tt>MultiThreadedTabuSearch</tt> object which returns
+              control immediately after calling <tt>startSolving()</tt> leaving your
+              application to await an appropriate event to know when the Tabu Search
+              has stopped.
+            </p>
+
+            <p>
+              Finally let's see how we get the answer and display it.
+            </p>
+
+
+
+<div style="text-align: center">
+<a href="main3.html" rel="previous">Previous</a> | 
+<a href="main5.html" rel="next">Next</a>
+</div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+  </div></td>
+</tr>
+<tr>
+<td bgcolor="#9090d0" style="height: 1em; border-right: solid black 1px"> </td>
+<td><div class="BottomMenu">
+<span class="Menu"><a title="" href="../../../index.html">Summary</a> | </span><span class="Menu"><a title="" href="../../../downloads/OpenTS_10-exp10.tgz">Download now!</a> | </span><span class="Menu"><a title="" href="../../../docs/index.html">Documentation</a> | </span><span class="Menu"><a title="" href="../../../license.html">License (CPL v0.5)</a> | </span><span class="Menu"><a title="" href="http://www.coin-or.org">COIN Home Page</a> | </span><span class="Menu"><a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a> | </span>
+</div></td>
+</tr>
+</table></body>
+</html>

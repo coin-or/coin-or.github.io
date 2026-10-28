@@ -1,0 +1,334 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- Generated from XML source. Copyright 2001 Robert Harder. --><title>OpenTS - Java Tabu Search Framework</title>
+<meta http-equiv="Content-Language" content="EN">
+<meta name="keywords" content="OpenTS, tabu search, java, javabean, heuristic">
+<meta name="description" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="abstract" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="author" content="Robert Harder">
+<meta name="copyright" content="Robert Harder, 2000">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="FOLLOW,INDEX">
+<link rel="SHORTCUT ICON" href="./docs/favicon.ico">
+<base target="_parent">
+<style type="text/css"><!--
+             
+
+               body
+                 {  margin: 0;
+                 }
+
+
+               .iHarderNet
+                 {  font-family: arial, geneva, lucida sans unicode, helvetica;
+                    color: white;
+                    text-align: center;
+                    font-size: 14pt;
+                 }
+
+
+               .i_iHarder
+                 {  font-family: times new roman, courier;
+                    font-style:  italic;
+                    font-weight: bold;
+                    font-size: 12pt;
+                 }
+
+               .MainTitle
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    font-style: italic;
+                    margin-bottom: 4pt;
+                 }
+
+               .OpenTS_Home
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 14pt;
+                    font-style: italic;
+                 }
+
+               .Menu
+                 {  margin-top: 10pt;
+                    margin-left: 6pt;
+                    text-indent: -6pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .SubMenu
+                 {  margin-top: -5pt;
+                    margin-left: 4pt;
+                 }
+
+
+               .MenuItem
+                 {  margin-top: 10pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .Menu A
+                 {  color: #000033;
+                 }
+
+               .Logo
+                 {  text-align: center;
+                 }
+
+.SubTitle
+{  font-family: Arial, san serif;
+   font-size: 16pt;
+   font-style: italic;
+   font-weight: bold;
+}
+
+
+               .SectionTitle
+                 {  margin-top: 1em;
+                    margin-left: 1em;
+                    margin-right: 25%;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: larger;
+                    /*border-top: 4px double black;*/
+                    /*border-bottom: 4px double black;*/
+                 }
+
+               .MainSectionTitle
+                 {  margin-top: 1em;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 22pt;
+                    font-style: italic;
+                    border-bottom: 4px double black;
+                 }
+
+               .SectionBody
+                 {  margin-top: 1em;
+                    margin-left: 1ex;
+                 }
+
+               .MainSectionBody
+                 {  margin-top: 10pt;
+                 }
+
+               .MainPage
+                 {  margin: 4pt; 
+                    margin-right: 24pt;
+                 }
+
+               .FAQList_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Answer
+                 {  
+                 }
+
+
+               .TopMenu
+                 {  margin-top: 20pt;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               .BottomMenu
+                 {  margin-top: 0.1in;
+                    border-top: 4px double black;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               p
+                 {  
+                    margin-top: 0.1in;
+                    text-indent: 1em;
+                 }
+
+               li
+                 {  margin-top: 0.2in;  
+                 }
+
+               ul
+                 {  margin-left: 0.25in;
+                    margin-top: 0.1in;
+                 }
+
+               tt
+                 {  font-size: larger;
+                 }
+
+
+ p.alert { border-left:solid red 6px; margin-left:-12px; padding-left:6px; }
+ pre { padding:1ex; border: solid gray 1px;}
+ code { font-size: 95%; }
+ dl dt { font-weight: bold }
+ dl dd { margin-bottom: 1em }
+ .newCode { background: #EEEEEE; }
+
+               a
+                 {  color: #000055;
+                 }
+               a:hover
+                 {  background: lavender;
+                    text-decoration: none;
+                    color: black;
+                 }
+               
+             
+           --></style>
+</head>
+<body bgcolor="white"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="#000066" height="50">
+<td width="128" height="50"><div class="iHarderNet"><a href="http://www.iHarder.net"><span class="iHarderNet"><span class="i_iHarder">i</span>Harder.net</span></a></div></td>
+<td width="*"><div class="MainTitle"><title-medium>OpenTS - Java Tabu Search</title-medium></div></td>
+</tr>
+<tr><td colspan="2"><div style="margin:0 ; border-top: 1px double black"></div></td></tr>
+<tr height="*">
+<td width="128" valign="top" bgcolor="#9090d0"><table width="100%" height="100%" cellpadding="2" cellspacing="0" border="0">
+<tr height="1"><td height="1" width="120" bgcolor="white" valign="center" align="center"><div class="SubTitle">
+      <img src="./docs/OpenTS_128x36.jpg" border="0" width="128" height="36">
+    </div></td></tr>
+<tr><td valign="top" height="*" style="border-top: solid black 1px; border-right: solid black 1px">
+<div class="Menu">
+<a title="" href="./index.html">Summary</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="./downloads/OpenTS_10-exp10.tgz">Download now!</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="./docs/index.html">Documentation</a><div class="SubMenu">
+<div class="Menu">
+<a title="" href="./docs/installation.html">Installation</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="./docs/manual.html">Users' Manual</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="./docs/tutorial/simple/index.html">Tutorial</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="./docs/api/index.html">Javadoc API</a><div class="SubMenu"></div>
+</div>
+</div>
+</div>
+<div class="Menu">
+<a title="" href="./license.html">License (CPL v0.5)</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="http://www.coin-or.org">COIN Home Page</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a><div class="SubMenu"></div>
+</div>
+<div class="Menu" style="font-weight: normal">Curious about what started it? <br><a href="downloads/ITOR_01101001.PDF">Read this paper on vehicle routing</a> and then
+<a href="downloads/Vehicle-Routing-Package.zip">download this file with all the relevant code</a>.
+</div>
+</td></tr>
+</table></td>
+<td width="*" height="*" bgcolor="white" valign="top"><div class="MainPage">
+
+    <div class="MainSectionTitle">Summary</div>
+<div class="MainSectionBody">
+
+<p><em>
+ Verson 1.0-exp10 has been released. It adds two new "helper" classes
+ <tt>ComplexMove</tt> and <tt>ComplexTabuList</tt> to aid in cases where
+ multiple attributes are being tracked in the tabu list.
+</em></p>
+<!--
+<p>
+<em>
+  <strong>News Flash: Tabu Search on Clusters of Machines!</strong> Deep in the OpenTS labs, work is
+  moving along on an application for analysts to run their 
+  pre-existing OpenTS tabu searches on clusters of Java machines!
+  To make sure you don't miss this important release in Summer 2002, or to listen for
+  calls for beta testing, sign up on the COIN announcements mailing list (very low volume)
+  here: <a href="http://www-124.ibm.com/developerworks/opensource/mailman/listinfo/coin-announce">http://www-124.ibm.com/developerworks/opensource/mailman/listinfo/coin-announce</a>.
+ </em>
+</p>
+-->
+        <p>
+          OpenTS is a java tabu search framework that helps you implement the popular 
+          tabu search meta-heuristic in a well-defined, object-oriented design. 
+          Among the key advantages of this framework:
+        </p>
+        <p>
+          <ul>
+            <li>
+              <b>Works with any problem type.</b> 
+              You can solve vehicle routing problems, assignment problems, or your 
+              favorite packing problem. OpenTS makes no assumptions about the type 
+              of problem you may solve.
+            </li>
+<p></p>
+            <li>
+              <b>Offloads repetitive tabu search functions.</b> 
+              You can define your problem and your ideal tabu search and 
+              leave the grunt work to OpenTS.
+            </li>
+<p></p>
+            <li>
+              <b>Logically organizes your tabu search.</b> 
+              You can better explain and understand your tabu search when 
+              it follows the well-structured design of the OpenTS framework.
+            </li>
+<p></p>
+            <li>
+              <b>Exploits modern computer technology.</b> 
+              You can take advantage of object-oriented programming and the 
+              cross-platform Java language including the ability to use 
+              multi-processor computers and deliver applications over the Internet.
+            </li>
+<p></p>
+            <li>
+              <b>Integrates goal programming.</b> 
+              You can evaluate solutions in more than one dimension and compare 
+              solutions first by comparing the most important value, then the second, 
+              the third and so on.
+            </li>
+          </ul>
+        </p>         
+        <p align="center">
+        <object data="docs/iteration.svg" width="440" height="300" 
+          type="image/svg+xml">
+          <img src="docs/iteration.gif" border="0" width="424" height="280">
+        </object>
+	  <br>
+          <a href="docs/index.html">
+            <em>An iteration in OpenTS.</em>
+          </a>
+         </p>
+       </div>
+
+  </div></td>
+</tr>
+<tr>
+<td bgcolor="#9090d0" style="height: 1em; border-right: solid black 1px"> </td>
+<td><div class="BottomMenu">
+<span class="Menu"><a title="" href="./index.html">Summary</a> | </span><span class="Menu"><a title="" href="./downloads/OpenTS_10-exp10.tgz">Download now!</a> | </span><span class="Menu"><a title="" href="./docs/index.html">Documentation</a> | </span><span class="Menu"><a title="" href="./license.html">License (CPL v0.5)</a> | </span><span class="Menu"><a title="" href="http://www.coin-or.org">COIN Home Page</a> | </span><span class="Menu"><a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a> | </span>
+</div></td>
+</tr>
+</table></body>
+</html>

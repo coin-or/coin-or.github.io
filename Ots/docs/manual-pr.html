@@ -1,0 +1,765 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- Generated from XML source. Copyright 2001 Robert Harder. --><title>OpenTS - Java Tabu Search Users Manual</title>
+<meta http-equiv="Content-Language" content="EN">
+<meta name="keywords" content="OpenTS, manual, tabu search, java, javabean, heuristic">
+<meta name="description" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="abstract" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="author" content="Robert Harder">
+<meta name="copyright" content="Robert Harder, 2000">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="FOLLOW,INDEX">
+<link rel="SHORTCUT ICON" href="../docs/favicon.ico">
+<base target="_parent">
+<style type="text/css"><!--
+             
+
+               body
+                 {  margin: 0;
+                 }
+
+
+               .iHarderNet
+                 {  font-family: arial, geneva, lucida sans unicode, helvetica;
+                    color: white;
+                    text-align: center;
+                    font-size: 14pt;
+                 }
+
+
+               .i_iHarder
+                 {  font-family: times new roman, courier;
+                    font-style:  italic;
+                    font-weight: bold;
+                    font-size: 12pt;
+                 }
+
+               .MainTitle
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    font-style: italic;
+                    margin-bottom: 4pt;
+                 }
+
+               .OpenTS_Home
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 14pt;
+                    font-style: italic;
+                 }
+
+               .Menu
+                 {  margin-top: 10pt;
+                    margin-left: 6pt;
+                    text-indent: -6pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .SubMenu
+                 {  margin-top: -5pt;
+                    margin-left: 4pt;
+                 }
+
+
+               .MenuItem
+                 {  margin-top: 10pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .Menu A
+                 {  color: #000033;
+                 }
+
+               .Logo
+                 {  text-align: center;
+                 }
+
+.SubTitle
+{  font-family: Arial, san serif;
+   font-size: 16pt;
+   font-style: italic;
+   font-weight: bold;
+}
+
+
+               .SectionTitle
+                 {  margin-top: 1em;
+                    margin-left: 1em;
+                    margin-right: 25%;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: larger;
+                    /*border-top: 4px double black;*/
+                    /*border-bottom: 4px double black;*/
+                 }
+
+               .MainSectionTitle
+                 {  margin-top: 1em;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 22pt;
+                    font-style: italic;
+                    border-bottom: 4px double black;
+                 }
+
+               .SectionBody
+                 {  margin-top: 1em;
+                    margin-left: 1ex;
+                 }
+
+               .MainSectionBody
+                 {  margin-top: 10pt;
+                 }
+
+               .MainPage
+                 {  margin: 4pt; 
+                    margin-right: 24pt;
+                 }
+
+               .FAQList_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Answer
+                 {  
+                 }
+
+
+               .TopMenu
+                 {  margin-top: 20pt;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               .BottomMenu
+                 {  margin-top: 0.1in;
+                    border-top: 4px double black;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               p
+                 {  
+                    margin-top: 0.1in;
+                    text-indent: 1em;
+                 }
+
+               li
+                 {  margin-top: 0.2in;  
+                 }
+
+               ul
+                 {  margin-left: 0.25in;
+                    margin-top: 0.1in;
+                 }
+
+               tt
+                 {  font-size: larger;
+                 }
+
+
+ p.alert { border-left:solid red 6px; margin-left:-12px; padding-left:6px; }
+ pre { padding:1ex; border: solid gray 1px;}
+ code { font-size: 95%; }
+ dl dt { font-weight: bold }
+ dl dd { margin-bottom: 1em }
+ .newCode { background: #EEEEEE; }
+
+               a
+                 {  color: #000055;
+                 }
+               a:hover
+                 {  background: lavender;
+                    text-decoration: none;
+                    color: black;
+                 }
+               
+             
+           --></style>
+</head>
+<body bgcolor="white"><td width="*" height="*" bgcolor="white" valign="top"><div class="MainPage">
+
+    <div class="MainSectionTitle">OpenTS Users Manual</div>
+<div class="MainSectionBody">
+
+
+
+<style type="text/css" media="print">
+ pre { background-color: none; border: solid black 1px }
+</style>
+
+
+
+
+        <!-- Not really a FAQ, but use it to generate a Table of Contents with links. -->
+        <ol>
+<li><div class="FAQList_Question"><a href="#id107452"><question>Introduction</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id107463"><question>The TabuSearch Object</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id107475"><question>The Solution Object</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id107685"><question>The ObjectiveFunction Object</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id108048"><question>The Move and MoveManager Objects</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id108059"><question>The TabuList Object</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id108071"><question>The TabuSearchListener Interface</question></a></div></li>
+<li><div class="FAQList_Question"><a href="#id108376"><question>Appendix</question></a></div></li>
+</ol>
+<hr>
+<ol>
+<li>
+<div class="FAQ_Question"><a name="id107452"><question>Introduction</question></a></div>
+<div class="FAQ_Answer"><answer>
+              Forthcoming.
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id107463"><question>The TabuSearch Object</question></a></div>
+<div class="FAQ_Answer"><answer>
+              Forthcoming.
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id107475"><question>The Solution Object</question></a></div>
+<div class="FAQ_Answer"><answer>
+<p>
+Your Solution object represents a solution to your problem.
+It is not necessarily a <em>good</em> solution - just a solution.
+</p>
+
+<p>
+OpenTS imposes no restriction on how you define your solution or
+what data structures you use because OpenTS never manipulates your
+Solution objects directly. It relies on your Move object to
+modify the Solution, your ObjectiveFunction object to evaluate the
+Solution, and your Solution itself to clone it.
+</p>
+
+<p>
+You may find it useful to subclass (extend) the SolutionAdapter class
+since it automatically handles the three required methods
+<code>getObjectiveValue()</code>, <code>setObjectiveValue(...)</code>,
+and <code>clone()</code>.
+</p>
+
+<p class="alert">
+SolutionAdapter properly clones the objective value array, but
+<strong>it is essential that you properly clone your data structures
+as well</strong>. For an excellent discussion of cloning techniques, 
+see <a href="http://developer.java.sun.com/developer/JDCTechTips/2001/tt0306.html">
+this Java Developer Connection Tech Tip</a>. 
+</p>
+
+<p>
+It is a common mistake to copy references to data instead of
+copying the data itself. The easiest place to make this mistake
+is with arrays. Suppose you have an <code>int</code> array called <var>sack</var>
+that maintains your solution state - perhaps it's an array of zero/one
+variables in a knapsack problem. It would be tempting to implement
+a <code>clone()</code> method like this in your Solution object:
+</p>
+
+<p>
+<strong>Wrong Way To Do It:</strong>
+<pre>public Object clone()
+{   
+    TSPSolution copy = (TSPSolution)super.clone();
+    <strong>copy.sack = this.sack;</strong>
+    return copy;
+}   // end clone
+</pre>
+</p>
+
+<p>
+All you've done is give your newly-cloned Solution a pointer
+to the original <var>sack</var> array. If you were to modify
+one Solution by manipulating the array, you would incorrectly
+be modifying the other Solution as well.
+</p>
+
+<p>
+Instead, make sure you make a complete copy of your data structures.
+In case where your data structures are representing by simple
+arrays of primitives, you should have no problems using a
+<code>clone()</code> method like this:
+</p>
+
+<p>
+<strong>Right Way To Do It:</strong>
+<pre>public Object clone()
+{   
+    TSPSolution copy = (TSPSolution)super.clone();
+    <strong>copy.sack = (int[])this.sack.clone();</strong>
+    return copy;
+}   // end clone
+</pre>
+</p>
+
+<p>
+Another common way to represent your data is with a 
+<code>java.util.ArrayList</code> or <code>java.util.LinkedList</code>.
+These are fairly efficient data structures depending on your problem type
+and can be a real headache-saver for problems like the Traveling
+Salesman Problem or Vehicle Routing Problem.
+</p>
+
+<p>
+Suppose you create your own Vehicle.java 
+and Customer.java classes each containing relevant
+information such as speed, endurance, location, capacity, demand, etc.
+An easy way to represent a tour would be to use Java's lists
+to store the customers you plan to visit in the order you plan
+to visit them.
+</p>
+
+<p>
+In fact, you may end up with an ArrayList of ArrayLists
+to account for multiple vehicles. Again, <em>be sure that you think
+through your <code>clone()</code> method</em> and make sure that you're cloning
+deep enough to ensure independence in your solution objects.
+</p>
+
+<p>
+In this case, it's probably okay if you don't clone the Vehicle
+and Customer objects since they don't change, but you <em>will</em>
+need to clone the ArrayLists.
+</p>
+
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id107685"><question>The ObjectiveFunction Object</question></a></div>
+<div class="FAQ_Answer"><answer>
+<p>
+OpenTS expects an objective/constraint penalties function to be 
+able to evaluate a solution's worth. OpenTS will pass the 
+ObjectiveFunction a Solution and optionally pass a proposed Move. 
+If the passed move is not null, then the evaluation should consider 
+the effect that executing this move on the solution would have before 
+evaluating it.
+</p>
+
+<p class="alert">
+If you can use some sort of incremental evaluation 
+technique, this will save you time. If you must operate on the solution 
+to actually calculate its value, <strong>you must return the solution to its 
+original state before the method returns</strong>. 
+</p>
+
+<p>
+It may be helfpul to give yourself some helper methods in your
+ObjectiveFunction to separate the incremental evaluation from the
+absolute evaluation. You might setup your <code>evaluate(...)</code>
+method like this:
+</p>
+
+<p>
+<strong>It May Help to Separate Your Logic:</strong>
+<pre>public double[] evaluate( Solution soln, Move proposedMove )
+{
+    if( proposedMove == null )
+        return <strong>evaluateAbsolutely( soln )</strong>;
+    else
+        return <strong>evaluateIncrementally( soln, proposedMove )</strong>;
+}
+</pre>
+</p>
+
+<p>
+Then you can deal with the two pieces of logic separately.
+If you cannot incrementally evaluate your solution but are
+forced to modify the Solution object first, make sure
+your Move object has a way to undo its operation:
+</p>
+
+
+<p>
+<strong>Always Return the Solution to its Original State:</strong>
+<pre>private double[] evaluateIncrementally( Solution soln, Move proposedMove )
+{
+    proposedMove.operateOn( soln );
+    double[] val = evaluateAbsolutely( soln );
+    <strong>proposedMove.undoOperation( soln );</strong>
+    return val;
+}</pre>
+</p>
+
+<p>
+It is a common mistake to try to reuse arrays of doubles
+and mess it up (it's possible, but you have to be careful).
+When you're first writing your code and aren't fine tuning
+it to this level, it's easiest to evaluate your objective
+function values with scalars and then return a fresh array:
+</p>
+
+<p>
+<strong>Avoid Reusing Arrays:</strong>
+<pre>public double[] evaluate( Solution soln, Move proposedMove )
+{
+    double val1 = ...;
+    double val2 = ...;
+
+    <strong>return new double[]{ val1, val2 }</strong>;
+}</pre>
+</p>
+
+
+
+<p>
+The array of returned values will later be compared 
+lexicographically in the classic "goal-programming" style. 
+If instead you want some goals to overpower higher goals, 
+use the style of weighting the levels with appropriate values. 
+</p>
+
+<p>
+In this trivial example, suppose your ObjectiveFunction 
+returns an array of three doubles
+in an assignment problem where the first value in the array (Goal #1)
+is the number of customers in a day who wait longer than 10 minutes
+on hold waiting for one of the available Tech Support personnel
+(objective value #2: minimize hiring), and the third value is
+the total cost of the operation.
+</p>
+
+<div align="center">
+
+<table width="100%">
+ <tr>
+  <td align="center">
+<table border="1">
+ <thead>
+  <tr>
+   <th colspan="3">Solution Pair A</th>
+  </tr>
+  <tr>
+   <td> </td>
+   <th>Soln 1</th>  <th>Soln 2</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr style="background-color:lavender">
+   <td>Goal #1</td>    <td>33</td>    <td>6</td>
+  </tr>
+  <tr>
+   <td>Goal #2</td>    <td>7</td>     <td>12</td>
+  </tr>
+  <tr>
+   <td>Goal #3</td>    <td>24000</td> <td>33000</td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td>Winner</td>
+  </tr>
+ </tbody>
+</table>
+  </td>
+
+
+  <td align="left">
+<table border="1">
+ <thead>
+  <tr>
+   <th colspan="3">Solution Pair B</th>
+  </tr>
+  <tr>
+   <td> </td>
+   <th>Soln 1</th>  <th>Soln 2</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Goal #1</td>    <td>17</td>    <td>17</td>
+  </tr>
+  <tr style="background-color:lavender">
+   <td>Goal #2</td>    <td>8</td>     <td>9</td>
+  </tr>
+  <tr>
+   <td>Goal #3</td>    <td>26000</td> <td>26000</td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>Winner</td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+  </td>
+ </tr>
+</table>
+</div>
+
+<p>
+We see in the tables above that with the lexicographical comparison
+of ObjectiveFunction values, that Goal #1 is absolutely more important
+than the rest of the goals which is why, in Solution Pair A, Soln 2
+beats Soln 1 despite Soln 1's lower cost and number of people hired.
+</p>
+
+<p>
+In Solution Pair B we see that there's a tie on Goal #1, so OpenTS
+compares the next goal and declares Soln 1 the winner for hiring
+fewer people. If this goal had been a tie, OpenTS would have moved
+on to the next goal.
+</p>
+
+<p>
+Although all numbers are stored and calculated as doubles, 
+they are cast to floats before being compared.
+This helps avoid the problems where two "equal" values
+stored as doubles differ by 0.000000000001 or some 
+ridiculously small value.
+</p>
+
+<p>
+When OpenTS considers whether or not some solution X is better than
+some other solution Y, the answer is No if the two objective function
+values result in ties for all of the goals.
+</p>
+
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id108048"><question>The Move and MoveManager Objects</question></a></div>
+<div class="FAQ_Answer"><answer>
+              Forthcoming.
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id108059"><question>The TabuList Object</question></a></div>
+<div class="FAQ_Answer"><answer>
+              Forthcoming.
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id108071"><question>The TabuSearchListener Interface</question></a></div>
+<div class="FAQ_Answer"><answer>
+              
+<p>
+By implementing and registering as a <code>TabuSearchListener</code>
+your objects can react dynamically to the search as it progresses.
+This gives you an easy way to trigger techniques such as 
+Reactive/Adaptive Tabu Lists, Strategic Oscillation, Path Relinking,
+and Restarts.
+</p>
+
+<p>
+When registered, your object will receive the following events:
+</p>
+
+<p>
+<dl>
+ <dt>newCurrentSolutionFound</dt>
+ <dd>
+  Fired after each iteration whether or not
+  the move that was selected actually made
+  any change to your solution (that's your
+  business).
+ </dd>
+
+ <dt>newBestSolutionFound</dt>
+ <dd>
+  Fired after an iteration when a solution has
+  been found that is better than any previously-found
+  solution.
+ </dd>
+
+ <dt>unimprovingMoveMade</dt>
+ <dd>
+  Fired after an iteration when the chosen move, probably
+  due to a constraining tabu list, results in a
+  move that is worse than when the iteration started.
+ </dd>
+
+ <dt>tabuSearchStarted</dt>
+ <dd>
+  Fired <em>on the calling thread</em> just before the tabu search 
+  starts the first iteration.
+ </dd>
+
+ <dt>tabuSearchStopped</dt>
+ <dd>
+  Fired <em>on the tabu search's thread</em> when there are
+  no more iterations to solve.
+ </dd>
+</dl>
+</p>
+
+<p>
+The first three events listed above will be fired in that order,
+should more than one need to be fired in a given iteration.
+</p>
+
+<p class="alert">
+In OpenTS versions prior to v1.0-exp2,
+ if you changed the current or best solution using
+the <code>setCurrentSolution( ... )</code> or 
+<code>setBestSolution( ... )</code> methods while responding to
+these events, the appropriate event would be fired again, resulting
+in an infinite loop. This "feature" has been removed since what
+it offers in the rare case that it's useful can be accomplished
+more safely in other ways.
+</p>
+
+
+<p>
+You register as a TabuSearchListener by implementing the interface
+and registering with the TabuSearch object after you instantiate it:
+</p>
+
+<p>
+<strong>Register As a TabuSearchListener</strong>
+<pre>import org.coinor.opents.*;
+public class MySearchProgram <strong>implements TabuSearchListener</strong>
+{
+    ...
+
+    TabuSearch ts = new MultiThreadedTabuSearch( ... );
+    <strong>ts.addTabuSearchListener( this );</strong>
+
+    ...
+}</pre>
+</p>
+
+<p>
+You may find it easier to use Java's anonymous inner classes
+along with the TabuSearchAdapter class. With this design pattern,
+you only have to implements methods for the events you're actually
+interested in:
+</p>
+
+<p>
+<strong>Use TabuSearchAdapter with Anonymous Inner Classes</strong>
+<pre>    TabuSearch ts = new MultiThreadedTabuSearch( ... );
+    ts.addTabuSearchListener( 
+    <strong>new TabuSearchAdapter()
+    {
+        public void unimprovingMoveMade( TabuSearchEvent evt )
+        {
+            ...
+        }
+    }</strong> );</pre>
+</p>
+
+<p>
+You might find it particularly useful to have your tabu list or 
+objective function objects implement TabuSearchListener. 
+Here we extend the included <code>SimpleTabuList</code> to make
+it a reactive tabu list:
+</p>
+
+<p>
+<strong>Reactive Tabu List</strong>
+<pre>import org.coinor.opents.*;
+public class MyTabuList extends SimpleTabuList
+ implements TabuSearchListener
+{
+    public final static int MAX_TENURE = 30;
+
+    public void newBestSolutionFound( TabuSearchEvent evt )
+    {   <strong>// Decrease tenure
+        setTenure( Math.max( 1, (int)( 0.75 * getTenure() ) ) );</strong>
+    }
+
+    public void unimprovingMoveMade( TabuSearchEvent evt )
+    {   <strong>// Increase tenure
+        setTenure( Math.min( MAX_TENURE, getTenure() + 2 );</strong>
+    }
+
+    // We're not using these events
+    public void newCurrentSolutionFound( TabuSearchEvent evt ){}
+    public void tabuSearchStarted( TabuSearchEvent evt ){}
+    public void tabuSearchStopped( TabuSearchEvent evt ){}
+}</pre>
+</p>
+
+
+<p>
+The <code>tabuSearchStarted</code> and <code>tabuSearchStopped</code>
+events are most important when using the <code>MultiThreadedTabuSearch</code>
+implemenation of the <code>TabuSearch</code> spec.
+When <code>startSolving()</code> is called on a <code>MultiThreadedTabuSearch</code>
+object, control returns immediately to the calling thread, and the
+tabu search runs on a newly-created thread.
+</p>
+
+<p>
+If you have another part of your code, such as a progress bar or some other
+indicator, that needs to know when your tabu search has started - or more
+importantly, finished - register as a listener with the tabu search 
+object and respond to the appropriate event.
+</p>
+
+<p>
+In a well-designed GUI application, you should always offload long tasks
+such as a tabu search to another thread, and these two events will help
+you manage that task.
+</p>
+
+<p>
+Here's a code fragment showing how we notify the user the tabu search
+has finished:
+</p>
+
+
+
+<p>
+<strong>Notify When Done</strong>
+<pre>TabuSearch ts = new MultiThreadedTabuSearch( ... );
+final java.awt.Component parent = ...; // Your root window or similar
+
+ts.addTabuSearchListener( new TabuSearchAdapter()
+{
+    <strong>public void tabuSearchStopped( TabuSearchEvent evt )
+    {
+        TabuSearch theTS = (TabuSearch)evt.getSource();
+        Solution   best  = theTS.getBestSolution();
+        final String msg = "Done. Best solution: " + best;
+
+        SwingUtilities.invokeLater( new Runnable()
+        {   public void run()
+            {   JOptionPane.showMessageDialog( parent, msg );
+            }
+        });
+    }</strong>
+});</pre>
+</p>
+
+
+            </answer></div>
+</li>
+<li>
+<div class="FAQ_Question"><a name="id108376"><question>Appendix</question></a></div>
+<div class="FAQ_Answer"><answer>
+              Forthcoming.
+            </answer></div>
+</li>
+</ol>
+
+    </div>
+
+
+
+
+
+  </div></td></body>
+</html>
