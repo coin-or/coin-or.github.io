@@ -1,0 +1,70 @@
+// Projects page: a category index, then one expandable entry per project.
+
+.project-categories {
+  columns: 3 240px;
+  column-gap: 30px;
+  margin-bottom: 2em;
+}
+
+.project-category {
+  break-inside: avoid;
+  margin-bottom: 18px;
+
+  h3 {
+    margin: 0 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $gold;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  ul { margin: 0; padding: 0; list-style: none; font-size: 14px; }
+  li { display: inline; margin: 0; }
+  li:not(:last-child)::after { content: " · "; color: $gray; }
+  a { text-decoration: none; }
+}
+
+.projects summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+}
+
+.project-name { font-weight: 600; }
+
+.project-summary {
+  flex: 1 1 300px;
+  color: $gray;
+  font-size: 14px;
+}
+
+.project-status {
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  &.status-active { background: $gold; color: $ink; }
+  &.status-inactive { background: $tint; border: 1px solid $rule; color: $gray; }
+  &.status-abandoned { background: #fff; border: 1px solid $rule; color: $gray; text-decoration: line-through; }
+}
+
+.project-facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 16px;
+  margin: 0 0 1em;
+  font-size: 14px;
+
+  dt { font-weight: 600; }
+  dd { margin: 0; overflow-wrap: anywhere; }
+}
+
+.projects .details-body {
+  h4 { margin: 1.2em 0 0.4em; font-size: 15px; font-weight: 600; }
+  table { width: auto; min-width: 50%; }
+}
+
+.subproject-group { margin: 0.6em 0 0.2em; font-weight: 600; font-size: 14px; }
+
+@media (max-width: 600px) {
+  .project-facts { grid-template-columns: minmax(0, 1fr); dd { margin-bottom: 6px; } }
+}
