@@ -4,7 +4,7 @@ date: 2025-09-04 09:00:00
 author: Matthew Saltzman
 ---
 
-The COIN-OR Cup recognizes and celebrates the best contributions to open-source operations research software development and use associated with the COIN-OR software collection. To remind you, COIN-OR stands for “COmputational INfrastructure for Operations Research”. It is the definitive collection of free, open-source operations research software that lets you concentrate on your research instead of re-implementing software. See [](https://nam12.safelinks.protection.outlook.com/?url=%2F&data=05%7C02%7Cmjs%40clemson.edu%7Ca11ecf4c0d264012232208dccd22e1c6%7C0c9bf8f6ccad4b87818d49026938aa97%7C0%7C0%7C638610796926638462%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=DLXjyNg0Hf7BYDWLV8ACClv8eXL2DRlu7SQI0R%2BEyVw%3D&reserved=0). Get on board\!
+The COIN-OR Cup recognizes and celebrates the best contributions to open-source operations research software development and use associated with the COIN-OR software collection. To remind you, COIN-OR stands for “COmputational INfrastructure for Operations Research”. It is the definitive collection of free, open-source operations research software that lets you concentrate on your research instead of re-implementing software. See [www.coin-or.org](/). Get on board\!
 
 GUIDELINES FOR COIN-OR CUP SUBMISSIONS:
 
