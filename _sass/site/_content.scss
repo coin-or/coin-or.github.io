@@ -243,3 +243,23 @@ details {
   .post-header .date-badge .date-year { margin: 0; }
   .news-item { gap: 12px; }
 }
+
+// A link styled as a button (charcoal, gold on hover, as the WordPress theme had).
+.content a.button {
+  display: inline-block;
+  padding: 8px 20px;
+  background: $charcoal;
+  color: #fff;
+  text-decoration: none;
+  &:hover, &:focus { background: $gold; color: $ink; }
+}
+
+// Rows of linked logos (Members page).
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 40px;
+  margin: 0 0 1.5em;
+  img { display: block; max-height: 70px; width: auto; }
+}

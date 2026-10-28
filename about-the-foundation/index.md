@@ -1,6 +1,9 @@
 ---
 title: The COIN-OR Foundation
 description: The COIN-OR Foundation, Inc., is a non-profit educational and scientific foundation formed in 2004 to manage the COIN-OR project.
+# old (pre-WordPress) addresses
+redirect_from:
+  - /foundation.html
 ---
 
 ## Purpose {#purpose}
