@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- comment -%} The News page: every post, newest first, grouped by year, each with a short excerpt. {%- endcomment -%}
+<div class="container with-sidebar">
+  <div class="news-list">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {{ content }}
+    {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {%- for year in years %}
+    <section class="news-year" id="year-{{ year.name }}">
+      <h2 class="news-year-title">{{ year.name }}</h2>
+      {%- for post in year.items %}
+      <article class="news-item">
+        {% include site/date-badge.html date=post.date %}
+        <div class="news-item-body">
+          <h3 class="news-item-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="news-item-excerpt">{{ post.content | strip_html | normalize_whitespace | truncatewords: 40 }}</p>
+          <p class="news-item-meta"><a href="{{ post.url | relative_url }}">Read more<span class="visually-hidden">: {{ post.title }}</span></a>{% if post.author %} · {{ post.author }}{% endif %}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </section>
+    {%- endfor %}
+  </div>
+  {% include site/news-sidebar.html %}
+</div>

@@ -117,6 +117,7 @@ description: "Open-source software for the operations research community."
 plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
+  - jekyll-feed
 redirect_from:
   json: false
 # redirect_from/redirect_to front matter keeps old URLs working (see _layouts/redirect.html and redirects/)

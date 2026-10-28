@@ -1,0 +1,33 @@
+{%- comment -%}
+  Sidebar for the News page and posts.  Usage: {% include site/news-sidebar.html recent=true %}
+  recent=true adds the list of recent posts (left off on the News page itself, which lists them all).
+{%- endcomment -%}
+<aside class="sidebar">
+  {%- if include.recent %}
+  <section class="widget">
+    <h2 class="widget-title">Recent News</h2>
+    <ul>
+      {%- for post in site.posts limit: 6 %}
+      <li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.title }}</a>
+        <span class="widget-date">{{ post.date | date: "%B %-d, %Y" }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+  <section class="widget">
+    <h2 class="widget-title">Archives</h2>
+    <ul class="widget-years">
+      {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+      {%- for year in years %}
+      <li><a href="{{ '/news/' | relative_url }}#year-{{ year.name }}">{{ year.name }}</a> <span class="widget-count">({{ year.items.size }})</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  <section class="widget">
+    <h2 class="widget-title">Follow</h2>
+    <ul>
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+      <li><a href="{{ '/groups/' | relative_url }}">Mailing lists</a></li>
+    </ul>
+  </section>
+</aside>
