@@ -1,6 +1,7 @@
 repository: coin-or/coin-or.github.io
 
 title: COIN-OR
+url: https://www.coin-or.org
 tagline: Computational Infrastructure for Operations Research
 # used by the main site theme (page titles, header, SEO tags); the docs use site_title below
 
@@ -110,9 +111,7 @@ sidebars:
 description: "Open-source software for the operations research community."
 # default page description for search engines and link previews
 
-# needed for sitemap.xml file only
-# url: http://idratherbewriting.com
-# baseurl: /documentation-theme-jekyll
+# baseurl is left unset: GitHub Pages fills it in (empty here, /Jekyll-site on the preview fork)
 
 plugins:
   - jekyll-redirect-from
