@@ -3,6 +3,9 @@ layout: default
 ---
 <div class="container">
   <article class="page">
+    {%- if page.parent %}
+    <p class="page-parent"><a href="{{ page.parent.url | relative_url }}">{{ page.parent.title }}</a></p>
+    {%- endif %}
     {%- unless page.hide_title %}
     <h1 class="page-title">{{ page.title }}</h1>
     {%- endunless %}
