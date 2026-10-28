@@ -1,0 +1,6 @@
+{%- comment -%} Dark day/month box shown beside news titles.  Usage: {% include site/date-badge.html date=page.date %} {%- endcomment -%}
+<time class="date-badge" datetime="{{ include.date | date_to_xmlschema }}">
+  <span class="date-day">{{ include.date | date: "%-d" }}</span>
+  <span class="date-month">{{ include.date | date: "%b" }}</span>
+  <span class="date-year">{{ include.date | date: "%Y" }}</span>
+</time>
