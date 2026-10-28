@@ -1,0 +1,2491 @@
+# COIN-OR project catalog, rendered by projects/index.html.
+# Converted from the WordPress Projects page (itself generated from each project's .coin-or/projDesc.xml).
+#
+# categories: the browsing categories, in display order.
+# projects:   one entry per project, alphabetical. Fields (all optional except id, name, summary):
+#   id            anchor on the Projects page (/projects/#id)
+#   description   Markdown
+#   manager, homepage, language
+#   license       {name, url}
+#   linked_projects, third_party   lists of {name, url}; third_party entries also have use (Required/Optional)
+#   status        {activity, maturity, stable_version, stable_release}
+#   platforms     list of {os, compiler} it builds and passes its unit test on
+#   categories    names from the categories list
+#   subprojects   for umbrella projects: list of {group, items}
+#   notes         Markdown shown at the end (e.g. a pointer to the old home page of a retired project)
+---
+categories:
+- Development tools
+- Documentation
+- Graphs
+- Interfaces
+- Metaheuristics
+- Modeling systems
+- Optimization bilevel
+- Optimization convex non-differentiable
+- Optimization deterministic linear
+- Optimization deterministic linear continuous
+- Optimization deterministic linear discrete
+- Optimization deterministic nonlinear
+- Optimization deterministic nonlinear discrete
+- Optimization deterministic nonlinear nonconvex mixed-integer
+- Optimization deterministic semidefinite continuous
+- Optimization stochastic
+- Optimization utility
+- Python tools
+- Stochastic modeling
+- Visualization software
+projects:
+- id: abacus
+  name: ABACUS
+  summary: An LP-based branch-and-cut framework.
+  description: ABACUS is a software system written in C++ that provides a framework for the implementation of branch-and-bound algorithms using linear programming relaxations. Cutting planes or columns can be generated dynamically (branch-and-cut, branch-and-price, branch-and-cut-and-price).
+  manager: Frank Baumann, Mark Sprenger
+  homepage: https://github.com/coin-or/ABACUS
+  license:
+    name: Lesser GNU general public license
+    url: https://www.gnu.org/licenses/lgpl-3.0.txt
+  linked_projects:
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: DyLP
+    url: https://github.com/coin-or/DyLP
+  - name: SYMPHONY
+    url: https://github.com/coin-or/SYMPHONY
+  - name: Vol
+    url: https://github.com/coin-or/Vol
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: 3.2betaU1
+    stable_release: no release version
+  platforms:
+  - os: Linux
+    compiler: gcc-4.1
+  categories:
+  - Optimization deterministic linear discrete
+- id: adol-c
+  name: ADOL-C
+  summary: A package for the automatic differentiation of C and C++ programs.
+  description: ADOL-C is an open-source package for the automatic differentiation of C and C++ programs. The resulting evaluation routines for first and higher-order derivatives may be called from C, C++, Fortran, or any other language that can be linked with C. The numerical values of derivative vectors are obtained free of truncation errors at a small multiple of the run time and random access memory required by the given function evaluation program. Derivative matrices are obtained by columns, by rows or in sparse format. For solution curves defined by ordinary differential equations, special routines are provided that evaluate the Taylor coefficient vectors and their Jacobians with respect to the current state vector. For explicitly or implicitly defined functions derivative tensors are obtained with a complexity that grows only quadratically in their degree.
+  manager: Andrea Walther
+  homepage: https://github.com/coin-or/ADOL-C
+  license:
+    name: Eclipse Public License 2.0 or GNU General Public License 2.0
+    url: https://www.opensource.org/licenses/alphabetical
+  third_party:
+  - name: ColPack
+    url: https://cscapes.cs.purdue.edu/coloringpage/software.htm
+    use: Optional (for exploitation of sparsity)
+  language: C and C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '2.7'
+    stable_release: 2.7.2
+  platforms:
+  - os: Linux
+    compiler: g++
+  - os: Linux
+    compiler: Intel icpc
+  - os: Mac OS X
+    compiler: g++
+  - os: Microsoft Windows
+    compiler: CYGWIN/icl
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  categories:
+  - Optimization utility
+- id: aimmslinks
+  name: AIMMSlinks
+  summary: Links between the modeling language AIMMS and solvers that are hosted at COIN-OR.
+  description: The AIMMSlinks project is dedicated to the development of links between the modeling language AIMMS and solvers that are hosted at COIN-OR.
+  manager: marcel dot hunting at aimms dot com
+  homepage: https://github.com/coin-or/AIMMSlinks
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.eclipse.org/legal/epl-v10.html
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  third_party:
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required for IPOPT
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional for IPOPT
+  - name: A sparse linear solver (MA27, MA57, WSMP, Pardiso, MUMPS)
+    use: Required (at least one) for IPOPT
+  - name: AIMMS
+    url: https://www.aimms.com/
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: '1.1'
+    stable_release: 1.1.0
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Linux
+    compiler: g++
+  categories:
+  - Interfaces
+- id: bcp
+  name: BCP
+  summary: A framework for constructing parallel branch-cut-price algorithms for mixed-integer linear programs.
+  description: BCP is a parallel framework for implementing branch, cut, and price algorithms for solving mixed integer programs (MIPs). BCP provides the user with an object-oriented framework that can be used to develop an efficient problem class specific MIP solver without all the implementational effort. involved with implementing a branch and bound framework from scratch.
+  manager: ladanyi at us dot ibm dot com
+  homepage: https://github.com/coin-or/Bcp
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '1.4'
+    stable_release: 1.4.4
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc
+  - os: Linux
+    compiler: gcc
+  - os: OSX
+    compiler: gcc
+  - os: Solarix X86
+    compiler: gcc
+  - os: Solarix X86
+    compiler: sunpro
+  categories:
+  - Optimization deterministic linear discrete
+- id: bonmin
+  name: BONMIN
+  summary: An experimental open-source C++ code for solving general MINLP (Mixed Integer NonLinear Programming) problems.
+  description: BONMIN (Basic Open-source Nonlinear Mixed INteger programming) is an open-source code for solving general MINLP (Mixed Integer NonLinear Programming) problems. It is distributed on COIN-OR under the CPL (Common Public License).
+  manager: Pierre Bonami
+  homepage: https://coin-or.github.io/Bonmin
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  third_party:
+  - name: Ampl Solver Library
+    url: https://www.netlib.org/ampl/solvers
+    use: Optional
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required (any implementation)
+  - name: CPLEX
+    url: https://www.ibm.com/analytics/cplex-optimizer
+    use: Optional
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional (any implementation)
+  - name: MA27
+    use: Required
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: '1.8'
+    stable_release: 1.8.8
+  platforms:
+  - os: Microsoft Windows
+    compiler: CYGWIN/g++
+  - os: Microsoft Windows
+    compiler: MSys/g++
+  - os: Linux
+    compiler: g++
+  - os: Mac OSX
+    compiler: g++
+  categories:
+  - Optimization deterministic nonlinear discrete
+- id: buildtools
+  name: BuildTools
+  summary: Tools for managing configuration and compilation of various COIN-OR projects under Linux, Unix, and Cygwin.
+  description: COIN-OR developer tools and documentation, tools for managing configuration and compilation of various COIN-OR projects under Linux, Unix, and Cygwin.
+  manager: stefan at gams dot com
+  homepage: https://github.com/coin-or-tools/BuildTools
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  language: Shell script (/bin/sh); autoconf
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '0.8'
+    stable_release: 0.8.10
+  categories:
+  - Development tools
+- id: cbc
+  name: CBC
+  summary: An LP-based branch-and-cut library.
+  description: CBC is an open-source MILP solver. It uses many of the COIN-OR components and is designed to be used with CLP. It is available as a library and as a standalone solver.
+  manager: Ted Ralphs, ted at lehigh dot edu
+  homepage: https://github.com/coin-or/Cbc
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  third_party:
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: GNU Readline
+    use: Optional
+  - name: GNU History
+    use: Optional
+  - name: AMPL Solver Library (ASL)
+    url: https://www.netlib.org/ampl/solvers/
+    use: Optional
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Optional
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '2.10'
+    stable_release: 2.10.5
+  platforms:
+  - os: Microsoft Windows
+    compiler: Visual Studio, cl
+  - os: Microsoft Windows / Cygwin / Msys / MinGW
+    compiler: gcc, cl
+  - os: Linux
+    compiler: gcc
+  - os: Mac OS X
+    compiler: gcc
+  categories:
+  - Optimization deterministic linear discrete
+- id: cgc
+  name: Cgc
+  summary: A collection of network representations and algorithms.
+  description: Cgc is a collection of network representations to facilitate the development and implementation of network algorithms.
+  manager: hpwalton at yahoo.com
+  homepage: https://github.com/coin-or/Cgc
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  categories:
+  - Graphs
+  - Optimization utility
+- id: cgl
+  name: Cgl
+  summary: A library of cutting-plane generators.
+  description: The COIN-OR Cut Generation Library (Cgl) is an open collection of cutting plane implementations (“cut generators”) for use in teaching, research, and applications. Cgl can be used with other COIN-OR packages that make use of cuts, such as the mixed-integer linear programming solver Cbc. Each cut generator has its own maintainer who leads the development of its functionality, testing, and documentation. See below for a listing of available generators. All the generators are combined in one library when Cgl is compiled.
+  manager: Robin Lougee (rlougee at us.ibm.com)
+  homepage: https://github.com/coin-or/Cgl
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '0.60'
+    stable_release: 0.60.3
+  platforms:
+  - os: GNU/Linux
+    compiler: gcc
+  - os: Mac OS X
+    compiler: gcc, clang
+  - os: Microsoft Windows with MSys2
+    compiler: gcc, cl, icl
+  - os: Microsoft Windows
+    compiler: Visual Studio, cl
+  categories:
+  - Optimization deterministic linear discrete
+  subprojects:
+  - group: Combinatorial cuts
+    items:
+    - CglAllDifferent
+    - CglBKClique
+    - CglClique
+    - CglCliqueMerging
+    - CglKnapsackCover
+    - CglOddHole
+    - CglOddHoleWC
+    - CglZeroHalf
+  - group: Flow cover cuts
+    items:
+    - CglFlowCover
+  - group: Gomory cuts and variants
+    items:
+    - CglGomory
+    - CglGMI
+    - CglRedSplit
+    - CglRedSplit2
+  - group: Lift-and-project cuts
+    items:
+    - CglLiftAndProject
+    - CglLandP
+  - group: Mixed integer rounding cuts and variants
+    items:
+    - CglMixedIntegerRounding
+    - CglMixedIntegerRounding2
+    - CglTwomir
+    - CglResidualCapacity
+  - group: Strengthening
+    items:
+    - CglDuplicateRow
+    - CglPreprocess
+    - CglProbing
+    - CglSimpleRounding
+- id: chipps
+  name: CHiPPS
+  summary: A framework for constructing parallel tree search algorithms (includes an LP-based branch-cut-price implementation).
+  description: CHiPPS is the COIN-OR Open Parallel Search Framework, a framework for implementing parallel algorithms based on tree search. The current CHiPPS architecture consists of three layers. The Abstract Library for Parallel Search (ALPS) is the base layer of a hierarchy consisting of implementations of various tree search algorithms for specific problem types. The Branch, Constrain, and Price Software (BiCePS) is a data management layer built on top of ALPS for implementing relaxation-based branch and bound algorithms. The BiCePS Linear Integer Solver (BLIS) is a concretization of the BiCePS layer for solving mixed-integer linear programs. ALPS, BiCePS, and BLIS are sub-repostories of the CHiPPS Subversion repository.
+  manager: Ted Ralphs, ted at lehigh dot edu
+  homepage: https://github.com/coin-or/CHiPPS-ALPS
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  third_party:
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Optional
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: see project home page
+    stable_release: see project home page
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc
+  - os: Linux
+    compiler: gcc
+  - os: OSX
+    compiler: gcc
+  - os: Solarix X86
+    compiler: gcc
+  - os: Solarix X86
+    compiler: sunpro
+  categories:
+  - Optimization deterministic linear discrete
+  - Optimization utility
+- id: clp
+  name: CLP
+  summary: A simplex solver.
+  description: CLP is a high quality open-source LP solver. Its main strengths are its Dual and Primal Simplex algorithms. It also has a barrier algorithm for Linear and Quadratic objectives. There are limited facilities for Nonlinear and Quadratic objectives using the Simplex algorithm. It is available as a library and as a standalone solver. It was written by John Forrest, jjforre at us.ibm.com.
+  manager: Julian Hall, jajhall@ed.ac.uk
+  homepage: https://github.com/coin-or/Clp
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '1.17'
+    stable_release: 1.17.6
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Mac OS X
+    compiler: gcc
+  - os: Microsoft Windows
+    compiler: Visual Studio, cl
+  - os: Microsoft Windows with MSys2
+    compiler: gcc, cl, icl
+  categories:
+  - Optimization deterministic linear continuous
+- id: cmpl
+  name: CMPL
+  summary: A mathematical programming language and a system for mathematical programming and optimisation of linear optimisation problems.
+  description: CMPL is a mathematical programming language and a system for mathematical programming and optimisation of linear optimisation problems. CMPL executes CBC (default), GLPK, SCIP, Gurobi or CPLEX directly to solve the generated model instance. Because it is also possible to transform the mathematical problem into MPS, Free-MPS or OSiL files, alternative solvers can be used. The CMPL distribution contains Coliop which is an (simple) IDE (Integrated Development Environment) for CMPL. The CMPL package also contains pyCMPL, jCMPL and CMPLServer. pyCMPL is the CMPL application programming interface (API) for Python and an interactive shell and jCMPL is CMPL’s Java API. CMPLServer is an XML-RPC-based web service for distributed and grid optimisation that can be used with CMPL, pyCMPL and jCMPL.
+  manager: Mike Steglich – mike.steglich at th-wildau dot de
+  homepage: https://github.com/coin-or/Cmpl
+  license:
+    name: GPLv3 (CMPL and Coliop) and LGPLv3 (pyCMPL, jCMPL, CMPLServer)
+    url: https://opensource.org/licenses/alphabetical
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  third_party:
+  - name: CPLEX
+    url: https://www.ibm.com/software/integration/optimization/cplex-optimizer/
+    use: Optional
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Required
+  - name: Gurobi
+    url: https://www.gurobi.com/
+    use: Optional
+  - name: SCIP
+    url: https://scip.zib.de/
+    use: Optional
+  - name: Qt5
+    url: https://qt-project.org/
+    use: Required
+  language: C++, Python, Java
+  status:
+    activity: Active
+    maturity: Not Yet Classified
+    stable_version: '1.12'
+    stable_release: 1.12.0
+  platforms:
+  - os: Linux
+    compiler: gcc, Python 2.7, Java 7
+  - os: Mac OS X
+    compiler: gcc, Python 2.7, Java 7
+  - os: Microsoft Windows
+    compiler: MSYS/MinGW/gcc, Python 2.7, Java 7
+  categories:
+  - Interfaces
+  - Modeling systems
+- id: coin-bazaar
+  name: Coin Bazaar
+  summary: Small examples and extensions of COIN-OR projects.
+  description: The Coin Bazaar project facilitates community involvement in the COIN-OR repositories. This project allows OR researchers to contribute code examples, application examples and code extensions and plugins without directly contributing to a regular COIN-OR project. Thus, this project helps bridge the gap between core package development and package extensions. Specific goals of this project are (1) to manage extensions to COIN-OR packages that have limited subversion access, (2) allow developers and COIN-OR users to share code and application examples, and (3) provide a home for auxilliary software tools that facilitate the use of COIN-OR tools.
+  manager: William Hart, wehart at sandia dot gov
+  homepage: https://github.com/coin-or-tools/CoinBazaar
+  license:
+    name: Individual Coin Bazaar projects are licensed separately under OSI approved licenses.
+  language: Coin Bazaar packages may be written in a variety of languages.
+  status:
+    activity: Active
+    maturity: Various
+    stable_version: ''
+    stable_release: ''
+  categories:
+  - Development tools
+  - Optimization utility
+- id: coinbinary
+  name: CoinBinary
+  summary: Pre-compiled binary distributions of COIN-OR projects.
+  description: The goal of this project is to provide sets of libraries and executables precompiled and tested on the most popular platforms for those users who do not need to look at or modify the source code of the COIN projects themselves. The CoinAll distribution is an associated effort to develop a distribution consisting of a set of consistent, interoperable binaries built from the source code of as large a subset of COIN-OR projects as possible. The idea is to allow a user who wants binaries for a large number of COIN projects and wants to ensure that they will all interoperate to be able to download them all at once in a single distribution.
+  manager: Ted Ralphs, ted at lehigh dot edu
+  homepage: https://github.com/coin-or/CoinBinary
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: BCP
+    url: https://github.com/coin-or/Bcp
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CHiPPS
+    url: https://github.com/coin-or/CHiPPS-ALPS
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: DyLP
+    url: https://github.com/coin-or/DyLP
+  - name: FLOPC++
+    url: https://github.com/coin-or/FlopC++
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: Optimization Services
+    url: https://github.com/coin-or/OS
+  - name: SMI
+    url: https://github.com/coin-or/Smi
+  - name: Test Tools
+    url: https://github.com/coin-or-tools/TestTools
+  - name: Vol
+    url: https://github.com/coin-or/Vol
+  third_party:
+  - name: Glpk
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: GNU Readline
+    use: Optional
+  - name: GNU History
+    use: Optional
+  - name: AMPL Solver Library (ASL)
+    url: https://www.netlib.org/ampl/solvers/
+    use: Optional
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Optional
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Optional
+  - name: Harwell Subroutine Library
+    url: https://www.hsl.rl.ac.uk/
+    use: Optional
+  - name: Mumps
+    url: https://mumps.enseeiht.fr/
+    use: Optional
+  language: C/C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: see project management page
+    stable_release: see project management page
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc
+  - os: Linux
+    compiler: gcc
+  - os: OSX
+    compiler: gcc
+  - os: Solarix X86
+    compiler: gcc
+  - os: Solarix X86
+    compiler: sunpro
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Optimization deterministic nonlinear
+  - Optimization stochastic
+  - Optimization utility
+- id: coineasy
+  name: CoinEasy
+  summary: New user information and support, CoinEasy is designed for new users of COIN-OR. The objective is to make it easy to use COIN-OR projects. Different users have different objectives and we provide information on how to get up and running easily depending upon the objective
+  notes: Please consult the [CoinEasy home page](https://projects.coin-or.org/CoinEasy) for further information.
+  categories:
+  - Documentation
+- id: coinmp
+  name: CoinMP
+  summary: A lightweight API and DLL for CLP, CBC, and CGL.
+  description: CoinMP is a C-API interface library that supports most of the functionality of the CLP (Coin LP), CBC (Coin Branch-and-Cut), and CGL (Cut Generation Library) projects. When compiled for Windows it generates a CoinMP.dll library that can be readily used in other Windows C/C++ projects. When compiled for Unix it generates a CoinMP.so library that can be similarly used in other Unix C/C++ projects. The project includes precompiled CoinMP.dll that is ready to be used as is in other Windows applications.
+  manager: Bjarni Kristjansson, bjarni at maximalsoftware dot com
+  homepage: https://github.com/coin-or/CoinMP
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  language: C
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '1.8'
+    stable_release: 1.8.4
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc/cl
+  - os: Linux
+    compiler: gcc/g++
+  - os: Mac OSX
+    compiler: gcc
+  - os: Solaris x86
+    compiler: gcc
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization utility
+- id: coinutils
+  name: CoinUtils
+  summary: Utilities, data structures, and linear algebra methods for COIN-OR projects.
+  description: The CoinUtils project is a collection of open-source utilities developed and used by a variety of other projects in the COIN-OR repository. The project includes classes for storing and manipulating sparse matrices and vectors, performing matrix factorization, parsing input files in standard formats, building representations of mathematical programs, comparing floating point numbers with a tolerance, performing simple presolve operations, and warm starting algorithms for mathematical programs, among others.
+  manager: Laszlo Ladanyi, ladanyi at us dot ibm dot com
+  homepage: https://www.github.com/coin-or/CoinUtils
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '2.11'
+    stable_release: 2.11.4
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Mac OS X
+    compiler: gcc
+  - os: Microsoft Windows
+    compiler: MSys2/cl
+  - os: Microsoft Windows
+    compiler: MSys2/icl
+  - os: Microsoft Windows
+    compiler: MSys2/gcc
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  categories:
+  - Optimization utility
+- id: couenne
+  name: Couenne
+  summary: A branch-and-bound algorithm for mixed integer nonlinear programming problems.
+  description: Couenne (Convex Over and Under ENvelopes for Nonlinear Estimation) is a spatial branch & bound algorithm that implements linearization, bound reduction, and branching techniques for Mixed-integer, Nonlinear Programming (MINLP) problems. The purpose of Couenne is to find global optima of nonconvex MINLPs.
+  manager: Pietro Belotti
+  homepage: https://github.com/coin-or/Couenne
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: BONMIN
+    url: https://github.com/coin-or/Bonmin
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  third_party:
+  - name: Ampl Solver Library
+    url: https://www.netlib.org/ampl/solvers
+    use: Optional
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required (any implementation)
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional (any implementation)
+  - name: At least one sparse linear solver (Mumps or MA27)
+    use: Required
+  language: C++
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: '0.5'
+    stable_release: 0.5.8
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  categories:
+  - Optimization deterministic nonlinear nonconvex mixed-integer
+- id: cppad
+  name: CppAD
+  summary: A tool for differentiation of C++ functions.
+  description: Given a C++ algorithm that computes function values, CppAD generates an algorithm that computes corresponding derivative values.
+  manager: Brad Bell, https://www.seanet.com/~bradbell
+  homepage: "/CppAD"
+  license:
+    name: Eclipse Public License 2.0 or (GNU General Public License 2.0 or later)
+    url: https://opensource.org/licenses/EPL-2.0
+  third_party:
+  - name: ADOL-C
+    url: https://github.com/coin-or/ADOL-C
+    use: Optional
+  - name: 'Boost: uBlas vector, Thread'
+    url: https://www.boost.org/doc/libs
+    use: Optional
+  - name: ColPack
+    url: https://cscapes.cs.purdue.edu/dox/ColPack/html
+    use: Optional
+  - name: Eigen
+    url: https://eigen.tuxfamily.org/
+    use: Optional
+  - name: FADBAD
+    url: https://www.fadbad.com/
+    use: Optional
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+    use: Optional
+  - name: OpenMP
+    url: https://en.wikipedia.org/wiki/OpenMP
+    use: Optional
+  - name: Pthread
+    url: https://en.wikipedia.org/wiki/POSIX_Threads
+    use: Optional
+  - name: Sacado
+    url: https://github.com/trilinos/Trilinos/tree/master/packages/sacado
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '20200000'
+    stable_release: '20200000.1'
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++
+  - os: Mac
+    compiler: clang
+  - os: Cygwin
+    compiler: gcc, clang
+  - os: Msys2
+    compiler: gcc, clang
+  - os: Linux
+    compiler: gcc, clang
+  categories:
+  - Optimization utility
+- id: creme
+  name: Crème
+  summary: An implementation of the randomized thermal relaxation method to find a feasible solution of the Maximum Feasible Subsystem problem.
+  description: Crème (COIN-OR RElaxation MEthod) is an implementation of a heuristic for the Maximum Feasible Subsystem (MaxFS) problem. The MaxFS problem consists of finding the subsystem of an infeasible LP such that the subsystem is feasible and contains a maximum number of constraints. Crème implements a randomized and thermal variant of the relaxation method proposed by Agmon (1954) and Motzkin and Schoenberg (1954). Crème is a heuristic that updates an iterate while keeping track of the number of inequalities satisfied at each iteration. See E. Amaldi, P. Belotti, R. Hauser, Randomized Relaxation Methods for the Maximum Feasible Subsystem Problem. In M. Juenger, V. Kaibel (eds.), Integer Programming and Combinatorial Optimization, 11th International IPCO Conference, Berlin, Germany, June 8-10, 2005, pages 249-264, 2005.
+  manager: Pietro Belotti (pbelott at clemson dot edu)
+  homepage: https://github.com/coin-or/Creme
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  language: C
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: no stable version
+    stable_release: no release version
+  platforms:
+  - os: Linux
+    compiler: gcc
+  categories:
+  - Optimization deterministic linear
+- id: csdp
+  name: CSDP
+  summary: A software package for semidefinite programming.
+  description: A software package for semidefinite programming.
+  manager: Brian Borchers borchers at nmt dot edu
+  homepage: https://github.com/coin-or/Csdp
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  third_party:
+  - name: BLAS
+    url: https://www.netlib.org/blas/
+    use: Required
+  - name: LAPACK
+    url: https://www.netlib.org/lapack/
+    use: Required
+  language: C
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '6.2'
+    stable_release: 6.2.0
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Windows
+    compiler: MinGW gcc
+  - os: Solaris
+    compiler: sunpro
+  - os: AIX
+    compiler: xlc
+  categories:
+  - Optimization deterministic semidefinite continuous
+- id: cuopt
+  name: cuOpt
+  summary: NVIDIA® cuOpt™ is a GPU-accelerated optimization engine
+  description: NVIDIA® cuOpt™ is a GPU-accelerated optimization engine that excels in mixed integer linear programming (MILP), linear programming (LP), and vehicle routing problems (VRP). It enables near real-time solutions for large-scale challenges with millions of variables and constraints, offering easy integration into existing solvers and seamless deployment across hybrid and multi-cloud environments.
+  manager: Anandh Anandh
+  homepage: https://github.com/coin-or/cuOpt
+  license:
+    name: Apache License 2.0
+    url: https://opensource.org/license/apache-2-0
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: CUDA
+  categories:
+  - Optimization deterministic linear discrete
+- id: cylp
+  name: CyLP
+  summary: a Python interface to Cbc and Clp
+  description: CyLP is a Python interface to COIN-OR’s Linear and mixed-integer program solvers (CLP, CBC, and CGL). CyLP’s unique feature is that one can use it to alter the solution process of the solvers from within Python. For example, one may define cut generators, branch-and-bound strategies, and primal/dual Simplex pivot rules completely in Python.
+  manager: Mehdi Towhidi, mehdi dot towhidi at kronos dot com
+  homepage: https://github.com/coin-or/CyLP
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  third_party:
+  - name: Numpy
+    url: https://www.numpy.org/
+    use: Required
+  - name: Scipy
+    url: https://www.scipy.org/
+    use: Required
+  language: Python
+  status:
+    activity: Abandoned
+    maturity: '5'
+    stable_version: ''
+    stable_release: ''
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Python tools
+- id: dfo
+  name: DFO
+  summary: a package for solving general nonlinear optimization problems when derivatives are unavailable
+  notes: Please consult the [DFO home page](https://projects.coin-or.org/Dfo) for further information.
+  categories:
+  - Optimization deterministic nonlinear
+- id: dip
+  name: DIP
+  summary: A framework for implementing a variety of decomposition-based branch-and-bound algorithms for solving mixed-integer linear programs.
+  description: DIP (Decomposition in Integer Programming) is a framework for implementing a wide variety of decomposition-based algorithms for solving integer programs.
+  manager: Ted Ralphs, ted at lehigh dot edu
+  homepage: https://github.com/coin-or/Dip
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0.php
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: CHiPPS
+    url: https://github.com/coin-or/CHiPPS-ALPS
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  third_party:
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Optional
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '0.92'
+    stable_release: 0.92.4
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc
+  - os: Linux
+    compiler: gcc
+  - os: OSX
+    compiler: gcc
+  - os: Solarix X86
+    compiler: gcc
+  - os: Solarix X86
+    compiler: sunpro
+  categories:
+  - Optimization deterministic linear discrete
+- id: disco
+  name: DisCO
+  summary: A solver library for MISOCP.
+  description: DisCO is an open-source distributed memory parallel solver library for MISOCP. It implements various algorithms and is compatible with various other solvers at solving continuous relaxations.
+  manager: Aykut Bulut, aykutblt at gmail dot com
+  homepage: https://github.com/coin-or/DisCO
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: CHiPPS-ALPS
+  - name: CHiPPS-BiCePS
+  third_party:
+  - name: Blas
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/Blas/stable/1.4
+    use: ''
+  - name: Lapack
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/Lapack/stable/1.5
+    use: ''
+  - name: Glpk
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/Glpk/stable/1.10
+    use: ''
+  - name: HSL
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/HSL/stable/1.5
+    use: ''
+  - name: Metis
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/Metis/stable/1.3
+    use: ''
+  - name: Mumps
+    url: https://github.com/coin-or/svn/BuildTools/ThirdParty/Mumps/trunk
+    use: ''
+  - name: OsiConic
+    url: https://github.com/aykutbulut/OSI-CONIC
+    use: ''
+  - name: CglConic
+    url: https://github.com/aykutbulut/CGL-CONIC
+    use: ''
+  - name: OsiMosek
+    url: https://github.com/aykutbulut/OSI-MOSEK
+    use: ''
+  - name: OsiCplex
+    url: https://github.com/aykutbulut/OsiCplex
+    use: ''
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: GNU/Linux
+    compiler: gcc
+  - os: Mac OSX 10.11
+    compiler: clang Xcode 8
+  - os: Mac OSX 10.12
+    compiler: clang Xcode 8.2
+  categories:
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Optimization deterministic nonlinear
+  - Optimization deterministic nonlinear discrete
+- id: djinni
+  name: Djinni
+  summary: A templatized C++ framework with Python bindings for heuristic search.
+  description: Djinni is a templatized C++ framework with python bindings for heuristic search.
+  manager: Justin C. Goodson
+  homepage: https://github.com/coin-or/Djinni
+  license:
+    name: ISC License
+    url: https://www.opensource.org/licenses/isc-license
+  third_party:
+  - name: boost
+    url: https://www.boost.org/
+    use: Optional
+  - name: PyGTK
+    url: https://www.pygtk.org/
+    use: Optional
+  language: C++, Python
+  status:
+    activity: Inactive
+    maturity: '5'
+    stable_version: '2.2'
+    stable_release: 2.2.4
+  platforms:
+  - os: Mac OS X
+    compiler: GCC
+  - os: Solaris
+    compiler: GCC
+  - os: FreeBSD
+    compiler: GCC
+  - os: Linux
+    compiler: GCC
+  categories:
+  - Metaheuristics
+- id: dylp
+  name: DyLP
+  summary: An implementation of the dynamic simplex method.
+  description: DyLP is an open-source implementation of the dynamic simplex algorithm for linear programming. DyLP is pure C, heavily instrumented and commented, targetted toward algorithm development. A C++ OSI interface, OsiDylp, is also available.
+  manager: Lou Hafer, lou@cs.sfu.ca
+  homepage: https://github.com/coin-or/DyLP
+  license:
+    name: Default is Eclipse Public License (EPL) 1.0. Gnu General Public License (GPL) on request.
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  language: C (dylp), C++ (OsiDylp)
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '1.10'
+    stable_release: 1.10.4
+  platforms:
+  - os: Microsoft Windows 7, XP / Cygwin / MinGW / Msys
+    compiler: GCC, cl
+  - os: Microsoft Windows 7, XP / Visual Studio
+    compiler: cl
+  - os: Fedora Linux
+    compiler: GCC
+  - os: Solaris (SPARC, x86)
+    compiler: Studio, GCC
+  - os: Mac OSX
+    compiler: GCC
+  categories:
+  - Optimization deterministic linear continuous
+- id: filtersd
+  name: filterSD
+  summary: A library for nonlinear optimization written in Fortran.
+  description: FilterSD is an open-source package for solving Nonlinear Programming Problems and Linearly Constrained Problems in continuous optimization, written in Fortran.
+  manager: Frank E. Curtis
+  homepage: https://github.com/coin-or/filterSD
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0/
+  language: Fortran 77
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: '2.0'
+    stable_release: 2.0.1
+  platforms:
+  - os: Mac OS X
+    compiler: gfortran
+  categories:
+  - Optimization deterministic nonlinear
+- id: flopcpp
+  name: FLOPC++
+  summary: An algebraic modeling language embedded in C++.
+  description: An open source algebraic modelling language implemented as a C++ class library.
+  manager: Tim Hultberg, tim dot hultberg at eumetsat dot int
+  homepage: https://github.com/coin-or/FlopC++
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: SMI
+    url: https://github.com/coin-or/Smi
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  language: C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '1.2'
+    stable_release: 1.2.5
+  categories:
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Optimization stochastic
+- id: gamslinks
+  name: GAMSlinks
+  summary: Links between GAMS (General Algebraic Modeling System) and solvers that are hosted at COIN-OR.
+  description: GAMSlinks is dedicated to the development of links between GAMS (General Algebraic Modeling System) and open source solvers. Its goals are to make the COIN-OR solvers available to GAMS users, help developers to hook up their solver to GAMS, and by that provide access to the GAMS quality assurance and benchmarking tools.
+  manager: Stefan Vigerske
+  homepage: https://github.com/coin-or/GAMSlinks
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: BONMIN
+    url: https://github.com/coin-or/Bonmin
+  - name: Couenne
+    url: https://github.com/coin-or/Couenne
+  - name: Optimization Services
+    url: https://github.com/coin-or/OS
+  third_party:
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required for IPOPT, BONMIN, and Couenne
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional
+  - name: A sparse linear solver (MA27, MA57, WSMP, Paradiso, HSL, MUMPS)
+    use: Required for IPOPT, BONMIN, and Couenne
+  - name: Metis 4
+    url: https://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+    use: Optional
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/glpk.html
+    use: Optional
+  - name: SCIP
+    url: https://scip.zib.de/
+    use: Optional
+  - name: SoPlex
+    url: https://soplex.zib.de/
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: '0.5'
+    stable_release: 0.4.1
+  platforms:
+  - os: Linux
+    compiler: GCC
+  - os: Mac OS X
+    compiler: GCC
+  categories:
+  - Interfaces
+- id: gimpy
+  name: GiMPy
+  summary: a Python library containing pure Python implementations of a variety of graph algorithms with visualizations
+  description: Graph Methods in Python (GiMPy) is a Python graph library containing pure Python implementations of a variety of graph algorithms. The goal is clarity in implementation rather than eficiency. Most methods have an accompanying visualization and are thus appropriate for use in the classroom.
+  manager: Ted Ralphs, ted at lehigh.edu
+  homepage: https://github.com/coin-or/GiMPy
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  language: Python
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Microsoft Windows
+    compiler: Python 2.7
+  - os: Linux
+    compiler: Python 2.7
+  - os: OS X
+    compiler: Python 2.7
+  categories:
+  - Graphs
+  - Modeling systems
+  - Python tools
+  - Visualization software
+- id: gravity
+  name: Gravity
+  summary: Gravity is an open source, scalable, memory efficient modeling language for solving mathematical models in Optimization and Machine Learning.
+  description: Gravity is an open source, scalable, memory efficient modeling language for solving mathematical models in Optimization and Machine Learning. It exploits structure to reduce function evaluation time including Jacobian and Hessian computation. Gravity is implemented in C++ with a flexible interface allowing the user to specify the numerical accuracy of variables and parameters and can handle arbitrary Mixed-Integer Nonlinear Programs (MINLPs) as well as Mixed-Integer Semidefinite Programs (MISDPs). It is also designed to offer efficient iterative model solving, convexity detection, multithreading of subproblems, and lazy constraint generation. When compared to state-of-the-art modeling languages such as JuMP, Gravity is 5 times faster in terms of function evaluation and up to 60 times more memory efficient. Short term goals include Lasserre’s hierarchy implementation for polynomial optimization and automatic symbolic variable elimination for MINLPs.
+  manager: Hassan Hijazi, hlh at lanl dot com
+  homepage: https://github.com/coin-or/Gravity
+  license:
+    name: BSD-3 Clause
+    url: https://opensource.org/licenses/BSD-3-Clause
+  third_party:
+  - name: IPOPT
+    url: https://github.com/coin-or/Ipopt
+    use: Optional
+  - name: BONMIN
+    url: https://github.com/coin-or/Bonmin
+    use: Optional
+  - name: GUROBI
+    url: https://www.gurobi.com/
+    use: Optional
+  - name: CPLEX
+    url: https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/
+    use: Optional
+  - name: MOSEK
+    url: https://www.mosek.com/
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: LINUX
+    compiler: GNU
+  - os: MAC
+    compiler: GNU/CLANG
+  categories:
+  - Modeling systems
+- id: grumpy
+  name: GrUMPy
+  summary: a Python library for visualizing various aspects of mathematical programming, including visualizations of the branch-and-cut process, branch-and-bound trees, polyhedra, cutting plane methods, etc.
+  description: Graphics for Understanding Mathematical Programming in Python (GrUMPy) is a Python library for visualizing various aspects of mathematical programming, including visualizations of the branch-and process, branch-and-bound trees, polyhedra, cutting plane methods, etc. The goal is clarity in implementation rather than efficiency. Most methods have an accompanying visualization and are thus appropriate for use in the classroom.
+  manager: Ted Ralphs, ted at lehigh.edu
+  homepage: https://github.com/coin-or/GrUMPy
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  language: Python
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '0.6'
+    stable_release: 0.6.1
+  platforms:
+  - os: Microsoft Windows
+    compiler: Python 2.7
+  - os: Linux
+    compiler: Python 2.7
+  - os: OS X
+    compiler: Python 2.7
+  categories:
+  - Graphs
+  - Optimization deterministic linear discrete
+  - Optimization utility
+  - Python tools
+  - Visualization software
+- id: highs
+  name: HiGHS
+  summary: Linear optimization software
+  description: High performance serial and parallel solver for large scale sparse linear programming
+  manager: Julian Hall, jajhall at ed dot ac dot uk
+  homepage: https://github.com/ERGO-Code/HiGHS
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  linked_projects:
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: GCC
+  - os: Linux
+    compiler: CLANG
+  categories:
+  - Optimization deterministic linear continuous
+- id: ipopt
+  name: Ipopt
+  summary: A solver for general large-scale nonlinear continuous optimization.
+  description: Ipopt is an open-source solver for large-scale nonlinear continuous optimization. It can be used from various modeling environments and is available as callable library with interfaces to C++, C, Fortran, Java, and R. Ipopt uses an interior point method, together with a filter linear search procedure.
+  manager: andreas dot waechter at northwestern dot edu
+  homepage: https://github.com/coin-or/Ipopt
+  license:
+    name: Eclipse Public License
+    url: https://opensource.org/licenses/EPL-2.0
+  third_party:
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required (any implementation)
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Required (any implementation)
+  - name: Ampl Solver Library
+    url: https://www.netlib.org/ampl/solvers
+    use: Optional
+  - name: A sparse linear solver (MA27, MA57, HSL_MA86, HSL_MA97, WSMP, Pardiso, MUMPS)
+    use: Required (at least one)
+  - name: Metis
+    url: https://glaros.dtc.umn.edu/gkhome/views/metis
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: see project page
+    stable_release: see project page
+  platforms:
+  - os: Microsoft Windows with MSYS2/MinGW
+    compiler: g++
+  - os: Microsoft Windows with MSYS2
+    compiler: cl
+  - os: Microsoft Windows with MSYS2
+    compiler: icl+ifort
+  - os: Linux
+    compiler: g++
+  - os: Mac OSX
+    compiler: g++
+  - os: Mac OSX
+    compiler: clang
+  categories:
+  - Optimization deterministic nonlinear
+- id: jmarkov
+  name: jMarkov
+  summary: An open-source tool for Markov chain modeling, including finite Markov chains, quasi-birth-and-death processes, phase-type distributions, and Markov decision processes.
+  description: jMarkov is an open-source tool for Markov chain modeling. jMarkov includes support for finite Markov chain, quasi-birth-and-death processes, phase-type distributions, and Markov decision processes.
+  manager: Juan F. Perez
+  homepage: https://github.com/coin-or/jMarkov
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.eclipse.org/legal/epl-v10.html
+  language: Java
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: no stable version
+    stable_release: '1.0'
+  platforms:
+  - os: Microsoft Windows
+    compiler: javac
+  categories:
+  - Stochastic modeling
+- id: jorlib
+  name: Java Operations Research Library (jORLib)
+  summary: jORLib is a Java library that provides algorithmic implementations and frameworks for optimization problems in the area of Operations Research.
+  description: jORLib is a Java library that provides algorithmic implementations and frameworks for optimization problems in the area of Operations Research.
+  manager: Joris Kinable, jkinable at cs dot cmu dot edu
+  homepage: https://github.com/coin-or/jORLib
+  license:
+    name: LGPLv2.1
+    url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
+  third_party:
+  - name: jGraphT 0.9.0
+    url: https://jgrapht.org/
+    use: Required
+  - name: Guava 14.0.1
+    url: https://code.google.com/p/guava-libraries/
+    use: Required
+  - name: Logback 0.9.28
+    url: https://logback.qos.ch//
+    use: Required
+  - name: Slf4j 1.6.1
+    url: https://www.slf4j.org/
+    use: Required
+  - name: JUnit 4.12
+    url: https://www.junit.org/
+    use: Optional (unit tests only)
+  language: Java 8
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: ''
+  - os: Microsoft Windows
+    compiler: ''
+  categories:
+  - Development tools
+  - Metaheuristics
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Optimization utility
+- id: lago
+  name: LaGO
+  summary: A package for the global optimization of nonconvex mixed-integer nonlinear programs.
+  description: LaGO (Lagrangian Global Optimizer) is a software-package for the global optimization of nonconvex mixed-integer nonlinear programs (MINLP). LaGO can work with black-box formulations of the functions, but assumes to have sparsity information and methods for the evaluation of function values, gradients, and Hessian-vector-multiplications.
+  manager: Stefan Vigerske
+  homepage: https://github.com/coin-or/LaGO
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  third_party:
+  - name: GAMS I/O libraries
+    url: https://www.gams.com/~svigerske
+    use: Required if no ASL available
+  - name: AMPL Solver Library (ASL)
+    url: https://www.netlib.org/ampl/solvers
+    use: Required if no GAMS I/O libraries available
+  - name: Blas
+    url: https://www.netlib.org/blas
+    use: Required if IPOPT is used
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional
+  - name: A sparse linear solver (MA27, MA57, WSMP, Paradiso, HSL, MUMPS)
+    use: Required if IPOPT is used
+  - name: FILIB++
+    use: Optional
+  - name: METIS
+    url: https://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+    use: Required
+  - name: ranlib
+    url: https://www.netlib.org/random
+    use: Required
+  - name: TNT
+    url: https://math.nist.gov/tnt
+    use: Required
+  - name: CPLEX
+    url: https://www.ilog.com/products/cplex
+    use: Optional
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: '0.3'
+    stable_release: no release version
+  platforms:
+  - os: Linux
+    compiler: gcc
+  categories:
+  - Optimization deterministic nonlinear
+  - Optimization deterministic nonlinear discrete
+- id: lemon
+  name: LEMON
+  summary: A C++ template library aimed at combinatorial optimization tasks, especially those working with graphs and networks.
+  description: Library of Efficient Models and Optimization in Networks – A C++ template library providing easy-to-use implementations of common graph and network related data structures and algorithms.
+  manager: alpar at cs.elte.hu
+  homepage: https://lemon.cs.elte.hu/
+  license:
+    name: Boost License 1.0
+    url: https://www.boost.org/LICENSE_1_0.txt
+  language: C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '1.2'
+    stable_release: 1.2.1
+  platforms:
+  - os: Linux
+    compiler: GCC 3.3 and upwards
+  - os: Linux
+    compiler: Intel C++ 11.1,13.1.3
+  - os: AIX
+    compiler: xlC
+  - os: Microsoft Windows
+    compiler: Visual C++ 2005,2008
+  - os: Microsoft Windows
+    compiler: Cygwin/GCC
+  - os: Microsoft Windows
+    compiler: MinGW
+  categories:
+  - Graphs
+  - Optimization utility
+- id: mcpp
+  name: MC++
+  summary: A toolkit for bounding factorable functions.
+  description: MC++ is a toolkit for bounding factorable functions. It provides methods for computing bounds on a factorable function in the form of convex/concave relaxations, Taylor models, and spectral bounds.
+  manager: Benoit Chachuat
+  homepage: https://github.com/coin-or/MCpp
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  third_party:
+  - name: fadbad++
+    url: https://www.fadbad.com/fadbad.html
+    use: Required
+  - name: Blas
+    url: https://www.netlib.org/blas/
+    use: Required
+  - name: Lapack
+    url: https://www.netlib.org/lapack/
+    use: Required
+  - name: PROFIL
+    url: https://www.ti3.tu-harburg.de/Software/PROFILEnglisch.html
+    use: Optional
+  - name: FILIB++
+    url: https://www2.math.uni-wuppertal.de/~xsc/software/filib.html
+    use: Optional
+  - name: CppUnit
+    url: https://sourceforge.net/apps/mediawiki/cppunit/index.php?title=Main_Page
+    use: Optional
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: GNU
+  categories:
+  - Optimization deterministic nonlinear
+- id: metslib
+  name: METSlib
+  summary: An object oriented metaheuristics optimization framework and toolkit in C++.
+  description: METSlib is an object oriented metaheuristics optimization framework and toolkit in C++. Hill Climbing, Steepest Descent, Random Restart Local Search, Variable Neighborhood Search, Iterated Local Search, Simulated Annealing and Tabu Search algorithms are applicable to one unified modeling framework.
+  manager: Mirko Maischberger
+  homepage: https://github.com/coin-or/metslib
+  license:
+    name: GPLv3.0 or, at your option, EPL 1.0
+    url: https://www.opensource.org/licenses/alphabetical
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '3'
+    stable_version: '0.5'
+    stable_release: 0.5.3
+  platforms:
+  - os: GNU/Linux
+    compiler: GCC 4.3.2
+  - os: Microsoft Windows
+    compiler: CYGWIN 1.7/gcc4
+  - os: OpenSolarisx86
+    compiler: gcc-4.x
+  categories:
+  - Metaheuristics
+- id: mibs
+  name: MibS
+  summary: Solver for mixed integer bilevel optimization problems.
+  description: MibS is a solver for mixed integer bilevel optimization problems.
+  manager: Ted Ralphs, tkralphs at lehigh dot edu
+  homepage: https://github.com/coin-or/MibS
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  linked_projects:
+  - name: CHiPPS
+    url: https://github.com/coin-or/CHiPPS-ALPS
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: SYMPHONY
+    url: https://github.com/coin-or/SYMPHONY
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: GCC
+  - os: Mac OS X
+    compiler: clang
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  categories:
+  - Interfaces
+  - Optimization bilevel
+  - Optimization deterministic linear discrete
+- id: mocha
+  name: MOCHA
+  summary: Heuristics and algorithms for multicriteria matroid optimization.
+  description: MOCHA is a software package which contains algorithms and heuristics to solve multicriteria matroid optimization problems. Beyond specific algorithms and heuristics, our package also contains and uses matroid (and related) data structures which can be used as a foundation for new and old algorithms and heuristics.
+  manager: David Haws
+  homepage: https://github.com/coin-or/MOCHA
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0.php
+  third_party:
+  - name: LAPACK
+    url: https://www.netlib.org/lapack/
+    use: Required
+  - name: BLAS
+    url: https://www.netlib.org/blas/
+    use: Required
+  - name: GMP
+    url: https://gmplib.org/
+    use: Optional
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: '1.0'
+    stable_release: 1.0.0
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Mac
+    compiler: gcc
+  categories:
+  - Graphs
+  - Optimization deterministic nonlinear
+  - Optimization stochastic
+- id: nlpapi
+  name: NLPAPI
+  summary: A subroutine interface for defining and solving nonlinear programming problems.
+  description: NLPAPI is a set of subroutines and data structures for defining nonlinear programming problems. It includes an interface to call LANCELOT to solve the problem (you need to get your own copy of LANCELOT), and an interface to IPOPT.
+  manager: Michael E Henderson
+  homepage: https://github.com/coin-or/NLPAPI
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  language: C
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: '0.9'
+    stable_release: 0.9.0
+  platforms:
+  - os: Windows cygwin
+    compiler: gcc
+  - os: GNU/Linux
+    compiler: gcc
+  - os: AIX
+    compiler: xlc
+  categories:
+  - Development tools
+  - Optimization deterministic nonlinear
+- id: obb
+  name: oBB
+  summary: Parallel global optimization of Hessian Lipschitz continuous functions.
+  description: An algorithm for the parallel global optimization of functions with a Lipschitz continuous gradient or Hessian.
+  manager: Jaroslav Fowkes
+  homepage: https://github.com/coin-or/oBB
+  license:
+    name: Gnu Lesser General Public License Version 3
+    url: https://www.gnu.org/licenses/lgpl.html
+  third_party:
+  - name: Python
+    url: https://www.python.org/
+    use: Required
+  - name: OpenMPI or another working implementation of MPI-2
+    url: https://www.open-mpi.org/
+    use: Required
+  - name: NumPy
+    url: https://www.numpy.org/
+    use: Required
+  - name: MPI for Python
+    url: https://mpi4py.scipy.org/
+    use: Required
+  - name: CVXOPT
+    url: https://cvxopt.org/
+    use: Required
+  - name: matplotlib
+    url: https://www.matplotlib.org/
+    use: Optional
+  language: Python
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: no stable version
+    stable_release: no release version
+  platforms:
+  - os: Linux
+    compiler: GNU
+  categories:
+  - Optimization deterministic nonlinear
+- id: oboe
+  name: OBOE
+  summary: Optimization of convex problems with user-supplied methods delivering key first order information (like support to the feasible set, support to the objective function).
+  description: OBOE (Oracle Based Optimization Engine) is an open source software for general convex optimization. It assumes that a user-made code, thereafter named oracle, is capable of delivering first order information on the key elements of the problem (support the feasible set, support to the objective function). The engine exploits this information to construct the so-called localization set which is a polyhedral approximation of the set of optimal solutions.
+  manager: Nidhi Swahncy
+  homepage: https://github.com/coin-or/OBOE
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  third_party:
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Required
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Required
+  - name: Lapackpp
+    url: https://www.sourceforge.net/projects/lapackpp
+    use: Required
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: Boost serialization (on Linux)
+    url: https://www.boost.org/libs/serialization
+    use: Optional
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '4'
+    stable_version: 1.0.4
+    stable_release: 1.0.3
+  platforms:
+  - os: Linux
+    compiler: g++
+  - os: Microsoft Windows
+    compiler: Visual Studio .NET
+  - os: Microsoft Windows
+    compiler: MinGW32/g++
+  categories:
+  - Optimization convex non-differentiable
+- id: optiml
+  name: OptiML
+  summary: interior point, active set method and parametric solvers for support vector machines, solver for the sparse inverse covariance problem
+  notes: Please consult the [OptiML home page](https://projects.coin-or.org/OptiML) for further information.
+  categories:
+  - Optimization deterministic nonlinear
+- id: optimization-services
+  name: Optimization Services
+  summary: A package for representing optimization instances, results, solver options, and communication between clients and solvers in a distributed environment using Web Services.
+  description: The objective of Optimization Services (OS) is to provide a set of standards for representing optimization instances, results, solver options, and communication between clients and solvers in a distributed environment using Web Services. This COIN-OR project provides source code for libraries and executable programs that implement OS standards.
+  manager: Kipp Martin kipp.martin at chicagogsb dot edu and Jun Ma
+  homepage: https://github.com/coin-or/OS
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: CppAD
+    url: https://github.com/coin-or/CppAD
+  - name: DyLP
+    url: https://github.com/coin-or/DyLP
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: SYMPHONY
+    url: https://github.com/coin-or/SYMPHONY
+  - name: Vol
+    url: https://github.com/coin-or/Vol
+  third_party:
+  - name: AMPL Solver Library (ASL)
+    url: https://www.netlib.org/ampl/solvers/
+    use: Optional
+  - name: Blas
+    url: https://www.netlib.org/blas/
+    use: Optional
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: HSL
+    url: https://hsl.rl.ac.uk/archive/hslarchive.html
+    use: Optional
+  - name: KNITRO
+    url: https://www.ziena.com/
+    use: Optional
+  - name: Lapack
+    url: https://www.netlib.org/lapack/
+    use: Optional
+  - name: LINDO
+    url: https://www.lindo.com/
+    use: Optional
+  - name: MUMPS
+    url: https://graal.ens-lyon.fr/MUMPS/
+    use: Optional
+  language: C,C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '2.10'
+    stable_release: 2.10.2
+  platforms:
+  - os: Linux
+    compiler: gcc
+  - os: Mac OS X (Intel)
+    compiler: gcc
+  - os: Mac OS X (Power PC)
+    compiler: gcc
+  - os: Microsoft Windows
+    compiler: MinGW/gcc
+  - os: Microsoft Windows
+    compiler: Cygwin/gcc
+  - os: Microsoft Windows
+    compiler: Msys/MS cl
+  - os: Microsoft Windows
+    compiler: Visual Studio cl
+  categories:
+  - Interfaces
+- id: osi
+  name: OSI
+  summary: A uniform API for calling embedded linear and mixed-integer programming solvers.
+  description: The COIN-OR Open Solver Interface is a uniform API for interacting with callable solver libraries. It supports linear programming solvers as well as the ability to “finish off” a mixed-integer problem calling the solver library’s MIP solver. A list of supported solvers appears at the bottom of the page.
+  manager: Matthew Saltzman, Lou Hafer
+  homepage: https://www.github.com/coin-or/Osi
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Data
+  - name: DyLP
+    url: https://github.com/coin-or/DyLP
+  - name: HiGHS
+    url: https://github.com/coin-or/HiGHS
+  - name: SYMPHONY
+    url: https://github.com/coin-or/SYMPHONY
+  - name: Vol
+    url: https://github.com/coin-or/Vol
+  third_party:
+  - name: CPLEX
+    url: https://www.ibm.com/analytics/cplex-optimizer
+    use: Optional
+  - name: Glpk
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: FICO-Xpress
+    url: https://www.fico.com/en/products/fico-xpress-optimization
+    use: Optional
+  - name: Gurobi
+    url: https://www.gurobi.com/
+    use: Optional
+  - name: Mosek
+    url: https://www.mosek.com/
+    use: Optional
+  - name: SoPlex
+    url: https://soplex.zib.de/
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '0.108'
+    stable_release: 0.108.6
+  platforms:
+  - os: GNU/Linux
+    compiler: gcc
+  - os: Mac OS X
+    compiler: gcc
+  - os: Microsoft Windows with MSys2
+    compiler: gcc, cl, icl
+  - os: Microsoft Windows
+    compiler: Visual Studio, cl
+  categories:
+  - Interfaces
+  subprojects:
+  - group: Solver Interfaces
+    items:
+    - 'OsiCpx: CPLEX'
+    - 'OsiGlpk: GNU LP Toolkit'
+    - 'OsiGrb: Gurobi'
+    - 'OsiMsk: Mosek'
+    - 'OsiSpx: Soplex'
+    - 'OsiXpr: XPRESS-MP'
+- id: ots
+  name: OTS
+  summary: a framework for constructing tabu search algorithms
+  notes: Please consult the [OTS home page](/Ots/index.html) for further information.
+  categories:
+  - Metaheuristics
+- id: paver
+  name: Paver
+  summary: Python scripts to do comparisons of solver performance.
+  description: These tools are meant to simplify the task of performance data comparison and visualization.
+  manager: Stefan Vigerske, stefan at gams.com
+  homepage: https://github.com/coin-or/Paver
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.eclipse.org/legal/epl-v10.html
+  third_party:
+  - name: Python 2.7
+    url: https://www.python.org/
+    use: required
+  - name: Numpy
+    url: https://docs.scipy.org/doc/
+    use: required
+  - name: Pandas
+    url: https://pandas.pydata.org/
+    use: required
+  - name: Matplotlib
+    url: https://matplotlib.org/
+    use: required
+  language: Python 2.x
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: Python 2.7
+  categories:
+  - Optimization utility
+  - Python tools
+- id: pfunc
+  name: PFunc
+  summary: A lightweight and portable library that provides C and C++ APIs to express task parallelism.
+  description: PFunc, short for Parallel Functions, is a lightweight and portable library that provides C and C++ APIs to express task parallelism. The features offered by PFunc are a strict superset of the features offered by current solutions for task parallelism such as Cilk and Intel’s Threading Building Blocks. Specifically, PFunc extends the feature set of current solutions with custom task scheduling, task priorities and task affinities. Furthermore, PFunc offers task groups for SPMD-style programming and multiple task completion notifications for parallel execution of DAGs. PFunc’s extended feature set is geared towards helping knowledgeable users optimize their application performance.
+  manager: Prabhanjan Kambadur
+  homepage: https://github.com/coin-or/PFunc
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.eclipse.org/legal/epl-v10.html
+  language: C, C++
+  status:
+    activity: Inactive
+    maturity: '3'
+    stable_version: '1.0'
+    stable_release: 1.0.2
+  platforms:
+  - os: Ubuntu Linux
+    compiler: gcc
+  - os: Fedora Linux
+    compiler: gcc
+  - os: RHEL Server release 5.5
+    compiler: gcc
+  - os: OS X Leopard
+    compiler: gcc
+  - os: AIX
+    compiler: xlc
+  - os: Windows XP Pro
+    compiler: Visual Studio Express 10.0
+  categories:
+  - Optimization utility
+- id: pulp
+  name: PuLP
+  summary: A Python library for modeling linear and integer programs.
+  description: PuLP is an LP modeler written in python. PuLP can generate MPS or LP files and call GLPK, COIN CLP/CBC, CPLEX, GUROBI to solve linear problems.
+  manager: Stuart Mitchell
+  homepage: https://github.com/coin-or/Pulp
+  license:
+    name: MIT License
+    url: https://www.opensource.org/licenses/mit-license.php
+  third_party:
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  language: python
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: '1.4'
+    stable_release: 1.4.8
+  platforms:
+  - os: Microsoft Windows
+    compiler: python 2.5
+  - os: Microsoft Windows
+    compiler: python 2.4
+  - os: Linux
+    compiler: python 2.6
+  - os: Linux
+    compiler: python 2.5
+  - os: Linux
+    compiler: python 2.4
+  categories:
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+- id: pyomo
+  name: Pyomo
+  summary: Pyomo is a Python-based open-source software package that supports a diverse set of optimization capabilities for formulating and analyzing optimization models.
+  description: Pyomo is a Python-based open-source software package that supports a diverse set of optimization capabilities for formulating and analyzing optimization models. Modeling optimization applications is a core capability of Pyomo. Pyomo can be used to define symbolic problems, create concrete problem instances, and solve these instances with standard solvers. Thus, Pyomo provides a capability that is commonly associated with algebraic modeling languages such as AMPL, AIMMS, and GAMS, but Pyomo’s modeling objects are embedded within a full-featured high-level programming language with a rich set of supporting libraries.
+  manager: William Hart, wehart at sandia dot gov, Jean-Paul Watson, jwatson at sandia dot gov and John Siirola, jdsiiro at sandia dot gov
+  homepage: https://www.pyomo.org/
+  license:
+    name: BSD
+    url: https://www.opensource.org/licenses/bsd-license.php
+  language: Python
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '4.2'
+    stable_release: 4.2.10784
+  platforms:
+  - os: Any
+    compiler: Python 2.6, 2.7, 3.3, and 3.4
+  categories:
+  - Development tools
+  - Modeling systems
+  - Optimization stochastic
+  - Optimization utility
+- id: python-mip
+  name: Python MIP
+  summary: Python MIP is a collection of Python tools for the modeling and solution of Mixed-Integer Linear programs (MIPs).
+  description: Python MIP is a collection of Python tools for the modeling and solution of Mixed-Integer Linear programs (MIPs). MIP syntax was inspired by Pulp. Just like CyLP it also provides access to advanced solver features like cut generation, MIPstarts and solution Pools. Porting Pulp and Gurobi models should be quite easy.
+  manager: Haroldo Gambini Santos
+  homepage: https://github.com/coin-or/python-mip
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  linked_projects:
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  third_party:
+  - name: Gurobi
+    url: https://www.gurobi.com/
+    use: Optional
+  language: Python
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: ''
+    stable_release: ''
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Optimization utility
+- id: qpoases
+  name: qpOASES
+  summary: An open-source C++ implementation of the recently proposed online active set strategy.
+  description: qpOASES is an open-source C++ implementation of the recently proposed online active set strategy for solving quadratic programming (QP) problems. It has several theoretical features that make it particularly suited for model predictive control (MPC) applications. Further numerical modifications have made qpOASES a reliable QP solver, even when tackling semi-definite, ill-posed or degenerated QP problems. Moreover, several interfaces to third-party software make qpOASES easy-to-use even for users without knowledge of C/C++.
+  manager: Joachim Ferreau
+  homepage: https://github.com/coin-or/qpOASES
+  license:
+    name: "​GNU Lesser General Public License (LGPL), v2.1"
+    url: https://www.gnu.org/licenses/lgpl-2.1.html
+  third_party:
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Optional
+  - name: LAPACK
+    url: https://www.netlib.org/lapack
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: '3.2'
+    stable_release: 3.2.1
+  platforms:
+  - os: Linux
+    compiler: g++
+  - os: Microsoft Windows
+    compiler: CYGWIN/g++
+  categories:
+  - Optimization deterministic nonlinear
+- id: rbfopt
+  name: RBFOpt
+  summary: A global derivative-free solver.
+  description: Library for black-box (also known as derivative-free) optimization written in Python. Currently, the software supports box-constrained problems with continuous and discrete variables.
+  manager: Giacomo Nannicini, giacomo dot n at gmail dot com
+  homepage: https://github.com/coin-or/RBFOpt/wiki
+  license:
+    name: Revised BSD license (3-clause BSD license)
+    url: https://opensource.org/licenses/BSD-3-Clause
+  linked_projects:
+  - name: Pyomo
+    url: https://github.com/coin-or/Pyomo
+  language: Python
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: 1.1.0
+    stable_release: 1.1.0
+  platforms:
+  - os: Linux
+    compiler: ''
+  - os: Mac OS X
+    compiler: ''
+  - os: Microsoft Windows
+    compiler: ''
+  categories:
+  - Optimization convex non-differentiable
+  - Optimization deterministic nonlinear discrete
+  - Optimization utility
+- id: rehearse
+  name: Rehearse
+  summary: An algebraic modeling library in C++.
+  description: An algebraic modeling library in C++.
+  manager: Onur Çelebi
+  homepage: https://github.com/coin-or/Rehearse
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  language: C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: ''
+    stable_release: ''
+  categories:
+  - Modeling systems
+- id: rose
+  name: ROSE
+  summary: Software for performing symbolic reformulations to Mathematical Programs (MP).
+  description: Optimization problems are usually defined in terms of their mathematical programming formulation. This consists of a set of objective functions to be optimized subject to a set of constraints, all expressed in terms of a set of decision variables which may be discrete or continuous. Formulations may be symbolically transformed so that some of their numerical properties (e.g. optimal solutions, feasible region,…) are invariant. Yet sometimes the reformulated problem is easier to solve or is useful within a given solution algorithm. The main aims of this project are a systematic study of reformulation theory, the production of software tools for automating mathematical programming reformulation, and the formalization and implementation of solution algorithms based on reformulation techniques.
+  manager: David Savourey
+  homepage: https://github.com/coin-or/ROSE
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.eclipse.org/legal/epl-v10.html
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: gcc
+  categories:
+  - Modeling systems
+- id: shot
+  name: The Supporting Hyperplane Optimization Toolkit (SHOT)
+  summary: A deterministic convex MINLP solver.
+  description: SHOT is a deterministic convex MINLP solver based on polyhedral outer approximation and primal heuristics.
+  manager: Andreas Lundell, andreas dot lundell at abo dot fi
+  homepage: https://www.github.com/COIN-OR/SHOT
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  linked_projects:
+  - name: Optimization Services
+    url: https://github.com/coin-or/OS
+  - name: Ipopt
+    url: https://github.com/coin-or/Ipopt
+  - name: CBC
+    url: https://github.com/coin-or/Cbc
+  third_party:
+  - name: Boost
+    url: https://www.boost.org/
+    use: Required
+  - name: IBM ILOG CPLEX
+    url: https://www.ibm.com/products/ilog-cplex-optimization-studio
+    use: Optional
+  - name: Gurobi
+    url: https://www.gurobi.com/
+    use: Optional
+  language: C++
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux
+    compiler: ''
+  categories:
+  - Optimization deterministic nonlinear
+  - Optimization deterministic nonlinear discrete
+- id: smi
+  name: SMI
+  summary: A stochastic modelling interface for optimization under uncertainty.
+  description: 'SMI is an open-source interface for modeling stochastic linear programming problems. Currently it supports: a scenario tree structure for multiperiod stochastic data, an implementation of a Stochastic MPS (SMPS) reader, direct interfaces for generating scenario trees from paths and from discrete random variables, generating the deterministic equivalent problem for OSI compatible solvers, and parsing the solutions by stage and scenario.'
+  manager: Alan King, kingaj at us dot ibm dot com
+  homepage: https://github.com/coin-or/Smi
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  language: C++
+  status:
+    activity: Active
+    maturity: '4'
+    stable_version: '0.96'
+    stable_release: 0.96.1
+  platforms:
+  - os: Microsoft Windows
+    compiler: Visual C++
+  - os: Linux
+    compiler: gcc
+  categories:
+  - Optimization stochastic
+- id: sonnet
+  name: SONNET
+  summary: Microsoft .NET wrapper for COIN-OR Open Solver Interface
+  description: A wrapper for COIN-OR mixed integer linear programming via OSI to Microsoft .NET
+  manager: Jan-Willem Goossens
+  homepage: https://github.com/coin-or/SONNET
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  language: C#
+  status:
+    activity: Active
+    maturity: '2'
+    stable_version: '1.2'
+    stable_release: 1.1.2
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVS/.NET
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+- id: symphony
+  name: SYMPHONY
+  summary: A callable library for solving mixed-integer linear programs.
+  description: SYMPHONY is an open-source generic MILP solver, callable library, and extensible framework for implementing customized solvers for mixed-integer linear programs (MILPs). SYMPHONY can be built in various sequential and parallel configurations for either distributed or shared memory architectures and can be used “out of the box” as a solver for generic mixed-integer linear programs or customized through a wide variety of user callback functions and control parameters. SYMPHONY has a number of advanced capabilities stemming from the research projects discussed above, including the ability to solve multi-objective MILPs, the ability to warm start its solution procedure, and the ability to perform basic sensitivity analyses. SYMPHONY has has been deployed in a variety of application areas, including computational biology, wireless telecommunications, supply chain management, transportation services, and air transportation.
+  manager: Ted Ralphs, ted at lehigh dot edu
+  homepage: https://github.com/coin-or/SYMPHONY
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: BuildTools
+    url: https://github.com/coin-or-tools/BuildTools
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  - name: Cgl
+    url: https://github.com/coin-or/Cgl
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: CLP
+    url: https://github.com/coin-or/Clp
+  third_party:
+  - name: Glpk
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: GNU Readline
+    use: Optional
+  - name: GNU History
+    use: Optional
+  - name: BLAS
+    url: https://www.netlib.org/blas
+    use: Required (any implementation)
+  - name: Lapack
+    url: https://www.netlib.org/lapack
+    use: Optional (any implementation)
+  language: C
+  status:
+    activity: Active
+    maturity: '5'
+    stable_version: '5.6'
+    stable_release: 5.6.17
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/cl
+  - os: Microsoft Windows
+    compiler: CYGWIN/gcc
+  - os: Microsoft Windows
+    compiler: MSys/gcc
+  - os: Linux
+    compiler: gcc
+  - os: OSX
+    compiler: gcc
+  - os: Solarix X86
+    compiler: gcc
+  - os: Solarix X86
+    compiler: sunpro
+  categories:
+  - Optimization deterministic linear discrete
+- id: test-tools
+  name: Test Tools
+  summary: Python scripts to automatically download, configure, build, test, and install COIN-OR projects.
+  description: The Test Tools project provides Python scripts to automatically download, configure, build, test, install, and build binaries of COIN-OR projects. If a failure is recognized, the scripts can send an e-mail to the corresponding project manager.
+  manager: JP Fasano
+  homepage: https://github.com/coin-or-tools/TestTools
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  language: Python
+  status:
+    activity: Inactive
+    maturity: '2'
+    stable_version: ''
+    stable_release: ''
+  platforms:
+  - os: Linux 32 and 64 bit
+    compiler: Python 2.5
+  - os: Sun OS Solaris
+    compiler: Python 2.4.4
+  - os: AIX Unix
+    compiler: Python 2.5
+  - os: Mac OS X
+    compiler: Python 2.5
+  - os: Windows XP
+    compiler: Python 2.5
+  - os: Windows XP (Cygwin)
+    compiler: Python 2.5
+  - os: Windows XP
+    compiler: Python 2.5
+  - os: Windows Server 2003 (Cygwin)
+    compiler: Python 2.5
+  - os: Windows Server 2003 64 Bit (MinGW)
+    compiler: Python 2.5
+  categories:
+  - Development tools
+- id: vol
+  name: Vol
+  summary: A subgradient algorithm that also computes approximate primal solutions.
+  description: Vol (Volume Algorithm) is an open-source implementation of a subgradient method that produces primal as well as dual solutions. The primal solution comes from estimating the volumes below the faces of the dual problem. This is an approximate method so the primal vector might have small infeasiblities that are negligible in many practical settings. The original subgradient algorithm produces only dual solutions.
+  manager: Francisco Barahona, barahon at us dot ibm dot com
+  homepage: https://github.com/coin-or/Vol
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/eclipse-1.0
+  linked_projects:
+  - name: CoinUtils
+    url: https://github.com/coin-or/CoinUtils
+  language: C++
+  status:
+    activity: Active
+    maturity: '3'
+    stable_version: '1.5'
+    stable_release: 1.5.4
+  platforms:
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  - os: Linux
+    compiler: gcc
+  categories:
+  - Optimization deterministic linear continuous
+- id: vrph
+  name: VRPH
+  summary: A library of heuristics for generating solutions to variants of the vehicle routing problem.
+  description: VRPH is an open source library of heuristics for the capacitated Vehicle Routing Problem (VRP). It includes several example applications that can be used to quickly generate good solutions to VRP instances containing thousands of customer locations. A large set of well-studied benchmark instances is available from the project homepage.
+  manager: Chris Groer, cgroer at gmail dot com
+  homepage: https://github.com/coin-or/VRPH
+  license:
+    name: Eclipse Public License 2.0
+    url: https://www.opensource.org/licenses/cpl1.0.php
+  linked_projects:
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  - name: SYMPHONY
+    url: https://github.com/coin-or/SYMPHONY
+  third_party:
+  - name: GLPK
+    url: https://www.gnu.org/software/glpk/
+    use: Optional
+  - name: PLplot
+    url: https://plplot.sourceforge.net/
+    use: Optional
+  language: C++
+  status:
+    activity: Inactive
+    maturity: '3'
+    stable_version: '1.0'
+    stable_release: 1.0.0
+  platforms:
+  - os: Linux
+    compiler: g++
+  - os: Microsoft Windows
+    compiler: CYGWIN/g++
+  - os: Microsoft Windows
+    compiler: MSVC++/cl
+  categories:
+  - Optimization deterministic linear discrete
+- id: yaposib
+  name: yaposib
+  summary: a Python interface to linear solvers that use the OSI
+  description: Yaposib is a python binding to OSI, the Open Solver Interface from COIN-OR. It intends to give access to various solvers through python. Yaposib was created in order to be integrated in COIN-OR/PuLP.
+  manager: n/a
+  homepage: https://github.com/coin-or/yaposib
+  license:
+    name: Eclipse Public License 2.0
+    url: https://opensource.org/licenses/EPL-2.0
+  linked_projects:
+  - name: OSI
+    url: https://github.com/coin-or/Osi
+  third_party:
+  - name: boost::python
+    url: https://www.boost.org/
+    use: Required
+  language: Python
+  status:
+    activity: Abandoned
+    maturity: '5'
+    stable_version: ''
+    stable_release: ''
+  categories:
+  - Interfaces
+  - Modeling systems
+  - Optimization deterministic linear continuous
+  - Optimization deterministic linear discrete
+  - Python tools
