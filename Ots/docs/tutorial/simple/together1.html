@@ -1,0 +1,393 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- Generated from XML source. Copyright 2001 Robert Harder. --><title>OpenTS Tutorial - Traveling Salesman Problem (TSP) - Solution</title>
+<meta http-equiv="Content-Language" content="EN">
+<meta name="keywords" content="OpenTS, teaching, aids, what, tabu search, java, javabean, heuristic">
+<meta name="description" content="A tutorial for using OpenTS">
+<meta name="abstract" content="A tutorial for using OpenTS">
+<meta name="author" content="Robert Harder">
+<meta name="copyright" content="Robert Harder, 2001">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="FOLLOW,INDEX">
+<link rel="SHORTCUT ICON" href="../../../docs/favicon.ico">
+<link rel="alternate" media="print" href="-pr.html">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<base target="_parent">
+<style type="text/css"><!--
+             
+
+               body
+                 {  margin: 0;
+                 }
+
+
+               .iHarderNet
+                 {  font-family: arial, geneva, lucida sans unicode, helvetica;
+                    color: white;
+                    text-align: center;
+                    font-size: 14pt;
+                 }
+
+
+               .i_iHarder
+                 {  font-family: times new roman, courier;
+                    font-style:  italic;
+                    font-weight: bold;
+                    font-size: 12pt;
+                 }
+
+               .MainTitle
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    font-style: italic;
+                    margin-bottom: 4pt;
+                 }
+
+               .OpenTS_Home
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 14pt;
+                    font-style: italic;
+                 }
+
+               .Menu
+                 {  margin-top: 10pt;
+                    margin-left: 6pt;
+                    text-indent: -6pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .SubMenu
+                 {  margin-top: -5pt;
+                    margin-left: 4pt;
+                 }
+
+
+               .MenuItem
+                 {  margin-top: 10pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .Menu A
+                 {  color: #000033;
+                 }
+
+               .Logo
+                 {  text-align: center;
+                 }
+
+.SubTitle
+{  font-family: Arial, san serif;
+   font-size: 16pt;
+   font-style: italic;
+   font-weight: bold;
+}
+
+
+               .SectionTitle
+                 {  margin-top: 1em;
+                    margin-left: 1em;
+                    margin-right: 25%;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: larger;
+                    /*border-top: 4px double black;*/
+                    /*border-bottom: 4px double black;*/
+                 }
+
+               .MainSectionTitle
+                 {  margin-top: 1em;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 22pt;
+                    font-style: italic;
+                    border-bottom: 4px double black;
+                 }
+
+               .SectionBody
+                 {  margin-top: 1em;
+                    margin-left: 1ex;
+                 }
+
+               .MainSectionBody
+                 {  margin-top: 10pt;
+                 }
+
+               .MainPage
+                 {  margin: 4pt; 
+                    margin-right: 24pt;
+                 }
+
+               .FAQList_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Answer
+                 {  
+                 }
+
+
+               .TopMenu
+                 {  margin-top: 20pt;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               .BottomMenu
+                 {  margin-top: 0.1in;
+                    border-top: 4px double black;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               p
+                 {  
+                    margin-top: 0.1in;
+                    text-indent: 1em;
+                 }
+
+               li
+                 {  margin-top: 0.2in;  
+                 }
+
+               ul
+                 {  margin-left: 0.25in;
+                    margin-top: 0.1in;
+                 }
+
+               tt
+                 {  font-size: larger;
+                 }
+
+
+ p.alert { border-left:solid red 6px; margin-left:-12px; padding-left:6px; }
+ pre { padding:1ex; border: solid gray 1px;}
+ code { font-size: 95%; }
+ dl dt { font-weight: bold }
+ dl dd { margin-bottom: 1em }
+ .newCode { background: #EEEEEE; }
+
+               a
+                 {  color: #000055;
+                 }
+               a:hover
+                 {  background: lavender;
+                    text-decoration: none;
+                    color: black;
+                 }
+               
+             
+           --></style>
+</head>
+<body bgcolor="white"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="#000066" height="50">
+<td width="128" height="50"><div class="iHarderNet"><a href="http://www.iHarder.net"><span class="iHarderNet"><span class="i_iHarder">i</span>Harder.net</span></a></div></td>
+<td width="*"><div class="MainTitle"><title-medium>OpenTS Tutorial</title-medium></div></td>
+</tr>
+<tr><td colspan="2"><div style="margin:0 ; border-top: 1px double black"></div></td></tr>
+<tr height="*">
+<td width="128" valign="top" bgcolor="#9090d0"><table width="100%" height="100%" cellpadding="2" cellspacing="0" border="0">
+<tr height="1"><td height="1" width="120" bgcolor="white" valign="center" align="center"><div class="SubTitle">
+      <img src="../../OpenTS_128x36.jpg" border="0" width="128" height="36">
+    </div></td></tr>
+<tr><td valign="top" height="*" style="border-top: solid black 1px; border-right: solid black 1px">
+<div class="Menu">
+<a title="" href="../../../index.html">Summary</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../downloads/OpenTS_10-exp10.tgz">Download now!</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/index.html">Documentation</a><div class="SubMenu">
+<div class="Menu">
+<a title="" href="../../../docs/installation.html">Installation</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/manual.html">Users' Manual</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/tutorial/simple/index.html">Tutorial</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../../../docs/api/index.html">Javadoc API</a><div class="SubMenu"></div>
+</div>
+</div>
+</div>
+<div class="Menu">
+<a title="" href="../../../license.html">License (CPL v0.5)</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="http://www.coin-or.org">COIN Home Page</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a><div class="SubMenu"></div>
+</div>
+<div class="Menu" style="font-weight: normal">Curious about what started it? <br><a href="/Ots/downloads/ITOR_01101001.PDF">Read this paper on vehicle routing</a> and then
+<a href="../../../downloads/Vehicle-Routing-Package.zip">download this file with all the relevant code</a>.
+</div>
+</td></tr>
+</table></td>
+<td width="*" height="*" bgcolor="white" valign="top"><div class="MainPage">
+
+    <div class="MainSectionTitle">Putting it All Together</div>
+<div class="MainSectionBody">
+
+        <div class="SectionTitle">Compiling the Code</div>
+<div class="SectionBody">
+
+            <p>
+              If you don't already have all the source files in one place,
+              you can <a href="SimpleOpenTSTutorial.zip">download them here</a>.
+              From a command prompt type the following command:
+            </p>
+
+<pre class="prettyprint"></code>javac -classpath .;OpenTS.jar *.java</code></pre>
+
+            <p>
+              That will generate several .class files in your current directory.
+            </p>
+
+        </div>
+
+        <div class="SectionTitle">Running the Code</div>
+<div class="SectionBody">
+
+            <p>
+              The command to run the code is very similar:
+            </p>
+
+<pre class="prettyprint"></code>java -classpath .;OpenTS.jar Main</code></pre>
+
+            <p>
+              You should get something like the following on your screen:
+            </p>
+
+<pre class="prettyprint"></code>Best Solution:
+Solution value: 1025.509594617172
+Sequence: [ 0, 4, 7, 6, 1, 8, 5, 12, 3, 13, 10, 
+           16, 9, 2, 11, 19, 15, 14, 17, 18 ]
+72.36062143209436	186.5986970577082
+31.65330865904046	153.7776120384018
+66.51727939444739	138.50626840743809
+162.0462546930939	95.58307450675024
+166.61826979420474	65.29515124758525
+183.24577341373626	70.1724467685417
+189.01469154596148	13.117008144132146
+139.21366507607408	9.466871801969523
+89.61552653863036	127.6305887567737
+40.14429295263602	170.02917644462565
+20.55498011060317	188.8716672695299
+20.536646263235212	118.30519471918417
+18.04865566274256	111.08005478256575
+47.10475812952504	69.82307132497667
+38.836647995939465	50.70319761183606
+17.932880938130214	37.87442743261589
+31.20277975254271	13.327835551901067
+79.60378594606847	46.333632353910794
+75.55484518831904	99.13175164522798
+119.3827892351382	182.30827271981533</code></pre>
+
+            <p>
+              You might be wondering if this is a good solution.
+              A quick trip to Excel gives us this chart of the solution.
+              If you get something that looks like this then you got it right.
+            </p>
+            <p align="center">
+              <img src="soln1.gif">
+            </p>
+
+            <p>
+              You may notice some obvious problems with the solution and say,
+              "I could have done better with a pencil and paper!" Good, you're
+              thinking. The tabu search we just built is embarrassingly primitive,
+              but the premise of tabu search is that we can model a heuristic
+              after the way humans think.
+            </p>
+
+            <p>
+              Think about how <em>you</em> search for things and make an analogy
+              to tabu search. Here are some things people have tried:
+              <dl>
+
+               <dt><a href="http://rtm.science.unitn.it/~battiti/reactive.html">Reactive Tabu List</a></dt>
+               <dd>
+                 Vary the tabu list tenure in response to how well the search is progressing.
+                 If you're "on a roll" finding many good solutions, the tabu list only
+                 gets in the way, so you can shorten the tenure.
+                 If you find yourself trapped in a local optima you can increase the tenure
+                 forcing your search to make unimproving moves while it moves to another
+                 area of the solution space.
+               </dd>
+
+               <dt>Intensification and Diversification</dt>
+               <dd>
+                 Not techniques so much as classifications of techniques, the idea is to
+                 spend more effort on areas of the solution space that show promise
+                 and move to far corners of the solution space when you hit a dead end.
+                 A Reactive Tabu List is one way to explicitly address Intensification
+                 and Diversification.
+               </dd>
+
+               <dt><a href="http://leeds.colorado.edu/Faculty/Laguna/articles/lop.pdf">Elite Solution Lists</a></dt>
+               <dd>
+                 Keep a record of the top 10 or so solutions and devote some iterations at
+                 the end of the run to intensifying your search around those solutions.
+               </dd>
+
+               <dt><a href="http://www.au.af.mil/au/database/research/ay2000/afit/afit-goa-ens-00m-05.htm">Jump Search</a></dt>
+               <dd>
+                 Similar to Elite Solution Lists, instead of using Tabu Search to generate
+                 several good solutions, use a known heuristic - especially one with variable
+                 parameters - to generate several good solutions, and then perform a Tabu Search
+                 from each of these starting points.
+                 Even if you don't make a list of starting solutions you may want to at least
+                 not start with a trivial solution as we did in this tutorial. Try this
+                 <a href="MyGreedyStartSolution.java">MyGreedyStartSolution</a> (only need
+                 to change the one line in Main.java) to see how that improves your solutions.
+               </dd>
+
+              </dl>
+            </p>
+        </div>
+
+<div style="text-align: center">
+<a href="tabu1.html" rel="prev">Previous: The Tabu List Object</a>
+</div>
+
+    </div>
+
+
+
+
+
+  </div></td>
+</tr>
+<tr>
+<td bgcolor="#9090d0" style="height: 1em; border-right: solid black 1px"> </td>
+<td><div class="BottomMenu">
+<span class="Menu"><a title="" href="../../../index.html">Summary</a> | </span><span class="Menu"><a title="" href="../../../downloads/OpenTS_10-exp10.tgz">Download now!</a> | </span><span class="Menu"><a title="" href="../../../docs/index.html">Documentation</a> | </span><span class="Menu"><a title="" href="../../../license.html">License (CPL v0.5)</a> | </span><span class="Menu"><a title="" href="http://www.coin-or.org">COIN Home Page</a> | </span><span class="Menu"><a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a> | </span>
+</div></td>
+</tr>
+</table></body>
+</html>

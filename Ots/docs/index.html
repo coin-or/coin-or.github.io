@@ -1,0 +1,375 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- Generated from XML source. Copyright 2001 Robert Harder. --><title>OpenTS - Documentation</title>
+<meta http-equiv="Content-Language" content="EN">
+<meta name="keywords" content="OpenTS, tabu search, java, javabean, heuristic">
+<meta name="description" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="abstract" content="Provides a framework for implementing a Tabu Search metaheuristic in Java.">
+<meta name="author" content="Robert Harder">
+<meta name="copyright" content="Robert Harder, 2000">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="FOLLOW,INDEX">
+<link rel="SHORTCUT ICON" href="../docs/favicon.ico">
+<base target="_parent">
+<style type="text/css"><!--
+             
+
+               body
+                 {  margin: 0;
+                 }
+
+
+               .iHarderNet
+                 {  font-family: arial, geneva, lucida sans unicode, helvetica;
+                    color: white;
+                    text-align: center;
+                    font-size: 14pt;
+                 }
+
+
+               .i_iHarder
+                 {  font-family: times new roman, courier;
+                    font-style:  italic;
+                    font-weight: bold;
+                    font-size: 12pt;
+                 }
+
+               .MainTitle
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    font-style: italic;
+                    margin-bottom: 4pt;
+                 }
+
+               .OpenTS_Home
+                 {  color: white;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 14pt;
+                    font-style: italic;
+                 }
+
+               .Menu
+                 {  margin-top: 10pt;
+                    margin-left: 6pt;
+                    text-indent: -6pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .SubMenu
+                 {  margin-top: -5pt;
+                    margin-left: 4pt;
+                 }
+
+
+               .MenuItem
+                 {  margin-top: 10pt;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 10pt;
+                 }
+
+               .Menu A
+                 {  color: #000033;
+                 }
+
+               .Logo
+                 {  text-align: center;
+                 }
+
+.SubTitle
+{  font-family: Arial, san serif;
+   font-size: 16pt;
+   font-style: italic;
+   font-weight: bold;
+}
+
+
+               .SectionTitle
+                 {  margin-top: 1em;
+                    margin-left: 1em;
+                    margin-right: 25%;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: larger;
+                    /*border-top: 4px double black;*/
+                    /*border-bottom: 4px double black;*/
+                 }
+
+               .MainSectionTitle
+                 {  margin-top: 1em;
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                    font-size: 22pt;
+                    font-style: italic;
+                    border-bottom: 4px double black;
+                 }
+
+               .SectionBody
+                 {  margin-top: 1em;
+                    margin-left: 1ex;
+                 }
+
+               .MainSectionBody
+                 {  margin-top: 10pt;
+                 }
+
+               .MainPage
+                 {  margin: 4pt; 
+                    margin-right: 24pt;
+                 }
+
+               .FAQList_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Question
+                 {  
+                    font-family: arial, geneva, lucida sans unicode, helvetica;
+                    font-weight: bold;
+                 }
+
+               .FAQ_Answer
+                 {  
+                 }
+
+
+               .TopMenu
+                 {  margin-top: 20pt;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               .BottomMenu
+                 {  margin-top: 0.1in;
+                    border-top: 4px double black;
+                    margin-bottom: 10pt;
+                    border-bottom: 4px black;
+                    text-align: center
+                 }
+
+               p
+                 {  
+                    margin-top: 0.1in;
+                    text-indent: 1em;
+                 }
+
+               li
+                 {  margin-top: 0.2in;  
+                 }
+
+               ul
+                 {  margin-left: 0.25in;
+                    margin-top: 0.1in;
+                 }
+
+               tt
+                 {  font-size: larger;
+                 }
+
+
+ p.alert { border-left:solid red 6px; margin-left:-12px; padding-left:6px; }
+ pre { padding:1ex; border: solid gray 1px;}
+ code { font-size: 95%; }
+ dl dt { font-weight: bold }
+ dl dd { margin-bottom: 1em }
+ .newCode { background: #EEEEEE; }
+
+               a
+                 {  color: #000055;
+                 }
+               a:hover
+                 {  background: lavender;
+                    text-decoration: none;
+                    color: black;
+                 }
+               
+             
+           --></style>
+</head>
+<body bgcolor="white"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="#000066" height="50">
+<td width="128" height="50"><div class="iHarderNet"><a href="http://www.iHarder.net"><span class="iHarderNet"><span class="i_iHarder">i</span>Harder.net</span></a></div></td>
+<td width="*"><div class="MainTitle"><title-medium>OpenTS - Documentation</title-medium></div></td>
+</tr>
+<tr><td colspan="2"><div style="margin:0 ; border-top: 1px double black"></div></td></tr>
+<tr height="*">
+<td width="128" valign="top" bgcolor="#9090d0"><table width="100%" height="100%" cellpadding="2" cellspacing="0" border="0">
+<tr height="1"><td height="1" width="120" bgcolor="white" valign="center" align="center"><div class="SubTitle">
+      <img src="OpenTS_128x36.jpg" border="0" width="128" height="36">
+    </div></td></tr>
+<tr><td valign="top" height="*" style="border-top: solid black 1px; border-right: solid black 1px">
+<div class="Menu">
+<a title="" href="../index.html">Summary</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../downloads/OpenTS_10-exp10.tgz">Download now!</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../docs/index.html">Documentation</a><div class="SubMenu">
+<div class="Menu">
+<a title="" href="../docs/installation.html">Installation</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../docs/manual.html">Users' Manual</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../docs/tutorial/simple/index.html">Tutorial</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="../docs/api/index.html">Javadoc API</a><div class="SubMenu"></div>
+</div>
+</div>
+</div>
+<div class="Menu">
+<a title="" href="../license.html">License (CPL v0.5)</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="http://www.coin-or.org">COIN Home Page</a><div class="SubMenu"></div>
+</div>
+<div class="Menu">
+<a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a><div class="SubMenu"></div>
+</div>
+<div class="Menu" style="font-weight: normal">Curious about what started it? <br><a href="http://www-124.ibm.com/developerworks/oss/coin/OpenTS/downloads/ITOR_01101001.PDF">Read this paper on vehicle routing</a> and then
+<a href="../downloads/Vehicle-Routing-Package.zip">download this file with all the relevant code</a>.
+</div>
+</td></tr>
+</table></td>
+<td width="*" height="*" bgcolor="white" valign="top"><div class="MainPage">
+
+    <div class="MainSectionTitle">Documentation</div>
+<div class="MainSectionBody">
+
+        <ul>
+
+          <li>
+            <a href="installation.html"><b>Installation</b></a>. 
+            Instructions for installing the <tt>jar</tt> file.
+          </li>
+
+          <li>
+<a href="#description"><b>Brief Description</b></a>. Below.</li>
+<!--
+          <li>
+            <a href="faq.html"><b>FAQ</b></a>. 
+            Frequently Asked Questions about OpenTS.
+          </li>
+-->
+          <li>
+            <a href="tutorial/simple/index.html"><b>Tutorial</b></a>. 
+            We walk you through building a simple tabu search for 
+            solving the Traveling Salesman Problem.
+          </li>
+
+          <li>
+            <a href="api/index.html"><b>Javadoc API</b></a>. 
+            Browse <tt>javadoc</tt>-generated API (also available in the 
+            <a href="http://www.crosswinds.net/~rharder/tabusearch/tabusearch25.zip">downloadable package</a>).
+          </li>
+        </ul>
+
+
+      <div class="SectionTitle">
+<a name="description"></a>Description</div>
+<div class="SectionBody">
+          <p>
+            OpenTS asks you to <b>define basic elements</b> common to all 
+            tabu searches and then performs iterations based on these elements. 
+            The key elements you must define, that is create Java classes for, are
+
+            <ul>
+              <li>Solution structure</li>
+              <li>Objective function</li>
+              <li>Tabu list</li>
+              <li>Move</li>
+              <li>Move manager</li>
+            </ul>
+          </p>
+
+          <p>
+            <b>OpenTS uses these elements</b> to search the solution space. 
+            Given a starting, or current, solution, the move manager is 
+            asked to generate a list of moves for the iteration. 
+            OpenTS uses the objective function to determine the value of the 
+            solution that would result from each of these moves. 
+            With the help of the tabu list, OpenTS determines which move is 
+            the best, and that move operates on the starting, or current, solution 
+            which results in a new current solution. 
+            The figure below shows this process graphically.
+          </p>
+
+          <p align="CENTER">
+
+            <img src="iteration.gif" border="0" width="424" height="280">
+<br>
+            <em>An iteration in OpenTS.</em>
+          </p>
+
+          <p>
+            OpenTS makes <b>adding dynamic tabu search techniques</b>, 
+            such as strategic oscillation or reactive tabu lists, easy through 
+            its efficient event mechanism that models Java's proven event mechanism. 
+            OpenTS fires the following events at the appropriate time:
+
+            <ul>
+              <li>New current solution</li>
+              <li>New best solution</li>
+              <li>Unimproving move made</li>
+              <li>Tabu search started</li>
+              <li>Tabu search finished</li>
+            </ul>
+          </p>
+
+          <p>
+            A <b>reactive tabu list</b>, for example, could be attached to the 
+            tabu search as a listener (as defined by the 
+            <tt>TabuSearchListener</tt> interface) and adjust its tabu tenure 
+            based on the frequency and recency of when unimproving moves are made. 
+            Listeners are attached and removed in the same way that Sun's Java components 
+            are attached and removed. For example, if you had an OpenTS tabu search object 
+            named <var>tabuSearch</var> and a tabu list named <var>tabuList</var> that 
+            implemented <tt>TabuSearchListener</tt>, you would attach the tabu list 
+            to the tabu search with the following line:
+
+            <dir>
+              <code>
+                tabuSearch.addTabuSearchListener( tabuList );
+              </code>
+            </dir>
+          </p>
+
+          <p>
+            Of course you do not need to use one of the tabu search elements as a listener. 
+            You may have a Java class that <b>reports the progress</b> of the tabu search instead.
+          </p>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+  </div></td>
+</tr>
+<tr>
+<td bgcolor="#9090d0" style="height: 1em; border-right: solid black 1px"> </td>
+<td><div class="BottomMenu">
+<span class="Menu"><a title="" href="../index.html">Summary</a> | </span><span class="Menu"><a title="" href="../downloads/OpenTS_10-exp10.tgz">Download now!</a> | </span><span class="Menu"><a title="" href="../docs/index.html">Documentation</a> | </span><span class="Menu"><a title="" href="../license.html">License (CPL v0.5)</a> | </span><span class="Menu"><a title="" href="http://www.coin-or.org">COIN Home Page</a> | </span><span class="Menu"><a title="" href="mailto:rharder--@--usa.net">Contact Robert Harder</a> | </span>
+</div></td>
+</tr>
+</table></body>
+</html>
