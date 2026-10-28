@@ -1,0 +1,87 @@
+
+\documentclass[12pt]{article}
+\usepackage{xspace}
+\usepackage{vmargin}
+
+\setpapersize{USletter}
+\setmarginsrb{1in}{.5in}{1in}{.5in}%
+	     {\baselineskip}{2\baselineskip}%
+	     {\baselineskip}{2\baselineskip}
+
+\pagestyle{empty}
+\setlength{\parskip}{.5\baselineskip}
+
+% svn: $Id: csro.tex 1774 2010-11-18 19:35:50Z lou $
+
+\newsavebox{\csroBox}
+
+\begin{document}
+
+\begin{lrbox}{\csroBox}
+\begin{minipage}{.9\linewidth}
+\begin{center}
+\textbf{Contributor's Statement of Respect for Ownership}
+\end{center}
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+I, \rule{.5\linewidth}{.5pt}\ , certify that
+\begin{enumerate}
+\item I have read and understood the statement below on Ownership of
+  Intellectual Property;
+  
+\item for any contribution I make to
+  the \textsc{Coin-OR} Foundation repository, I will make all reasonable 
+  efforts to determine the legal owners of the contribution, and I
+  will obtain the permission of the owners of the contribution to make
+  the contribution available under an open source license certified by
+  the Open Source Initiative;
+
+\item if I am employed, I have discussed contributing to COIN-OR with my
+    employer, \rule{.55\linewidth}{.5pt}\ ,
+    and have obtained their permission to contribute or have determined that
+    they do not assert ownership rights to my contributions;
+
+\item I will not knowingly submit any contribution of which I am not the
+  owner or for which I do not have the owner's permission; and
+
+\item for any contribution I make to an existing project, I will use
+  the same license the project was released under.
+\end{enumerate}
+\begin{flushleft}
+\begin{minipage}{.6\linewidth}\centering\vspace{2\baselineskip}
+\rule{\linewidth}{.5pt} \\
+(signature of contributor)
+\end{minipage}
+\end{flushleft}
+\end{minipage}
+\end{lrbox}
+
+\bgroup\setlength{\fboxsep}{1em}
+\fbox{\usebox{\csroBox}}
+\egroup
+
+\vspace{\baselineskip}
+\begin{center}
+\bfseries Ownership of Intellectual Property
+\end{center}\vspace*{-.5\baselineskip}
+
+The creator of a work may not be the sole owner of the
+intellectual property associated with the work.
+In general, \textit{any} individual or organization which
+contributed resources to the development of a work may be a co-owner.
+The legal ownership depends on the particulars of the situation and the
+contracts involved.
+Some employment contracts assert that the employer has
+ownership rights to any work created by the employee, even if that work is
+created outside
+of regular working hours and without the use of the organization's resources.
+Also, an employer may be fine with contributions to one project but not to
+another.
+
+\bgroup\bfseries
+Contributors should consult with their management, legal counsel,
+and/or technology transfer officers when determining the legal ownership
+of a contribution. 
+\egroup
+
+\end{document}

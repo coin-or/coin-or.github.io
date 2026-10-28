@@ -262,6 +262,13 @@ details {
   &:hover, &:focus { background: $gold; color: $ink; }
 }
 
+// A long list flowed into columns (kramdown: put "{: .list-columns}" after the list).
+.content .list-columns {
+  columns: 4 180px;
+  column-gap: 24px;
+  li { break-inside: avoid; }
+}
+
 // Rows of linked logos (Members page).
 .logo-grid {
   display: flex;
