@@ -5,6 +5,9 @@ tags: [welcome]
 sidebar: home_sidebar
 permalink: /docs/index.html
 summary: This guide will help you get started quickly with COIN-OR.
+# old (pre-WordPress) addresses
+redirect_from:
+  - /documentation.html
 ---
 
 {% include note.html content="If you've landed here, you're probably just getting started with COIN-OR. These guides provide an overview of various topics, but individual projects may have their own documentation." %}

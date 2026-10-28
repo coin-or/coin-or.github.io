@@ -1,0 +1,25 @@
+---
+title: "Former Board and Council Members"
+---
+
+- Miles Lubin (TLC, 2013-2016)
+  - Tony Kelman (TLC, 2013-2016)
+  - JP Fasano (TLC, 2004-2009)
+  - Bob Fourer (SLB, 2005-2011)
+  - Matt Galati (TLC, 2010-2013)
+  - Lou Hafer (SLB, 2004-2015)
+  - William Hart (TLC, 2009-2011; SLB, 2012-2014)
+  - Brady Hunsaker (SLB, 2004-2007)
+  - David Jensen (SLB, 2008-2011)
+  - Randy Kiefer (SLB, 2004-2013)
+  - Bjarni Kristjansson (SLB, 2004-2006)
+  - Laszlo Ladanyi (TLC, 2004-2011)
+  - Jeff Linderoth (TLC, 2004-2005)
+  - Leo Lopes (TLC, 2004-2012)
+  - Robin Lougee (SLB, 2004-2008)
+  - Francois Margot (TLC, 2005-2008)
+  - Kipp Martin (TLC, 2005-2014)
+  - Daniel Reich (SLB, 2014 – 2015)
+  - Paul Rubin (SLB, 2010-2013)
+  - Michael Trick (SLB, 2007-2010)
+  - Andreas Wächter (TLC, 2004-2010)

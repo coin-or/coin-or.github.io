@@ -1,6 +1,9 @@
 ---
 title: FAQ
 description: Frequently asked questions about COIN-OR software and the COIN-OR Foundation.
+# old (pre-WordPress) addresses
+redirect_from:
+  - /faqs.html
 ---
 
 <div class="accordion faq">
