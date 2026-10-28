@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{xspace}
+\usepackage{vmargin}
+\pagestyle{empty}
+\setpapersize{USletter}
+\setmarginsrb{1in}{.5in}{1in}{.5in}%
+	     {\baselineskip}{2\baselineskip}%
+	     {\baselineskip}{2\baselineskip}
+
+
+\setlength{\parskip}{.5\baselineskip}
+
+\newsavebox{\tmpbox}
+
+\begin{document}
+\begin{center}
+{\LARGE\bf Documentation of Ownership and Licensing for New Projects}
+\end{center}
+
+\vskip -.2in
+
+\begin{lrbox}{\tmpbox}
+\begin{minipage}{.9\linewidth}
+\begin{center}
+\textbf{Contributor's Statement of Ownership and Licensing}
+\end{center}
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+I, \rule{.5\linewidth}{.5pt}\ , represent that:
+\begin{enumerate}
+  \item \label{enum:WeOwnIt}
+  the individuals and organizations listed immediately below
+  are the only owner(s) of the contribution
+  \rule{.5\linewidth}{.5pt}
+  \begin{center}
+  \vspace*{4\baselineskip}
+  \end{center}
+
+  \item
+  if any part of the contribution is not owned by the
+  individuals and organizations listed in (\ref{enum:WeOwnIt}), that part
+  was obtained under an open source license certified by the Open Source
+  Initiative; and
+
+  \item \raggedright
+  all owners have agreed to license the contribution under the
+  \rule{.5\linewidth}{.5pt}\ , an open source license certified by the
+  Open Source Initiative.
+\end{enumerate}
+\begin{flushleft}
+\begin{minipage}{.6\linewidth}\centering\vspace{2\baselineskip}
+\rule{\linewidth}{.5pt} \\
+(signature of contributor)
+\end{minipage}
+\end{flushleft}
+\end{minipage}
+\end{lrbox}
+
+\bgroup\setlength{\fboxsep}{1em}
+\fbox{\usebox{\tmpbox}}
+\egroup
+
+\begin{lrbox}{\tmpbox}
+\begin{minipage}{.9\linewidth}
+\begin{center}
+\textbf{Owner's Confirmation of Licensing}
+\end{center}
+I, \rule{.5\linewidth}{.5pt}\ , am an owner of the contribution
+\rule{.5\linewidth}{.5pt}\ , and I agree to license any portion I own
+under
+the terms of the \rule{.55\linewidth}{.5pt}\ , an open source license certified
+by the Open Source Initiative.
+\begin{flushleft}
+\begin{minipage}{.6\linewidth}\centering\vspace{2\baselineskip}
+\rule{\linewidth}{.5pt} \\
+(signature of owner)
+\end{minipage}
+\end{flushleft}
+\end{minipage}
+\end{lrbox}
+
+\vspace*{5\baselineskip}
+\bgroup\setlength{\fboxsep}{1em}
+\fbox{\usebox{\tmpbox}}
+\egroup
+
+\end{document}
+
+

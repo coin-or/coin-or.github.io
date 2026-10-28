@@ -1,0 +1,167 @@
+---
+title: "COIN-OR Contributors on File"
+permalink: /management/contributors.html
+parent:
+  title: Contributing Code
+  url: /contributing/code/
+---
+
+This page contains a list of contributors who have a Contributor's Statement of Respect for Ownership on file. All contributors must have filled out this document in order for their contributions to be accepted in the repository.
+
+## List of Contributors
+
+  - Achterberg, Tobias
+  - Aides, Amit
+  - Aravkin, Aleksandr
+  - Arrigo, Zanette
+  - Austel, Vernon
+  - Bailey, Kendall
+  - Barahona, Francisco
+  - Bell, Brad
+  - Belotti, Pietro
+  - Berthold, Timo
+  - Bonami, Pierre
+  - Borchers, Brian
+  - Buchner, Alexander
+  - Bulut, Aykut
+  - Cafieri, Sonia
+  - Carbonetto, Peter
+  - Çelebi, Onur
+  - Chachuat, Benoit
+  - Chen, Lifeng
+  - Curtis, Frank
+  - D'Ambrosio, Claudia
+  - De Loera, Jesus
+  - Dezso, Balazs
+  - Diaby, Moustapha
+  - Diedam, Holger
+  - Drouet, Laurent
+  - Duquesne, Christophe-Marie
+  - Entriken, Robert
+  - Fasano, J.P.
+  - Ferreau, Joachim
+  - Forrest, John J.
+  - Fourer, Bob
+  - Fowkes, Jaroslav
+  - Fylstra, Daniel
+  - Galati, Matthew
+  - Gambini Santos, Haroldo
+  - Gassmann, Horand (Gus)
+  - Gay, David
+  - Gleixner, Ambros
+  - Góez, Julio
+  - Goncalves, Joao P.
+  - Groer, Chris
+  - Goodson, Justin
+  - Gupta, Anshul
+  - Guzelsoy, Menal
+  - Hafer, Lou
+  - Hagemann, Michael
+  - Hahn, Peter
+  - Hall, Julian
+  - Hansen, Robert
+  - Harder, Robert
+  - Hart, Bill
+  - Haws, David
+  - Helender, Mary
+  - Henderson, Michael E.
+  - Hijazi, Hassan
+  - Hocking, Damien
+  - Horn, Greg
+  - Huang, Wei
+  - Huber, Johannes
+  - Hultberg, Tim
+  - Hunsaker, Brady
+  - Hunting, Marcel
+  - Junger, Michael
+  - Juttner, Alper
+  - Kambadur, Prabhanjan
+  - Karwan, Mark
+  - Kaut, Michal
+  - Kawajiri, Yoshiaki
+  - Kean, Anita
+  - Kewei, Tong
+  - Kim, Kibaek
+  - King, Alan
+  - Kirches, Christian
+  - Kristjansson, Bjarni
+  - Kudruss, Manuel
+  - Kulkarni, Abhishek
+  - Ladanyi, Laszlo
+  - Laird, Carl
+  - Lannez, Sebastien
+  - Lee, Jon
+  - Leyland, Geoff
+  - Liberti, Leo
+  - Librik, David
+  - Lim, Qi-Shan
+  - Lodi, Andrea
+  - Lopes, Leo
+  - Lopez-Negrete, Rodrigo
+  - Lougee, Robin
+  - Lubin, Miles
+  - Ma, Jun
+  - Mahajan, Ashutosh
+  - Maischberger, Mirko
+  - Marcarelli, Sonya
+  - Margot, Francois
+  - Martin, Herve
+  - Martin, Kipp
+  - Middlekoop, Timothy
+  - Mitchell, Stuart
+  - Namazifar, Mahdi
+  - Nannicini, Giacomo
+  - Novak, Ivo
+  - O'Hair, Allison
+  - Ostrowski, James
+  - Pérez, Juan
+  - Phillips, Cynthia
+  - Pirnay, Hans
+  - Potschka, Andreas
+  - Qualizza, Andrea
+  - Ralphs, Ted
+  - Roelofs, Marcel
+  - Saltzman, Matthew
+  - Sarmiento-Romero, Andrés
+  - Sathe, Madan
+  - Savourey, David
+  - Sawhney, Nidhi
+  - Scheinberg, Katya
+  - Schenk, Olaf
+  - Schlieff, Thomas
+  - Schmidt, Daniel
+  - Schoenemann, Thomas
+  - Sharma, Shaurya
+  - Sheng, Huanyuan (Wayne)
+  - Siirola, John
+  - Silva, Daniel
+  - Soares, Rafael de Pelegrini
+  - Sommerhoff, Andres
+  - Sprenger, Mark
+  - Straver, Edwin
+  - Steglich, Mike
+  - Sun, Lei
+  - Tarissan, Fabien
+  - Teeter, Chuck
+  - Towhidi, Mehdi
+  - Tse, Stephen
+  - Turnberg, Scott
+  - Utke, Jean
+  - Vasilev, Igor
+  - Vial, Jean-Philippe
+  - Vigerske, Stefan
+  - Waechter, Andreas
+  - Waldron, Walter
+  - Walter, Sebastian
+  - Walther, Andrea
+  - Walton, H. Philip
+  - Wang, Jiadong
+  - Wasielak, Aramian
+  - Watson, Jean-Paul
+  - Wen, Zaiwen
+  - Westermann, Lutz
+  - Wolf, Christian
+  - Xu, Yan
+  - Ypma, Jelmer
+  - Zviarovich, Viktar
+{: .list-columns}
