@@ -5,6 +5,14 @@
   font-size: 28px;
 }
 
+// Link back to the section a page belongs to (front matter "parent: {title, url}").
+.page-parent {
+  margin: 30px 0 -22px;
+  font-size: 14px;
+  a { text-decoration: none; }
+  a::before { content: "\2039\00a0"; }
+}
+
 .content {
   > :first-child { margin-top: 0; }
 

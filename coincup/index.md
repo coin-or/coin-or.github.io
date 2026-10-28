@@ -1,5 +1,9 @@
 ---
 title: "COIN-OR Cup"
+redirect_from:
+  - /coinCup/
+  - /coinCup/index.html
+  - /coinCup/coinCup.html
 ---
 
 ## COIN-OR Cups & Winners
